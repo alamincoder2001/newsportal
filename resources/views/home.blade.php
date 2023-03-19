@@ -55,8 +55,8 @@
                 </div>
               </ul>
             </li>
-            <li class="nav-item nav-search">
-              <a href="#" id="google-search"><i class="bi bi-search"></i></a>
+            <li class="nav-item nav-search d-flex align-items-center">
+              <a href="#" id="google-search" onclick="showSearch(event)"><i class="bi bi-search"></i></a>
               <form class="d-none" action="" method="get" id="cse-search-box">
                 <input type="search">
               </form>
@@ -68,6 +68,12 @@
   </div>
 
   <script src="{{asset('js/app.js')}}"></script>
+
+  <script>
+    function showSearch(event){
+      $("#cse-search-box").removeClass("d-none")
+    }
+  </script>
 </body>
 
 </html>

@@ -54,3 +54,17 @@ body {
     justify-content: left;
 }
 
+#navbar_top .nav-search{
+    margin-left: 25px;
+}
+
+#navbar_top #cse-search-box {
+    position: absolute;
+    right: 4%;
+    top: 1%;
+    background: #fff;
+    width: 80%;
+    height: 42px;
+    padding: 8px 0 0 8px;
+    display: none;
+}
