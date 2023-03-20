@@ -1,79 +1,2922 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="bn" prefix="og: http://ogp.me/ns#">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nirvoy News</title>
-  <link rel="icon" type="image/x-icon" href="{{asset('newsportal.png')}}">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>Bangladesh Pratidin || Highest Circulated Newspaper</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38749363-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-38749363-1');
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FYW9668KNF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-FYW9668KNF');
+    </script>
+
+    <link rel="shortcut icon" href="https://www.bd-pratidin.com/assets/images/favicon.ico" />
+
+    <base href="http://127.0.0.1:8000/" />
+
+    <meta name="language" content="bn" />
+    <meta http-equiv="Content-Language" content="bn" />
+    <meta name="robots" content="all">
+    <meta name="googlebot" content="all" />
+    <meta name="googlebot-news" content="all" />
+    <meta name="Developer" content="Rabiul islam Rabin, Enayet Ullah" />
+    <meta name="Developed By" content="EWMGL Online Team" />
+    <meta name="propeller" content="cf3d93daee2cc94d6c89200a87935b1b" />
+    <meta name="google-site-verification" content="_JcfyGLu-M-P88rgYIRlvsdFYZRPGeng4Ri5JuxvSY8" />
+    <meta name="msvalidate.01" content="8DB9F4C3D539E57F5EC78BAE1D489691" />
+    <meta name="alexaVerifyID" content="O6Wa6LtBxJdn47-bYj7dMciIP7A" />
+    <meta name="keywords" content="Bangla News, Bangladesh News, Bengali News, Bangla NewsPaper, Bangladesh Newspaper, Paper, Bengali NewsPaper, Indian Newspaper, Online Bangla News, bd newspaper, news paper, bangla news paper, bangladeshi newspaper, news paper bangladesh, daily news paper in bangladesh, daily newspapers of bangladesh, daily newspaper, daily newspaper, current news, current news, bengali daily newspaper, daily news,portal, portal, bangla, bangla, news, news, bangladesh, bangladesh, bangladeshi, bangladeshi, bengali, culture, portal site, dhaka, textile, garments, micro credit,dhaka news, world news, national news, bangladesh media, betar, current news,sports, bangladesh sports, bangladesh, bangladesh politics, bangladesh business, banglanews, bangla khobor, bangla potrika, bangla, bengali, dhaka, news, reviews, opinion and feature stories. Bangladesh Pratidin provides trusted Bangladeshi and International news as well as local and regional perspectives. Find also entertainment, business, science, technology, sports, movies, travel, jobs, education, health, environment, human-rights news and more,বিডি প্রতিদিন, বাংলাদেশ প্রতিদিন খেলার খবর, বিডি প্রতিদিন খবর, প্রতিদিন বাংলাদেশ, বিডি প্রতিদিন অনলাইন, বিডি প্রতিদিন ক্রিকেট, বাংলাদেশ প্রতিদিন পত্রিকা, বাংলাদেশ প্রতিদিন অনলাইন, বাংলাদেশ প্রতিদিন আন্তর্জাতিক, বাংলাদেশ প্রতিদিন খেলার খবর, বাংলাদেশ প্রতিদিন চাকরির খবর, বাংলাদেশ প্রতিদিন শিক্ষা খবর, বাংলা নিউজ আজকের, বাংলা নিউজ পেপার, প্রতিদিনের সংবাদ" />
+    <meta name="description" content="Bangladesh pratidin. Most Largest And Popular In Bangladesh for bd news bangla" />
+    <meta name="author" content="Bangladesh Pratidin" />
+    <meta name="url" content="http://127.0.0.1:8000/" />
+
+    <meta property="og:site_name" content="বাংলাদেশ প্রতিদিন" />
+    <meta property="og:url" content="http://127.0.0.1:8000/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Bangladesh Pratidin || Highest Circulated Newspaper" />
+    <meta property="og:description" content="Bangladesh pratidin. Most Largest And Popular In Bangladesh for bd news bangla" />
+    <meta property="og:image" content="http://127.0.0.1:8000/assets/newDesktop/img/default-img.jpg" />
+    <meta property="image_url" content="http://127.0.0.1:8000/assets/newDesktop/img/default-img.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="bd-pratidin.com">
+    <meta property="twitter:url" content="http://127.0.0.1:8000/">
+    <meta name="twitter:title" content="Bangladesh Pratidin || Highest Circulated Newspaper">
+    <meta name="twitter:description" content="Bangladesh pratidin. Most Largest And Popular In Bangladesh for bd news bangla">
+    <meta name="twitter:image" content="http://127.0.0.1:8000/assets/newDesktop/img/default-img.jpg">
+
+    <meta property="fb:app_id" content="1163541667026157" />
+    <meta property="fb:pages" content="1095330173885635" />
+
+    <link rel="canonical" href="http://127.0.0.1:8000/">
+    <link rel="image_src" href="http://127.0.0.1:8000/assets/newDesktop/img/default-img.jpg">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "url": "http://127.0.0.1:8000/",
+            "logo": "http://127.0.0.1:8000/assets/newDesktop/img/logo.png",
+            "contactPoint": [{
+                "@type": "ContactPoint",
+                "telephone": "09612120000, 8432371-3",
+                "email": "bdpratidin@gmail.com, online.bdpratidin@yahoo.com",
+                "contactType": "customer service"
+            }],
+            "sameAs": [
+                "https://www.facebook.com/dailybangladeshpratidin",
+                "https://twitter.com/bd_pratidin",
+                "https://www.youtube.com/channel/UC0g7R-oqBXYZDIE8yPgT6rA/videos",
+                "https://www.instagram.com/bangladeshpratidin/?igshid=17sw13yaetjrq",
+                "https://play.google.com/store/apps/details?id=com.bangladesh.pratidin",
+                "https://apps.apple.com/us/app/bangladesh-pratidin/id1056949757",
+                "http://127.0.0.1:8000/sitemap.xml"
+            ]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": "http://127.0.0.1:8000/",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "http://127.0.0.1:8000/keywordsearch?cx=5d07de91748e84546&cof=FORID%3A10&ie=UTF-8&q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
+
+    <link href="{{asset('frontend')}}/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="{{asset('frontend')}}/assets/css/calendar.css" rel="stylesheet">
+    <link href="{{asset('frontend')}}/assets/css/theme-style.css" rel="stylesheet">
+
+    <script src="{{asset('frontend')}}/assets/js/jquery.min.js"></script>
+    <script src="{{asset('frontend')}}/assets/js/lazyload.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("img.lazy").lazyload({
+                effect: "fadeIn"
+            });
+        });
+    </script>
+
+    <!-- <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+        var gptadslots = [];
+        var googletag = googletag || {
+            cmd: []
+        };
+    </script>
+    <script>
+        window.googletag = window.googletag || {
+            cmd: []
+        };
+        googletag.cmd.push(function() {
+
+            googletag.defineSlot('/21674221269/Desktop_Home_Top_728x90', [728, 90], 'div-gpt-ad-1631773692077-0').addService(googletag.pubads());
+            googletag.defineSlot('/21674221269/Desktop_Homepage_Top_970x90', [970, 90], 'div-gpt-ad-1641384618839-0').addService(googletag.pubads());
+            googletag.defineSlot('/21674221269/Desktop_Homepage_970x90_LB1', [970, 250], 'div-gpt-ad-1632991122851-0').addService(googletag.pubads());
+            googletag.defineSlot('/21674221269/Desktop_Homepage_970x90_LB2', [
+                [970, 90],
+                [728, 90]
+            ], 'div-gpt-ad-1631775223363-0').addService(googletag.pubads());
+            googletag.defineSlot('/21674221269/Desktop_Homepage_970x90_LB5.', [970, 90], 'div-gpt-ad-1631775365067-0').addService(googletag.pubads());
+            googletag.defineSlot('/21674221269/Desktop_Homepage_970x90_LB6.', [970, 90], 'div-gpt-ad-1631791189192-0').addService(googletag.pubads());
+            googletag.defineSlot('/21674221269/Desktop_Homepage_728x90_LB7', [
+                [970, 90],
+                [728, 90]
+            ], 'div-gpt-ad-1631791358837-0').addService(googletag.pubads());
+            googletag.defineSlot('/21674221269/Desktop_Wizards_300x250_4', [300, 250], 'div-gpt-ad-1631791688046-0').addService(googletag.pubads());
+            googletag.defineSlot('/21674221269/Mobile_Wizards_300x250_5', [300, 250], 'div-gpt-ad-1631791741735-0').addService(googletag.pubads());
+            googletag.defineSlot('/21674221269/Desktop_Wizards_300x250_6', [300, 250], 'div-gpt-ad-1671429662828-0').addService(googletag.pubads());
+            googletag.defineSlot('/21674221269/Desktop_Details_Welcome', [660, 440], 'div-gpt-ad-1602771092550-0').addService(googletag.pubads());
+            googletag.defineSlot('/21674221269/Desktop_Home_Page_R1_New', [300, 250], 'div-gpt-ad-1641306577359-0').addService(googletag.pubads());
+            googletag.defineSlot('/21674221269/Desktop_Home_Desktop_970X90', [970, 90], 'div-gpt-ad-1641372357518-0').addService(googletag.pubads());
+            googletag.defineSlot('/21674221269/Desktop_Homepage_970x90_LB6.', [
+                [970, 90],
+                [728, 90]
+            ], 'div-gpt-ad-1648555683029-0').addService(googletag.pubads());
+            googletag.defineSlot('/21674221269/Desktop_Homepage_970x90_LB_8', [
+                [728, 90],
+                [970, 90]
+            ], 'div-gpt-ad-1651052733981-0').addService(googletag.pubads());
+            googletag.defineSlot('/21674221269/Desktop_Homepage_970x90_LB_9', [
+                [970, 90],
+                [728, 90]
+            ], 'div-gpt-ad-1651125597903-0').addService(googletag.pubads());
+            googletag.defineSlot('/21674221269/Desktop_Homepage_970x90_LB_10', [
+                [970, 90],
+                [728, 90]
+            ], 'div-gpt-ad-1651125671108-0').addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            // googletag.pubads().collapseEmptyDivs(true);
+            googletag.pubads().setCentering(true);
+            googletag.enableServices();
+        });
+    </script>
+    <script>
+        var esadt;
+        esadt || ((esadt = esadt || {}).cmd = esadt.cmd || [], function() {
+            var t = document.createElement("script");
+            t.async = !0, t.id = "esadt", t.type = "text/javascript";
+            var e = "https:" == document.location.protocol;
+            t.src = (e ? "https:" : "http:") + "///sspjs.eskimi.com/esadt.js", (e = document.getElementsByTagName("script")[0]).parentNode.insertBefore(t, e)
+        }());
+    </script>
+
+    <script id="feedify_webscript">
+        var feedify = feedify || {};
+        window.feedify_options = {
+            fedify_url: "https://feedify.net/",
+            pkey: "BPpGBQxY28Cs9tN3u0mConi-r7kfeRNM3rfGz_Hzt-SygP4JR7J1mrrzAuppfASF7TWe9A3GUoo3NhOawAGYiMs"
+        };
+        (function(window, document) {
+            function addScript(script_url) {
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.src = script_url;
+                document.getElementsByTagName('head')[0].appendChild(s);
+            }
+            addScript('https://tpcf.feedify.net/uploads/settings/8ce1c6f1268498a2918986b482857ddb.js?ts=' + Math.random());
+            addScript('https://cdn.feedify.net/getjs/feedbackembad-min-3.0.js');
+        })(window, document);
+    </script> -->
+    <meta http-equiv="refresh" content="1000" />
 </head>
 
-<body>
-  <div id="app">
+<body class="home ">
 
-    <!-- header section -->
-    <header class="header d-none d-lg-block">
-      <a class="anniversary-logo" href="#">
-        <img src="{{asset('frontend/images/logo/nirvoynews.png')}}" alt="Nirvoy News">
-      </a>
-    </header>
-    <!-- end header section -->
 
-    <!-- navbar start -->
-    <nav id="navbar_top" class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand d-lg-none" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="##main_nav" aria-controls="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="#main_nav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="text-secondary bi bi-house-fill"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">জাতীয়</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                অন্যান্য
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <div class="row">
-                  <div class="col-lg-6 col-sm-6 col-6">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another</a></li>
-                  </div>
-                  <div class="col-lg-6 col-sm-6 col-6">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another</a></li>
-                  </div>
+
+    <header>
+        <div class="container mb-3">
+            <div class="row">
+                <div class="col-md-4 col-lg-3 col-xl-4 col-xxl-4">
+                    <a href="http://127.0.0.1:8000/" class="logo"><img src="{{asset('frontend')}}/assets/img/logo.png" alt=""></a>
                 </div>
-              </ul>
-            </li>
-            <li class="nav-item nav-search d-flex align-items-center">
-              <a href="#" id="google-search" onclick="showSearch(event)"><i class="bi bi-search"></i></a>
-              <form class="d-none" action="" method="get" id="cse-search-box">
-                <input type="search">
-              </form>
-            </li>
-          </ul>
+
+                <div class="col-md-8 col-lg-9 col-xl-8 col-xxl-8 ps-0">
+                    <div class="ads header-ad">
+                        <div data-position="desktop-home-header-right" class="m-0 p-0">
+                            <div class="ads mb-2 d-flex justify-content-center">
+                                <div class="ad_cl-661" data-id="661">
+                                    <div>
+                                        <a href="http://127.0.0.1:8000/en/"><img src="http://127.0.0.1:8000/assets/images/banner/20220803024408.gif" align="BP EN"></a>
+                                        <style type="text/css">
+                                            .ad_cl-661 {
+                                                display: inline-block;
+                                                width: 100%;
+                                                text-align: right;
+                                            }
+                                        </style>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </header>
+    <nav id="navbar_top" class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" id="top-navbar-logo" href="http://127.0.0.1:8000/"><img src="{{asset('frontend')}}/assets/img/logo.png" alt="bd-pratidin"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="bi bi-menu-button-fill"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main_nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/"><i class="text-secondary bi bi-house-fill"></i></a></li>
+                    <li class="nav-item "><a class="nav-link" href="national">জাতীয়</a></li>
+                    <li class="nav-item "><a class="nav-link" href="country">দেশগ্রাম</a></li>
+                    <li class="nav-item "><a class="nav-link" href="international-news">পূর্ব-পশ্চিম</a></li>
+                    <li class="nav-item "><a class="nav-link" href="entertainment">শোবিজ</a></li>
+                    <li class="nav-item "><a class="nav-link" href="sports">মাঠে ময়দানে</a></li>
+                    <li class="nav-item"><a class="nav-link text-success" href="online/todaynews">আজকের শিরোনাম</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown"> অন্যান্য </a>
+                        <ul class="dropdown-menu dropdown-menu-right  multi-column columns-2">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <ul class="multi-column-dropdown">
+                                        <li><a class="dropdown-item" href="economy">শিল্প বাণিজ্য</a></li>
+                                        <li><a class="dropdown-item" href="campus-online">ক্যাম্পাস</a></li>
+                                        <li><a class="dropdown-item" href="corporate-corner">কর্পোরেট কর্নার</a></li>
+                                        <li><a class="dropdown-item" href="islam">ইসলাম</a></li>
+                                        <li><a class="dropdown-item" href="health-tips">হেলথ কর্নার</a></li>
+                                        <li><a class="dropdown-item" href="life">জীবন ধারা</a></li>
+                                        <li><a class="dropdown-item" href="open-air-theater">মুক্তমঞ্চ</a></li>
+                                        <li><a class="dropdown-item" href="mixter">পাঁচফোড়ন</a></li>
+                                        <li><a class="dropdown-item" href="features">ফিচার</a></li>
+                                        <li><a class="dropdown-item" href="readers-column">পাঠক কলাম</a></li>
+                                        <li><a class="dropdown-item" href="coronavirus">করোনাভাইরাস</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6">
+                                    <ul class="multi-column-dropdown">
+                                        <li><a class="dropdown-item" href="city-news">নগর জীবন</a></li>
+                                        <li><a class="dropdown-item" href="minister-spake">মন্ত্রী কথন</a></li>
+                                        <li><a class="dropdown-item" href="probash-potro">পরবাস</a></li>
+                                        <li><a class="dropdown-item" href="chayer-desh">চায়ের দেশ</a></li>
+                                        <li><a class="dropdown-item" href="kolkata">ওপার বাংলা</a></li>
+                                        <li><a class="dropdown-item" href="chittagong-pratidin">চট্টগ্রাম প্রতিদিন</a></li>
+                                        <li><a class="dropdown-item" href="facebook">ফেসবুক কর্নার</a></li>
+                                        <li><a class="dropdown-item" href="tech-world">টেক ওয়ার্ল্ড</a></li>
+                                        <li><a class="dropdown-item" href="city-roundup">নগর পরিক্রমা</a></li>
+                                        <li><a class="dropdown-item" href="agriculture-nature">কৃষি ও প্রকৃতি</a></li>
+                                        <li><a class="dropdown-item" href="14-years-bd-pratidin">১৪ বছরে বাংলাদেশ <br> প্রতিদিন</a></li>
+
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item epaper"><a target="_blank" class="nav-link" href="http://www.ebdpratidin.com">ই-পেপার</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  dropdown-toggle text-danger" href="http://127.0.0.1:8000/printversion"> আজকের পত্রিকা </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+
+                            <li><a class="dropdown-item text-danger" href="printversion">হোম</a></li>
+                            <li><a class="dropdown-item" href="first-page">প্রথম পাতা</a></li>
+                            <li><a class="dropdown-item" href="last-page">পেছনের পৃষ্ঠা</a></li>
+                            <li><a class="dropdown-item" href="city">নগর জীবন</a></li>
+                            <li><a class="dropdown-item" href="country-village">দেশগ্রাম</a></li>
+                            <li><a class="dropdown-item" href="sport-news">মাঠে ময়দানে</a></li>
+                            <li><a class="dropdown-item" href="entertainment-news">শোবিজ</a></li>
+                            <li><a class="dropdown-item" href="editorial">সম্পাদকীয়</a></li>
+                            <li><a class="dropdown-item" href="various">রকমারি</a></li>
+                            <li><a class="dropdown-item" href="news">খবর</a></li>
+                            <li><a class="dropdown-item" href="international">পূর্ব-পশ্চিম</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">সংস্করণ</a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a target="_blank" class="dropdown-item" href="http://127.0.0.1:8000/northamerica/">ইউএসএ এডিশন</a></li>
+                            <li><a target="_blank" class="dropdown-item" href="http://127.0.0.1:8000/uk/">ইউকে এডিশন</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-search">
+                        <a href="#" id="google-search"><i class="bi bi-search"></i></a>
+                        <form action="./home/search" method="get" id="cse-search-box">
+                            <input type="hidden" value="5d07de91748e84546" name="cx">
+                            <a href="#"><i class="bi bi-x-lg"></i></a>
+                            <input type="hidden" name="cof" value="FORID:10" />
+                            <input type="hidden" value="UTF-8" name="ie">
+                            <input name="q" type="text" placeholder="Search.....">
+                            <button type="submit" onclick="document.getElementById('form-id').submit();"><i class="bi bi-search"></i></button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
-  </div>
 
-  <script src="{{asset('js/app.js')}}"></script>
+    <div class="clearfix"></div>
+    <div class="acme-news-ticker-bg">
+        <div class="container">
+            <div class="acme-news-ticker">
+                <div class="acme-news-ticker-label">শিরোনাম </div>
+                <div class="acme-news-ticker-box">
+                    <ul class="my-news-ticker">
+                        <li><a href="international-news/2023/03/20/868861">যুক্তরাষ্ট্রে আরও ১৮৬ ব্যাংক পতনের ঝুঁকিতে
+                            </a></li>
+                        <li><a href="city-news/2023/03/20/868860">মাদকবিরোধী পুলিশি অভিযানে গ্রেফতার ৪২</a></li>
+                        <li><a href="city-news/2023/03/20/868859">বৃষ্টিতে ঢাকায় দূষণ কমে বায়ুমানের উন্নতি</a></li>
+                        <li><a href="international-news/2023/03/20/868858">ইরানের প্রেসিডেন্টকে সৌদি আরবে সফরের আমন্ত্রণ বাদশাহ সালমানের
+                            </a></li>
+                        <li><a href="international-news/2023/03/20/868857">এবার ক্রেডিট সুইস ব্যাংক দেউলিয়া হওয়া নিয়ে আতঙ্ক</a></li>
+                        <li><a href="national/2023/03/20/868856">বঙ্গভবনে রাষ্ট্রপতির সঙ্গে সৌদি রাষ্ট্রদূতের সৌজন্য সাক্ষাৎ</a></li>
+                        <li><a href="city-news/2023/03/20/868855">হেলেনা জাহাঙ্গীরসহ ৫ জনের মামলার রায় আজ</a></li>
+                        <li><a href="sports/2023/03/20/868854">
+                                পয়েন্ট তালিকায় শীর্ষে ফেরা হলো না বায়ার্নের </a></li>
+                        <li><a href="sports/2023/03/20/868853">ঘরের মাঠেও জুভেন্টাসে ধরাশায়ী ইন্টার</a></li>
+                        <li><a href="international-news/2023/03/20/868852">যে কারণে চীনকে ধন্যবাদ দিলেন পুতিন</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <script>
-    function showSearch(event){
-      $("#cse-search-box").removeClass("d-none")
-    }
-  </script>
+    <div class="clearfix"></div>
+    
+
+    <div class="container my-4">
+        <div class="col-md-12">
+            <div data-position="desktop-home-after-nav" class="m-0 p-0">
+                <div class="ads bg-light mb-2 d-flex justify-content-center">
+                    <div class="ad_cl-1" data-id="1">
+                        <div id='div-gpt-ad-1641384618839-0' style='min-width: 970px; min-height: 90px;'>
+                            <script>
+                                googletag.cmd.push(function() {
+                                    googletag.display('div-gpt-ad-1641384618839-0');
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mainContainer">
+        <div class="row">
+            <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-5">
+                <div id="carouselHomeCaptions" class="carousel slide lead-slider" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselHomeCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselHomeCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselHomeCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <a href="first-page/2023/03/20/868809">
+                                <img src="{{asset('frontend')}}/assets/news_images/thumbnails/Bd-Pratidin-20-03-23-F-05.png" class="d-block w-100" alt="কে এই আরাভ খান">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>কে এই আরাভ খান</h5>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="carousel-item ">
+                            <a href="last-page/2023/03/20/868825">
+                                <img src="{{asset('frontend')}}/assets/news_images/thumbnails/Bd-Pratidin-20-03-23-F-12.png" class="d-block w-100" alt="অস্ট্রেলিয়ার বাণিজ্যে চীনের বিকল্প বাংলাদেশ">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>অস্ট্রেলিয়ার বাণিজ্যে চীনের বিকল্প বাংলাদেশ</h5>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="city-news/2023/03/20/868855">
+                                <img src="{{asset('frontend')}}/assets/news_images/thumbnails/091146_bangladesh_pratidin_ima.png" class="d-block w-100" alt="হেলেনা জাহাঙ্গীরসহ ৫ জনের মামলার রায় আজ">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>হেলেনা জাহাঙ্গীরসহ ৫ জনের মামলার রায় আজ</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselHomeCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselHomeCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="lead-2nd mt-4">
+                    <h1 class="mb-0 pb-0 d-block"><a href="./online/focus"><span class="blink"></span><span>ফোকাস</span> <i class="bi bi-chevron-right"></i></a></h1>
+                    <ul class="m-0">
+                        <li class="bi bi-caret-right-fill"><a href="sports/2023/03/20/868840">ছিলেন মেসি-এমবাপ্পে, তবুও লজ্জায় ডুবল পিএসজি</a></li>
+                        <li class="bi bi-caret-right-fill"><a href="last-page/2023/03/20/868829">হেলিকপ্টার ও হাতি নিয়ে বিয়ে</a></li>
+                        <li class="bi bi-caret-right-fill"><a href="last-page/2023/03/20/868827">দেশে ফিরলেন মাহির স্বামী রকিব
+                            </a></li>
+                        <li class="bi bi-caret-right-fill"><a href="first-page/2023/03/20/868819">তিস্তা নিয়ে ভারতের কাছে জানতে চেয়েছে ঢাকা</a></li>
+                        <li class="bi bi-caret-right-fill"><a href="first-page/2023/03/20/868817">আমজাদের এক হাজার ব্যাংক হিসাব জব্দ</a></li>
+                        <li class="bi bi-caret-right-fill"><a href="editorial/2023/03/20/868774">প্রযুক্তির বিকৃত ব্যবহার ধ্বংস করছে পারিবারিক বন্ধন</a></li>
+                        <li class="bi bi-caret-right-fill"><a href="editorial/2023/03/20/868768">একাত্তরের নভেম্বরেই বিধ্বস্ত হয়ে পড়ে পাকিস্তানিরা</a></li>
+                        <li class="bi bi-caret-right-fill"><a href="kolkata/2023/03/19/868750">এবার অমর্ত্য সেনের বিরুদ্ধে উচ্ছেদ আইনে মামলার হুঁশিয়ারি বিশ্বভারতীর </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                <div class="news-tab-area latest-news-top">
+                    <h2 class="title"><span class="blink"></span> সর্বশেষ খবর</h2>
+                    <div class="tab-content mt-3">
+                        <ul>
+                            <li><a href="international-news/2023/03/20/868861" class="row">
+                                    <p class="col-md-8">
+                                        <strong>যুক্তরাষ্ট্রে আরও ১৮৬ ব্যাংক পতনের ঝুঁকিতে
+                                        </strong>
+                                        <span><i class="bi bi-stopwatch"></i> ৩ মিনিট আগে | <small>পূর্ব-পশ্চিম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/102101_bangladesh_pratidin_svb.jpg?v=1679286286" alt="যুক্তরাষ্ট্রে আরও ১৮৬ ব্যাংক পতনের ঝুঁকিতে
+
+">
+                                    </p>
+                                </a></li>
+                            <li><a href="city-news/2023/03/20/868860" class="row">
+                                    <p class="col-md-8">
+                                        <strong>মাদকবিরোধী পুলিশি অভিযানে গ্রেফতার ৪২</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ৭ মিনিট আগে | <small>নগর জীবন</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/101710_bangladesh_pratidin_greftar_2.jpg?v=1679286286" alt="মাদকবিরোধী পুলিশি অভিযানে গ্রেফতার ৪২">
+                                    </p>
+                                </a></li>
+                            <li><a href="city-news/2023/03/20/868859" class="row">
+                                    <p class="col-md-8">
+                                        <strong>বৃষ্টিতে ঢাকায় দূষণ কমে বায়ুমানের উন্নতি</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৭ মিনিট আগে | <small>নগর জীবন</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/100745_bangladesh_pratidin_670.jpg?v=1679286286" alt="বৃষ্টিতে ঢাকায় দূষণ কমে বায়ুমানের উন্নতি">
+                                    </p>
+                                </a></li>
+                            <li><a href="international-news/2023/03/20/868858" class="row">
+                                    <p class="col-md-8">
+                                        <strong>ইরানের প্রেসিডেন্টকে সৌদি আরবে সফরের আমন্ত্রণ বাদশাহ সালমানের
+                                        </strong>
+                                        <span><i class="bi bi-stopwatch"></i> ২৭ মিনিট আগে | <small>পূর্ব-পশ্চিম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/095728_bangladesh_pratidin_Raisi.jpg?v=1679286286" alt="ইরানের প্রেসিডেন্টকে সৌদি আরবে সফরের আমন্ত্রণ বাদশাহ সালমানের
+
+">
+                                    </p>
+                                </a></li>
+                            <li><a href="international-news/2023/03/20/868857" class="row">
+                                    <p class="col-md-8">
+                                        <strong>এবার ক্রেডিট সুইস ব্যাংক দেউলিয়া হওয়া নিয়ে আতঙ্ক</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ৩৫ মিনিট আগে | <small>পূর্ব-পশ্চিম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/094908_bangladesh_pratidin_77.jpg?v=1679286286" alt="এবার ক্রেডিট সুইস ব্যাংক দেউলিয়া হওয়া নিয়ে আতঙ্ক">
+                                    </p>
+                                </a></li>
+                            <li><a href="national/2023/03/20/868856" class="row">
+                                    <p class="col-md-8">
+                                        <strong>বঙ্গভবনে রাষ্ট্রপতির সঙ্গে সৌদি রাষ্ট্রদূতের সৌজন্য সাক্ষাৎ</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ৫৮ মিনিট আগে | <small>জাতীয়</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/092547_bangladesh_pratidin_0000777.jpg?v=1679286286" alt="বঙ্গভবনে রাষ্ট্রপতির সঙ্গে সৌদি রাষ্ট্রদূতের সৌজন্য সাক্ষাৎ">
+                                    </p>
+                                </a></li>
+                            <li><a href="city-news/2023/03/20/868855" class="row">
+                                    <p class="col-md-8">
+                                        <strong>হেলেনা জাহাঙ্গীরসহ ৫ জনের মামলার রায় আজ</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১ ঘন্টা আগে | <small>নগর জীবন</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/091146_bangladesh_pratidin_ima.jpg?v=1679286286" alt="হেলেনা জাহাঙ্গীরসহ ৫ জনের মামলার রায় আজ">
+                                    </p>
+                                </a></li>
+                            <li><a href="sports/2023/03/20/868854" class="row">
+                                    <p class="col-md-8">
+                                        <strong>
+                                            পয়েন্ট তালিকায় শীর্ষে ফেরা হলো না বায়ার্নের </strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১ ঘন্টা আগে | <small>মাঠে ময়দানে</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/085343_bangladesh_pratidin_000ure.jpg?v=1679286286" alt="
+পয়েন্ট তালিকায় শীর্ষে ফেরা হলো না বায়ার্নের ">
+                                    </p>
+                                </a></li>
+                            <li><a href="sports/2023/03/20/868853" class="row">
+                                    <p class="col-md-8">
+                                        <strong>ঘরের মাঠেও জুভেন্টাসে ধরাশায়ী ইন্টার</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১ ঘন্টা আগে | <small>মাঠে ময়দানে</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/082955_bangladesh_pratidin_14.jpg?v=1679286286" alt="ঘরের মাঠেও জুভেন্টাসে ধরাশায়ী ইন্টার">
+                                    </p>
+                                </a></li>
+                            <li><a href="international-news/2023/03/20/868852" class="row">
+                                    <p class="col-md-8">
+                                        <strong>যে কারণে চীনকে ধন্যবাদ দিলেন পুতিন</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ৪ ঘন্টা আগে | <small>পূর্ব-পশ্চিম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/053658_bangladesh_pratidin_BD-pratidin--7.jpg?v=1679286286" alt="যে কারণে চীনকে ধন্যবাদ দিলেন পুতিন">
+                                    </p>
+                                </a></li>
+                            <li><a href="sports/2023/03/20/868851" class="row">
+                                    <p class="col-md-8">
+                                        <strong>এল ক্ল্যাসিকোয় বাজিমাত, ফের বার্সেলোনার রিয়াল বধ</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ৫ ঘন্টা আগে | <small>মাঠে ময়দানে</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/042602_bangladesh_pratidin_BD-pratidin--6.jpg?v=1679286286" alt="এল ক্ল্যাসিকোয় বাজিমাত, ফের বার্সেলোনার রিয়াল বধ">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/20/868849" class="row">
+                                    <p class="col-md-8">
+                                        <strong>ইয়াবা পাচার, মা ছেলেসহ চার কারবারি আটক</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ৭ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/025353_bangladesh_pratidin_BD-pratidin--4.jpg?v=1679286286" alt="ইয়াবা পাচার, মা ছেলেসহ চার কারবারি আটক">
+                                    </p>
+                                </a></li>
+                            <li><a href="sports/2023/03/20/868840" class="row">
+                                    <p class="col-md-8">
+                                        <strong>ছিলেন মেসি-এমবাপ্পে, তবুও লজ্জায় ডুবল পিএসজি</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ৯ ঘন্টা আগে | <small>মাঠে ময়দানে</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/011941_bangladesh_pratidin_BD-pratidin--3.jpg?v=1679286286" alt="ছিলেন মেসি-এমবাপ্পে, তবুও লজ্জায় ডুবল পিএসজি">
+                                    </p>
+                                </a></li>
+                            <li><a href="international-news/2023/03/20/868839" class="row">
+                                    <p class="col-md-8">
+                                        <strong>মারিওপোল সফর, কী দেখলেন পুতিন?</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ৯ ঘন্টা আগে | <small>পূর্ব-পশ্চিম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/005341_bangladesh_pratidin_BD-pratidin--2.jpg?v=1679286286" alt="মারিওপোল সফর, কী দেখলেন পুতিন?">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/20/868823" class="row">
+                                    <p class="col-md-8">
+                                        <strong>পর্যটককে ছুরিকাঘাত করে ছিনতাই, ডিবির জালে পাঁচ ছিনতাইকারী</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১০ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/001358_bangladesh_pratidin_BD-pratidin--1.jpg?v=1679286286" alt="পর্যটককে ছুরিকাঘাত করে ছিনতাই,  ডিবির জালে পাঁচ ছিনতাইকারী">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868760" class="row">
+                                    <p class="col-md-8">
+                                        <strong>সিদ্ধিরগঞ্জে ট্যাংকলরী শ্রমিক ইউনিয়নের উদ্যোগে বঙ্গবন্ধুর জন্মবার্ষিকী</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১১ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/225454_bangladesh_pratidin_sid.jpg?v=1679286286" alt="সিদ্ধিরগঞ্জে ট্যাংকলরী শ্রমিক ইউনিয়নের উদ্যোগে বঙ্গবন্ধুর জন্মবার্ষিকী">
+                                    </p>
+                                </a></li>
+                            <li><a href="agriculture-nature/2023/03/19/868759" class="row">
+                                    <p class="col-md-8">
+                                        <strong>এবার একলাখ মেট্রিক টন আলু রপ্তানির লক্ষ্যমাত্রা</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১১ ঘন্টা আগে | <small>কৃষি ও প্রকৃতি</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/223714_bangladesh_pratidin_rangpur-alu-photo-19-3-23.jpg?v=1679286286" alt="এবার একলাখ মেট্রিক টন আলু রপ্তানির লক্ষ্যমাত্রা">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868758" class="row">
+                                    <p class="col-md-8">
+                                        <strong>ঝালকাঠিতে ২ মাদক ব্যবসায়ী আটক </strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১১ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/223546_bangladesh_pratidin_dsfdfsdsdf.jpg?v=1679286286" alt="ঝালকাঠিতে ২ মাদক ব্যবসায়ী আটক  ">
+                                    </p>
+                                </a></li>
+                            <li><a href="national/2023/03/19/868757" class="row">
+                                    <p class="col-md-8">
+                                        <strong>রমজানে কেউ যেন খাদ্য মজুতদারি করতে না পারে : প্রধানমন্ত্রী</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১১ ঘন্টা আগে | <small>জাতীয়</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/223506_bangladesh_pratidin_sheikh-hasina-(file-photo).jpg?v=1679286286" alt="রমজানে কেউ যেন খাদ্য মজুতদারি করতে না পারে : প্রধানমন্ত্রী">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868756" class="row">
+                                    <p class="col-md-8">
+                                        <strong>লোকালয় থেকে উদ্ধার করা সাপ সুন্দরবনে অবমুক্ত</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১১ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/223254_bangladesh_pratidin_sdfdsfsdfdfsgd.jpg?v=1679286286" alt="লোকালয় থেকে উদ্ধার করা সাপ সুন্দরবনে অবমুক্ত">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868755" class="row">
+                                    <p class="col-md-8">
+                                        <strong>ওড়াকান্দিতে ৩ দিনব্যাপী বারুনী মেলা</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১১ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/222841_bangladesh_pratidin_sdfdfsdffds.jpg?v=1679286286" alt="ওড়াকান্দিতে ৩ দিনব্যাপী বারুনী মেলা">
+                                    </p>
+                                </a></li>
+                            <li><a href="international-news/2023/03/19/868754" class="row">
+                                    <p class="col-md-8">
+                                        <strong>এক সপ্তাহে চারবার ক্ষেপণাস্ত্র নিক্ষেপ উত্তর কোরিয়ার</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১১ ঘন্টা আগে | <small>পূর্ব-পশ্চিম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/222821_bangladesh_pratidin_missile-bdp.jpg?v=1679286286" alt="এক সপ্তাহে চারবার ক্ষেপণাস্ত্র নিক্ষেপ উত্তর কোরিয়ার">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868753" class="row">
+                                    <p class="col-md-8">
+                                        <strong>মেহেরপুরে নবনির্মিত একাডেমিক ভবন উদ্বোধন </strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১২ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/222316_bangladesh_pratidin_fsdfdssdfdsf.jpg?v=1679286286" alt="মেহেরপুরে নবনির্মিত একাডেমিক ভবন উদ্বোধন  ">
+                                    </p>
+                                </a></li>
+                            <li><a href="entertainment/2023/03/19/868752" class="row">
+                                    <p class="col-md-8">
+                                        <strong>নিজেকে বাংলাদেশি মনে করি: রাজা সেন</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১২ ঘন্টা আগে | <small>শোবিজ</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/222015_bangladesh_pratidin_raza.jpg?v=1679286286" alt="নিজেকে বাংলাদেশি মনে করি: রাজা সেন">
+                                    </p>
+                                </a></li>
+                            <li><a href="chittagong-pratidin/2023/03/19/868751" class="row">
+                                    <p class="col-md-8">
+                                        <strong>চক্ষু গবেষণায় বাংলাদেশের সর্বোচ্চ সম্মাননা পেলেন চট্টগ্রামের ডা. আসিফ</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১২ ঘন্টা আগে | <small>চট্টগ্রাম প্রতিদিন</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/221202_bangladesh_pratidin_Ctg-Pic--01-(19_03.jpg?v=1679286286" alt="চক্ষু গবেষণায় বাংলাদেশের সর্বোচ্চ সম্মাননা পেলেন চট্টগ্রামের ডা. আসিফ">
+                                    </p>
+                                </a></li>
+                            <li><a href="kolkata/2023/03/19/868750" class="row">
+                                    <p class="col-md-8">
+                                        <strong>এবার অমর্ত্য সেনের বিরুদ্ধে উচ্ছেদ আইনে মামলার হুঁশিয়ারি বিশ্বভারতীর </strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১২ ঘন্টা আগে | <small>ওপার বাংলা</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/220230_bangladesh_pratidin_amorto.jpg?v=1679286286" alt="এবার অমর্ত্য সেনের বিরুদ্ধে উচ্ছেদ আইনে মামলার হুঁশিয়ারি বিশ্বভারতীর ">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868749" class="row">
+                                    <p class="col-md-8">
+                                        <strong>সড়ক দুর্ঘটনায় দুই মোটরসাইকেল আরোহী নিহত</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১২ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/214149_bangladesh_pratidin_accident-2.jpg?v=1679286286" alt="সড়ক দুর্ঘটনায় দুই মোটরসাইকেল আরোহী নিহত">
+                                    </p>
+                                </a></li>
+                            <li><a href="chittagong-pratidin/2023/03/19/868748" class="row">
+                                    <p class="col-md-8">
+                                        <strong>চট্টগ্রামে আউটার স্টেডিয়ামের অবৈধ স্থাপনা উচ্ছেদ</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১২ ঘন্টা আগে | <small>চট্টগ্রাম প্রতিদিন</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/213949_bangladesh_pratidin_ctg_dhaka_642.jpg?v=1679286286" alt="চট্টগ্রামে আউটার স্টেডিয়ামের অবৈধ স্থাপনা উচ্ছেদ">
+                                    </p>
+                                </a></li>
+                            <li><a href="entertainment/2023/03/19/868747" class="row">
+                                    <p class="col-md-8">
+                                        <strong>ডিবি কার্যালয় থেকে বেরিয়ে যা বললেন শাকিব খান</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৩ ঘন্টা আগে | <small>শোবিজ</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/212034_bangladesh_pratidin_shakib-khan-bdp.jpg?v=1679286286" alt="ডিবি কার্যালয় থেকে বেরিয়ে যা বললেন শাকিব খান">
+                                    </p>
+                                </a></li>
+                            <li><a href="chittagong-pratidin/2023/03/19/868746" class="row">
+                                    <p class="col-md-8">
+                                        <strong>চিকিৎসককে ধর্ষণচেষ্টায় সিএনজি চালকের যাবজ্জীবন</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৩ ঘন্টা আগে | <small>চট্টগ্রাম প্রতিদিন</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/210551_bangladesh_pratidin_court-jabojjibon.jpg?v=1679286286" alt="চিকিৎসককে ধর্ষণচেষ্টায় সিএনজি চালকের যাবজ্জীবন">
+                                    </p>
+                                </a></li>
+                            <li><a href="chayer-desh/2023/03/19/868745" class="row">
+                                    <p class="col-md-8">
+                                        <strong>সিলেটে আরও ৬০০ পরিবার পাচ্ছেন ঘর</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৩ ঘন্টা আগে | <small>চায়ের দেশ</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/210135_bangladesh_pratidin_fdsdfsdsf.jpg?v=1679286286" alt="সিলেটে আরও ৬০০ পরিবার পাচ্ছেন ঘর">
+                                    </p>
+                                </a></li>
+                            <li><a href="city-news/2023/03/19/868744" class="row">
+                                    <p class="col-md-8">
+                                        <strong>ব্যক্তিগত সমস্যা নিয়ে এসেছিলেন শাকিব, খতিয়ে দেখবে ডিবি : হারুন</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৩ ঘন্টা আগে | <small>নগর জীবন</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/210038_bangladesh_pratidin_harun-bdp.jpg?v=1679286286" alt="ব্যক্তিগত সমস্যা নিয়ে এসেছিলেন শাকিব, খতিয়ে দেখবে ডিবি : হারুন">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868743" class="row">
+                                    <p class="col-md-8">
+                                        <strong>রংপুরে ধর্ষণ ও হত্যা মামলার আসামি গ্রেফতার</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৩ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/205110_bangladesh_pratidin_dsfdsfdsfdfs.jpg?v=1679286286" alt="রংপুরে ধর্ষণ ও হত্যা মামলার আসামি গ্রেফতার">
+                                    </p>
+                                </a></li>
+                            <li><a href="chittagong-pratidin/2023/03/19/868742" class="row">
+                                    <p class="col-md-8">
+                                        <strong>চট্টগ্রাম-৮ আসনে আওয়ামী লীগের মনোনয়ন বিক্রি শুরু</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৩ ঘন্টা আগে | <small>চট্টগ্রাম প্রতিদিন</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/204706_bangladesh_pratidin_a_lig.jpg?v=1679286286" alt="চট্টগ্রাম-৮ আসনে আওয়ামী লীগের মনোনয়ন বিক্রি শুরু">
+                                    </p>
+                                </a></li>
+                            <li><a href="national/2023/03/19/868741" class="row">
+                                    <p class="col-md-8">
+                                        <strong>গতি ফিরছে প্রবাসী আয়ে, বাড়ছে রেমিট্যান্স</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৩ ঘন্টা আগে | <small>জাতীয়</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/203301_bangladesh_pratidin_doller.jpg?v=1679286286" alt="গতি ফিরছে প্রবাসী আয়ে, বাড়ছে রেমিট্যান্স">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868740" class="row">
+                                    <p class="col-md-8">
+                                        <strong>দাউদকান্দিতে মুক্তিপণ না দেওয়ায় প্রথম শ্রেণির ছাত্রীকে হত্যা</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৩ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/202455_bangladesh_pratidin_las_udhar_2.jpg?v=1679286286" alt="দাউদকান্দিতে মুক্তিপণ না দেওয়ায় প্রথম শ্রেণির ছাত্রীকে হত্যা">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868739" class="row">
+                                    <p class="col-md-8">
+                                        <strong>ম্যাজিস্ট্রেট আসার খবরে বিয়ের আসর থেকে পালালেন বর </strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/201134_bangladesh_pratidin_ballo-bia-2.jpg?v=1679286286" alt="ম্যাজিস্ট্রেট আসার খবরে বিয়ের আসর থেকে পালালেন বর ">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868738" class="row">
+                                    <p class="col-md-8">
+                                        <strong>বন্ধুকে ছুরিকাঘাতে হত্যা, গ্রেফতার ১</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/200213_bangladesh_pratidin_greftar_3.jpg?v=1679286286" alt="বন্ধুকে ছুরিকাঘাতে হত্যা, গ্রেফতার ১">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868737" class="row">
+                                    <p class="col-md-8">
+                                        <strong>বগুড়ায় ঘর পাচ্ছেন এক হাজার ৩৩০ পরিবার</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/195828_bangladesh_pratidin_sdffsddsg.jpg?v=1679286286" alt="বগুড়ায় ঘর পাচ্ছেন এক হাজার ৩৩০ পরিবার">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868736" class="row">
+                                    <p class="col-md-8">
+                                        <strong>চুয়াডাঙ্গায় ৭০০ গ্রাম হেরোইন উদ্ধার</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/195630_bangladesh_pratidin_dfsfdsdsffds.jpg?v=1679286286" alt="চুয়াডাঙ্গায় ৭০০ গ্রাম হেরোইন উদ্ধার">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868735" class="row">
+                                    <p class="col-md-8">
+                                        <strong>বঙ্গবন্ধু রেল সেতুর মালামাল নিয়ে মোংলা বন্দরে বিদেশী জাহাজ </strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/195553_bangladesh_pratidin_Untitled-3.jpg?v=1679286286" alt="বঙ্গবন্ধু রেল সেতুর মালামাল নিয়ে মোংলা বন্দরে বিদেশী জাহাজ ">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868734" class="row">
+                                    <p class="col-md-8">
+                                        <strong>দিনাজপুর চেম্বার অব কমার্সের নির্বাচনে ফলাফল ঘোষণা</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/194932_bangladesh_pratidin_dinajpur_district_0_44518.jpg?v=1679286286" alt="দিনাজপুর চেম্বার অব কমার্সের নির্বাচনে ফলাফল ঘোষণা">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868733" class="row">
+                                    <p class="col-md-8">
+                                        <strong>সমুদ্র উত্তাল থাকায় সেন্টমার্টিন নৌ পথে জাহাজ চলাচল বন্ধ</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/193706_bangladesh_pratidin_bbbb.jpg?v=1679286286" alt="সমুদ্র উত্তাল থাকায় সেন্টমার্টিন নৌ পথে জাহাজ চলাচল বন্ধ">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868732" class="row">
+                                    <p class="col-md-8">
+                                        <strong>মাদারীপুরে বাস দুর্ঘটনা; সার্টিফিকেট আনা হলো না আফসানার</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/192841_bangladesh_pratidin_Gopalganj-Road-Accident-Photo-02(19_03.jpg?v=1679286286" alt="মাদারীপুরে বাস দুর্ঘটনা; সার্টিফিকেট আনা হলো না আফসানার">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868731" class="row">
+                                    <p class="col-md-8">
+                                        <strong>নাটোরে বারুণী গঙ্গা স্নান অনুষ্ঠিত</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/192502_bangladesh_pratidin_bbb.jpg?v=1679286286" alt="নাটোরে বারুণী গঙ্গা স্নান অনুষ্ঠিত">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868730" class="row">
+                                    <p class="col-md-8">
+                                        <strong>গুচ্ছে অংশ নেবে না ইবি</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৫ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/191807_bangladesh_pratidin_b.jpg?v=1679286286" alt="গুচ্ছে অংশ নেবে না ইবি">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868729" class="row">
+                                    <p class="col-md-8">
+                                        <strong>ধর্ষণের পর হত্যা, কিশোরীর মরদেহ মিলল নদীতে </strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৫ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/191727_bangladesh_pratidin_rape-2.jpg?v=1679286286" alt="ধর্ষণের পর হত্যা, কিশোরীর মরদেহ মিলল নদীতে ">
+                                    </p>
+                                </a></li>
+                            <li><a href="national/2023/03/19/868728" class="row">
+                                    <p class="col-md-8">
+                                        <strong>হজ ফ্লাইট শুরু ২১ মে</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৫ ঘন্টা আগে | <small>জাতীয়</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/191035_bangladesh_pratidin_hajj-flights-bdp.jpg?v=1679286286" alt="হজ ফ্লাইট শুরু ২১ মে">
+                                    </p>
+                                </a></li>
+                            <li><a href="kolkata/2023/03/19/868727" class="row">
+                                    <p class="col-md-8">
+                                        <strong>পেট্রাপোল স্থলবন্দর সীমান্তে ট্রাক থেকে ৪০ স্বর্ণের বার উদ্ধার</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৫ ঘন্টা আগে | <small>ওপার বাংলা</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/191012_bangladesh_pratidin_Untitled-2.jpg?v=1679286286" alt="পেট্রাপোল স্থলবন্দর সীমান্তে ট্রাক থেকে ৪০ স্বর্ণের বার উদ্ধার">
+                                    </p>
+                                </a></li>
+                            <li><a href="city-news/2023/03/19/868726" class="row">
+                                    <p class="col-md-8">
+                                        <strong>বরিশালে ইমারত নির্মাণ শ্রমিক
+                                            ইউনিয়নের মানববন্ধন ও বিক্ষোভ মিছিল</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৫ ঘন্টা আগে | <small>নগর জীবন</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/190747_bangladesh_pratidin_bbbb.jpg?v=1679286286" alt="বরিশালে ইমারত নির্মাণ শ্রমিক
+ইউনিয়নের মানববন্ধন ও বিক্ষোভ মিছিল">
+                                    </p>
+                                </a></li>
+                            <li><a href="national/2023/03/19/868725" class="row">
+                                    <p class="col-md-8">
+                                        <strong>চালকদের অবহেলা ও অসতর্কতা সড়ক দুর্ঘটনার অন্যতম কারণ: ফখরুল</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৫ ঘন্টা আগে | <small>জাতীয়</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/190511_bangladesh_pratidin_r.jpg?v=1679286286" alt="চালকদের অবহেলা ও অসতর্কতা সড়ক দুর্ঘটনার অন্যতম কারণ: ফখরুল">
+                                    </p>
+                                </a></li>
+                            <li><a href="national/2023/03/19/868724" class="row">
+                                    <p class="col-md-8">
+                                        <strong>রমজানে জাল নোট নিয়ে সতর্কতা </strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৫ ঘন্টা আগে | <small>জাতীয়</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/184856_bangladesh_pratidin_bangladesh-bank-bdp-new.jpg?v=1679286286" alt="রমজানে জাল নোট নিয়ে সতর্কতা ">
+                                    </p>
+                                </a></li>
+                            <li><a href="minister-spake/2023/03/19/868723" class="row">
+                                    <p class="col-md-8">
+                                        <strong>'স্বাধীনতা ঘোষণা দেওয়ার বৈধ অধিকার বঙ্গবন্ধু ছাড়া আর কারো ছিল না'
+                                        </strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৫ ঘন্টা আগে | <small>মন্ত্রী কথন</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/184806_bangladesh_pratidin_obaidul-kader-file-pic.jpg?v=1679286286" alt="'স্বাধীনতা ঘোষণা দেওয়ার বৈধ অধিকার বঙ্গবন্ধু ছাড়া আর কারো ছিল না'
+
+
+
+">
+                                    </p>
+                                </a></li>
+                            <li><a href="sports/2023/03/19/868722" class="row">
+                                    <p class="col-md-8">
+                                        <strong>৩৭ ওভারেই শেষ ১০০ ওভারের খেলা, ১০ উইকেটে হারল ভারত</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৫ ঘন্টা আগে | <small>মাঠে ময়দানে</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/184116_bangladesh_pratidin_virat-bdp.jpg?v=1679286286" alt="৩৭ ওভারেই শেষ ১০০ ওভারের খেলা, ১০ উইকেটে হারল ভারত">
+                                    </p>
+                                </a></li>
+                            <li><a href="campus-online/2023/03/19/868721" class="row">
+                                    <p class="col-md-8">
+                                        <strong>ঢাবির রেজিস্টার্ড গ্র্যাজুয়েট নির্বাচন: ২৫ পদেই আওয়ামী পন্থীদের জয়</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৫ ঘন্টা আগে | <small>ক্যাম্পাস</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/183756_bangladesh_pratidin_du.jpg?v=1679286286" alt="ঢাবির রেজিস্টার্ড গ্র্যাজুয়েট নির্বাচন: ২৫ পদেই আওয়ামী পন্থীদের জয়">
+                                    </p>
+                                </a></li>
+                            <li><a href="national/2023/03/19/868720" class="row">
+                                    <p class="col-md-8">
+                                        <strong>হত্যা-অত্যাচার করে আওয়ামী লীগকে কেউ ধ্বংস করতে পারেনি : প্রধানমন্ত্রী
+                                        </strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৫ ঘন্টা আগে | <small>জাতীয়</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/183024_bangladesh_pratidin_pm-newssss-piiic-newsss-pic.jpg?v=1679286286" alt="হত্যা-অত্যাচার করে আওয়ামী লীগকে কেউ ধ্বংস করতে পারেনি : প্রধানমন্ত্রী 
+
+">
+                                    </p>
+                                </a></li>
+                            <li><a href="campus-online/2023/03/19/868719" class="row">
+                                    <p class="col-md-8">
+                                        <strong>চবি শিক্ষক-শিক্ষার্থীদের উপর হামলার প্রতিবাদে শিক্ষকদের মানববন্ধন </strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৬ ঘন্টা আগে | <small>ক্যাম্পাস</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/182412_bangladesh_pratidin_cu.jpg?v=1679286286" alt="চবি শিক্ষক-শিক্ষার্থীদের উপর হামলার প্রতিবাদে শিক্ষকদের মানববন্ধন ">
+                                    </p>
+                                </a></li>
+                            <li><a href="minister-spake/2023/03/19/868718" class="row">
+                                    <p class="col-md-8">
+                                        <strong>গণমানুষের সংবাদপত্র গড়ে তোলা একটি বড় চ্যালেঞ্জ : তথ্যমন্ত্রী
+                                        </strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৬ ঘন্টা আগে | <small>মন্ত্রী কথন</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/181432_bangladesh_pratidin_desh-news-pic.jpg?v=1679286286" alt="গণমানুষের সংবাদপত্র গড়ে তোলা একটি বড় চ্যালেঞ্জ : তথ্যমন্ত্রী
+
+">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868717" class="row">
+                                    <p class="col-md-8">
+                                        <strong>শিবচরে বাস দুর্ঘটনা, নিহত ব্যাংক কর্মকর্তার বাড়িতে শোকের মাতম</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৬ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/181342_bangladesh_pratidin_Untitled-2.jpg?v=1679286286" alt="শিবচরে বাস দুর্ঘটনা, নিহত ব্যাংক কর্মকর্তার বাড়িতে শোকের মাতম">
+                                    </p>
+                                </a></li>
+                            <li><a href="country/2023/03/19/868716" class="row">
+                                    <p class="col-md-8">
+                                        <strong>দিনাজপুরে দূষণের শিকার হচ্ছে লিচু</strong>
+                                        <span><i class="bi bi-stopwatch"></i> ১৬ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                    </p>
+                                    <p class="col-md-4 ps-0">
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/181314_bangladesh_pratidin_bbbbb.jpg?v=1679286286" alt="দিনাজপুরে দূষণের শিকার হচ্ছে লিচু">
+                                    </p>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-3 highlights">
+                <div data-position="desktop-home-lead-right" class="m-0 p-0">
+                    <div class="ads bg-light mb-2 d-flex justify-content-center">
+                        <div class="ad_cl-2" data-id="2">
+                            <div id='div-gpt-ad-1641306577359-0' style='min-width: 300px; min-height: 250px;'>
+                                <script>
+                                    googletag.cmd.push(function() {
+                                        googletag.display('div-gpt-ad-1641306577359-0');
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="m-0">
+                    <li class="mt-3"><a href="first-page/2023/03/20/868806">
+                            <img class="lazy" src="{{asset('frontend')}}/assets/news_images/thumbnails/Bd-Pratidin-20-03-23-F-02.png" alt="বাংলাদেশ প্রতিদিন শুভেচ্ছায় সিক্ত">
+                            <p>বাংলাদেশ প্রতিদিন শুভেচ্ছায় সিক্ত</p>
+                        </a></li>
+                    <li class="mt-3"><a href="last-page/2023/03/20/868825">
+                            <img class="lazy" src="{{asset('frontend')}}/assets/news_images/thumbnails/Bd-Pratidin-20-03-23-F-12.png" alt="অস্ট্রেলিয়ার বাণিজ্যে চীনের বিকল্প বাংলাদেশ">
+                            <p>অস্ট্রেলিয়ার বাণিজ্যে চীনের বিকল্প বাংলাদেশ</p>
+                        </a></li>
+                    <li class="mt-3"><a href="city/2023/03/20/868763">
+                            <img class="lazy" src="{{asset('frontend')}}/assets/news_images/thumbnails/20-03-2023-p3-1.png" alt="মশার যন্ত্রণায় অতিষ্ঠ সিলেটবাসী">
+                            <p>মশার যন্ত্রণায় অতিষ্ঠ সিলেটবাসী</p>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container my-3">
+        <div class="col-md-12">
+            <div data-position="desktop-home-after-lead-area" class="m-0 p-0">
+                <div class="ads bg-light mb-2 d-flex justify-content-center">
+                    <div class="ad_cl-4" data-id="4">
+                        <div id='div-gpt-ad-1632991122851-0' style='min-width: 970px; min-height: 250px;'>
+                            <script>
+                                googletag.cmd.push(function() {
+                                    googletag.display('div-gpt-ad-1632991122851-0');
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="section_16">
+        <div class="bg pb-4 mb-3">
+            <div class="container">
+                <a href="./online/highlights" class="title"><img class="w-100 lazy" src="{{asset('frontend')}}/assets/img/highlights-title-bg.png" alt="highlights"></a>
+                <div class="clearfix"></div>
+                <div class="row">
+                    <div class="col-md-3 col-lg-2 mb-4">
+                        <a href="city-news/2023/03/20/868859">
+                            <img class="w-100 lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/100745_bangladesh_pratidin_670.jpg?v=1679286286" alt="বৃষ্টিতে ঢাকায় দূষণ কমে বায়ুমানের উন্নতি">
+                            <p>বৃষ্টিতে ঢাকায় দূষণ কমে বায়ুমানের উন্নতি</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-lg-2 mb-4">
+                        <a href="first-page/2023/03/20/868809">
+                            <img class="w-100 lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/Bd-Pratidin-20-03-23-F-05.jpg?v=1679286286" alt="কে এই আরাভ খান">
+                            <p>কে এই আরাভ খান</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-lg-2 mb-4">
+                        <a href="sports/2023/03/20/868853">
+                            <img class="w-100 lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/082955_bangladesh_pratidin_14.jpg?v=1679286286" alt="ঘরের মাঠেও জুভেন্টাসে ধরাশায়ী ইন্টার">
+                            <p>ঘরের মাঠেও জুভেন্টাসে ধরাশায়ী ইন্টার</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-lg-2 mb-4">
+                        <a href="international-news/2023/03/20/868839">
+                            <img class="w-100 lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/005341_bangladesh_pratidin_BD-pratidin--2.jpg?v=1679286286" alt="মারিওপোল সফর, কী দেখলেন পুতিন?">
+                            <p>মারিওপোল সফর, কী দেখলেন পুতিন?</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-lg-2 mb-4">
+                        <a href="sports/2023/03/20/868840">
+                            <img class="w-100 lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/011941_bangladesh_pratidin_BD-pratidin--3.jpg?v=1679286286" alt="ছিলেন মেসি-এমবাপ্পে, তবুও লজ্জায় ডুবল পিএসজি">
+                            <p>ছিলেন মেসি-এমবাপ্পে, তবুও লজ্জায় ডুবল পিএসজি</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-lg-2 mb-4">
+                        <a href="last-page/2023/03/20/868829">
+                            <img class="w-100 lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/Bd-Pratidin-20-03-23-F-13.jpg?v=1679286286" alt="হেলিকপ্টার ও হাতি নিয়ে বিয়ে">
+                            <p>হেলিকপ্টার ও হাতি নিয়ে বিয়ে</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-lg-2 mb-4">
+                        <a href="national/2023/03/19/868741">
+                            <img class="w-100 lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/thumbnails/203301_bangladesh_pratidin_doller.jpg?v=1679286286" alt="গতি ফিরছে প্রবাসী আয়ে, বাড়ছে রেমিট্যান্স">
+                            <p>গতি ফিরছে প্রবাসী আয়ে, বাড়ছে রেমিট্যান্স</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-lg-2 mb-4">
+                        <a href="entertainment/2023/03/19/868747">
+                            <img class="w-100 lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/thumbnails/212034_bangladesh_pratidin_shakib-khan-bdp.jpg?v=1679286286" alt="ডিবি কার্যালয় থেকে বেরিয়ে যা বললেন শাকিব খান">
+                            <p>ডিবি কার্যালয় থেকে বেরিয়ে যা বললেন শাকিব খান</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-lg-2 mb-4">
+                        <a href="country/2023/03/19/868739">
+                            <img class="w-100 lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/thumbnails/201134_bangladesh_pratidin_ballo-bia-2.jpg?v=1679286286" alt="ম্যাজিস্ট্রেট আসার খবরে বিয়ের আসর থেকে পালালেন বর ">
+                            <p>ম্যাজিস্ট্রেট আসার খবরে বিয়ের আসর থেকে পালালেন বর </p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-lg-2 mb-4">
+                        <a href="country/2023/03/19/868732">
+                            <img class="w-100 lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/thumbnails/192841_bangladesh_pratidin_Gopalganj-Road-Accident-Photo-02(19_03.jpg?v=1679286286" alt="মাদারীপুরে বাস দুর্ঘটনা; সার্টিফিকেট আনা হলো না আফসানার">
+                            <p>মাদারীপুরে বাস দুর্ঘটনা; সার্টিফিকেট আনা হলো না আফসানার</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-lg-2 mb-4">
+                        <a href="country/2023/03/20/868823">
+                            <img class="w-100 lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/001358_bangladesh_pratidin_BD-pratidin--1.jpg?v=1679286286" alt="পর্যটককে ছুরিকাঘাত করে ছিনতাই,  ডিবির জালে পাঁচ ছিনতাইকারী">
+                            <p>পর্যটককে ছুরিকাঘাত করে ছিনতাই, ডিবির জালে পাঁচ ছিনতাইকারী</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-lg-2 mb-4">
+                        <a href="sports/2023/03/19/868707">
+                            <img class="w-100 lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/thumbnails/174214_bangladesh_pratidin_archarry-news-pic.jpg?v=1679286286" alt="এশিয়া কাপ আর্চারিতে সোনা জিতল বাংলাদেশ">
+                            <p>এশিয়া কাপ আর্চারিতে সোনা জিতল বাংলাদেশ</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="col-md-12">
+            <div data-position="desktop-home-after-highlight-2nd" class="m-0 p-0">
+                <div class="ads bg-light mb-2 d-flex justify-content-center">
+                    <div class="ad_cl-5" data-id="5">
+                        <div id='div-gpt-ad-1631775223363-0' style='min-width: 728px; min-height: 90px;'>
+                            <script>
+                                googletag.cmd.push(function() {
+                                    googletag.display('div-gpt-ad-1631775223363-0');
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mb-3">
+        <div class="row section-1 section-15">
+            <div class="col-md-8 home-category-area">
+                <h1><a href="./national"><span>জাতীয়</span> <i class="bi bi-chevron-right">আরও</i></a></h1>
+                <div class="clearfix"></div>
+                <div class="row">
+                    <div class="col-md-9 mb-3">
+                        <div class="lead-item"><a href="national/2023/03/20/868856" class="row">
+                                <div class="col-md-4 text">বঙ্গভবনে রাষ্ট্রপতির সঙ্গে সৌদি রাষ্ট্রদূতের সৌজন্য সাক্ষাৎ</div>
+                                <div class="col-md-8 pe-0">
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/092547_bangladesh_pratidin_0000777.jpg?v=1679286286" alt="বঙ্গভবনে রাষ্ট্রপতির সঙ্গে সৌদি রাষ্ট্রদূতের সৌজন্য সাক্ষাৎ">
+                                </div>
+                            </a></div>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="list-item" href="national/2023/03/19/868757">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/223506_bangladesh_pratidin_sheikh-hasina-(file-photo).jpg?v=1679286286" alt="রমজানে কেউ যেন খাদ্য মজুতদারি করতে না পারে : প্রধানমন্ত্রী">
+                            <p>রমজানে কেউ যেন খাদ্য মজুতদারি করতে না পারে : প্রধানমন্ত্রী</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="list-item" href="national/2023/03/19/868741">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/203301_bangladesh_pratidin_doller.jpg?v=1679286286" alt="গতি ফিরছে প্রবাসী আয়ে, বাড়ছে রেমিট্যান্স">
+                            <p>গতি ফিরছে প্রবাসী আয়ে, বাড়ছে রেমিট্যান্স</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="list-item" href="national/2023/03/19/868728">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/191035_bangladesh_pratidin_hajj-flights-bdp.jpg?v=1679286286" alt="হজ ফ্লাইট শুরু ২১ মে">
+                            <p>হজ ফ্লাইট শুরু ২১ মে</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="list-item" href="national/2023/03/19/868725">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/190511_bangladesh_pratidin_r.jpg?v=1679286286" alt="চালকদের অবহেলা ও অসতর্কতা সড়ক দুর্ঘটনার অন্যতম কারণ: ফখরুল">
+                            <p>চালকদের অবহেলা ও অসতর্কতা সড়ক দুর্ঘটনার অন্যতম কারণ: ফখরুল</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="list-item" href="national/2023/03/19/868724">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/184856_bangladesh_pratidin_bangladesh-bank-bdp-new.jpg?v=1679286286" alt="রমজানে জাল নোট নিয়ে সতর্কতা ">
+                            <p>রমজানে জাল নোট নিয়ে সতর্কতা </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="news-tab-area my-tabs">
+                        <ul id="newsTab" class="nav nav-tabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="latest-news-tab" data-bs-toggle="tab" data-bs-target="#latest-news" type="button" role="tab" aria-controls="latest-news" aria-selected="true">অনলাইন</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="most-read-tab" data-bs-toggle="tab" data-bs-target="#most-read" type="button" role="tab" aria-controls="most-read" aria-selected="false">সর্বাধিক পঠিত</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content mt-3" id="myTabContent">
+                            <div class="tab-pane fade" id="latest-news" role="tabpanel" aria-labelledby="latest-news-tab">
+                                <ul>
+                                    <li class="bi bi-hand-index-thumb"><a href="international-news/2023/03/20/868852">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>যে কারণে চীনকে ধন্যবাদ দিলেন পুতিন</strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="international-news/2023/03/20/868839">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>মারিওপোল সফর, কী দেখলেন পুতিন?</strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="sports/2023/03/20/868840">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>ছিলেন মেসি-এমবাপ্পে, তবুও লজ্জায় ডুবল পিএসজি</strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="sports/2023/03/20/868851">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>এল ক্ল্যাসিকোয় বাজিমাত, ফের বার্সেলোনার রিয়াল বধ</strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="city-news/2023/03/20/868855">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>হেলেনা জাহাঙ্গীরসহ ৫ জনের মামলার রায় আজ</strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="country/2023/03/20/868823">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>পর্যটককে ছুরিকাঘাত করে ছিনতাই, ডিবির জালে পাঁচ ছিনতাইকারী</strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="country/2023/03/20/868849">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>ইয়াবা পাচার, মা ছেলেসহ চার কারবারি আটক</strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="international-news/2023/03/20/868857">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>এবার ক্রেডিট সুইস ব্যাংক দেউলিয়া হওয়া নিয়ে আতঙ্ক</strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="international-news/2023/03/20/868858">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>ইরানের প্রেসিডেন্টকে সৌদি আরবে সফরের আমন্ত্রণ বাদশাহ সালমানের
+                                                </strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="sports/2023/03/20/868854">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>
+                                                    পয়েন্ট তালিকায় শীর্ষে ফেরা হলো না বায়ার্নের </strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="sports/2023/03/20/868853">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>ঘরের মাঠেও জুভেন্টাসে ধরাশায়ী ইন্টার</strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="national/2023/03/20/868856">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>বঙ্গভবনে রাষ্ট্রপতির সঙ্গে সৌদি রাষ্ট্রদূতের সৌজন্য সাক্ষাৎ</strong>
+                                            </p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade show active" id="most-read" role="tabpanel" aria-labelledby="most-read-tab">
+                                <ul>
+                                    <li class="bi bi-hand-index-thumb"><a href="first-page/2023/03/20/868809">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>কে এই আরাভ খান </strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="first-page/2023/03/20/868808">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>মার্কিন নিষেধাজ্ঞা নিয়ে ঘাবড়ানোর কিছু নেই </strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="last-page/2023/03/20/868825">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>অস্ট্রেলিয়ার বাণিজ্যে চীনের বিকল্প বাংলাদেশ </strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="first-page/2023/03/20/868817">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>আমজাদের এক হাজার ব্যাংক হিসাব জব্দ </strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="first-page/2023/03/20/868805">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>হঠাৎ মৃত্যুপুরী মাদারীপুর </strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="last-page/2023/03/20/868829">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>হেলিকপ্টার ও হাতি নিয়ে বিয়ে </strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="first-page/2023/03/20/868816">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>চালক শুনছিলেন না কারও কথাই </strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="first-page/2023/03/20/868811">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>অমর্ত্য সেনকে বাড়ি ছাড়ার নোটিস </strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="first-page/2023/03/20/868806">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>বাংলাদেশ প্রতিদিন শুভেচ্ছায় সিক্ত </strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="first-page/2023/03/20/868807">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>তারা ক্ষমতায় আসতে পারবে না </strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="last-page/2023/03/20/868827">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>দেশে ফিরলেন মাহির স্বামী রকিব
+                                                </strong>
+                                            </p>
+                                        </a></li>
+                                    <li class="bi bi-hand-index-thumb"><a href="various/2023/03/20/868762">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>বিশ্বের সুখী দেশের গল্প </strong>
+                                            </p>
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-12">
+            <div data-position="desktop-home-after-national" class="m-0 p-0">
+                <div class="ads bg-light mb-2 d-flex justify-content-center">
+                    <div class="ad_cl-6" data-id="6">
+                        <div id='div-gpt-ad-1631775365067-0' style='min-width: 970px; min-height: 90px;'>
+                            <script>
+                                googletag.cmd.push(function() {
+                                    googletag.display('div-gpt-ad-1631775365067-0');
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row home-category-area section-2">
+            <h1><a href="./minister-spake"><span>মন্ত্রী কথন</span> <i class="bi bi-chevron-right">আরও</i></a></h1>
+            <div class="col-md-3">
+                <div class="row">
+                    <ul class="section-2-list-iteam">
+                        <li class="mb-2"><a href="minister-spake/2023/03/19/868718" class="row">
+                                <span class="col-md-4 pe-0">
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/181432_bangladesh_pratidin_desh-news-pic.jpg?v=1679286286" alt="গণমানুষের সংবাদপত্র গড়ে তোলা একটি বড় চ্যালেঞ্জ : তথ্যমন্ত্রী
+
+">
+                                </span>
+                                <span class="col-md-8">
+                                    <p>গণমানুষের সংবাদপত্র গড়ে তোলা একটি বড় চ্যালেঞ্জ : তথ্যমন্ত্রী
+                                    </p>
+                                </span>
+                            </a></li>
+                        <li class="mb-2"><a href="minister-spake/2023/03/19/868687" class="row">
+                                <span class="col-md-4 pe-0">
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/153336_bangladesh_pratidin_1607769267_59.jpg?v=1679286286" alt="আমাদের দেশ সব দিক থেকে এগিয়ে যাচ্ছে: এলজিআরডি মন্ত্রী">
+                                </span>
+                                <span class="col-md-8">
+                                    <p>আমাদের দেশ সব দিক থেকে এগিয়ে যাচ্ছে: এলজিআরডি মন্ত্রী</p>
+                                </span>
+                            </a></li>
+                        <li class="mb-2"><a href="minister-spake/2023/03/19/868679" class="row">
+                                <span class="col-md-4 pe-0">
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/120202_bangladesh_pratidin_kamal.jpg?v=1679286286" alt="র‌্যাব গণমানুষের আস্থার বাহিনীতে পরিণত হয়েছে : স্বরাষ্ট্রমন্ত্রী
+
+">
+                                </span>
+                                <span class="col-md-8">
+                                    <p>র‌্যাব গণমানুষের আস্থার বাহিনীতে পরিণত হয়েছে : স্বরাষ্ট্রমন্ত্রী
+                                    </p>
+                                </span>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="lead-item"><a href="minister-spake/2023/03/19/868723" class="row">
+                            <div class="col-md-5 col-lg-5 col-xxl-4 text">'স্বাধীনতা ঘোষণা দেওয়ার বৈধ অধিকার বঙ্গবন্ধু ছাড়া আর কারো ছিল না'
+                            </div>
+                            <div class="col-md-7 col-lg-7 col-xxl-8 pe-0">
+                                <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/thumbnails/184806_bangladesh_pratidin_obaidul-kader-file-pic.jpg?v=1679286286" alt="'স্বাধীনতা ঘোষণা দেওয়ার বৈধ অধিকার বঙ্গবন্ধু ছাড়া আর কারো ছিল না'
+
+
+
+">
+                            </div>
+                        </a></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <ul class="section-2-list-iteam">
+                        <li class="mb-2"><a href="minister-spake/2023/03/18/868526" class="row">
+                                <span class="col-md-4 pe-0">
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/221231_bangladesh_pratidin_a-k-m-mozamel-news-pic.jpg?v=1679286286" alt="পাকিস্তানি জেনারেলদের প্রেতাত্মা এদেশে রয়ে গেছে : মুক্তিযুদ্ধমন্ত্রী  
+
+">
+                                </span>
+                                <span class="col-md-8">
+                                    <p>পাকিস্তানি জেনারেলদের প্রেতাত্মা এদেশে রয়ে গেছে : মুক্তিযুদ্ধমন্ত্রী
+                                    </p>
+                                </span>
+                            </a></li>
+                        <li class="mb-2"><a href="minister-spake/2023/03/18/868520" class="row">
+                                <span class="col-md-4 pe-0">
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/215519_bangladesh_pratidin_hasan-mahmud-news-pic.jpg?v=1679286286" alt="বর্তমান সরকার দল নিরপেক্ষভাবে গুণীদের মূল্যায়ন করে : তথ্যমন্ত্রী
+
+">
+                                </span>
+                                <span class="col-md-8">
+                                    <p>বর্তমান সরকার দল নিরপেক্ষভাবে গুণীদের মূল্যায়ন করে : তথ্যমন্ত্রী
+                                    </p>
+                                </span>
+                            </a></li>
+                        <li class="mb-2"><a href="minister-spake/2023/03/18/868485" class="row">
+                                <span class="col-md-4 pe-0">
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/202432_bangladesh_pratidin_quader.jpg?v=1679286286" alt="মির্জা ফখরুল দেখতে মনে হয় ভদ্রলোক, আর অন্তরে বিষ : ওবায়দুল কাদের
+
+">
+                                </span>
+                                <span class="col-md-8">
+                                    <p>মির্জা ফখরুল দেখতে মনে হয় ভদ্রলোক, আর অন্তরে বিষ : ওবায়দুল কাদের
+                                    </p>
+                                </span>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-12">
+            <div data-position="desktop-home-after-minister-spake" class="m-0 p-0">
+                <div class="ads bg-light mb-2 d-flex justify-content-center">
+                    <div class="ad_cl-383" data-id="383">
+                        <div id='div-gpt-ad-1648555683029-0' style='min-width: 728px; min-height: 90px;'>
+                            <script>
+                                googletag.cmd.push(function() {
+                                    googletag.display('div-gpt-ad-1648555683029-0');
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="ads bg-light mb-2 d-flex justify-content-center">
+                    <div class="ad_cl-779" data-id="779">
+                        <div id="elm-esk-924610632537-hxa">
+                            <script>
+                                esadt.cmd.push({
+                                    render: ['esk-924610632537-hxa', 'elm-esk-924610632537-hxa', {
+                                        'macro': '%%CLICK_URL_UNESC%%'
+                                    }]
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="ads bg-light mb-2 d-flex justify-content-center">
+                    <div class="ad_cl-828" data-id="828">
+                        <div id="elm-esk-2945254185838-umx">
+                            <script>
+                                esadt.cmd.push({
+                                    render: ['esk-2945254185838-umx', 'elm-esk-2945254185838-umx', {
+                                        'macro': '%%CLICK_URL_UNESC%%'
+                                    }]
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="section-10-bg custom-section-bp">
+            <div class="container mt-0">
+                <div class="row home-category-area section-10">
+
+                    <h1 class="mb-1"><a href="entertainment"><img class="w-100" src="https://www.bd-pratidin.com/assets/newDesktop/img/showbiz-title.png" alt="শোবিজ"></a></h1>
+                    <div class="col-md-3">
+                        <div class="col-md-12 mb-4">
+                            <a class="list-item" href="entertainment/2023/03/19/868752">
+                                <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/thumbnails/222015_bangladesh_pratidin_raza.jpg?v=1679286286" alt="নিজেকে বাংলাদেশি মনে করি: রাজা সেন">
+                                <p>নিজেকে বাংলাদেশি মনে করি: রাজা সেন</p>
+                            </a>
+                        </div>
+                        <div class="col-md-12 mb-4">
+                            <a class="list-item" href="entertainment/2023/03/19/868648">
+                                <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/thumbnails/092532_bangladesh_pratidin_Ram_Charan.jpg?v=1679286286" alt="কোহলির বায়োপিকে কি রাম চরণ?">
+                                <p>কোহলির বায়োপিকে কি রাম চরণ?</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="lead-item"><a href="entertainment/2023/03/19/868747">
+                                <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/212034_bangladesh_pratidin_shakib-khan-bdp.jpg?v=1679286286" alt="ডিবি কার্যালয় থেকে বেরিয়ে যা বললেন শাকিব খান">
+                                <span>ডিবি কার্যালয় থেকে বেরিয়ে যা বললেন শাকিব খান</span>
+                            </a></div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="row">
+                            <ul class="section-10-list-iteam">
+                                <li class="mb-2"><a href="entertainment/2023/03/19/868639" class="row">
+                                        <span class="col-md-4 pe-0">
+                                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/081239_bangladesh_pratidin_Priyanka.jpg?v=1679286286" alt="এবার হলিউডের ‘বৈষম্য’ নিয়ে সরব প্রিয়াঙ্কা">
+                                        </span>
+                                        <span class="col-md-8">
+                                            <p>এবার হলিউডের ‘বৈষম্য’ নিয়ে সরব প্রিয়াঙ্কা</p>
+                                        </span>
+                                    </a></li>
+                                <li class="mb-2"><a href="entertainment/2023/03/18/868499" class="row">
+                                        <span class="col-md-4 pe-0">
+                                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/204927_bangladesh_pratidin_mahi-news-pic.jpg?v=1679286286" alt="কারামুক্ত হলেন মাহি 
+
+">
+                                        </span>
+                                        <span class="col-md-8">
+                                            <p>কারামুক্ত হলেন মাহি
+                                            </p>
+                                        </span>
+                                    </a></li>
+                                <li class="mb-2"><a href="entertainment/2023/03/18/868461" class="row">
+                                        <span class="col-md-4 pe-0">
+                                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/180347_bangladesh_pratidin_mahi222.jpg?v=1679286286" alt="দুপুরে কারাগারে, বিকেলে জামিন মাহির">
+                                        </span>
+                                        <span class="col-md-8">
+                                            <p>দুপুরে কারাগারে, বিকেলে জামিন মাহির</p>
+                                        </span>
+                                    </a></li>
+                                <li class="mb-2"><a href="entertainment/2023/03/18/868411" class="row">
+                                        <span class="col-md-4 pe-0">
+                                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/143918_bangladesh_pratidin_mahiya-mahi-bdp.jpg?v=1679286286" alt="কারাগারে পাঠানো হল মাহিকে">
+                                        </span>
+                                        <span class="col-md-8">
+                                            <p>কারাগারে পাঠানো হল মাহিকে</p>
+                                        </span>
+                                    </a></li>
+                                <li class="mb-2"><a href="entertainment/2023/03/18/868403" class="row">
+                                        <span class="col-md-4 pe-0">
+                                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/135325_bangladesh_pratidin_mahi-bdp.jpg?v=1679286286" alt="আদালতে পাঠানো হয়েছে মাহিকে">
+                                        </span>
+                                        <span class="col-md-8">
+                                            <p>আদালতে পাঠানো হয়েছে মাহিকে</p>
+                                        </span>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style type="text/css">
+            .custom-section-bp {
+                background: rgb(81, 1, 28);
+                /* Old browsers */
+                background: -moz-linear-gradient(left, rgba(81, 1, 28, 1) 0%, rgba(231, 108, 147, 1) 100%);
+                background: -webkit-linear-gradient(left, rgba(81, 1, 28, 1) 0%, rgba(231, 108, 147, 1) 100%);
+                background: linear-gradient(to right, rgba(81, 1, 28, 1) 0%, rgba(231, 108, 147, 1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#51011c', endColorstr='#e76c93', GradientType=1);
+            }
+
+            .custom-section-bp .home-category-area>h1 a {
+                background: unset;
+            }
+
+            .fifaworldcupBottomArea img {
+                border: 1px solid #FFF;
+                border-radius: 5px;
+            }
+        </style>
+    </div>
+    <div class="container">
+        <div class="col-md-12">
+            <div data-position="desktop-home-before-international-news" class="m-0 p-0">
+                <div class="ads bg-light mb-2 d-flex justify-content-center">
+                    <div class="ad_cl-9" data-id="9">
+                        <div id='div-gpt-ad-1631791358837-0' style='min-width: 728px; min-height: 90px;'>
+                            <script>
+                                googletag.cmd.push(function() {
+                                    googletag.display('div-gpt-ad-1631791358837-0');
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row home-category-area section-1">
+            <h1><a href="./international-news"><span>পূর্ব-পশ্চিম</span> <i class="bi bi-chevron-right">আরও</i></a></h1>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-9 mb-3">
+                        <div class="lead-item"><a href="international-news/2023/03/20/868861" class="row">
+                                <div class="col-md-4 text">যুক্তরাষ্ট্রে আরও ১৮৬ ব্যাংক পতনের ঝুঁকিতে
+                                </div>
+                                <div class="col-md-8 pe-0">
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/102101_bangladesh_pratidin_svb.jpg?v=1679286286" alt="যুক্তরাষ্ট্রে আরও ১৮৬ ব্যাংক পতনের ঝুঁকিতে
+
+">
+                                </div>
+                            </a></div>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="list-item" href="international-news/2023/03/20/868858">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/095728_bangladesh_pratidin_Raisi.jpg?v=1679286286" alt="ইরানের প্রেসিডেন্টকে সৌদি আরবে সফরের আমন্ত্রণ বাদশাহ সালমানের
+
+">
+                            <p>ইরানের প্রেসিডেন্টকে সৌদি আরবে সফরের আমন্ত্রণ বাদশাহ সালমানের
+                            </p>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="list-item" href="international-news/2023/03/20/868857">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/094908_bangladesh_pratidin_77.jpg?v=1679286286" alt="এবার ক্রেডিট সুইস ব্যাংক দেউলিয়া হওয়া নিয়ে আতঙ্ক">
+                            <p>এবার ক্রেডিট সুইস ব্যাংক দেউলিয়া হওয়া নিয়ে আতঙ্ক</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="list-item" href="international-news/2023/03/20/868852">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/053658_bangladesh_pratidin_BD-pratidin--7.jpg?v=1679286286" alt="যে কারণে চীনকে ধন্যবাদ দিলেন পুতিন">
+                            <p>যে কারণে চীনকে ধন্যবাদ দিলেন পুতিন</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="list-item" href="international-news/2023/03/20/868839">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/005341_bangladesh_pratidin_BD-pratidin--2.jpg?v=1679286286" alt="মারিওপোল সফর, কী দেখলেন পুতিন?">
+                            <p>মারিওপোল সফর, কী দেখলেন পুতিন?</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="list-item" href="international-news/2023/03/19/868754">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/222821_bangladesh_pratidin_missile-bdp.jpg?v=1679286286" alt="এক সপ্তাহে চারবার ক্ষেপণাস্ত্র নিক্ষেপ উত্তর কোরিয়ার">
+                            <p>এক সপ্তাহে চারবার ক্ষেপণাস্ত্র নিক্ষেপ উত্তর কোরিয়ার</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <ul class="section-1-list-iteam">
+                        <li class="mb-2"><a href="international-news/2023/03/19/868708" class="row">
+                                <span class="col-md-4 pe-0">
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/174458_bangladesh_pratidin_france.jpg?v=1679286286" alt="অনাস্থা ভোটের মুখে পড়তে পারেন প্রেসিডেন্ট ম্যাক্রোঁ">
+                                </span>
+                                <span class="col-md-8">
+                                    <p>অনাস্থা ভোটের মুখে পড়তে পারেন প্রেসিডেন্ট ম্যাক্রোঁ</p>
+                                </span>
+                            </a></li>
+                        <li class="mb-2"><a href="international-news/2023/03/19/868669" class="row">
+                                <span class="col-md-4 pe-0">
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/112547_bangladesh_pratidin_asad.jpg?v=1679286286" alt="সিরিয়ার প্রেসিডেন্টের বিরুদ্ধে জেলেনস্কির নিষেধাজ্ঞা">
+                                </span>
+                                <span class="col-md-8">
+                                    <p>সিরিয়ার প্রেসিডেন্টের বিরুদ্ধে জেলেনস্কির নিষেধাজ্ঞা</p>
+                                </span>
+                            </a></li>
+                        <li class="mb-2"><a href="international-news/2023/03/19/868664" class="row">
+                                <span class="col-md-4 pe-0">
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/111131_bangladesh_pratidin_pak.jpg?v=1679286286" alt="ইমরান খানের বিরুদ্ধে গ্রেফতারি পরোয়ানা স্থগিত">
+                                </span>
+                                <span class="col-md-8">
+                                    <p>ইমরান খানের বিরুদ্ধে গ্রেফতারি পরোয়ানা স্থগিত</p>
+                                </span>
+                            </a></li>
+                        <li class="mb-2"><a href="international-news/2023/03/19/868663" class="row">
+                                <span class="col-md-4 pe-0">
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/110735_bangladesh_pratidin_Credit_Swisse.jpg?v=1679286286" alt="বিপর্যস্ত ক্রেডিট সুইস ব্যাংক বাঁচাতে ৬ বিলিয়ন ডলার গ্যারান্টি চায় ইউবিএস">
+                                </span>
+                                <span class="col-md-8">
+                                    <p>বিপর্যস্ত ক্রেডিট সুইস ব্যাংক বাঁচাতে ৬ বিলিয়ন ডলার গ্যারান্টি চায় ইউবিএস</p>
+                                </span>
+                            </a></li>
+                        <li class="mb-2"><a href="international-news/2023/03/19/868661" class="row">
+                                <span class="col-md-4 pe-0">
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/110436_bangladesh_pratidin_putin.jpg?v=1679286286" alt="পুতিনের বিরুদ্ধে পরোয়ানা : বাইডেন-শলৎসের সমর্থন">
+                                </span>
+                                <span class="col-md-8">
+                                    <p>পুতিনের বিরুদ্ধে পরোয়ানা : বাইডেন-শলৎসের সমর্থন</p>
+                                </span>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-12">
+            <div data-position="desktop-home-after-international-news" class="m-0 p-0">
+                <div class="ads bg-light mb-2 d-flex justify-content-center">
+                    <div class="ad_cl-469" data-id="469">
+                        <div id='div-gpt-ad-1651052733981-0' style='min-width: 728px; min-height: 90px;'>
+                            <script>
+                                googletag.cmd.push(function() {
+                                    googletag.display('div-gpt-ad-1651052733981-0');
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row section-3">
+            <div class="col-md-3 home-category-area">
+                <h2><a href="facebook"><span>ফেসবুক কর্নার</span> <i class="bi bi-chevron-right"></i></a></h2>
+                <div class="section-5">
+                    <ul>
+                        <li><a href="facebook/2023/03/16/867905" class="row">
+                                <p class="col-md-5">
+                                    <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/16/mob/173713_bangladesh_pratidin_336021587_153392333958139_2525730959427255339_n.png?v=1679286286" alt="এই সুমনকে আমি 'হিপোক্রেট সুমন' বলি" alt="এই সুমনকে আমি 'হিপোক্রেট সুমন' বলি" width="304" height="236">
+                                </p>
+                                <p class="col-md-7 p-0">
+                                    <strong>এই সুমনকে আমি 'হিপোক্রেট সুমন' বলি</strong>
+                                </p>
+                            </a></li>
+                        <li><a href="facebook/2023/03/15/867592" class="row">
+                                <p class="col-md-5">
+                                    <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/15/mob/152711_bangladesh_pratidin_202211_bangladesh_pratidin_iffti-update-news-pic.jpg?v=1679286286" alt="একটি প্রক্ষালন কক্ষের আত্মকাহিনী" alt="একটি প্রক্ষালন কক্ষের আত্মকাহিনী" width="304" height="236">
+                                </p>
+                                <p class="col-md-7 p-0">
+                                    <strong>একটি প্রক্ষালন কক্ষের আত্মকাহিনী</strong>
+                                </p>
+                            </a></li>
+                        <li><a href="facebook/2023/03/14/867265" class="row">
+                                <p class="col-md-5">
+                                    <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/14/mob/101014_bangladesh_pratidin_sa.jpg?v=1679286286" alt="আমার টিকিট কাটার পয়সায় তারা ভাত খায়" alt="আমার টিকিট কাটার পয়সায় তারা ভাত খায়" width="304" height="236">
+                                </p>
+                                <p class="col-md-7 p-0">
+                                    <strong>আমার টিকিট কাটার পয়সায় তারা ভাত খায়</strong>
+                                </p>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 home-category-area">
+                <h2><a href="city-news"><span>নগর জীবন</span> <i class="bi bi-chevron-right"></i></a></h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <a class="list-item" href="city-news/2023/03/20/868860">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/101710_bangladesh_pratidin_greftar_2.jpg?v=1679286286" alt="মাদকবিরোধী পুলিশি অভিযানে গ্রেফতার ৪২">
+                            <p>মাদকবিরোধী পুলিশি অভিযানে গ্রেফতার ৪২</p>
+                        </a>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <a class="list-item" href="city-news/2023/03/20/868859">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/100745_bangladesh_pratidin_670.jpg?v=1679286286" alt="বৃষ্টিতে ঢাকায় দূষণ কমে বায়ুমানের উন্নতি">
+                            <p>বৃষ্টিতে ঢাকায় দূষণ কমে বায়ুমানের উন্নতি</p>
+                        </a>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <a class="list-item" href="city-news/2023/03/20/868855">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/091146_bangladesh_pratidin_ima.jpg?v=1679286286" alt="হেলেনা জাহাঙ্গীরসহ ৫ জনের মামলার রায় আজ">
+                            <p>হেলেনা জাহাঙ্গীরসহ ৫ জনের মামলার রায় আজ</p>
+                        </a>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <a class="list-item" href="city-news/2023/03/19/868744">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/210038_bangladesh_pratidin_harun-bdp.jpg?v=1679286286" alt="ব্যক্তিগত সমস্যা নিয়ে এসেছিলেন শাকিব, খতিয়ে দেখবে ডিবি : হারুন">
+                            <p>ব্যক্তিগত সমস্যা নিয়ে এসেছিলেন শাকিব, খতিয়ে দেখবে ডিবি : হারুন</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 home-category-area">
+                <h2><a href="open-air-theater"><span>মুক্তমঞ্চ</span> <i class="bi bi-chevron-right"></i></a></h2>
+                <div class="section-4">
+                    <ul>
+                        <li><a href="editorial/2023/03/20/868774" class="row">
+                                <p class="col-md-4 col-lg-4 col-xl-3">
+                                    <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/BP-230320-2.jpg?v=1679286286" alt="Cinque Terre" width="304" height="236">
+                                </p>
+                                <p class="col-md-8 col-lg-8 col-xl-9">
+                                    <strong>প্রযুক্তির বিকৃত ব্যবহার ধ্বংস করছে পারিবারিক বন্ধন</strong>
+                                    <span>পুঁজিবাদী বিশ্বে ভোগই শেষ কথা। যে যত ভোগী&#8230;</span>
+                                </p>
+                            </a></li>
+                        <li><a href="editorial/2023/03/20/868768" class="row">
+                                <p class="col-md-4 col-lg-4 col-xl-3">
+                                    <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/BP-230320-12.jpg?v=1679286286" alt="Cinque Terre" width="304" height="236">
+                                </p>
+                                <p class="col-md-8 col-lg-8 col-xl-9">
+                                    <strong>একাত্তরের নভেম্বরেই বিধ্বস্ত হয়ে পড়ে পাকিস্তানিরা</strong>
+                                    <span>বাংলাদেশে গণহত্যার প্রতিবাদে এবং বঙ্গবন্ধুর&#8230;</span>
+                                </p>
+                            </a></li>
+                        <li><a href="open-air-theater/2023/03/17/868103" class="row">
+                                <p class="col-md-4 col-lg-4 col-xl-3">
+                                    <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/17/mob/105254_bangladesh_pratidin_barrister_biplab_barua.jpg?v=1679286286" alt="Cinque Terre" width="304" height="236">
+                                </p>
+                                <p class="col-md-8 col-lg-8 col-xl-9">
+                                    <strong>মৃত্যুমুখেও বঙ্গবন্ধুর অন্যন্য সংগ্রাম</strong>
+                                    <span>সর্বকালের সর্বশ্রেষ্ঠ বাঙালি জাতির পিতা&#8230;</span>
+                                </p>
+                            </a></li>
+                    </ul>
+                    <div class="radio">
+                        <img class="lazy" src="https://www.bd-pratidin.com/assets/newDesktop/img/radio.png" width="50">
+                        <audio controls="controls">
+                            <source src="http://str.radiocapital.fm:8000/stream" type="audio/mpeg" />
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-12">
+            <div data-position="desktop-home-before-country" class="m-0 p-0">
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <div class="row home-category-area section-11">
+            <h1><a href="country"><span>দেশ-গ্রাম</span> <i class="bi bi-chevron-right">আরও</i></a></h1>
+            <div class="col-md-6">
+                <div class="lead-item"><a href="country/2023/03/20/868850">
+                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/034454_bangladesh_pratidin_BD-pratidin--5.jpg?v=1679286286" alt="বঙ্গবন্ধুর জন্মদিন, পিরোজপুরে আলোচনা সভা">
+                        <span>বঙ্গবন্ধুর জন্মদিন, পিরোজপুরে আলোচনা সভা</span>
+                    </a>
+                    <p class="text">পিরোজপুরের ভান্ডারিয়ায় বঙ্গবন্ধু শেখ মুজিবুর রহমানের ১০৩তম জন্মদিন উপলক্ষে আওয়ামী লীগের&#8230;...</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <a class="list-item" href="country/2023/03/20/868849">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/025353_bangladesh_pratidin_BD-pratidin--4.jpg?v=1679286286" alt="ইয়াবা পাচার, মা ছেলেসহ চার কারবারি আটক">
+                            <p>ইয়াবা পাচার, মা ছেলেসহ চার কারবারি আটক</p>
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <a class="list-item" href="country/2023/03/20/868823">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/001358_bangladesh_pratidin_BD-pratidin--1.jpg?v=1679286286" alt="পর্যটককে ছুরিকাঘাত করে ছিনতাই,  ডিবির জালে পাঁচ ছিনতাইকারী">
+                            <p>পর্যটককে ছুরিকাঘাত করে ছিনতাই, ডিবির জালে পাঁচ ছিনতাইকারী</p>
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <a class="list-item" href="country/2023/03/19/868760">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/225454_bangladesh_pratidin_sid.jpg?v=1679286286" alt="সিদ্ধিরগঞ্জে ট্যাংকলরী শ্রমিক ইউনিয়নের উদ্যোগে বঙ্গবন্ধুর জন্মবার্ষিকী">
+                            <p>সিদ্ধিরগঞ্জে ট্যাংকলরী শ্রমিক ইউনিয়নের উদ্যোগে বঙ্গবন্ধুর জন্মবার্ষিকী</p>
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <a class="list-item" href="country/2023/03/19/868758">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/223546_bangladesh_pratidin_dsfdfsdsdf.jpg?v=1679286286" alt="ঝালকাঠিতে ২ মাদক ব্যবসায়ী আটক  ">
+                            <p>ঝালকাঠিতে ২ মাদক ব্যবসায়ী আটক </p>
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <a class="list-item" href="country/2023/03/19/868756">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/223254_bangladesh_pratidin_sdfdsfsdfdfsgd.jpg?v=1679286286" alt="লোকালয় থেকে উদ্ধার করা সাপ সুন্দরবনে অবমুক্ত">
+                            <p>লোকালয় থেকে উদ্ধার করা সাপ সুন্দরবনে অবমুক্ত</p>
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <a class="list-item" href="country/2023/03/19/868755">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/222841_bangladesh_pratidin_sdfdfsdffds.jpg?v=1679286286" alt="ওড়াকান্দিতে ৩ দিনব্যাপী বারুনী মেলা">
+                            <p>ওড়াকান্দিতে ৩ দিনব্যাপী বারুনী মেলা</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-3">
+        <div class="col-md-12">
+            <div data-position="desktop-home-after-country" class="m-0 p-0">
+            </div>
+        </div>
+    </div>
+    <div class="container section-6">
+        <div class="row">
+            <div class="col-md-12 col-lg-8 col-xl-9">
+                <div class="home-category-area">
+                    <h1><a href="islam"><span>ইসলাম</span> <i class="bi bi-chevron-right">আরও</i></a></h1>
+                    <div class="row">
+                        <div class="col-md-3 mb-4">
+                            <a class="list-item" href="islam/2023/03/19/868651">
+                                <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/095044_bangladesh_pratidin_Islam.jpg?v=1679286286" alt="যৌবনকালের ইবাদত আল্লাহর বেশি পছন্দ">
+                                <p>যৌবনকালের ইবাদত আল্লাহর বেশি পছন্দ</p>
+                            </a>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <a class="list-item" href="islam/2023/03/19/868637">
+                                <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/075736_bangladesh_pratidin_zzzzzzzzzzzzzzzzzzzzzzzzzz.jpg?v=1679286286" alt="সমাগত মাহে রমজানকে স্বাগত জানিয়ে মহানবী (সা.)-এর ভাষণ">
+                                <p>সমাগত মাহে রমজানকে স্বাগত জানিয়ে মহানবী (সা.)-এর ভাষণ</p>
+                            </a>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <a class="list-item" href="islam/2023/03/18/868353">
+                                <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/080921_bangladesh_pratidin_iqlas.jpg?v=1679286286" alt="সুরা ইখলাসের বৈশিষ্ট্য">
+                                <p>সুরা ইখলাসের বৈশিষ্ট্য</p>
+                            </a>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <a class="list-item" href="islam/2023/03/18/868350">
+                                <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/074455_bangladesh_pratidin_Islam.jpg?v=1679286286" alt="গরিব ও অসহায়দের সাহায্য করুন">
+                                <p>গরিব ও অসহায়দের সাহায্য করুন</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div data-position="desktop-home-islam-below" class="m-0 p-0">
+                    <div class="ads bg-light mb-2 d-flex justify-content-center"> <a href="http://127.0.0.1:8000/" class="ad_cl-848" data-id="848" target="_blank">
+                            <img src="https://www.bd-pratidin.com/assets/images/banner/20221129021445.jpg" alt="desktop-home-islam-below" /> </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4 col-xl-3 p-0" data-ad="in-section-6">
+                <div data-position="desktop-home-islam-right" class="m-0 p-0">
+                    <div class="ads bg-light mb-2 d-flex justify-content-center">
+                        <div class="ad_cl-10" data-id="10">
+                            <div id='div-gpt-ad-1631791688046-0' style='min-width: 300px; min-height: 250px;'>
+                                <script>
+                                    googletag.cmd.push(function() {
+                                        googletag.display('div-gpt-ad-1631791688046-0');
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ads bg-light mb-2 d-flex justify-content-center">
+                        <div class="ad_cl-12" data-id="12">
+                            <div id='div-gpt-ad-1671429662828-0' style='min-width: 300px; min-height: 250px;'>
+                                <script>
+                                    googletag.cmd.push(function() {
+                                        googletag.display('div-gpt-ad-1671429662828-0');
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-12">
+        </div>
+    </div>
+    <div class="section-10-bg">
+        <div class="container mt-3">
+            <div class="row home-category-area section-10">
+                <h1><a href="sports"><span>মাঠে ময়দানে</span> <i class="bi bi-chevron-right">আরও</i></a></h1>
+                <div class="col-md-3">
+                    <div class="col-md-12 mb-4">
+                        <a class="list-item" href="sports/2023/03/20/868853">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/082955_bangladesh_pratidin_14.jpg?v=1679286286" alt="ঘরের মাঠেও জুভেন্টাসে ধরাশায়ী ইন্টার">
+                            <p>ঘরের মাঠেও জুভেন্টাসে ধরাশায়ী ইন্টার</p>
+                        </a>
+                    </div>
+                    <div class="col-md-12 mb-4">
+                        <a class="list-item" href="sports/2023/03/20/868851">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/042602_bangladesh_pratidin_BD-pratidin--6.jpg?v=1679286286" alt="এল ক্ল্যাসিকোয় বাজিমাত, ফের বার্সেলোনার রিয়াল বধ">
+                            <p>এল ক্ল্যাসিকোয় বাজিমাত, ফের বার্সেলোনার রিয়াল বধ</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="lead-item"><a href="sports/2023/03/20/868854">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/085343_bangladesh_pratidin_000ure.jpg?v=1679286286" alt="
+পয়েন্ট তালিকায় শীর্ষে ফেরা হলো না বায়ার্নের ">
+                            <span>
+                                পয়েন্ট তালিকায় শীর্ষে ফেরা হলো না বায়ার্নের </span>
+                        </a></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <ul class="section-10-list-iteam">
+                            <li class="mb-2"><a href="sports/2023/03/20/868840" class="row">
+                                    <span class="col-md-4 pe-0">
+                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/011941_bangladesh_pratidin_BD-pratidin--3.jpg?v=1679286286" alt="ছিলেন মেসি-এমবাপ্পে, তবুও লজ্জায় ডুবল পিএসজি">
+                                    </span>
+                                    <span class="col-md-8">
+                                        <p>ছিলেন মেসি-এমবাপ্পে, তবুও লজ্জায় ডুবল পিএসজি</p>
+                                    </span>
+                                </a></li>
+                            <li class="mb-2"><a href="sports/2023/03/19/868722" class="row">
+                                    <span class="col-md-4 pe-0">
+                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/184116_bangladesh_pratidin_virat-bdp.jpg?v=1679286286" alt="৩৭ ওভারেই শেষ ১০০ ওভারের খেলা, ১০ উইকেটে হারল ভারত">
+                                    </span>
+                                    <span class="col-md-8">
+                                        <p>৩৭ ওভারেই শেষ ১০০ ওভারের খেলা, ১০ উইকেটে হারল ভারত</p>
+                                    </span>
+                                </a></li>
+                            <li class="mb-2"><a href="sports/2023/03/19/868707" class="row">
+                                    <span class="col-md-4 pe-0">
+                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/174214_bangladesh_pratidin_archarry-news-pic.jpg?v=1679286286" alt="এশিয়া কাপ আর্চারিতে সোনা জিতল বাংলাদেশ">
+                                    </span>
+                                    <span class="col-md-8">
+                                        <p>এশিয়া কাপ আর্চারিতে সোনা জিতল বাংলাদেশ</p>
+                                    </span>
+                                </a></li>
+                            <li class="mb-2"><a href="sports/2023/03/19/868685" class="row">
+                                    <span class="col-md-4 pe-0">
+                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/151159_bangladesh_pratidin_zzzzzaaa.jpg?v=1679286286" alt="আইপিএলে খেলার ছাড়পত্র চাইলেন লিটন ও সাকিব; কী বলল বিসিবি?">
+                                    </span>
+                                    <span class="col-md-8">
+                                        <p>আইপিএলে খেলার ছাড়পত্র চাইলেন লিটন ও সাকিব; কী বলল বিসিবি?</p>
+                                    </span>
+                                </a></li>
+                            <li class="mb-2"><a href="sports/2023/03/19/868684" class="row">
+                                    <span class="col-md-4 pe-0">
+                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/143129_bangladesh_pratidin_zzzzzzzzzzzaaa.jpg?v=1679286286" alt="বৃষ্টির দিনে একাই অনুশীলন করলেন তামিম">
+                                    </span>
+                                    <span class="col-md-8">
+                                        <p>বৃষ্টির দিনে একাই অনুশীলন করলেন তামিম</p>
+                                    </span>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <div class="col-md-12">
+            <div data-position="desktop-home-after-sports" class="m-0 p-0">
+                <div class="ads bg-light mb-2 d-flex justify-content-center">
+                    <div class="ad_cl-478" data-id="478">
+                        <div id='div-gpt-ad-1651125597903-0' style='min-width: 728px; min-height: 90px;'>
+                            <script>
+                                googletag.cmd.push(function() {
+                                    googletag.display('div-gpt-ad-1651125597903-0');
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3 mb-3">
+        <div class="row section-13">
+            <div class="col-md-4 home-category-area">
+                <h2><a href="life"><span>জীবন ধারা</span> <i class="bi bi-chevron-right"></i></a></h2>
+                <a class="list-item" href="life/2023/03/12/866694">
+                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/12/thumbnails/143705_bangladesh_pratidin_12.jpg?v=1679286286" alt="অফিসে কেমন হবে আপনার পোশাক">
+                    <p>অফিসে কেমন হবে আপনার পোশাক</p>
+                </a>
+                <ul class="mt-1">
+                    <li class="bi bi-caret-right-fill"><a href="life/2023/03/12/866650">‘ডক্টর’স অ্যাডভাইস’
+                        </a></li>
+                    <li class="bi bi-caret-right-fill"><a href="life/2023/03/11/866311">ডিআরইউ এবং ফ্রেন্ডশিপ-এর যৌথ আয়োজনে নারী দিবস উদযাপন</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="life/2023/03/09/865860">আরটিভি ‘জয়া আলোকিত নারী সম্মাননা ২০২৩’ পেলেন ৬ নারী</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="life/2023/03/06/864900">সপ্তাহে অন্তত দুইবার চুল ধোয়া উচিত</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 home-category-area">
+                <h2><a href="coronavirus"><span>করোনাভাইরাস</span> <i class="bi bi-chevron-right"></i></a></h2>
+                <a class="list-item" href="coronavirus/2023/03/19/868649">
+                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/thumbnails/094506_bangladesh_pratidin_Japan2.jpg?v=1679286286" alt="জাপানে ১৬০ কোটি ডলারের করোনা টিকা ধ্বংস">
+                    <p>জাপানে ১৬০ কোটি ডলারের করোনা টিকা ধ্বংস</p>
+                </a>
+                <ul class="mt-1">
+                    <li class="bi bi-caret-right-fill"><a href="coronavirus/2023/03/19/868705">আরও ৬ জনের করোনা শনাক্ত</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="coronavirus/2023/03/19/868640">করোনা: বিশ্বজুড়ে দৈনিক মৃত্যুর সংখ্যা কমেছে</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="coronavirus/2023/03/18/868439">আরও ৪ জনের করোনা শনাক্ত
+                        </a></li>
+                    <li class="bi bi-caret-right-fill"><a href="coronavirus/2023/03/18/868359">করোনায় বিশ্বে আরও ৭০০ জনের মৃত্যু</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 home-category-area">
+                <h2><a href="health-tips"><span>হেলথ কর্নার</span> <i class="bi bi-chevron-right"></i></a></h2>
+                <a class="list-item" href="health-tips/2023/03/17/868119">
+                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/17/thumbnails/125804_bangladesh_pratidin_334991344_1176114793071473_.jpg?v=1679286286" alt="বিশ্ব ঘুম দিবস আজ">
+                    <p>বিশ্ব ঘুম দিবস আজ</p>
+                </a>
+                <ul class="mt-1">
+                    <li class="bi bi-caret-right-fill"><a href="health-tips/2023/03/09/865717">আজ বিশ্ব কিডনি দিবস</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="health-tips/2023/03/07/865288">‘কিডনি রোগে আক্রান্তদের প্রায় ৮০ শতাংশেরই মৃত্যু হয়’</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="health-tips/2023/03/06/864873">বৃষ্টির পানি সংরক্ষণ ও উন্নততর সংস্থান নিশ্চিতের লক্ষ্যে সমঝোতা স্মারক স্বাক্ষরিত</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="health-tips/2023/03/04/864319">বিএসএমএমইউয়ে বিশ্ব শ্রবণ দিবস উপলক্ষে সেমিনার</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-12">
+        </div>
+    </div>
+    <div class="section-8">
+        <div class="container py-4">
+            <h1><a href="#"><span>সোশ্যাল মিডিয়া</span></a></h1>
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="./photogallery/924#lg=1&slide=0" class="section-8-img">
+                        <img class="lazy" src="https://www.bd-pratidin.com/assets/images/photo_gallery/7069.jpg" alt="মেহজাবিন চৌধুরী" width="300" height="450">
+                        <span>
+                            <p><i class="bi bi-facebook"></i></p>
+                            <div class="pt-2">নজর কাড়া মেহজাবিন চৌধুরী</div>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="./photogallery/923#lg=1&slide=0" class="section-8-img">
+                        <img class="lazy" src="https://www.bd-pratidin.com/assets/images/photo_gallery/7067.jpg" alt="তানজিন তিশা" width="300" height="450">
+                        <span>
+                            <p><i class="bi bi-facebook"></i></p>
+                            <div class="pt-2">লাস্যময়ী তানজিন তিশা</div>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="./photogallery/921#lg=1&slide=0" class="section-8-img">
+                        <img class="lazy" src="https://www.bd-pratidin.com/assets/images/photo_gallery/7065.jpg" alt="শ্রাবন্তী চ্যাটার্জি" width="300" height="450">
+                        <span>
+                            <p><i class="bi bi-facebook"></i></p>
+                            <div class="pt-2">লাস্যময়ী শ্রাবন্তী চ্যাটার্জি</div>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="./photogallery/920#lg=1&slide=0" class="section-8-img">
+                        <img class="lazy" src="https://www.bd-pratidin.com/assets/images/photo_gallery/7063.jpg" alt="বিদ্যা সিনহা সাহা মীম" width="300" height="450">
+                        <span>
+                            <p><i class="bi bi-facebook"></i></p>
+                            <div class="pt-2">নজর কাড়লেন বিদ্যা সিনহা সাহা মীম</div>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <div class="row home-category-area section-9">
+            <h1><a href="economy"><span>শিল্প বাণিজ্য</span> <i class="bi bi-chevron-right">আরও</i></a></h1>
+            <div class="col-md-5 col-lg-6 col-xl-6">
+                <div class="lead-item"><a href="economy/2023/03/19/868671">
+                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/thumbnails/113027_bangladesh_pratidin_share_market.jpg?v=1679286286" alt="সূচকের উত্থানে পুঁজিবাজারে চলছে লেনদেন">
+                        <span>সূচকের উত্থানে পুঁজিবাজারে চলছে লেনদেন</span>
+                    </a>
+                    <p class="text">সপ্তাহের প্রথম কার্যদিবস রবিবার (১৯ মার্চ) দেশের প্রধান শেয়ারবাজার ঢাকা স্টক এক্সচেঞ্জ&#8230;</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-xl-2">
+                <div class="col-md-12 mb-3">
+                    <a class="list-item" href="economy/2023/03/18/868512">
+                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/213126_bangladesh_pratidin_gold_bejus.jpg?v=1679286286" alt="দেশের বাজারে বাড়ল স্বর্ণের দাম
+
+">
+                        <p>দেশের বাজারে বাড়ল স্বর্ণের দাম
+                        </p>
+                    </a>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <a class="list-item" href="economy/2023/03/18/868425">
+                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/161709_bangladesh_pratidin_Gold_bar_logo.jpg?v=1679286286" alt="স্বর্ণের দামের নতুন রেকর্ড ভারতে 
+
+">
+                        <p>স্বর্ণের দামের নতুন রেকর্ড ভারতে
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-4">
+                <div class="row">
+                    <ul class="section-9-list-iteam">
+                        <li class="mb-2"><a href="economy/2023/03/17/868104" class="row">
+                                <span class="col-md-4 pe-0">
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/17/mob/110230_bangladesh_pratidin_green_file.jpg?v=1679286286" alt="৯০ হাজার কোটি রুপি বিনিয়োগ প্রস্তাব ভারতীয় কোম্পানির">
+                                </span>
+                                <span class="col-md-8">
+                                    <p>৯০ হাজার কোটি রুপি বিনিয়োগ প্রস্তাব ভারতীয় কোম্পানির</p>
+                                </span>
+                            </a></li>
+                        <li class="mb-2"><a href="economy/2023/03/16/867834" class="row">
+                                <span class="col-md-4 pe-0">
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/16/mob/110155_bangladesh_pratidin_zzzzzzzzzzzzzzaaa.jpg?v=1679286286" alt="সূচকের মিশ্র প্রবণতায় পুঁজিবাজারে লেনদেন চলছে">
+                                </span>
+                                <span class="col-md-8">
+                                    <p>সূচকের মিশ্র প্রবণতায় পুঁজিবাজারে লেনদেন চলছে</p>
+                                </span>
+                            </a></li>
+                        <li class="mb-2"><a href="economy/2023/03/15/867538" class="row">
+                                <span class="col-md-4 pe-0">
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/15/mob/111118_bangladesh_pratidin_zzzzzzzzzzzzzzaaa.jpg?v=1679286286" alt="সূচকের ওঠানামায় পুঁজিবাজারে লেনদেন চলছে">
+                                </span>
+                                <span class="col-md-8">
+                                    <p>সূচকের ওঠানামায় পুঁজিবাজারে লেনদেন চলছে</p>
+                                </span>
+                            </a></li>
+                        <li class="mb-2"><a href="economy/2023/03/14/867284" class="row">
+                                <span class="col-md-4 pe-0">
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/14/mob/114038_bangladesh_pratidin_share_market.jpg?v=1679286286" alt="সূচকের উত্থানে পুঁজিবাজারে লেনদেন চলছে">
+                                </span>
+                                <span class="col-md-8">
+                                    <p>সূচকের উত্থানে পুঁজিবাজারে লেনদেন চলছে</p>
+                                </span>
+                            </a></li>
+                        <li class="mb-2"><a href="economy/2023/03/14/867258" class="row">
+                                <span class="col-md-4 pe-0">
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/14/mob/090429_bangladesh_pratidin_Untitled-3.jpg?v=1679286286" alt="দেশের সক্ষমতা তুলে ধরতেই বিজনেস সামিট: এফবিসিসিআই">
+                                </span>
+                                <span class="col-md-8">
+                                    <p>দেশের সক্ষমতা তুলে ধরতেই বিজনেস সামিট: এফবিসিসিআই</p>
+                                </span>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <div class="col-md-12">
+            <div data-position="desktop-home-after-corona" class="m-0 p-0">
+                <div class="ads bg-light mb-2 d-flex justify-content-center">
+                    <div class="ad_cl-479" data-id="479">
+                        <div id='div-gpt-ad-1651125671108-0' style='min-width: 728px; min-height: 90px;'>
+                            <script>
+                                googletag.cmd.push(function() {
+                                    googletag.display('div-gpt-ad-1651125671108-0');
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-3">
+        <div class="container">
+            <div class="row section-3">
+                <div class="col-md-3 home-category-area">
+                    <h2><a href="agriculture-nature"><span>কৃষি ও প্রকৃতি</span> <i class="bi bi-chevron-right"></i></a></h2>
+                    <div class="section-5">
+                        <ul>
+                            <li><a href="agriculture-nature/2023/03/19/868759" class="row">
+                                    <p class="col-md-5">
+                                        <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/223714_bangladesh_pratidin_rangpur-alu-photo-19-3-23.jpg?v=1679286286" alt="এবার একলাখ মেট্রিক টন আলু রপ্তানির লক্ষ্যমাত্রা" alt="এবার একলাখ মেট্রিক টন আলু রপ্তানির লক্ষ্যমাত্রা" width="304" height="236">
+                                    </p>
+                                    <p class="col-md-7 p-0">
+                                        <strong>এবার একলাখ মেট্রিক টন আলু রপ্তানির লক্ষ্যমাত্রা</strong>
+                                    </p>
+                                </a></li>
+                            <li><a href="agriculture-nature/2023/03/17/868209" class="row">
+                                    <p class="col-md-5">
+                                        <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/17/mob/213352_bangladesh_pratidin_sakhipur-pi-poshikhon-.jpg?v=1679286286" alt="সখীপুরে দিনব্যাপী কৃষকদের প্রশিক্ষণ " alt="সখীপুরে দিনব্যাপী কৃষকদের প্রশিক্ষণ " width="304" height="236">
+                                    </p>
+                                    <p class="col-md-7 p-0">
+                                        <strong>সখীপুরে দিনব্যাপী কৃষকদের প্রশিক্ষণ </strong>
+                                    </p>
+                                </a></li>
+                            <li><a href="agriculture-nature/2023/03/17/868142" class="row">
+                                    <p class="col-md-5">
+                                        <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/17/mob/163706_bangladesh_pratidin_DINAJPUR---Dristinondon-Noi-Sikkar-poribes-School-CHAD-BAGAN-pic-5.jpg?v=1679286286" alt="বিদ্যালয়ে দৃষ্টিনন্দন ছাদ বাগান " alt="বিদ্যালয়ে দৃষ্টিনন্দন ছাদ বাগান " width="304" height="236">
+                                    </p>
+                                    <p class="col-md-7 p-0">
+                                        <strong>বিদ্যালয়ে দৃষ্টিনন্দন ছাদ বাগান </strong>
+                                    </p>
+                                </a></li>
+                            <li><a href="agriculture-nature/2023/03/15/867675" class="row">
+                                    <p class="col-md-5">
+                                        <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/15/mob/211325_bangladesh_pratidin_krisi.jpg?v=1679286286" alt="এক ডিজিটাল প্ল্যাটফর্মে মিলবে কৃষির ৪৫ সেবা" alt="এক ডিজিটাল প্ল্যাটফর্মে মিলবে কৃষির ৪৫ সেবা" width="304" height="236">
+                                    </p>
+                                    <p class="col-md-7 p-0">
+                                        <strong>এক ডিজিটাল প্ল্যাটফর্মে মিলবে কৃষির ৪৫ সেবা</strong>
+                                    </p>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 home-category-area">
+                    <h2><a href="probash-potro"><span>পরবাস</span> <i class="bi bi-chevron-right"></i></a></h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <a class="list-item" href="probash-potro/2023/03/19/868697">
+                                <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/165319_bangladesh_pratidin_b.jpg?v=1679286286" alt="মালয়েশিয়া যুবলীগের উদ্যোগে 
+বঙ্গবন্ধুর জন্মবার্ষিকী পালন ">
+                                <p>মালয়েশিয়া যুবলীগের উদ্যোগে
+                                    বঙ্গবন্ধুর জন্মবার্ষিকী পালন </p>
+                            </a>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <a class="list-item" href="probash-potro/2023/03/19/868657">
+                                <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/104003_bangladesh_pratidin_BD_Pratidin.jpg?v=1679286286" alt="বঙ্গবন্ধুর জন্মবার্ষিকীতে জাতিসংঘে শিশু-কিশোর আনন্দমেলা">
+                                <p>বঙ্গবন্ধুর জন্মবার্ষিকীতে জাতিসংঘে শিশু-কিশোর আনন্দমেলা</p>
+                            </a>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <a class="list-item" href="probash-potro/2023/03/19/868628">
+                                <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/062457_bangladesh_pratidin_Pa.jpg?v=1679286286" alt="প্যারিসে বঙ্গবন্ধুর ১০৩তম জন্ম বার্ষিকী ও জাতীয় শিশু দিবস উদযাপন ">
+                                <p>প্যারিসে বঙ্গবন্ধুর ১০৩তম জন্ম বার্ষিকী ও জাতীয় শিশু দিবস উদযাপন </p>
+                            </a>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <a class="list-item" href="probash-potro/2023/03/18/868501">
+                                <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/210300_bangladesh_pratidin_BBB-2.jpg?v=1679286286" alt="নিউইয়র্ক কন্স্যুলেটে বঙ্গবন্ধুর জন্মবার্ষিকী উদযাপন">
+                                <p>নিউইয়র্ক কন্স্যুলেটে বঙ্গবন্ধুর জন্মবার্ষিকী উদযাপন</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 home-category-area">
+                    <h2><a href="kolkata"><span>ওপার বাংলা</span> <i class="bi bi-chevron-right"></i></a></h2>
+                    <div class="section-4">
+                        <ul>
+                            <li><a href="kolkata/2023/03/19/868750" class="row">
+                                    <p class="col-md-4 col-lg-4 col-xl-3">
+                                        <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/220230_bangladesh_pratidin_amorto.jpg?v=1679286286" alt="Cinque Terre" width="304" height="236">
+                                    </p>
+                                    <p class="col-md-8 col-lg-8 col-xl-9">
+                                        <strong>এবার অমর্ত্য সেনের বিরুদ্ধে উচ্ছেদ আইনে মামলার হুঁশিয়ারি বিশ্বভারতীর </strong>
+                                        <span>নোবেলজয়ী ভারতীয় অর্থনীতিবিদ অধ্যাপক&#8230;</span>
+                                    </p>
+                                </a></li>
+                            <li><a href="kolkata/2023/03/19/868727" class="row">
+                                    <p class="col-md-4 col-lg-4 col-xl-3">
+                                        <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/191012_bangladesh_pratidin_Untitled-2.jpg?v=1679286286" alt="Cinque Terre" width="304" height="236">
+                                    </p>
+                                    <p class="col-md-8 col-lg-8 col-xl-9">
+                                        <strong>পেট্রাপোল স্থলবন্দর সীমান্তে ট্রাক থেকে ৪০ স্বর্ণের বার উদ্ধার</strong>
+                                        <span>ভারত-বাংলাদেশ আন্তর্জাতিক সীমান্তের&#8230;</span>
+                                    </p>
+                                </a></li>
+                            <li><a href="kolkata/2023/03/19/868694" class="row">
+                                    <p class="col-md-4 col-lg-4 col-xl-3">
+                                        <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/162803_bangladesh_pratidin_bbbbb.jpg?v=1679286286" alt="Cinque Terre" width="304" height="236">
+                                    </p>
+                                    <p class="col-md-8 col-lg-8 col-xl-9">
+                                        <strong>পশ্চিমবঙ্গের বালুরঘাট থেকে উদ্ধার ২১টি বাংলাদেশি পাসপোর্ট</strong>
+                                        <span>ভারতের পশ্চিমবঙ্গের দক্ষিণ দিনাজপুর&#8230;</span>
+                                    </p>
+                                </a></li>
+                            <li><a href="kolkata/2023/03/19/868677" class="row">
+                                    <p class="col-md-4 col-lg-4 col-xl-3">
+                                        <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/115524_bangladesh_pratidin_Kalkata.jpg?v=1679286286" alt="Cinque Terre" width="304" height="236">
+                                    </p>
+                                    <p class="col-md-8 col-lg-8 col-xl-9">
+                                        <strong>কলকাতার স্টুডিও পাড়ায় অগ্নিকাণ্ড, পুড়ে ছাই একাংশ</strong>
+                                        <span>কলকাতার টালিগঞ্জের এনটিওয়ান স্টুডিওতে&#8230;</span>
+                                    </p>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-12-bg">
+        <div class="container mt-3">
+            <div class="row home-category-area section-12">
+                <h1><a href="chayer-desh"><span>চায়ের দেশ</span> <i class="bi bi-chevron-right">আরও</i></a></h1>
+                <div class="col-md-8 col-lg-5 col-xl-5 col-xxl-6">
+                    <div class="lead-item"><a href="chayer-desh/2023/03/19/868745">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/thumbnails/210135_bangladesh_pratidin_fdsdfsdsf.jpg?v=1679286286" alt="সিলেটে আরও ৬০০ পরিবার পাচ্ছেন ঘর">
+                            <span>সিলেটে আরও ৬০০ পরিবার পাচ্ছেন ঘর</span>
+                        </a>
+                        <p class="text">প্রধানমন্ত্রী শেখ হাসিনার আশ্রয়ণ প্রকল্পের ঘর পেতে যাচ্ছেন সিলেটের&#8230;</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 col-xxl-3">
+                    <div class="row">
+                        <ul class="section-12-list-iteam">
+                            <li class="mb-4"><a href="chayer-desh/2023/03/19/868654" class="row">
+                                    <span class="col-md-4 pe-0">
+                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/102330_bangladesh_pratidin_12-221.jpg?v=1679286286" alt="হবিগঞ্জে অনির্দিষ্টকালের পরিবহন ধর্মঘট চলছে">
+                                    </span>
+                                    <span class="col-md-8">
+                                        <p>হবিগঞ্জে অনির্দিষ্টকালের পরিবহন ধর্মঘট চলছে</p>
+                                    </span>
+                                </a></li>
+                            <li class="mb-4"><a href="chayer-desh/2023/03/18/868504" class="row">
+                                    <span class="col-md-4 pe-0">
+                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/210649_bangladesh_pratidin_accident-3.jpg?v=1679286286" alt="সিলেটে দুর্ঘটনায় ট্রাকের হেলপার নিহত ">
+                                    </span>
+                                    <span class="col-md-8">
+                                        <p>সিলেটে দুর্ঘটনায় ট্রাকের হেলপার নিহত </p>
+                                    </span>
+                                </a></li>
+                            <li class="mb-4"><a href="chayer-desh/2023/03/18/868419" class="row">
+                                    <span class="col-md-4 pe-0">
+                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/155022_bangladesh_pratidin_climete-change.jpg?v=1679286286" alt="সিলেটে ৬০ কি.মি. বেগে বয়ে যেতে পারে ঝড়
+
+">
+                                    </span>
+                                    <span class="col-md-8">
+                                        <p>সিলেটে ৬০ কি.মি. বেগে বয়ে যেতে পারে ঝড়
+                                        </p>
+                                    </span>
+                                </a></li>
+                            <li class="mb-4"><a href="chayer-desh/2023/03/16/867863" class="row">
+                                    <span class="col-md-4 pe-0">
+                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/16/mob/134037_bangladesh_pratidin_Untitled-1.jpg?v=1679286286" alt="মেয়র আরিফের হার্টে ৩টি ব্লক, পরানো হয়েছে রিং  ">
+                                    </span>
+                                    <span class="col-md-8">
+                                        <p>মেয়র আরিফের হার্টে ৩টি ব্লক, পরানো হয়েছে রিং </p>
+                                    </span>
+                                </a></li>
+                            <li class="mb-4"><a href="chayer-desh/2023/03/14/867334" class="row">
+                                    <span class="col-md-4 pe-0">
+                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/14/mob/160846_bangladesh_pratidin_fish-news-pic.jpg?v=1679286286" alt="সিলেটে ধরা পড়ল ১৬০ কেজির বাঘাইড়
+
+">
+                                    </span>
+                                    <span class="col-md-8">
+                                        <p>সিলেটে ধরা পড়ল ১৬০ কেজির বাঘাইড়
+                                        </p>
+                                    </span>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-0 col-lg-4 col-xl-4 col-xxl-3">
+                    <div data-position="desktop-home-chayer-desh-right" class="m-0 p-0">
+                        <div class="ads bg-light mb-2 d-flex justify-content-center">
+                            <div class="ad_cl-11" data-id="11">
+                                <div id='div-gpt-ad-1631791741735-0' style='min-width: 300px; min-height: 250px;'>
+                                    <script>
+                                        googletag.cmd.push(function() {
+                                            googletag.display('div-gpt-ad-1631791741735-0');
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ads bg-light mb-2 d-flex justify-content-center"> <a href="https://www.sonalibank.com.bd/" class="ad_cl-769" data-id="769" target="_blank">
+                                <img src="https://www.bd-pratidin.com/assets/images/banner/20220929044426.gif" alt="desktop-home-chayer-desh-right" /> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <div class="row section-13">
+            <div class="col-md-4 home-category-area">
+                <h2><a href="mixter"><span>পাঁচফোড়ন</span> <i class="bi bi-chevron-right"></i></a></h2>
+                <a class="list-item" href="mixter/2023/03/14/867314">
+                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/14/thumbnails/142541_bangladesh_pratidin_BD-pratidin--3.jpg?v=1679286286" alt="ব্যানার টানিয়ে চোরকে যে অনুরোধ করলেন সাবেক মেয়র">
+                    <p>ব্যানার টানিয়ে চোরকে যে অনুরোধ করলেন সাবেক মেয়র</p>
+                </a>
+                <ul class="mt-1">
+                    <li class="bi bi-caret-right-fill"><a href="mixter/2023/03/13/866980">বিয়ের দাবিতে যুবকদের ১০০ কিলোমিটার পদযাত্রা!</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="mixter/2023/03/12/866700">পুরুষের মমিকে নিজের বান্ধবী বলে দাবি তরুণের!</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="mixter/2023/03/12/866695">নিজেকে নিজেই ‘বিয়ে’ করেছিলেন তরুণী, ২৪ ঘণ্টা না পেরোতেই ‘বিচ্ছেদ’
+                        </a></li>
+                    <li class="bi bi-caret-right-fill"><a href="mixter/2023/03/09/865836">পার্লামেন্ট ভাষণে প্রেমিকাকে বিয়ের প্রস্তাব দিলেন এমপি</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 home-category-area">
+                <h2><a href="features"><span>ফিচার</span> <i class="bi bi-chevron-right"></i></a></h2>
+                <a class="list-item" href="features/2023/03/18/868513">
+                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/thumbnails/213539_bangladesh_pratidin_BOGRA-PIC-PARTS--(1)-18-03-2023.jpg?v=1679286286" alt="কোটি টাকার পুরাতন অচল শ্যালো মেশিনের বাজার বগুড়ায়">
+                    <p>কোটি টাকার পুরাতন অচল শ্যালো মেশিনের বাজার বগুড়ায়</p>
+                </a>
+                <ul class="mt-1">
+                    <li class="bi bi-caret-right-fill"><a href="features/2023/03/18/868488">চট্টগ্রামের সবজির চাহিদা বাড়ছে বিদেশে</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="features/2023/03/18/868464">লাখ টাকার চাকরি ছেড়ে সিঙাড়ার ব্যবসা দম্পতির
+                        </a></li>
+                    <li class="bi bi-caret-right-fill"><a href="features/2023/03/06/864841">মাদক সম্রাট পাবলো এস্কোবারের ৭০ জলহস্তী যাচ্ছে ভারত-মেক্সিকোতে</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="features/2023/03/03/863962">কুয়াকাটার শুটকির সুখ্যাতি দেশজুড়ে</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 home-category-area">
+                <h2><a href="tech-world"><span>টেক ওয়ার্ল্ড</span> <i class="bi bi-chevron-right"></i></a></h2>
+                <a class="list-item" href="tech-world/2023/03/17/868167">
+                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/17/thumbnails/182643_bangladesh_pratidin_Chin.jpg?v=1679286286" alt="চ্যাটজিপিটির প্রতিদ্বন্দ্বী জনসমক্ষে আনল চীনা প্রযুক্তি জায়ান্ট বাইদু">
+                    <p>চ্যাটজিপিটির প্রতিদ্বন্দ্বী জনসমক্ষে আনল চীনা প্রযুক্তি জায়ান্ট বাইদু</p>
+                </a>
+                <ul class="mt-1">
+                    <li class="bi bi-caret-right-fill"><a href="tech-world/2023/03/15/867525">এবার ১০ হাজার কর্মী ছাঁটাইয়ের ঘোষণা মেটা’র</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="tech-world/2023/03/13/866924">বাংলাদেশে সফটওয়্যার উৎপাদন করছে ইউনিসফট</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="tech-world/2023/03/12/866667">বিং সার্চ ইঞ্জিনের দৈনিক ব্যবহারকারী ১০ কোটি ছাড়িয়েছে
+                        </a></li>
+                    <li class="bi bi-caret-right-fill"><a href="tech-world/2023/03/12/866625">টিকটকের মতো গুগল ব্যবহারকারীর গোপনীয়তা নিয়েও প্রশ্ন!</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section-11 section-14 mt-4">
+        <div class="container mt-3">
+            <div class="row home-category-area section-14">
+                <h1><a href="chittagong-pratidin"><span>চট্টগ্রাম প্রতিদিন</span> <i class="bi bi-chevron-right">আরও</i></a></h1>
+                <div class="col-md-5 col-lg-5 col-xl-5 col-xxl-6">
+                    <div class="lead-item"><a href="chittagong-pratidin/2023/03/19/868751">
+                            <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/thumbnails/221202_bangladesh_pratidin_Ctg-Pic--01-(19_03.jpg?v=1679286286" alt="চক্ষু গবেষণায় বাংলাদেশের সর্বোচ্চ সম্মাননা পেলেন চট্টগ্রামের ডা. আসিফ">
+                            <span>চক্ষু গবেষণায় বাংলাদেশের সর্বোচ্চ সম্মাননা পেলেন চট্টগ্রামের ডা. আসিফ</span>
+                        </a>
+                        <p class="text">&lsquo;চক্ষু বিষয়ক গবেষণা ও প্রেজেন্টেশন&rsquo; এর জন্য অফথালমোলজিতে বাংলাদেশের সর্বোচ্চ সম্মাননা&#8230;</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+                    <div class="row">
+                        <ul class="section-14-list-iteam">
+                            <li class="mb-2"><a href="chittagong-pratidin/2023/03/19/868748" class="row">
+                                    <span class="col-md-4 pe-0">
+                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/213949_bangladesh_pratidin_ctg_dhaka_642.jpg?v=1679286286" alt="চট্টগ্রামে আউটার স্টেডিয়ামের অবৈধ স্থাপনা উচ্ছেদ">
+                                    </span>
+                                    <span class="col-md-8">
+                                        <p>চট্টগ্রামে আউটার স্টেডিয়ামের অবৈধ স্থাপনা উচ্ছেদ</p>
+                                    </span>
+                                </a></li>
+                            <li class="mb-2"><a href="chittagong-pratidin/2023/03/19/868746" class="row">
+                                    <span class="col-md-4 pe-0">
+                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/210551_bangladesh_pratidin_court-jabojjibon.jpg?v=1679286286" alt="চিকিৎসককে ধর্ষণচেষ্টায় সিএনজি চালকের যাবজ্জীবন">
+                                    </span>
+                                    <span class="col-md-8">
+                                        <p>চিকিৎসককে ধর্ষণচেষ্টায় সিএনজি চালকের যাবজ্জীবন</p>
+                                    </span>
+                                </a></li>
+                            <li class="mb-2"><a href="chittagong-pratidin/2023/03/19/868742" class="row">
+                                    <span class="col-md-4 pe-0">
+                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/204706_bangladesh_pratidin_a_lig.jpg?v=1679286286" alt="চট্টগ্রাম-৮ আসনে আওয়ামী লীগের মনোনয়ন বিক্রি শুরু">
+                                    </span>
+                                    <span class="col-md-8">
+                                        <p>চট্টগ্রাম-৮ আসনে আওয়ামী লীগের মনোনয়ন বিক্রি শুরু</p>
+                                    </span>
+                                </a></li>
+                            <li class="mb-2"><a href="chittagong-pratidin/2023/03/19/868709" class="row">
+                                    <span class="col-md-4 pe-0">
+                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/175358_bangladesh_pratidin_C.jpg?v=1679286286" alt="জিয়াউল হক মাইজভাণ্ডারী ট্রাস্টের বৃত্তি প্রদান সম্পন্ন">
+                                    </span>
+                                    <span class="col-md-8">
+                                        <p>জিয়াউল হক মাইজভাণ্ডারী ট্রাস্টের বৃত্তি প্রদান সম্পন্ন</p>
+                                    </span>
+                                </a></li>
+                            <li class="mb-2"><a href="chittagong-pratidin/2023/03/19/868630" class="row">
+                                    <span class="col-md-4 pe-0">
+                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/063744_bangladesh_pratidin_GPH.jpg?v=1679286286" alt="মার্কিন প্রতিনিধি দলের  জিপিএইচ কারখানা পরিদর্শন
+
+">
+                                    </span>
+                                    <span class="col-md-8">
+                                        <p>মার্কিন প্রতিনিধি দলের জিপিএইচ কারখানা পরিদর্শন
+                                        </p>
+                                    </span>
+                                </a></li>
+                            <li class="mb-2"><a href="chittagong-pratidin/2023/03/19/868614" class="row">
+                                    <span class="col-md-4 pe-0">
+                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/005206_bangladesh_pratidin_DD.jpg?v=1679286286" alt="বাদশা মিয়া-সুকানী ফাউন্ডেশন
+মেধা বৃত্তি প্রদান">
+                                    </span>
+                                    <span class="col-md-8">
+                                        <p>বাদশা মিয়া-সুকানী ফাউন্ডেশন
+                                            মেধা বৃত্তি প্রদান</p>
+                                    </span>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-3">
+                    <div data-position="desktop-home-chittagong-pratidin-right" class="m-0 p-0">
+                        <div class="ads bg-light mb-2 d-flex justify-content-center"> <a href="http://www.fsiblbd.com/" class="ad_cl-13" data-id="13" target="_blank">
+                                <img src="https://www.bd-pratidin.com/assets/images/banner/20210916053607.gif" alt="desktop-home-chittagong-pratidin-right" /> </a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-md-12 home-category-area mt-4">
+                        <h1><a href="#"><span>পুরোনো সংখ্যা</span> <i class="bi bi-chevron-right"></i></a></h1>
+
+                        <div class="calendarArea">
+                            <div class="app__main">
+                                <div class="calendar">
+                                    <div id="calendar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <div class="row section-13">
+            <div class="col-md-4 home-category-area">
+                <h2><a href="campus-online"><span>ক্যাম্পাস</span> <i class="bi bi-chevron-right"></i></a></h2>
+                <a class="list-item" href="campus-online/2023/03/19/868721">
+                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/thumbnails/183756_bangladesh_pratidin_du.jpg?v=1679286286" alt="ঢাবির রেজিস্টার্ড গ্র্যাজুয়েট নির্বাচন: ২৫ পদেই আওয়ামী পন্থীদের জয়">
+                    <p>ঢাবির রেজিস্টার্ড গ্র্যাজুয়েট নির্বাচন: ২৫ পদেই আওয়ামী পন্থীদের জয়</p>
+                </a>
+                <ul class="mt-1">
+                    <li class="bi bi-caret-right-fill"><a href="campus-online/2023/03/19/868719">চবি শিক্ষক-শিক্ষার্থীদের উপর হামলার প্রতিবাদে শিক্ষকদের মানববন্ধন </a></li>
+                    <li class="bi bi-caret-right-fill"><a href="campus-online/2023/03/19/868704">চবি শিক্ষক সমিতির উদ্যোগে তিন দিনব্যাপী বইমেলা</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="campus-online/2023/03/19/868682">নিজস্ব পদ্ধতিতে ভর্তি পরীক্ষা চায় ইবি শিক্ষার্থীরা</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="campus-online/2023/03/19/868633">রাবিতে ছাত্রলীগের কর্মসূচিতে না যাওয়ায় শিক্ষার্থীকে মারধর, তদন্ত কমিটি গঠন
+                        </a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 home-category-area">
+                <h2><a href="city-roundup"><span>নগর পরিক্রমা</span> <i class="bi bi-chevron-right"></i></a></h2>
+                <a class="list-item" href="city-roundup/2023/03/18/868423">
+                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/thumbnails/160632_bangladesh_pratidin_dengu.jpg?v=1679286286" alt="আরও ৪ ডেঙ্গুরোগী হাসপাতালে ভর্তি">
+                    <p>আরও ৪ ডেঙ্গুরোগী হাসপাতালে ভর্তি</p>
+                </a>
+                <ul class="mt-1">
+                    <li class="bi bi-caret-right-fill"><a href="city-roundup/2023/03/16/867909">আরও তিন ডেঙ্গুরোগী হাসপাতালে ভর্তি</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="city-roundup/2023/03/15/867620">আরও ৫ জন ডেঙ্গুরোগী হাসপাতালে ভর্তি</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="city-roundup/2023/03/14/867367">আরও দুই ডেঙ্গুরোগী হাসপাতালে ভর্তি</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="city-roundup/2023/03/14/867358">সিটি কর্পোরেশন ও পৌরসভার জন্য এসডিজি লোকালাইজেশন বিষয়ক কর্মশালা</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 home-category-area">
+                <h2><a href="corporate-corner"><span>কর্পোরেট কর্নার</span> <i class="bi bi-chevron-right"></i></a></h2>
+                <a class="list-item" href="corporate-corner/2023/03/18/868484">
+                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/thumbnails/200031_bangladesh_pratidin_ACC-brand-launching-picture.jpg?v=1679286286" alt="ইউরোপীয় ব্র্যান্ড এসিসির বাংলাদেশে যাত্রা শুরু 
+
+">
+                    <p>ইউরোপীয় ব্র্যান্ড এসিসির বাংলাদেশে যাত্রা শুরু
+                    </p>
+                </a>
+                <ul class="mt-1">
+                    <li class="bi bi-caret-right-fill"><a href="corporate-corner/2023/03/16/867896"> শুরু হতে যাচ্ছে ‘পোলার আইসক্রিম মনের সুখে আঁকি’ চিত্রাঙ্কন প্রতিযোগিতা ২০২৩ </a></li>
+                    <li class="bi bi-caret-right-fill"><a href="corporate-corner/2023/03/15/867558">
+                            ওয়ালটন ফ্রিজ কিনে ১০১টি পণ্য ফ্রি পেলেন বাগেরহাটের নজরুল</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="corporate-corner/2023/03/14/867278">রিয়েলমি ফ্যান ফেস্ট ২০২২-এর বিজয়ীর নাম প্রকাশ</a></li>
+                    <li class="bi bi-caret-right-fill"><a href="corporate-corner/2023/03/13/866922">ডাচ্-বাংলা ব্যাংকের মহাখালী শাখার স্থানান্তর </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-12">
+        </div>
+    </div>
+    <style>
+        #drag-area {
+            position: fixed;
+            left: 1%;
+            bottom: 10%;
+            width: 125px;
+            height: 125px;
+        }
+
+        #drag-area .bi-arrows-move {
+            font-size: 24px;
+            color: black;
+            position: absolute;
+            right: 0;
+            top: -33px;
+            background: white;
+            border-radius: 5px;
+            padding: 0 5px;
+        }
+
+        #drag-body {
+            background: whitesmoke;
+            position: absolute;
+            z-index: 999999999;
+            width: 125px;
+            height: 125px;
+        }
+
+        #drag-close {
+            background: whitesmoke;
+            position: absolute;
+            left: -18px;
+            top: -16px;
+            border: none;
+            color: red;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 99999999999999;
+        }
+
+        #drag-bodydrag-area {
+            padding: 10px;
+            cursor: move;
+            z-index: 10;
+            color: #fff;
+            width: 125px;
+            height: 125px;
+        }
+
+        #drag-bodydrag-area:after {
+            content: '';
+            width: 125px;
+            height: 125px;
+            display: inline-block;
+        }
+    </style>
+    <div data-position="desktop-home-draggable" class="m-0 p-0">
+    </div>
+    <script>
+        document.getElementById("drag-close").addEventListener("click", clickcloseDrag);
+
+        function clickcloseDrag() {
+            var x = document.getElementById("drag-body");
+            var b = document.getElementById("drag-close");
+            x.style.display = "none";
+            b.style.display = "none";
+        }
+
+        //Make the DIV element draggagle:
+        dragElement(document.getElementById("drag-body"));
+
+        function dragElement(elmnt) {
+            var pos1 = 0,
+                pos2 = 0,
+                pos3 = 0,
+                pos4 = 0,
+                is_drag = 'no';
+            if (document.getElementById(elmnt.id + "body")) {
+                /* if present, the header is where you move the DIV from:*/
+                document.getElementById(elmnt.id + "body").onmousedown = dragMouseDown;
+            } else {
+                /* otherwise, move the DIV from anywhere inside the DIV:*/
+                elmnt.onmousedown = dragMouseDown;
+            }
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // calculate the new cursor position:
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // set the element's new position:
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                is_drag = 'yes';
+
+                var elemSt = document.querySelector('#drag-close');
+                elemSt.style.top = parseInt(elmnt.style.top) - 16 + "px";
+                elemSt.style.left = parseInt(elmnt.style.left) - 18 + "px";
+            }
+
+            function closeDragElement() {
+                /* stop moving when mouse button is released:*/
+                document.onmouseup = null;
+                document.onmousemove = null;
+                if (is_drag == 'no') {
+                    window.open('#', '_blank');
+                }
+                is_drag = 'no';
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="bottom-sticky-ad bg-light">
+        <div class="container"> <a href="#" class="sticky-ad-down"><i class="bi bi-chevron-down"></i></a>
+            <div class="ads d-flex justify-content-center">
+                <div class="ad_cl-7" data-id="7">
+                    <div id='div-gpt-ad-1641372357518-0' style='min-width: 970px; min-height: 90px;'>
+                        <script>
+                            googletag.cmd.push(function() {
+                                googletag.display('div-gpt-ad-1641372357518-0');
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <footer class="mt-5">
+        <div class="container">
+            <div class="footer-top">
+                <img src="{{asset('frontend')}}/assets/img/logo.png">
+                <div class="footer-editor">
+                    <h2><span>সম্পাদক :</span> নঈম নিজাম</h2>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-mid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-4 pt-3">
+                        <ul>
+                            <li><a href="./national">জাতীয়</a></li>
+                            <li><a href="./city-news">নগর জীবন</a></li>
+                            <li><a href="./country">দেশগ্রাম</a></li>
+                            <li><a href="./international-news">পূর্ব-পশ্চিম</a></li>
+                            <li><a href="./entertainment">শোবিজ</a></li>
+                            <li><a href="./chayer-desh">চায়ের দেশ</a></li>
+                            <li><a href="./first-page">প্রথম পাতা</a></li>
+                            <li><a href="./sport-news">মাঠে ময়দানে</a></li>
+                            <li><a href="./last-page">পেছনের পৃষ্ঠা</a></li>
+                            <li><a class="text-danger" target="_blank" href="http://www.ebdpratidin.com">ই-পেপার</a></li>
+                            <li><a class="text-danger" target="_blank" href="http://127.0.0.1:8000/northamerica/">ইউএসএ এডিশন</a></li>
+                            <li><a class="text-danger" target="_blank" href="http://127.0.0.1:8000/uk/">ইউকে এডিশন</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-5"></div>
+                    <div class="col-12 col-md-4 col-lg-3 pt-3">
+                        <div class="app-info">
+                            <h3>মোবাইল অ্যাপ ডাউনলোড করুন</h3>
+                            <div class="clearfix"></div>
+                            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.bangladesh.pratidin" class="android"><img src="{{asset('frontend')}}/assets/img/android.png"></a>
+                            <a target="_blank" href="https://apps.apple.com/us/app/bangladesh-pratidin/id1056949757" class="ios"><img src="{{asset('frontend')}}/assets/img/ios-app.png"></a>
+                            <ul class="mt-3">
+
+                                <li><a target="_blank" href="https://www.instagram.com/bangladeshpratidin/?igshid=17sw13yaetjrq"><i class="bi bi-instagram"></i></a></li>
+                                <li><a target="_blank" href="https://twitter.com/bd_pratidin"><i class="bi bi-twitter"></i></a></li>
+                                <li><a target="_blank" href="https://www.youtube.com/channel/UC0g7R-oqBXYZDIE8yPgT6rA/videos"><i class="bi bi-youtube"></i></a></li>
+                                <li><a target="_blank" href="https://www.facebook.com/dailybangladeshpratidin/"><i class="bi bi-facebook"></i></a></li>
+                                <li>আমাদের সঙ্গে থাকুন</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="container">
+            <div class="footer-bottom">
+                <ul>
+                    <li><a href="./page/contactus">যোগাযোগ</a></li>
+                    <li><a href="./page/privacy-policy">গোপনীয়তা নীতি</a></li>
+                    <li><a href="./file/Rate_Card_2022.pdf" target="_blank">বিজ্ঞাপনের মূল্য তালিকা</a></li>
+                </ul>
+                <p class="copyright">স্বত্ব © ২০২৩ বাংলাদেশ প্রতিদিন</p>
+            </div>
+        </div>
+    </footer>
+    <a href="#" id="back-to-top" title="Back to top"><i class="bi bi-chevron-up"></i></a>
+
+    <script src="{{asset('frontend')}}/assets/js/bootstrap.min.js"></script>
+    <script src="{{asset('frontend')}}/assets/js/acmeticker.min.js"></script>
+    <script src="{{asset('frontend')}}/assets/js/theme-script.js"></script>
+    <script src="{{asset('frontend')}}/assets/js/jquery.date-dropdowns.js"></script>
+    <script src="{{asset('frontend')}}/assets/js/calendar.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#btnArchive").click(function(e) {
+                e.preventDefault();
+                var arcDate = document.getElementsByName("date")[0].value;
+                if (arcDate) {
+                    gtag('event', 'link', {
+                        'event_label': 'On Content Archive',
+                        'event_category': 'click',
+                        'non_interaction': true
+                    });
+                    window.location = "/archive/" + arcDate;
+                }
+            });
+
+            $("#example1").dateDropdowns({
+                submitFormat: "yyyy/mm/dd",
+                required: true
+            });
+        });
+
+
+        $(document).ready(function() {
+            $('#welcomeModal').modal('show');
+            setTimeout(function() {
+                $('#welcomeModal').modal('hide');
+            }, 8000);
+        });
+    </script>
 </body>
 
 </html>

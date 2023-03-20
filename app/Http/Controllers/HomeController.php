@@ -10,4 +10,10 @@ class HomeController extends Controller
     {
         return view("home");
     }
+
+    // national
+    public function national()
+    {
+        return view("national");
+    }
 }
