@@ -16,4 +16,27 @@ class HomeController extends Controller
     {
         return view("national");
     }
+    // internationalnews
+    public function internationalnews()
+    {
+        return view("internationalnews");
+    }
+
+    // country
+    public function country()
+    {
+        return view("country");
+    }
+
+    // entertainment
+    public function entertainment()
+    {
+        return view("entertainment");
+    }
+
+    // sports
+    public function sports()
+    {
+        return view("sports");
+    }
 }
