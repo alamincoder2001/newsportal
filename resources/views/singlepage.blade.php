@@ -110,49 +110,6 @@
             });
         });
     </script>
-
-    <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
-    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-    <script>
-        var gptadslots = [];
-        var googletag = googletag || {
-            cmd: []
-        };
-    </script>
-    <script>
-        window.googletag = window.googletag || {
-            cmd: []
-        };
-        googletag.cmd.push(function() {
-
-            googletag.defineSlot('/21674221269/Desktop_Article-Page_728x90_LB4', [728, 90], 'div-gpt-ad-1631792780205-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/Desktop_Article-Page_970x90_LB1', [970, 90], 'div-gpt-ad-1641387118359-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/Desktop_Article-Page_300x250_R1', [300, 250], 'div-gpt-ad-1631793056673-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/Desktop_Test_Middle_300x250', [300, 250], 'div-gpt-ad-1631793377702-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/Desktop_Article-Page_300x250_R2', [300, 250], 'div-gpt-ad-1631793696046-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/Desktop_Article-Page_300x250_R3', [300, 250], 'div-gpt-ad-1631794319734-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/Desktop_Article-Page_300x250_R4', [300, 250], 'div-gpt-ad-1631794442885-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/Desktop_Article-Page_728x90_LB3', [728, 90], 'div-gpt-ad-1631794531500-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/Desktop_Article-Page_300x250_R6(1st)', [728, 90], 'div-gpt-ad-1631795075202-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/ICC_Page_Desktop_728x90', [970, 90], 'div-gpt-ad-1641387397284-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/Desktop_Article-Page_300x250_R5', [300, 250], 'div-gpt-ad-1632647720394-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/Desktop_Article-Page_728x90_LB4', [728, 90], 'div-gpt-ad-1635766164619-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/National_Desktop_Special_2_300X250', [300, 250], 'div-gpt-ad-1640867664058-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/Desktop_Article-Page_728x90_LB5', [728, 90], 'div-gpt-ad-1632647997807-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/National_Desktop_Special_1_300X250', [300, 250], 'div-gpt-ad-1643634498587-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/City_Desktop_Special_1_300X250', [300, 250], 'div-gpt-ad-1643634977013-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/International_Desktop_Special_1_300X250', [300, 250], 'div-gpt-ad-1643647912126-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/Desktop_Details_Sticky_970X90', [970, 90], 'div-gpt-ad-1644661209784-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/Desktop_Article_Welcome', [660, 440], 'div-gpt-ad-1648564629064-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/Desktop_Article-Page_300x250_R5', [300, 250], 'div-gpt-ad-1649088771783-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/Desktop_Article-Page_728x90_LB6', [728, 90], 'div-gpt-ad-1651054090431-0').addService(googletag.pubads());
-            googletag.defineSlot('/21674221269/Fifa_desktop_article_970x90_top', [970, 90], 'div-gpt-ad-1669725102193-0').addService(googletag.pubads());
-            googletag.pubads().enableSingleRequest();
-            // googletag.pubads().collapseEmptyDivs(true);
-            googletag.pubads().setCentering(true);
-            googletag.enableServices();
-        });
-    </script>
     <link rel="amphtml" href="https://www.bd-pratidin.com/amp/entertainment/2023/03/20/868881">
     <meta property="article:published_time" content="2023-03-20T13:18:35+06:00.000Z" />
     <meta property="article:modified_time" content="2023-03-20T13:18:35+06:00.000Z" />

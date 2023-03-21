@@ -37,7 +37,7 @@ header {
 
 header .logo {
     display: block;
-    padding-top: 20px
+    padding-top: 20px;
 }
 
 header .logo img {
@@ -900,6 +900,18 @@ header .header-ad {
     color: #3e4750;
     padding-left: 25px;
     padding-top: 25px
+}
+
+.section-1 .lead-item .description p {
+    margin: 3px 5px 3px 15px;
+    text-align: justify;
+    font-size: 18px;
+    color: #3e4750;
+    padding: 10px;
+    font-weight: 400;
+}
+.section-1 .lead-item .description p span {
+    color: #ff3131bd;
 }
 
 .section-1 .list-item {
@@ -2108,7 +2120,8 @@ body.t20-world-cup-2021 .category .cat-lead p {
 }
 
 .section_16 {
-    background-image: linear-gradient(to right, #b8b8b8, #c4c4c4, #d1d1d1, #dddddd, #eaeaea)
+    /* background-image: linear-gradient(to right, #b8b8b8, #c4c4c4, #d1d1d1, #dddddd, #eaeaea) */
+    background: gray;
 }
 
 .section_16 .bg {
@@ -2737,8 +2750,8 @@ body.t20-world-cup-2021 .category .cat-lead p {
 
 #back-to-top {
     position: fixed;
-    bottom: 12%;
-    right: 40px;
+    bottom: 5%;
+    right: 30px;
     z-index: 9999;
     width: 32px;
     height: 32px;
@@ -3764,7 +3777,7 @@ footer .footer-bottom .copyright {
 
     .ads iframe {
         -webkit-transform: scale(.64) !important;
-        -moz-transform-scale(0.64)
+        -moz-transform-scale(0.64);
     }
 
     .lead-slider .carousel-caption h5 {
@@ -3786,7 +3799,7 @@ footer .footer-bottom .copyright {
     }
 
     .latest-news-top .tab-content ul {
-        height: 679px
+        height: 679px;
     }
 
     .lead-2nd ul li a {
@@ -3824,6 +3837,7 @@ footer .footer-bottom .copyright {
         font-size: 16px;
         line-height: 25px
     }
+    
 
     .section-1 .list-item p {
         font-size: 16px
