@@ -2472,115 +2472,14 @@
     </style>
     <div data-position="desktop-home-draggable" class="m-0 p-0">
     </div>
-    <script>
-        document.getElementById("drag-close").addEventListener("click", clickcloseDrag);
 
-        function clickcloseDrag() {
-            var x = document.getElementById("drag-body");
-            var b = document.getElementById("drag-close");
-            x.style.display = "none";
-            b.style.display = "none";
-        }
-
-        //Make the DIV element draggagle:
-        dragElement(document.getElementById("drag-body"));
-
-        function dragElement(elmnt) {
-            var pos1 = 0,
-                pos2 = 0,
-                pos3 = 0,
-                pos4 = 0,
-                is_drag = 'no';
-            if (document.getElementById(elmnt.id + "body")) {
-                /* if present, the header is where you move the DIV from:*/
-                document.getElementById(elmnt.id + "body").onmousedown = dragMouseDown;
-            } else {
-                /* otherwise, move the DIV from anywhere inside the DIV:*/
-                elmnt.onmousedown = dragMouseDown;
-            }
-
-            function dragMouseDown(e) {
-                e = e || window.event;
-                e.preventDefault();
-                // get the mouse cursor position at startup:
-                pos3 = e.clientX;
-                pos4 = e.clientY;
-                document.onmouseup = closeDragElement;
-                // call a function whenever the cursor moves:
-                document.onmousemove = elementDrag;
-            }
-
-            function elementDrag(e) {
-                e = e || window.event;
-                e.preventDefault();
-                // calculate the new cursor position:
-                pos1 = pos3 - e.clientX;
-                pos2 = pos4 - e.clientY;
-                pos3 = e.clientX;
-                pos4 = e.clientY;
-                // set the element's new position:
-                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-                is_drag = 'yes';
-
-                var elemSt = document.querySelector('#drag-close');
-                elemSt.style.top = parseInt(elmnt.style.top) - 16 + "px";
-                elemSt.style.left = parseInt(elmnt.style.left) - 18 + "px";
-            }
-
-            function closeDragElement() {
-                /* stop moving when mouse button is released:*/
-                document.onmouseup = null;
-                document.onmousemove = null;
-                if (is_drag == 'no') {
-                    window.open('#', '_blank');
-                }
-                is_drag = 'no';
-            }
-        }
-    </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="bottom-sticky-ad bg-light">
-        <div class="container"> <a href="#" class="sticky-ad-down"><i class="bi bi-chevron-down"></i></a>
-            <div class="ads d-flex justify-content-center">
-                <div class="ad_cl-7" data-id="7">
-                    <div id='div-gpt-ad-1641372357518-0' style='min-width: 970px; min-height: 90px;'>
-                        <script>
-                            googletag.cmd.push(function() {
-                                googletag.display('div-gpt-ad-1641372357518-0');
-                            });
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="clearfix"></div>
     <footer class="mt-5">
         <div class="container">
             <div class="footer-top">
                 <img src="{{asset('frontend')}}/assets/img/logo.png">
                 <div class="footer-editor">
-                    <h2><span>সম্পাদক :</span> নঈম নিজাম</h2>
+                    <h2><span>সম্পাদক :</span> নিরভয় নিউজ</h2>
 
                 </div>
             </div>
@@ -2599,9 +2498,6 @@
                             <li><a href="./first-page">প্রথম পাতা</a></li>
                             <li><a href="./sport-news">মাঠে ময়দানে</a></li>
                             <li><a href="./last-page">পেছনের পৃষ্ঠা</a></li>
-                            <li><a class="text-danger" target="_blank" href="http://www.ebdpratidin.com">ই-পেপার</a></li>
-                            <li><a class="text-danger" target="_blank" href="http://127.0.0.1:8000/northamerica/">ইউএসএ এডিশন</a></li>
-                            <li><a class="text-danger" target="_blank" href="http://127.0.0.1:8000/uk/">ইউকে এডিশন</a></li>
                         </ul>
                     </div>
                     <div class="col-12 col-md-4 col-lg-5"></div>

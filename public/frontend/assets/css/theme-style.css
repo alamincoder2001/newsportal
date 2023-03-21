@@ -689,7 +689,7 @@ header .header-ad {
 }
 
 .latest-news-top .tab-content ul {
-    height: 850px
+    height: 1085px
 }
 
 .news-tab-area .tab-content ul::-webkit-scrollbar {
@@ -3375,15 +3375,17 @@ pre code span.highlight {
 }
 
 footer {
-    background: url(../img/footer-bg.jpg) center top no-repeat;
+    /* background: url(../img/footer-bg.jpg) center top no-repeat;
     width: 100%;
     padding: 20px 0;
     display: inline-block;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
-    margin-bottom: 90px
+    background-size: cover; */
+    background: #dbdbdb;
+    padding: 35px 0;
+    /* margin-bottom: 20px; */
 }
 
 footer .footer-top img {
@@ -4144,7 +4146,7 @@ footer .footer-bottom .copyright {
     }
 
     .latest-news-top .tab-content ul {
-        height: 950px
+        height: 1085px
     }
 
     .section-1 .lead-item .text {
