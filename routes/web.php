@@ -21,8 +21,8 @@ Route::group(["prefix" => "admin"], function () {
     // admin dashboard
     Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 
-        //profile Route
-        Route::get('/profile', [AdminController::class, 'profileIndex'])->name('admin.profile');
-        Route::post('/profile', [AdminController::class, 'profileUpdate'])->name('admin.profile.update');
-        Route::post('/profileImage', [AdminController::class, 'imageUpdate'])->name('admin.profile.imageUpdate');
+    //profile Route
+    Route::get('/profile', [AdminController::class, 'profileIndex'])->name('admin.profile');
+    Route::post('/profile', [AdminController::class, 'profileUpdate'])->name('admin.profile.update');
+    Route::post('/profileImage', [AdminController::class, 'imageUpdate'])->name('admin.profile.imageUpdate');
 });
