@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminAccessController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
@@ -25,4 +26,9 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/profile', [AdminController::class, 'profileIndex'])->name('admin.profile');
     Route::post('/profile', [AdminController::class, 'profileUpdate'])->name('admin.profile.update');
     Route::post('/profileImage', [AdminController::class, 'imageUpdate'])->name('admin.profile.imageUpdate');
+
+    //user Route
+    Route::get('/user', [AdminAccessController::class, 'index'])->name('admin.user.index');
+    Route::get('/user-fetch/{id?}', [AdminAccessController::class, 'fetch'])->name('admin.user.fetch');
+    Route::post('/user', [AdminAccessController::class, 'store'])->name('admin.user.store');
 });
