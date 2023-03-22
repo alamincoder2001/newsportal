@@ -2021,18 +2021,14 @@
             <div class="col-md-3 col-lg-3 col-xl-2">
                 <div class="col-md-12 mb-3">
                     <a class="list-item" href="economy/2023/03/18/868512">
-                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/213126_bangladesh_pratidin_gold_bejus.jpg?v=1679286286" alt="দেশের বাজারে বাড়ল স্বর্ণের দাম
-
-">
+                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/213126_bangladesh_pratidin_gold_bejus.jpg?v=1679286286" alt="দেশের বাজারে বাড়ল স্বর্ণের দাম">
                         <p>দেশের বাজারে বাড়ল স্বর্ণের দাম
                         </p>
                     </a>
                 </div>
                 <div class="col-md-12 mb-3">
                     <a class="list-item" href="economy/2023/03/18/868425">
-                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/161709_bangladesh_pratidin_Gold_bar_logo.jpg?v=1679286286" alt="স্বর্ণের দামের নতুন রেকর্ড ভারতে 
-
-">
+                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/161709_bangladesh_pratidin_Gold_bar_logo.jpg?v=1679286286" alt="স্বর্ণের দামের নতুন রেকর্ড ভারতে">
                         <p>স্বর্ণের দামের নতুন রেকর্ড ভারতে
                         </p>
                     </a>
@@ -2086,188 +2082,7 @@
             </div>
         </div>
     </div>
-    <div class="container mt-3">
-        <div class="col-md-12">
-            <div data-position="desktop-home-after-corona" class="m-0 p-0">
-                <div class="ads bg-light mb-2 d-flex justify-content-center">
-                    <div class="ad_cl-479" data-id="479">
-                        <div id='div-gpt-ad-1651125671108-0' style='min-width: 728px; min-height: 90px;'>
-                            <script>
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1651125671108-0');
-                                });
-                            </script>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="mt-3">
-        <div class="container">
-            <div class="row section-3">
-                <div class="col-md-3 home-category-area">
-                    <h2><a href="agriculture-nature"><span>কৃষি ও প্রকৃতি</span> <i class="bi bi-chevron-right"></i></a></h2>
-                    <div class="section-5">
-                        <ul>
-                            <li><a href="agriculture-nature/2023/03/19/868759" class="row">
-                                    <p class="col-md-5">
-                                        <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/223714_bangladesh_pratidin_rangpur-alu-photo-19-3-23.jpg?v=1679286286" alt="এবার একলাখ মেট্রিক টন আলু রপ্তানির লক্ষ্যমাত্রা" alt="এবার একলাখ মেট্রিক টন আলু রপ্তানির লক্ষ্যমাত্রা" width="304" height="236">
-                                    </p>
-                                    <p class="col-md-7 p-0">
-                                        <strong>এবার একলাখ মেট্রিক টন আলু রপ্তানির লক্ষ্যমাত্রা</strong>
-                                    </p>
-                                </a></li>
-                            <li><a href="agriculture-nature/2023/03/17/868209" class="row">
-                                    <p class="col-md-5">
-                                        <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/17/mob/213352_bangladesh_pratidin_sakhipur-pi-poshikhon-.jpg?v=1679286286" alt="সখীপুরে দিনব্যাপী কৃষকদের প্রশিক্ষণ " alt="সখীপুরে দিনব্যাপী কৃষকদের প্রশিক্ষণ " width="304" height="236">
-                                    </p>
-                                    <p class="col-md-7 p-0">
-                                        <strong>সখীপুরে দিনব্যাপী কৃষকদের প্রশিক্ষণ </strong>
-                                    </p>
-                                </a></li>
-                            <li><a href="agriculture-nature/2023/03/17/868142" class="row">
-                                    <p class="col-md-5">
-                                        <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/17/mob/163706_bangladesh_pratidin_DINAJPUR---Dristinondon-Noi-Sikkar-poribes-School-CHAD-BAGAN-pic-5.jpg?v=1679286286" alt="বিদ্যালয়ে দৃষ্টিনন্দন ছাদ বাগান " alt="বিদ্যালয়ে দৃষ্টিনন্দন ছাদ বাগান " width="304" height="236">
-                                    </p>
-                                    <p class="col-md-7 p-0">
-                                        <strong>বিদ্যালয়ে দৃষ্টিনন্দন ছাদ বাগান </strong>
-                                    </p>
-                                </a></li>
-                            <li><a href="agriculture-nature/2023/03/15/867675" class="row">
-                                    <p class="col-md-5">
-                                        <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/15/mob/211325_bangladesh_pratidin_krisi.jpg?v=1679286286" alt="এক ডিজিটাল প্ল্যাটফর্মে মিলবে কৃষির ৪৫ সেবা" alt="এক ডিজিটাল প্ল্যাটফর্মে মিলবে কৃষির ৪৫ সেবা" width="304" height="236">
-                                    </p>
-                                    <p class="col-md-7 p-0">
-                                        <strong>এক ডিজিটাল প্ল্যাটফর্মে মিলবে কৃষির ৪৫ সেবা</strong>
-                                    </p>
-                                </a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 home-category-area">
-                    <h2><a href="probash-potro"><span>পরবাস</span> <i class="bi bi-chevron-right"></i></a></h2>
-                    <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <a class="list-item" href="probash-potro/2023/03/19/868697">
-                                <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/165319_bangladesh_pratidin_b.jpg?v=1679286286" alt="মালয়েশিয়া যুবলীগের উদ্যোগে 
-বঙ্গবন্ধুর জন্মবার্ষিকী পালন ">
-                                <p>মালয়েশিয়া যুবলীগের উদ্যোগে
-                                    বঙ্গবন্ধুর জন্মবার্ষিকী পালন </p>
-                            </a>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <a class="list-item" href="probash-potro/2023/03/19/868657">
-                                <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/104003_bangladesh_pratidin_BD_Pratidin.jpg?v=1679286286" alt="বঙ্গবন্ধুর জন্মবার্ষিকীতে জাতিসংঘে শিশু-কিশোর আনন্দমেলা">
-                                <p>বঙ্গবন্ধুর জন্মবার্ষিকীতে জাতিসংঘে শিশু-কিশোর আনন্দমেলা</p>
-                            </a>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <a class="list-item" href="probash-potro/2023/03/19/868628">
-                                <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/062457_bangladesh_pratidin_Pa.jpg?v=1679286286" alt="প্যারিসে বঙ্গবন্ধুর ১০৩তম জন্ম বার্ষিকী ও জাতীয় শিশু দিবস উদযাপন ">
-                                <p>প্যারিসে বঙ্গবন্ধুর ১০৩তম জন্ম বার্ষিকী ও জাতীয় শিশু দিবস উদযাপন </p>
-                            </a>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <a class="list-item" href="probash-potro/2023/03/18/868501">
-                                <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/210300_bangladesh_pratidin_BBB-2.jpg?v=1679286286" alt="নিউইয়র্ক কন্স্যুলেটে বঙ্গবন্ধুর জন্মবার্ষিকী উদযাপন">
-                                <p>নিউইয়র্ক কন্স্যুলেটে বঙ্গবন্ধুর জন্মবার্ষিকী উদযাপন</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5 home-category-area">
-                    <h2><a href="kolkata"><span>ওপার বাংলা</span> <i class="bi bi-chevron-right"></i></a></h2>
-                    <div class="section-4">
-                        <ul>
-                            <li><a href="kolkata/2023/03/19/868750" class="row">
-                                    <p class="col-md-4 col-lg-4 col-xl-3">
-                                        <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/220230_bangladesh_pratidin_amorto.jpg?v=1679286286" alt="Cinque Terre" width="304" height="236">
-                                    </p>
-                                    <p class="col-md-8 col-lg-8 col-xl-9">
-                                        <strong>এবার অমর্ত্য সেনের বিরুদ্ধে উচ্ছেদ আইনে মামলার হুঁশিয়ারি বিশ্বভারতীর </strong>
-                                        <span>নোবেলজয়ী ভারতীয় অর্থনীতিবিদ অধ্যাপক&#8230;</span>
-                                    </p>
-                                </a></li>
-                            <li><a href="kolkata/2023/03/19/868727" class="row">
-                                    <p class="col-md-4 col-lg-4 col-xl-3">
-                                        <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/191012_bangladesh_pratidin_Untitled-2.jpg?v=1679286286" alt="Cinque Terre" width="304" height="236">
-                                    </p>
-                                    <p class="col-md-8 col-lg-8 col-xl-9">
-                                        <strong>পেট্রাপোল স্থলবন্দর সীমান্তে ট্রাক থেকে ৪০ স্বর্ণের বার উদ্ধার</strong>
-                                        <span>ভারত-বাংলাদেশ আন্তর্জাতিক সীমান্তের&#8230;</span>
-                                    </p>
-                                </a></li>
-                            <li><a href="kolkata/2023/03/19/868694" class="row">
-                                    <p class="col-md-4 col-lg-4 col-xl-3">
-                                        <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/162803_bangladesh_pratidin_bbbbb.jpg?v=1679286286" alt="Cinque Terre" width="304" height="236">
-                                    </p>
-                                    <p class="col-md-8 col-lg-8 col-xl-9">
-                                        <strong>পশ্চিমবঙ্গের বালুরঘাট থেকে উদ্ধার ২১টি বাংলাদেশি পাসপোর্ট</strong>
-                                        <span>ভারতের পশ্চিমবঙ্গের দক্ষিণ দিনাজপুর&#8230;</span>
-                                    </p>
-                                </a></li>
-                            <li><a href="kolkata/2023/03/19/868677" class="row">
-                                    <p class="col-md-4 col-lg-4 col-xl-3">
-                                        <img class="lazy rounded-circle" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/115524_bangladesh_pratidin_Kalkata.jpg?v=1679286286" alt="Cinque Terre" width="304" height="236">
-                                    </p>
-                                    <p class="col-md-8 col-lg-8 col-xl-9">
-                                        <strong>কলকাতার স্টুডিও পাড়ায় অগ্নিকাণ্ড, পুড়ে ছাই একাংশ</strong>
-                                        <span>কলকাতার টালিগঞ্জের এনটিওয়ান স্টুডিওতে&#8230;</span>
-                                    </p>
-                                </a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container mt-3">
-        <div class="row section-13">
-            <div class="col-md-4 home-category-area">
-                <h2><a href="mixter"><span>পাঁচফোড়ন</span> <i class="bi bi-chevron-right"></i></a></h2>
-                <a class="list-item" href="mixter/2023/03/14/867314">
-                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/14/thumbnails/142541_bangladesh_pratidin_BD-pratidin--3.jpg?v=1679286286" alt="ব্যানার টানিয়ে চোরকে যে অনুরোধ করলেন সাবেক মেয়র">
-                    <p>ব্যানার টানিয়ে চোরকে যে অনুরোধ করলেন সাবেক মেয়র</p>
-                </a>
-                <ul class="mt-1">
-                    <li class="bi bi-caret-right-fill"><a href="mixter/2023/03/13/866980">বিয়ের দাবিতে যুবকদের ১০০ কিলোমিটার পদযাত্রা!</a></li>
-                    <li class="bi bi-caret-right-fill"><a href="mixter/2023/03/12/866700">পুরুষের মমিকে নিজের বান্ধবী বলে দাবি তরুণের!</a></li>
-                    <li class="bi bi-caret-right-fill"><a href="mixter/2023/03/12/866695">নিজেকে নিজেই ‘বিয়ে’ করেছিলেন তরুণী, ২৪ ঘণ্টা না পেরোতেই ‘বিচ্ছেদ’
-                        </a></li>
-                    <li class="bi bi-caret-right-fill"><a href="mixter/2023/03/09/865836">পার্লামেন্ট ভাষণে প্রেমিকাকে বিয়ের প্রস্তাব দিলেন এমপি</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4 home-category-area">
-                <h2><a href="features"><span>ফিচার</span> <i class="bi bi-chevron-right"></i></a></h2>
-                <a class="list-item" href="features/2023/03/18/868513">
-                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/thumbnails/213539_bangladesh_pratidin_BOGRA-PIC-PARTS--(1)-18-03-2023.jpg?v=1679286286" alt="কোটি টাকার পুরাতন অচল শ্যালো মেশিনের বাজার বগুড়ায়">
-                    <p>কোটি টাকার পুরাতন অচল শ্যালো মেশিনের বাজার বগুড়ায়</p>
-                </a>
-                <ul class="mt-1">
-                    <li class="bi bi-caret-right-fill"><a href="features/2023/03/18/868488">চট্টগ্রামের সবজির চাহিদা বাড়ছে বিদেশে</a></li>
-                    <li class="bi bi-caret-right-fill"><a href="features/2023/03/18/868464">লাখ টাকার চাকরি ছেড়ে সিঙাড়ার ব্যবসা দম্পতির
-                        </a></li>
-                    <li class="bi bi-caret-right-fill"><a href="features/2023/03/06/864841">মাদক সম্রাট পাবলো এস্কোবারের ৭০ জলহস্তী যাচ্ছে ভারত-মেক্সিকোতে</a></li>
-                    <li class="bi bi-caret-right-fill"><a href="features/2023/03/03/863962">কুয়াকাটার শুটকির সুখ্যাতি দেশজুড়ে</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4 home-category-area">
-                <h2><a href="tech-world"><span>টেক ওয়ার্ল্ড</span> <i class="bi bi-chevron-right"></i></a></h2>
-                <a class="list-item" href="tech-world/2023/03/17/868167">
-                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/17/thumbnails/182643_bangladesh_pratidin_Chin.jpg?v=1679286286" alt="চ্যাটজিপিটির প্রতিদ্বন্দ্বী জনসমক্ষে আনল চীনা প্রযুক্তি জায়ান্ট বাইদু">
-                    <p>চ্যাটজিপিটির প্রতিদ্বন্দ্বী জনসমক্ষে আনল চীনা প্রযুক্তি জায়ান্ট বাইদু</p>
-                </a>
-                <ul class="mt-1">
-                    <li class="bi bi-caret-right-fill"><a href="tech-world/2023/03/15/867525">এবার ১০ হাজার কর্মী ছাঁটাইয়ের ঘোষণা মেটা’র</a></li>
-                    <li class="bi bi-caret-right-fill"><a href="tech-world/2023/03/13/866924">বাংলাদেশে সফটওয়্যার উৎপাদন করছে ইউনিসফট</a></li>
-                    <li class="bi bi-caret-right-fill"><a href="tech-world/2023/03/12/866667">বিং সার্চ ইঞ্জিনের দৈনিক ব্যবহারকারী ১০ কোটি ছাড়িয়েছে
-                        </a></li>
-                    <li class="bi bi-caret-right-fill"><a href="tech-world/2023/03/12/866625">টিকটকের মতো গুগল ব্যবহারকারীর গোপনীয়তা নিয়েও প্রশ্ন!</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    
     <div class="section-11 section-14 mt-4">
         <div class="container mt-3">
             <div class="row home-category-area section-14">
@@ -2317,9 +2132,7 @@
                                 </a></li>
                             <li class="mb-2"><a href="chittagong-pratidin/2023/03/19/868630" class="row">
                                     <span class="col-md-4 pe-0">
-                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/063744_bangladesh_pratidin_GPH.jpg?v=1679286286" alt="মার্কিন প্রতিনিধি দলের  জিপিএইচ কারখানা পরিদর্শন
-
-">
+                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/063744_bangladesh_pratidin_GPH.jpg?v=1679286286" alt="মার্কিন প্রতিনিধি দলের  জিপিএইচ কারখানা পরিদর্শন">
                                     </span>
                                     <span class="col-md-8">
                                         <p>মার্কিন প্রতিনিধি দলের জিপিএইচ কারখানা পরিদর্শন
@@ -2328,8 +2141,7 @@
                                 </a></li>
                             <li class="mb-2"><a href="chittagong-pratidin/2023/03/19/868614" class="row">
                                     <span class="col-md-4 pe-0">
-                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/005206_bangladesh_pratidin_DD.jpg?v=1679286286" alt="বাদশা মিয়া-সুকানী ফাউন্ডেশন
-মেধা বৃত্তি প্রদান">
+                                        <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/005206_bangladesh_pratidin_DD.jpg?v=1679286286" alt="বাদশা মিয়া-সুকানী ফাউন্ডেশন মেধা বৃত্তি প্রদান">
                                     </span>
                                     <span class="col-md-8">
                                         <p>বাদশা মিয়া-সুকানী ফাউন্ডেশন
