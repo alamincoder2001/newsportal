@@ -2389,10 +2389,10 @@
                             <a target="_blank" href="https://apps.apple.com/us/app/bangladesh-pratidin/id1056949757" class="ios"><img src="{{asset('frontend')}}/assets/img/ios-app.png"></a>
                             <ul class="mt-3">
 
-                                <li><a target="_blank" href="https://www.instagram.com/bangladeshpratidin/?igshid=17sw13yaetjrq"><i class="bi bi-instagram"></i></a></li>
-                                <li><a target="_blank" href="https://twitter.com/bd_pratidin"><i class="bi bi-twitter"></i></a></li>
-                                <li><a target="_blank" href="https://www.youtube.com/channel/UC0g7R-oqBXYZDIE8yPgT6rA/videos"><i class="bi bi-youtube"></i></a></li>
-                                <li><a target="_blank" href="https://www.facebook.com/dailybangladeshpratidin/"><i class="bi bi-facebook"></i></a></li>
+                                <li><a target="_blank" href="#"><i class="bi bi-instagram"></i></a></li>
+                                <li><a target="_blank" href="#"><i class="bi bi-twitter"></i></a></li>
+                                <li><a target="_blank" href="#"><i class="bi bi-youtube"></i></a></li>
+                                <li><a target="_blank" href="#"><i class="bi bi-facebook"></i></a></li>
                                 <li>আমাদের সঙ্গে থাকুন</li>
                             </ul>
                         </div>
