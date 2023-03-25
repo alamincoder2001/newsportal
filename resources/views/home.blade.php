@@ -144,9 +144,13 @@
 
                 <div class="col-md-7 d-flex align-items-end justify-content-center" style="flex-direction: column;">
                     <span class="text-center mobileview">
+<<<<<<< HEAD
+                        <p id="dateBangla" class="m-0" style="font-size: 20px;font-weight: bold;color:hsl(0, 0%, 14%);"></p>
+=======
                         <p id="dateEnglish" class="m-0" style="font-size: 20px;font-weight: bold;color:brown;"></p>
                         <p id="dateArabic" class="m-0" style="font-size: 20px;font-weight: bold;color:brown;"></p>
                         <p id="dateBangla" class="m-0" style="font-size: 20px;font-weight: bold;color:brown;"></p>
+>>>>>>> 8498a87a919dd364d9c5ced45852d8932e58b334
                         <p id="time" class="m-0" style="font-weight: bold;color:darkcyan;"></p>
                     </span>
                 </div>
