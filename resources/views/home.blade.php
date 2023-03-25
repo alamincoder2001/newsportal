@@ -144,7 +144,7 @@
 
                 <div class="col-md-7 d-flex align-items-end justify-content-center" style="flex-direction: column;">
                     <span class="text-center mobileview">
-                        <p id="dateBangla" class="m-0" style="font-size: 20px;font-weight: bold;color:brown;"></p>
+                        <p id="dateBangla" class="m-0" style="font-size: 20px;font-weight: bold;color:hsl(0, 0%, 14%);"></p>
                         <p id="time" class="m-0" style="font-weight: bold;color:darkcyan;"></p>
                     </span>
                 </div>
