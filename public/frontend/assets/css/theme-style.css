@@ -30,7 +30,7 @@ body {
 }
 
 header {
-    /* background: url(../img/header-bg.png) center top no-repeat; */
+    background: url(../img/header-bg.png) center top no-repeat;
     background-size: 100% 100%;
     padding: 0 10px;
     height: 125px;
