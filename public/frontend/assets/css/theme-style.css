@@ -3446,7 +3446,6 @@ footer .footer-top .footer-editor {
 footer .footer-top .footer-editor h2 {
     display: block;
     font-size: 24px;
-    margin-bottom: 5px
 }
 
 footer .footer-top .footer-editor h2 span {
@@ -3499,7 +3498,9 @@ footer .footer-mid .app-info {
     width: 300px;
     float: right;
     color: #000;
-    text-align: right
+    text-align: right;
+    margin-top: 0;
+    margin-bottom: 15px;
 }
 
 footer .footer-mid .app-info h3 {
