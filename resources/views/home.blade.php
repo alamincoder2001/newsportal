@@ -178,7 +178,7 @@
     <nav id="navbar_top" class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" id="top-navbar-logo" href="http://127.0.0.1:8000/"><img src="{{asset('frontend')}}/assets/img/logo.png" alt="bd-pratidin"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="bi bi-list"></span>
             </button>
             <div class="collapse navbar-collapse" id="main_nav">
