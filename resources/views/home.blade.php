@@ -149,8 +149,8 @@
                     </span>
                 </div>
 
-                <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4 ps-0">
-                    <div class="ads header-ad">
+                {{-- <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4 ps-0">
+                    {{-- <div class="ads header-ad">
                         <div data-position="desktop-home-header-right" class="m-0 p-0">
                             <div class="ads mb-2 d-flex justify-content-center">
                                 <div class="ad_cl-661" data-id="661">
@@ -167,8 +167,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div> --}}
+                {{-- </div>  --}}
             </div>
         </div>
     </header>
@@ -2355,7 +2355,7 @@
     <footer class="mt-5">
         <div class="container">
             <div class="footer-top">
-                <img src="{{asset('frontend')}}/assets/img/logo.png">
+                <img class="logo" src="{{asset('frontend')}}/assets/img/logo.png">
                 <div class="footer-editor">
                     <h2><span>সম্পাদক :</span> নিরভয় নিউজ</h2>
 

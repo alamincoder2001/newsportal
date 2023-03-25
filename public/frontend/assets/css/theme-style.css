@@ -40,10 +40,12 @@ header {
 header .logo {
     display: block;
     padding-top: 17px;
+    text-align: right;
 }
 
 header .logo img {
-    width: 100%
+    width: 140px;
+    height: auto;
 }
 
 header .navbar-title {
@@ -58,11 +60,13 @@ header .navbar-title-text {
     font-family: 'solaimanlipi';
     font-weight: bold;
     letter-spacing: 2px;
+    text-align: right;
 }
 
 header .navbar-subTitle-text{
     font-weight: bold;
     letter-spacing: 1px;
+    text-align: right;
 }
 
 header .line {
