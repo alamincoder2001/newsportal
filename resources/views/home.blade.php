@@ -151,8 +151,8 @@
                     </span>
                 </div>
 
-                {{-- <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4 ps-0">
-                    {{-- <div class="ads header-ad">
+                <!-- <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4 ps-0">
+                    <div class="ads header-ad">
                         <div data-position="desktop-home-header-right" class="m-0 p-0">
                             <div class="ads mb-2 d-flex justify-content-center">
                                 <div class="ad_cl-661" data-id="661">
@@ -169,8 +169,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div> --}}
-                {{-- </div>  --}}
+                    </div>
+                </div>  -->
             </div>
         </div>
     </header>
@@ -2460,10 +2460,14 @@
             engMonth = month[new Date().getMonth()];
             let englishDate = engDay+', ' + new Date().getDate()+" "+engMonth+" "+ new Date().getFullYear()
             // bangla date
-            var banglaDate = new buetDateConverter().convert("l , j F, Y (বঙ্গাব্দ)");
+            let banglaDate = new buetDateConverter().convert("l , j F, Y (বঙ্গাব্দ)");
+            // arabic data
+            let arabicDate = new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 'long',weekday: 'long',year : 'numeric'}).format(Date.now());
+
             document.getElementById("dateEnglish").innerText = englishDate
-            document.getElementById("dateBangla").innerText = banglaDate
-            document.getElementById("time").innerText = time
+            document.getElementById("dateArabic").innerText  = arabicDate
+            document.getElementById("dateBangla").innerText  = banglaDate
+            document.getElementById("time").innerText        = time
             setTimeout(() => {
                 dateTime()
             }, 1000)
