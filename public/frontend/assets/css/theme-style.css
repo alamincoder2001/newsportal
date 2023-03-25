@@ -57,6 +57,12 @@ header .navbar-title {
 header .navbar-title-text {
     font-family: 'solaimanlipi';
     font-weight: bold;
+    letter-spacing: 2px;
+}
+
+header .navbar-subTitle-text{
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 header .line {
@@ -111,7 +117,7 @@ header .header-ad {
 }
 
 #navbar_top .nav-item .nav-link {
-    position: relative
+    position: relative;
 }
 
 #navbar_top .nav-item .nav-link:after {

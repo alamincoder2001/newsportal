@@ -137,7 +137,7 @@
                         </div>
                         <div class="col-lg-7 navbar-title">
                             <h1 class="m-0 navbar-title-text">Nirvoy News</h1>
-                            <span>নির্ভয় সত্যের পথে সাহসী সৈনিক</span>
+                            <span class="navbar-subTitle-text">নির্ভয় সত্যের পথে সাহসী সৈনিক</span>
                         </div>
                     </div>
                 </div>
@@ -271,7 +271,7 @@
 
     <div class="clearfix"></div>
 
-
+{{--
     <div class="container my-4">
         <div class="col-md-12">
             <div data-position="desktop-home-after-nav" class="m-0 p-0">
@@ -288,8 +288,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container mainContainer">
+    </div> --}}
+    <div class="container mainContainer my-4">
         <div class="row">
             <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <div id="carouselHomeCaptions" class="carousel slide lead-slider" data-bs-ride="carousel">
@@ -1072,7 +1072,7 @@
     <div class="container mb-3">
         <div class="row section-1 section-15">
             <div class="col-md-8 home-category-area">
-                <h1><a href="./national"><span>জাতীয়</span> <i class="bi bi-chevron-right">আরও</i></a></h1>
+                <h1><a href="./national"><span>জাতীয়</span> <i class="bi bi-chevron-right" >আরও</i></a></h1>
                 <div class="clearfix"></div>
                 <div class="row">
                     <div class="col-md-12 mb-3">
