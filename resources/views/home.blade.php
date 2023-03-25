@@ -142,20 +142,18 @@
                     </div>
                 </div>
 
-                <div class="col-md-7 d-flex align-items-end justify-content-center" style="flex-direction: column;">
+                <div class="col-md-7 d-flex align-items-end justify-content-center" style="flex-direction: column; margin-top:15px;">
                     <span class="text-center mobileview">
 
-                        <p id="dateBangla" class="m-0" style="font-size: 20px;font-weight: bold;color:hsl(0, 0%, 14%);"></p>
-                        <p id="dateEnglish" class="m-0" style="font-size: 20px;font-weight: bold;color:brown;"></p>
-                        <p id="dateArabic" class="m-0" style="font-size: 20px;font-weight: bold;color:brown;"></p>
-                        <p id="dateBangla" class="m-0" style="font-size: 20px;font-weight: bold;color:brown;"></p>
-
+                        <p id="dateEnglish" class="m-0" style="font-size: 16px;font-weight: bold;color:brown;"></p>
+                        <p id="dateArabic" class="m-0" style="font-size: 16px;font-weight: bold;color:green;"></p>
+                        <p id="dateBangla" class="m-0" style="font-size: 17px;font-weight: bold;color:hsl(0, 0%, 14%);"></p>
                         <p id="time" class="m-0" style="font-weight: bold;color:darkcyan;"></p>
                     </span>
                 </div>
 
-                {{-- <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4 ps-0">
-                    {{-- <div class="ads header-ad">
+                <!-- <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4 ps-0">
+                    <div class="ads header-ad">
                         <div data-position="desktop-home-header-right" class="m-0 p-0">
                             <div class="ads mb-2 d-flex justify-content-center">
                                 <div class="ad_cl-661" data-id="661">
@@ -172,8 +170,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div> --}}
-                {{-- </div>  --}}
+                    </div>
+                </div>  -->
             </div>
         </div>
     </header>
@@ -2392,10 +2390,10 @@
                             <a target="_blank" href="https://apps.apple.com/us/app/bangladesh-pratidin/id1056949757" class="ios"><img src="{{asset('frontend')}}/assets/img/ios-app.png"></a>
                             <ul class="mt-3">
 
-                                <li><a target="_blank" href="https://www.instagram.com/bangladeshpratidin/?igshid=17sw13yaetjrq"><i class="bi bi-instagram"></i></a></li>
-                                <li><a target="_blank" href="https://twitter.com/bd_pratidin"><i class="bi bi-twitter"></i></a></li>
-                                <li><a target="_blank" href="https://www.youtube.com/channel/UC0g7R-oqBXYZDIE8yPgT6rA/videos"><i class="bi bi-youtube"></i></a></li>
-                                <li><a target="_blank" href="https://www.facebook.com/dailybangladeshpratidin/"><i class="bi bi-facebook"></i></a></li>
+                                <li><a target="_blank" href="#"><i class="bi bi-instagram"></i></a></li>
+                                <li><a target="_blank" href="#"><i class="bi bi-twitter"></i></a></li>
+                                <li><a target="_blank" href="#"><i class="bi bi-youtube"></i></a></li>
+                                <li><a target="_blank" href="#"><i class="bi bi-facebook"></i></a></li>
                                 <li>আমাদের সঙ্গে থাকুন</li>
                             </ul>
                         </div>
@@ -2463,10 +2461,14 @@
             engMonth = month[new Date().getMonth()];
             let englishDate = engDay+', ' + new Date().getDate()+" "+engMonth+" "+ new Date().getFullYear()
             // bangla date
-            var banglaDate = new buetDateConverter().convert("l , j F, Y (বঙ্গাব্দ)");
+            let banglaDate = new buetDateConverter().convert("l , j F, Y (বঙ্গাব্দ)");
+            // arabic data
+            let arabicDate = new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 'long',weekday: 'long',year : 'numeric'}).format(Date.now());
+
             document.getElementById("dateEnglish").innerText = englishDate
-            document.getElementById("dateBangla").innerText = banglaDate
-            document.getElementById("time").innerText = time
+            document.getElementById("dateArabic").innerText  = arabicDate
+            document.getElementById("dateBangla").innerText  = banglaDate
+            document.getElementById("time").innerText        = time
             setTimeout(() => {
                 dateTime()
             }, 1000)
