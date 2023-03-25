@@ -82,7 +82,9 @@
     //get Data
     var table = $('#datatable').DataTable({
         ajax: location.origin + "/admin/user-fetch",
-        order: [[ 0, "desc" ]],
+        order: [
+            [0, "desc"]
+        ],
         columns: [{
                 data: 'id',
             },
@@ -160,6 +162,23 @@
                 }
             }
         })
+    }
+
+    // delete department
+    function Delete(id) {
+        if (confirm("Are you sure want to delete this data!")) {
+            $.ajax({
+                url: location.origin + "/admin/user/delete",
+                method: "POST",
+                data: {
+                    id: id
+                },
+                success: (response) => {
+                    $.notify(response, "success");
+                    table.ajax.reload();
+                }
+            })
+        }
     }
 </script>
 @endpush
