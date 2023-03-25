@@ -40,7 +40,7 @@ header {
 header .logo {
     display: block;
     padding-top: 17px;
-    text-align: right;
+    text-align: left;
 }
 
 header .logo img {
