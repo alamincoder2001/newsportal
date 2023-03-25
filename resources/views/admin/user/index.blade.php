@@ -19,6 +19,7 @@
                                     <th>Sl</th>
                                     <th>Name</th>
                                     <th>UserName</th>
+                                    <th>Email</th>
                                     <th>Role</th>
                                     <th>Action</th>
                                 </tr>
@@ -95,11 +96,15 @@
                 data: 'email',
             },
             {
+                data: 'role',
+            },
+            {
                 data: null,
                 render: data => {
                     return `
-                            ${'<button type="button" onclick="Edit('+data.id+')" class="btn btn-primary shadow-none btn-sm">Edit</button>'}            
-                            ${'<button type="button" onclick="Delete('+data.id+')" class="btn btn-danger shadow-none btn-sm">Delete</button>'}
+                            ${'<a href="/admin/user/permission/'+data.id+'" class="btn btn-warning shadow-none btn-sm"><i class="mdi mdi-account-settings-variant"></i></a>'}
+                            ${'<button type="button" onclick="Edit('+data.id+')" class="btn btn-primary shadow-none btn-sm"><i class="mdi mdi-account-edit"></i></button>'}            
+                            ${'<button type="button" onclick="Delete('+data.id+')" class="btn btn-danger shadow-none btn-sm"><i class="mdi mdi-account-remove"></i></button>'}
                         `;
                 }
             }
