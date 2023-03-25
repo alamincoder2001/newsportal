@@ -30,7 +30,7 @@ body {
 }
 
 header {
-    background: url(../img/header-bg.png) center top no-repeat;
+    /* background: url(../img/header-bg.png) center top no-repeat; */
     background-size: 100% 100%;
     padding: 0 10px;
     height: 125px;
@@ -53,7 +53,7 @@ header .navbar-title {
     flex-direction: column;
     justify-content: center;
     margin-top: 22px;
-    margin-left: -25px;
+    margin-left: -50px;
 }
 
 header .navbar-title-text {
@@ -63,7 +63,7 @@ header .navbar-title-text {
     text-align: right;
 }
 
-header .navbar-subTitle-text{
+header .navbar-subTitle-text {
     font-weight: bold;
     letter-spacing: 1px;
     text-align: right;
@@ -258,14 +258,56 @@ header .header-ad {
     text-align: right
 }
 
+.mobileViewRow {
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.mobileview p {
+    font-size: 16px;
+}
+
 @media(max-width:767px) {
+    header{
+        height: 95px !important;
+    }
     #navbar_top .dropdown-menu.multi-column {
         min-width: 240px !important;
         overflow-x: hidden
     }
 
+    .mobileViewRow {
+        margin-top: 50px;
+    }
+
     .mobileview {
         margin-top: -30px !important;
+    }
+
+    .mobileview p {
+        font-size: 9px;
+    }
+
+    header .navbar-title {
+        margin: 0;
+        margin-left: 5px;
+    }
+
+    header .navbar-title .navbar-title-text{
+        font-size: 8px;
+        text-align: center;
+    }
+    header .navbar-title .navbar-subTitle-text{
+        font-size: 6px;
+        text-align: center;
+    }
+
+    header .logo{
+        text-align: center;
+    }
+    header .logo img{
+        width: 65px !important;
+        margin-left: 6px;
     }
 }
 
@@ -3430,12 +3472,12 @@ footer {
     -o-background-size: cover;
     background-size: cover; */
     background: #dbdbdb;
-    padding: 35px 0;
+    padding-top: 20px;
     /* margin-bottom: 20px; */
 }
 
 footer .footer-top img {
-    width: 200px;
+    width: 115px;
     float: left
 }
 
@@ -3468,8 +3510,6 @@ footer .footer-mid {
     background: #d9d9d9;
     display: inline-block;
     width: 100%;
-    padding: 15px 0;
-    margin: 15px 0
 }
 
 footer .footer-mid ul {
@@ -3564,12 +3604,13 @@ footer .footer-bottom {}
     padding: 0
 } */
 
-.footer-bottom{
+.footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
 }
+
 .footer-bottom ul {
     display: flex;
     margin: 0;
@@ -3616,7 +3657,7 @@ footer .footer-bottom {}
     border-radius: 50px
 }
 
-.footer-bottom p{
+.footer-bottom p {
     color: #a5a5a5;
 }
 
