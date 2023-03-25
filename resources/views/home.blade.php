@@ -130,24 +130,24 @@
     <header>
         <div class="container mb-3">
             <div class="row">
-                <div class="col-md-5 col-lg-5 col-xl-5 col-xxl-5 d-none d-lg-block">
+                <div class="col-4 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
                     <div class="row">
-                        <div class="col-lg-5">
+                        <div class="col-12 col-lg-5">
                             <a href="http://127.0.0.1:8000/" class="logo"><img src="{{asset('frontend')}}/assets/img/logo.png" alt=""></a>
                         </div>
-                        <div class="col-lg-7 navbar-title">
+                        <div class="col-12 col-lg-7 navbar-title">
                             <h1 class="m-0 navbar-title-text">Nirvoy News</h1>
                             <span class="navbar-subTitle-text">নির্ভয় সত্যের পথে সাহসী সৈনিক</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-7 d-flex align-items-end justify-content-center" style="flex-direction: column; margin-top:15px;">
-                    <span class="text-center mobileview">
+                <div class="col-8 col-md-7 d-flex align-items-end justify-content-center mobileViewRow">
+                    <span class="text-end mobileview">
 
-                        <p id="dateEnglish" class="m-0" style="font-size: 16px;font-weight: bold;color:brown;"></p>
-                        <p id="dateArabic" class="m-0" style="font-size: 16px;font-weight: bold;color:green;"></p>
-                        <p id="dateBangla" class="m-0" style="font-size: 17px;font-weight: bold;color:hsl(0, 0%, 14%);"></p>
+                        <p id="dateEnglish" class="m-0" style="font-weight: bold;color:brown;"></p>
+                        <p id="dateArabic" class="m-0" style="font-weight: bold;color:green;"></p>
+                        <p id="dateBangla" class="m-0" style="font-weight: bold;color:hsl(0, 0%, 14%);"></p>
                         <p id="time" class="m-0" style="font-weight: bold;color:darkcyan;"></p>
                     </span>
                 </div>
@@ -179,7 +179,7 @@
         <div class="container">
             <a class="navbar-brand" id="top-navbar-logo" href="http://127.0.0.1:8000/"><img src="{{asset('frontend')}}/assets/img/logo.png" alt="bd-pratidin"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="bi bi-menu-button-fill"></span>
+                <span class="bi bi-list"></span>
             </button>
             <div class="collapse navbar-collapse" id="main_nav">
                 <ul class="navbar-nav">
