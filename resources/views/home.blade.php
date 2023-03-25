@@ -144,7 +144,13 @@
 
                 <div class="col-md-7 d-flex align-items-end justify-content-center" style="flex-direction: column;">
                     <span class="text-center mobileview">
+<<<<<<< HEAD
                         <p id="dateBangla" class="m-0" style="font-size: 20px;font-weight: bold;color:hsl(0, 0%, 14%);"></p>
+=======
+                        <p id="dateEnglish" class="m-0" style="font-size: 20px;font-weight: bold;color:brown;"></p>
+                        <p id="dateArabic" class="m-0" style="font-size: 20px;font-weight: bold;color:brown;"></p>
+                        <p id="dateBangla" class="m-0" style="font-size: 20px;font-weight: bold;color:brown;"></p>
+>>>>>>> 8498a87a919dd364d9c5ced45852d8932e58b334
                         <p id="time" class="m-0" style="font-weight: bold;color:darkcyan;"></p>
                     </span>
                 </div>
@@ -2450,11 +2456,17 @@
         });
 
         function dateTime() {
-            var dateConverted = new buetDateConverter().convert("l , j F, Y (বঙ্গাব্দ)");
-
-            // d = new Date().toDateString();
+            let day = ["Monday","Tuesday","Wednessday","Thursday","Friday","Saturday","Sunday"];
+            let month = ["January","February","March","April","May","June","July", "August", "September", "October", "November", "December"];
             time = new Date().toLocaleTimeString();
-            document.getElementById("dateBangla").innerText = dateConverted
+            // english date
+            engDay = day[new Date().getDay()-1];
+            engMonth = month[new Date().getMonth()];
+            let englishDate = engDay+', ' + new Date().getDate()+" "+engMonth+" "+ new Date().getFullYear()
+            // bangla date
+            var banglaDate = new buetDateConverter().convert("l , j F, Y (বঙ্গাব্দ)");
+            document.getElementById("dateEnglish").innerText = englishDate
+            document.getElementById("dateBangla").innerText = banglaDate
             document.getElementById("time").innerText = time
             setTimeout(() => {
                 dateTime()
