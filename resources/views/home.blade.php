@@ -130,7 +130,7 @@
     <header>
         <div class="container mb-3">
             <div class="row">
-                <div class="col-md-5 col-lg-5 col-xl-5 col-xxl-5">
+                <div class="col-md-5 col-lg-5 col-xl-5 col-xxl-5 d-none d-lg-block">
                     <div class="row">
                         <div class="col-lg-5">
                             <a href="http://127.0.0.1:8000/" class="logo"><img src="{{asset('frontend')}}/assets/img/logo.png" alt=""></a>
@@ -345,6 +345,10 @@
                         <li class="bi bi-caret-right-fill"><a href="editorial/2023/03/20/868774">প্রযুক্তির বিকৃত ব্যবহার ধ্বংস করছে পারিবারিক বন্ধন</a></li>
                         <li class="bi bi-caret-right-fill"><a href="editorial/2023/03/20/868768">একাত্তরের নভেম্বরেই বিধ্বস্ত হয়ে পড়ে পাকিস্তানিরা</a></li>
                         <li class="bi bi-caret-right-fill"><a href="kolkata/2023/03/19/868750">এবার অমর্ত্য সেনের বিরুদ্ধে উচ্ছেদ আইনে মামলার হুঁশিয়ারি বিশ্বভারতীর </a></li>
+                        <li class="bi bi-caret-right-fill"><a href="first-page/2023/03/20/868819">তিস্তা নিয়ে ভারতের কাছে জানতে চেয়েছে ঢাকা</a></li>
+                        <li class="bi bi-caret-right-fill"><a href="first-page/2023/03/20/868817">আমজাদের এক হাজার ব্যাংক হিসাব জব্দ</a></li>
+                        <li class="bi bi-caret-right-fill"><a href="editorial/2023/03/20/868774">প্রযুক্তির বিকৃত ব্যবহার ধ্বংস করছে পারিবারিক বন্ধন</a></li>
+                        <li class="bi bi-caret-right-fill"><a href="editorial/2023/03/20/868768">একাত্তরের নভেম্বরেই বিধ্বস্ত হয়ে পড়ে পাকিস্তানিরা</a></li>
                     </ul>
                 </div>
             </div>
@@ -931,7 +935,20 @@
                     <li class="mb-3"><a href="city/2023/03/20/868763">
                             <img class="lazy" src="{{asset('frontend')}}/assets/news_images/thumbnails/20-03-2023-p3-1.png" alt="মশার যন্ত্রণায় অতিষ্ঠ সিলেটবাসী">
                             <p>মশার যন্ত্রণায় অতিষ্ঠ সিলেটবাসী</p>
-                        </a></li>
+                        </a>
+                    </li>
+                </ul>
+                <!-- video -->
+                <hr>
+                <ul class="m-0">
+                    <li class="mb-3">
+                        <iframe allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="border-radius: 5px;" width="260" height="175" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                        </iframe>
+                    </li>
+                    <li class="mb-3">
+                        <iframe allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="border-radius: 5px;" width="260" height="175" src="https://www.youtube.com/embed/zAlX1V3lK5s">
+                        </iframe>
+                    </li>
                 </ul>
             </div>
         </div>

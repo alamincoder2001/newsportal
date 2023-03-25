@@ -96,7 +96,8 @@ header .header-ad {
 }
 
 #navbar_top .navbar-brand img {
-    width: 120px
+    /* width: 120px; */
+    width: 40px;
 }
 
 #navbar_top .navbar-brand {
@@ -332,7 +333,7 @@ header .header-ad {
 .acme-news-ticker-box ul li::before {
     content: url(../img/star.png);
     margin-left: 1rem;
-    margin-right: 0.4rem;
+    /* margin-right: 0.4rem; */
 }
 
 /* .acme-news-ticker-box ul li a:after {
