@@ -2385,8 +2385,8 @@
                         <div class="app-info">
                             <h3>মোবাইল অ্যাপ ডাউনলোড করুন</h3>
                             <div class="clearfix"></div>
-                            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.bangladesh.pratidin" class="android"><img src="{{asset('frontend')}}/assets/img/android.png"></a>
-                            <a target="_blank" href="https://apps.apple.com/us/app/bangladesh-pratidin/id1056949757" class="ios"><img src="{{asset('frontend')}}/assets/img/ios-app.png"></a>
+                            <a target="_blank" href="#" class="android"><img src="{{asset('frontend')}}/assets/img/android.png"></a>
+                            <a target="_blank" href="#" class="ios"><img src="{{asset('frontend')}}/assets/img/ios-app.png"></a>
                             <ul class="mt-3">
 
                                 <li><a target="_blank" href="#"><i class="bi bi-instagram"></i></a></li>
