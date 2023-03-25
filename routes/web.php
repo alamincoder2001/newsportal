@@ -31,4 +31,6 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/user', [AdminAccessController::class, 'index'])->name('admin.user.index');
     Route::get('/user-fetch/{id?}', [AdminAccessController::class, 'fetch'])->name('admin.user.fetch');
     Route::post('/user', [AdminAccessController::class, 'store'])->name('admin.user.store');
+    Route::get('/user/permission/{id}', [AdminAccessController::class, 'permissionEdit'])->name('admin.user.permission');
+    Route::post('/user/store-permission', [AdminAccessController::class, 'permissionStore'])->name('admin.store.permission');
 });

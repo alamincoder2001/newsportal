@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Admin;
+use App\Models\Permission;
+use App\Models\AdminAccess;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -70,6 +72,37 @@ class AdminAccessController extends Controller
             }
         } catch (\Throwable $e) {
             return "Opps! something went wrong";
+        }
+    }
+
+    // permission edit
+    public function permissionEdit($id)
+    {
+        $user = Admin::find($id);
+        $userAccess = AdminAccess::where('admin_id', $id)->pluck('permissions')->toArray();
+        $group_name = Permission::pluck('group_name')->unique();
+        $permissions = Permission::all();
+        return view('admin.user.access', compact('user', 'userAccess', 'group_name', 'permissions'));
+    }
+
+    public function permissionStore(Request $request)
+    {
+        try {
+            AdminAccess::where('admin_id', $request->admin_id)->delete();
+            $permissions = Permission::all();
+
+            foreach ($permissions as $value) {
+                if (in_array($value->id, $request->permissions)) {
+                    AdminAccess::create([
+                        'admin_id'    => $request->admin_id,
+                        'group_name'  => $value->group_name,
+                        'permissions' => $value->permissions,
+                    ]);
+                }
+            }
+            return redirect()->route('admin.user.index')->with('success', 'Permissions added successfullly');
+        } catch (\Throwable $e) {
+            return redirect()->route('admin.user.index');
         }
     }
 }
