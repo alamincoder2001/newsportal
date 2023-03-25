@@ -7,6 +7,7 @@ use App\Models\Permission;
 use App\Models\AdminAccess;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -70,6 +71,21 @@ class AdminAccessController extends Controller
             } else {
                 return "User updated successfull";
             }
+        } catch (\Throwable $e) {
+            return "Opps! something went wrong";
+        }
+    }
+
+    public function destroy(Request $request)
+    {
+        try {
+            $admin_id = Admin::find($request->id);
+            $old = $admin_id->image;
+            if (File::exists($old)) {
+                File::delete($old);
+            }
+            $admin_id->delete();
+            return "User Delete successfully";
         } catch (\Throwable $e) {
             return "Opps! something went wrong";
         }

@@ -32,7 +32,7 @@
         gtag('config', 'G-FYW9668KNF');
     </script>
 
-    <link rel="shortcut icon" href="https://www.bd-pratidin.com/assets/images/favicon.ico" />
+    <link rel="shortcut icon" href="{{asset('frontend/assets/img/logo.png')}}" />
 
     <base href="http://127.0.0.1:8000/" />
 
