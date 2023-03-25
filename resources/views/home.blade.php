@@ -142,11 +142,12 @@
                     </div>
                 </div>
 
-                <div class="col-md-7 d-flex align-items-end justify-content-center" style="flex-direction: column;">
+                <div class="col-md-7 d-flex align-items-end justify-content-center" style="flex-direction: column; margin-top:15px;">
                     <span class="text-center mobileview">
-                        <p id="dateEnglish" class="m-0" style="font-size: 20px;font-weight: bold;color:brown;"></p>
-                        <p id="dateArabic" class="m-0" style="font-size: 20px;font-weight: bold;color:brown;"></p>
-                        <p id="dateBangla" class="m-0" style="font-size: 20px;font-weight: bold;color:hsl(0, 0%, 14%);"></p>
+
+                        <p id="dateEnglish" class="m-0" style="font-size: 16px;font-weight: bold;color:brown;"></p>
+                        <p id="dateArabic" class="m-0" style="font-size: 16px;font-weight: bold;color:green;"></p>
+                        <p id="dateBangla" class="m-0" style="font-size: 17px;font-weight: bold;color:hsl(0, 0%, 14%);"></p>
                         <p id="time" class="m-0" style="font-weight: bold;color:darkcyan;"></p>
                     </span>
                 </div>
