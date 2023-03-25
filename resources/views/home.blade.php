@@ -273,7 +273,7 @@
 
     <div class="clearfix"></div>
 
-{{--
+    {{--
     <div class="container my-4">
         <div class="col-md-12">
             <div data-position="desktop-home-after-nav" class="m-0 p-0">
@@ -1074,7 +1074,7 @@
     <div class="container mb-3">
         <div class="row section-1 section-15">
             <div class="col-md-8 home-category-area">
-                <h1><a href="./national"><span>জাতীয়</span> <i class="bi bi-chevron-right" >আরও</i></a></h1>
+                <h1><a href="./national"><span>জাতীয়</span> <i class="bi bi-chevron-right">আরও</i></a></h1>
                 <div class="clearfix"></div>
                 <div class="row">
                     <div class="col-md-12 mb-3">
@@ -2422,6 +2422,7 @@
     <script src="{{asset('frontend')}}/assets/js/jquery.date-dropdowns.js"></script>
     <script src="{{asset('frontend')}}/assets/js/calendar.js"></script>
     <script type='text/javascript' src="{{asset('frontend')}}/assets/js/bangla-date.js"></script>
+    <script type='text/javascript' src="{{asset('frontend')}}/assets/js/arabic.js"></script>
     <script type="text/javascript">
         $(function() {
             $("#btnArchive").click(function(e) {
@@ -2452,22 +2453,27 @@
         });
 
         function dateTime() {
-            let day = ["Monday","Tuesday","Wednessday","Thursday","Friday","Saturday","Sunday"];
-            let month = ["January","February","March","April","May","June","July", "August", "September", "October", "November", "December"];
+            let day = ["Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday", "Sunday"];
+            let month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             time = new Date().toLocaleTimeString();
             // english date
-            engDay = day[new Date().getDay()-1];
+            engDay = day[new Date().getDay() - 1];
             engMonth = month[new Date().getMonth()];
-            let englishDate = engDay+', ' + new Date().getDate()+" "+engMonth+" "+ new Date().getFullYear()
+            let englishDate = engDay + ', ' + new Date().getDate() + " " + engMonth + " " + new Date().getFullYear()
             // bangla date
             let banglaDate = new buetDateConverter().convert("l , j F, Y (বঙ্গাব্দ)");
             // arabic data
-            let arabicDate = new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {day: 'numeric', month: 'long',weekday: 'long',year : 'numeric'}).format(Date.now());
+            let arabicDate = new Intl.DateTimeFormat('ar-TN-u-ca-islamic', {
+                day: 'numeric',
+                month: 'long',
+                weekday: 'long',
+                year: 'numeric'
+            }).format(Date.now());
 
             document.getElementById("dateEnglish").innerText = englishDate
-            document.getElementById("dateArabic").innerText  = arabicDate
-            document.getElementById("dateBangla").innerText  = banglaDate
-            document.getElementById("time").innerText        = time
+            document.getElementById("dateArabic").innerText = writeIslamicDate(new Date(), -1)
+            document.getElementById("dateBangla").innerText = banglaDate
+            document.getElementById("time").innerText = time
             setTimeout(() => {
                 dateTime()
             }, 1000)
