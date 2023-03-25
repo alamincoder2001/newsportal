@@ -870,7 +870,7 @@
                                         <span><i class="bi bi-stopwatch"></i> ১৫ ঘন্টা আগে | <small>জাতীয়</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
-                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/183024_bangladesh_pratidin_pm-newssss-piiic-newsss-pic.jpg?v=1679286286" alt="হত্যা-অত্যাচার করে আওয়ামী লীগকে কেউ ধ্বংস করতে পারেনি : প্রধানমন্ত্রী 
+                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/183024_bangladesh_pratidin_pm-newssss-piiic-newsss-pic.jpg?v=1679286286" alt="হত্যা-অত্যাচার করে আওয়ামী লীগকে কেউ ধ্বংস করতে পারেনি : প্রধানমন্ত্রী
 
 ">
                                     </p>
@@ -1325,7 +1325,7 @@
                     <ul class="section-2-list-iteam">
                         <li class="mb-2"><a href="minister-spake/2023/03/18/868526" class="row">
                                 <span class="col-md-4 pe-0">
-                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/221231_bangladesh_pratidin_a-k-m-mozamel-news-pic.jpg?v=1679286286" alt="পাকিস্তানি জেনারেলদের প্রেতাত্মা এদেশে রয়ে গেছে : মুক্তিযুদ্ধমন্ত্রী  
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/221231_bangladesh_pratidin_a-k-m-mozamel-news-pic.jpg?v=1679286286" alt="পাকিস্তানি জেনারেলদের প্রেতাত্মা এদেশে রয়ে গেছে : মুক্তিযুদ্ধমন্ত্রী
 
 ">
                                 </span>
@@ -2256,7 +2256,7 @@
             <div class="col-md-4 home-category-area">
                 <h2><a href="corporate-corner"><span>কর্পোরেট কর্নার</span> <i class="bi bi-chevron-right"></i></a></h2>
                 <a class="list-item" href="corporate-corner/2023/03/18/868484">
-                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/thumbnails/200031_bangladesh_pratidin_ACC-brand-launching-picture.jpg?v=1679286286" alt="ইউরোপীয় ব্র্যান্ড এসিসির বাংলাদেশে যাত্রা শুরু 
+                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/thumbnails/200031_bangladesh_pratidin_ACC-brand-launching-picture.jpg?v=1679286286" alt="ইউরোপীয় ব্র্যান্ড এসিসির বাংলাদেশে যাত্রা শুরু
 
 ">
                     <p>ইউরোপীয় ব্র্যান্ড এসিসির বাংলাদেশে যাত্রা শুরু
