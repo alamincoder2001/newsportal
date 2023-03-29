@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Admin Login</title>
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('frontend/assets/img/logo.png')}}" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
@@ -39,11 +41,11 @@
             <div class="row g-0 d-flex align-items-center">
                 <div class="col-lg-5 d-none d-lg-flex justify-content-center align-items-center gap-2" style="flex-direction: column;margin-top:-85px;">
                     <div style="width: 180px;height:60px;">
-                        <img style="width: 180px;height:60px;" src="{{asset('noImage.jpg')}}" alt="Water Market BD"/>
+                        <img style="width: 180px;height:60px;" src="{{asset('frontend/assets/img/logo.png')}}" alt="Water Market BD"/>
                     </div>
                     <div>
                         <a href="{{route('website')}}">
-                            <h4 class="m-0"></h4>
+                            <h4 class="m-0">নির্ভয় নিউজ</h4>
                         </a>
                     </div>
                 </div>
