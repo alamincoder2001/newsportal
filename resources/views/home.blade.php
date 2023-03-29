@@ -137,7 +137,7 @@
                         </div>
                         <div class="col-12 col-lg-7 navbar-title">
                             <h1 class="m-0 navbar-title-text">Nirvoy News</h1>
-                            <span class="navbar-subTitle-text">নির্ভয় সত্যের পথে সাহসী সৈনিক</span>
+                            <span class="navbar-subTitle-text">নির্ভয় সত্যের পথে সাহসী  সৈনিক</span>
                         </div>
                     </div>
                 </div>
