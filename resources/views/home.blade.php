@@ -485,17 +485,6 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="country/2023/03/20/868849" class="row">
-                                    <p class="col-md-8">
-                                        <strong>ইয়াবা পাচার, মা ছেলেসহ চার কারবারি আটক</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ৭ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
-                                    </p>
-                                    <p class="col-md-4 ps-0">
-                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/025353_bangladesh_pratidin_BD-pratidin--4.jpg?v=1679286286" alt="ইয়াবা পাচার, মা ছেলেসহ চার কারবারি আটক">
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
                                 <a href="sports/2023/03/20/868840" class="row">
                                     <p class="col-md-8">
                                         <strong>ছিলেন মেসি-এমবাপ্পে, তবুও লজ্জায় ডুবল পিএসজি</strong>
@@ -521,7 +510,7 @@
                                 <a href="country/2023/03/20/868823" class="row">
                                     <p class="col-md-8">
                                         <strong>পর্যটককে ছুরিকাঘাত করে ছিনতাই, ডিবির জালে পাঁচ ছিনতাইকারী</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১০ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১০ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/001358_bangladesh_pratidin_BD-pratidin--1.jpg?v=1679286286" alt="পর্যটককে ছুরিকাঘাত করে ছিনতাই,  ডিবির জালে পাঁচ ছিনতাইকারী">
@@ -532,7 +521,7 @@
                                 <a href="country/2023/03/19/868760" class="row">
                                     <p class="col-md-8">
                                         <strong>সিদ্ধিরগঞ্জে ট্যাংকলরী শ্রমিক ইউনিয়নের উদ্যোগে বঙ্গবন্ধুর জন্মবার্ষিকী</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১১ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১১ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/225454_bangladesh_pratidin_sid.jpg?v=1679286286" alt="সিদ্ধিরগঞ্জে ট্যাংকলরী শ্রমিক ইউনিয়নের উদ্যোগে বঙ্গবন্ধুর জন্মবার্ষিকী">
@@ -554,7 +543,7 @@
                                 <a href="country/2023/03/19/868758" class="row">
                                     <p class="col-md-8">
                                         <strong>ঝালকাঠিতে ২ মাদক ব্যবসায়ী আটক </strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১১ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১১ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/223546_bangladesh_pratidin_dsfdfsdsdf.jpg?v=1679286286" alt="ঝালকাঠিতে ২ মাদক ব্যবসায়ী আটক  ">
@@ -576,7 +565,7 @@
                                 <a href="country/2023/03/19/868756" class="row">
                                     <p class="col-md-8">
                                         <strong>লোকালয় থেকে উদ্ধার করা সাপ সুন্দরবনে অবমুক্ত</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১১ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১১ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/223254_bangladesh_pratidin_sdfdsfsdfdfsgd.jpg?v=1679286286" alt="লোকালয় থেকে উদ্ধার করা সাপ সুন্দরবনে অবমুক্ত">
@@ -587,7 +576,7 @@
                                 <a href="country/2023/03/19/868755" class="row">
                                     <p class="col-md-8">
                                         <strong>ওড়াকান্দিতে ৩ দিনব্যাপী বারুনী মেলা</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১১ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১১ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/222841_bangladesh_pratidin_sdfdfsdffds.jpg?v=1679286286" alt="ওড়াকান্দিতে ৩ দিনব্যাপী বারুনী মেলা">
@@ -609,7 +598,7 @@
                                 <a href="country/2023/03/19/868753" class="row">
                                     <p class="col-md-8">
                                         <strong>মেহেরপুরে নবনির্মিত একাডেমিক ভবন উদ্বোধন </strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১২ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১২ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/222316_bangladesh_pratidin_fsdfdssdfdsf.jpg?v=1679286286" alt="মেহেরপুরে নবনির্মিত একাডেমিক ভবন উদ্বোধন  ">
@@ -653,7 +642,7 @@
                                 <a href="country/2023/03/19/868749" class="row">
                                     <p class="col-md-8">
                                         <strong>সড়ক দুর্ঘটনায় দুই মোটরসাইকেল আরোহী নিহত</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১২ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১২ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/214149_bangladesh_pratidin_accident-2.jpg?v=1679286286" alt="সড়ক দুর্ঘটনায় দুই মোটরসাইকেল আরোহী নিহত">
@@ -719,7 +708,7 @@
                                 <a href="country/2023/03/19/868743" class="row">
                                     <p class="col-md-8">
                                         <strong>রংপুরে ধর্ষণ ও হত্যা মামলার আসামি গ্রেফতার</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১৩ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১৩ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/205110_bangladesh_pratidin_dsfdsfdsfdfs.jpg?v=1679286286" alt="রংপুরে ধর্ষণ ও হত্যা মামলার আসামি গ্রেফতার">
@@ -752,7 +741,7 @@
                                 <a href="country/2023/03/19/868740" class="row">
                                     <p class="col-md-8">
                                         <strong>দাউদকান্দিতে মুক্তিপণ না দেওয়ায় প্রথম শ্রেণির ছাত্রীকে হত্যা</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১৩ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১৩ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/202455_bangladesh_pratidin_las_udhar_2.jpg?v=1679286286" alt="দাউদকান্দিতে মুক্তিপণ না দেওয়ায় প্রথম শ্রেণির ছাত্রীকে হত্যা">
@@ -763,7 +752,7 @@
                                 <a href="country/2023/03/19/868739" class="row">
                                     <p class="col-md-8">
                                         <strong>ম্যাজিস্ট্রেট আসার খবরে বিয়ের আসর থেকে পালালেন বর </strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/201134_bangladesh_pratidin_ballo-bia-2.jpg?v=1679286286" alt="ম্যাজিস্ট্রেট আসার খবরে বিয়ের আসর থেকে পালালেন বর ">
@@ -774,7 +763,7 @@
                                 <a href="country/2023/03/19/868738" class="row">
                                     <p class="col-md-8">
                                         <strong>বন্ধুকে ছুরিকাঘাতে হত্যা, গ্রেফতার ১</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/200213_bangladesh_pratidin_greftar_3.jpg?v=1679286286" alt="বন্ধুকে ছুরিকাঘাতে হত্যা, গ্রেফতার ১">
@@ -785,7 +774,7 @@
                                 <a href="country/2023/03/19/868737" class="row">
                                     <p class="col-md-8">
                                         <strong>বগুড়ায় ঘর পাচ্ছেন এক হাজার ৩৩০ পরিবার</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/195828_bangladesh_pratidin_sdffsddsg.jpg?v=1679286286" alt="বগুড়ায় ঘর পাচ্ছেন এক হাজার ৩৩০ পরিবার">
@@ -796,7 +785,7 @@
                                 <a href="country/2023/03/19/868736" class="row">
                                     <p class="col-md-8">
                                         <strong>চুয়াডাঙ্গায় ৭০০ গ্রাম হেরোইন উদ্ধার</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/195630_bangladesh_pratidin_dfsfdsdsffds.jpg?v=1679286286" alt="চুয়াডাঙ্গায় ৭০০ গ্রাম হেরোইন উদ্ধার">
@@ -807,7 +796,7 @@
                                 <a href="country/2023/03/19/868735" class="row">
                                     <p class="col-md-8">
                                         <strong>বঙ্গবন্ধু রেল সেতুর মালামাল নিয়ে মোংলা বন্দরে বিদেশী জাহাজ </strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/195553_bangladesh_pratidin_Untitled-3.jpg?v=1679286286" alt="বঙ্গবন্ধু রেল সেতুর মালামাল নিয়ে মোংলা বন্দরে বিদেশী জাহাজ ">
@@ -818,7 +807,7 @@
                                 <a href="country/2023/03/19/868734" class="row">
                                     <p class="col-md-8">
                                         <strong>দিনাজপুর চেম্বার অব কমার্সের নির্বাচনে ফলাফল ঘোষণা</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/194932_bangladesh_pratidin_dinajpur_district_0_44518.jpg?v=1679286286" alt="দিনাজপুর চেম্বার অব কমার্সের নির্বাচনে ফলাফল ঘোষণা">
@@ -829,7 +818,7 @@
                                 <a href="country/2023/03/19/868733" class="row">
                                     <p class="col-md-8">
                                         <strong>সমুদ্র উত্তাল থাকায় সেন্টমার্টিন নৌ পথে জাহাজ চলাচল বন্ধ</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/193706_bangladesh_pratidin_bbbb.jpg?v=1679286286" alt="সমুদ্র উত্তাল থাকায় সেন্টমার্টিন নৌ পথে জাহাজ চলাচল বন্ধ">
@@ -840,7 +829,7 @@
                                 <a href="country/2023/03/19/868732" class="row">
                                     <p class="col-md-8">
                                         <strong>মাদারীপুরে বাস দুর্ঘটনা; সার্টিফিকেট আনা হলো না আফসানার</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/192841_bangladesh_pratidin_Gopalganj-Road-Accident-Photo-02(19_03.jpg?v=1679286286" alt="মাদারীপুরে বাস দুর্ঘটনা; সার্টিফিকেট আনা হলো না আফসানার">
@@ -851,7 +840,7 @@
                                 <a href="country/2023/03/19/868731" class="row">
                                     <p class="col-md-8">
                                         <strong>নাটোরে বারুণী গঙ্গা স্নান অনুষ্ঠিত</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১৪ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/192502_bangladesh_pratidin_bbb.jpg?v=1679286286" alt="নাটোরে বারুণী গঙ্গা স্নান অনুষ্ঠিত">
@@ -862,7 +851,7 @@
                                 <a href="country/2023/03/19/868730" class="row">
                                     <p class="col-md-8">
                                         <strong>গুচ্ছে অংশ নেবে না ইবি</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১৫ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১৫ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/191807_bangladesh_pratidin_b.jpg?v=1679286286" alt="গুচ্ছে অংশ নেবে না ইবি">
@@ -873,7 +862,7 @@
                                 <a href="country/2023/03/19/868729" class="row">
                                     <p class="col-md-8">
                                         <strong>ধর্ষণের পর হত্যা, কিশোরীর মরদেহ মিলল নদীতে </strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১৫ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১৫ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/191727_bangladesh_pratidin_rape-2.jpg?v=1679286286" alt="ধর্ষণের পর হত্যা, কিশোরীর মরদেহ মিলল নদীতে ">
@@ -985,7 +974,7 @@
                                 <a href="country/2023/03/19/868717" class="row">
                                     <p class="col-md-8">
                                         <strong>শিবচরে বাস দুর্ঘটনা, নিহত ব্যাংক কর্মকর্তার বাড়িতে শোকের মাতম</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১৬ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১৬ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/181342_bangladesh_pratidin_Untitled-2.jpg?v=1679286286" alt="শিবচরে বাস দুর্ঘটনা, নিহত ব্যাংক কর্মকর্তার বাড়িতে শোকের মাতম">
@@ -996,7 +985,7 @@
                                 <a href="country/2023/03/19/868716" class="row">
                                     <p class="col-md-8">
                                         <strong>দিনাজপুরে দূষণের শিকার হচ্ছে লিচু</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১৬ ঘন্টা আগে | <small>দেশগ্রাম</small></span>
+                                        <span><i class="bi bi-stopwatch"></i> ১৬ ঘন্টা আগে | <small>দেশ</small></span>
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/181314_bangladesh_pratidin_bbbbb.jpg?v=1679286286" alt="দিনাজপুরে দূষণের শিকার হচ্ছে লিচু">
@@ -2120,7 +2109,7 @@
                         <ul>
                             <li><a href="./national">জাতীয়</a></li>
                             <li><a href="./city-news">নগর জীবন</a></li>
-                            <li><a href="./country">দেশগ্রাম</a></li>
+                            <li><a href="./country">দেশ</a></li>
                             <li><a href="./international-news">আন্তর্জাতিক খবর</a></li>
                             <li><a href="./entertainment">শোবিজ</a></li>
                             <li><a href="./chayer-desh">চায়ের দেশ</a></li>
