@@ -151,27 +151,6 @@
                         <p id="time" class="m-0" style="font-weight: bold;color:darkcyan;"></p>
                     </span>
                 </div>
-
-                <!-- <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4 ps-0">
-                    <div class="ads header-ad">
-                        <div data-position="desktop-home-header-right" class="m-0 p-0">
-                            <div class="ads mb-2 d-flex justify-content-center">
-                                <div class="ad_cl-661" data-id="661">
-                                    <div>
-                                        <a href="http://127.0.0.1:8000/en/"><img src="http://127.0.0.1:8000/assets/images/banner/20220803024408.gif" align="BP EN"></a>
-                                        <style type="text/css">
-                                            .ad_cl-661 {
-                                                display: inline-block;
-                                                width: 100%;
-                                                text-align: right;
-                                            }
-                                        </style>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>  -->
             </div>
         </div>
     </header>
