@@ -5,7 +5,7 @@
             <a class="navbar-brand" href="{{url('admin')}}">
                 <!-- Logo text -->
                 <span style="width:100%;">
-                    <img style="width: 100%;height:50px;" src="{{asset('noImage.jpg')}}" alt="homepage" class="light-logo" />
+                    <img style="width: 100%;height:50px;" src="{{asset('frontend/assets/img/logo.png')}}" alt="homepage" class="light-logo" />
                 </span>
             </a>
             <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
