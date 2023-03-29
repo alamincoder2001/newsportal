@@ -205,9 +205,7 @@
                                         <li><a class="dropdown-item" href="life">জীবন ধারা</a></li>
                                         <li><a class="dropdown-item" href="open-air-theater">মুক্তমঞ্চ</a></li>
                                         <li><a class="dropdown-item" href="mixter">পাঁচফোড়ন</a></li>
-                                        <li><a class="dropdown-item" href="features">ফিচার</a></li>
                                         <li><a class="dropdown-item" href="readers-column">পাঠক কলাম</a></li>
-                                        <li><a class="dropdown-item" href="coronavirus">করোনাভাইরাস</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-6">
@@ -221,10 +219,6 @@
                                         <li><a class="dropdown-item" href="tech-world">টেক ওয়ার্ল্ড</a></li>
                                         <li><a class="dropdown-item" href="city-roundup">নগর পরিক্রমা</a></li>
                                         <li><a class="dropdown-item" href="agriculture-nature">কৃষি ও প্রকৃতি</a></li>
-                                        <li><a class="dropdown-item" href="14-years-bd-pratidin">১৪ বছরে বাংলাদেশ <br> প্রতিদিন</a></li>
-
-
-
                                     </ul>
                                 </div>
                             </div>
