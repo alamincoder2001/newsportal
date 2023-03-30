@@ -11,6 +11,20 @@
                                     <input type="text" name="title" v-model="news.title" id="title"
                                         class="form-control shadow-none">
                                 </div>
+                                <div class="row mt-2">
+                                    <div class="col-lg-6">
+                                        <div class="form-group mt-2">
+                                            <label for="phone">Phone:</label>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group mt-2">
+                                            <label for="youtube">Youtube Url:</label>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <ckeditor :editor="editor" v-model="news.description"></ckeditor>
                                 </div>

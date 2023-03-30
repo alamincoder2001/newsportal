@@ -5626,6 +5626,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -40282,6 +40296,8 @@ var render = function () {
                     }),
                   ]),
                   _vm._v(" "),
+                  _vm._m(0),
+                  _vm._v(" "),
                   _c(
                     "div",
                     { staticClass: "form-group" },
@@ -40441,7 +40457,26 @@ var render = function () {
     ),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row mt-2" }, [
+      _c("div", { staticClass: "col-lg-6" }, [
+        _c("div", { staticClass: "form-group mt-2" }, [
+          _c("label", { attrs: { for: "phone" } }, [_vm._v("Phone:")]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-lg-6" }, [
+        _c("div", { staticClass: "form-group mt-2" }, [
+          _c("label", { attrs: { for: "youtube" } }, [_vm._v("Youtube Url:")]),
+        ]),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
