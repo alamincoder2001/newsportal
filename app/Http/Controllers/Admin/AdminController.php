@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
@@ -105,6 +106,62 @@ class AdminController extends Controller
             return "Image Upload successfully";
         } catch (\Throwable $e) {
             return "Something went wrong";
+        }
+    }
+
+    //settings method
+    public function setting()
+    {
+        return view("admin.settings");
+    }
+
+    public function fetchSetting()
+    {
+        return Setting::first();
+    }
+
+    public function storeSetting(Request $request)
+    {
+        try {
+            $validator = Validator::make($request->all(), [
+                "company_name" => "required",
+                "title" => "required",
+                "phone" => "required",
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json(["error" => $validator->errors()]);
+            }
+
+            $data               = Setting::first();
+            $data->company_name = $request->company_name;
+            $data->title        = $request->title;
+            $data->phone        = $request->phone;
+            $data->facebook     = $request->facebook;
+            $data->instagram    = $request->instagram;
+            $data->twitter      = $request->twitter;
+            $data->linkedin     = $request->linkedin;
+            $data->youtube      = $request->youtube;
+            if ($request->hasFile("logo")) {
+                if (isset($old) && $old != "") {
+                    if (File::exists($old)) {
+                        File::delete($old);
+                    }
+                }
+                $data->logo = $this->imageUpload($request, 'logo', 'uploads/settings') ?? '';
+            }
+            if ($request->hasFile("favicon")) {
+                if (isset($old) && $old != "") {
+                    if (File::exists($old)) {
+                        File::delete($old);
+                    }
+                }
+                $data->favicon = $this->imageUpload($request, 'favicon', 'uploads/settings') ?? '';
+            }
+            $data->save();
+            return "Setting updated successfully";
+        } catch (\Throwable $e) {
+            return "Opps! something went wrong";
         }
     }
 }

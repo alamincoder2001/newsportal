@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\SubcategoryController;
 
 // frontend section route
@@ -23,7 +24,12 @@ Route::group(["prefix" => "admin"], function () {
 
     // admin dashboard
     Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-
+    
+    //settings Route
+    Route::get('/settings', [AdminController::class, 'setting'])->name('admin.settings');
+    Route::get('/settings-fetch', [AdminController::class, 'fetchSetting'])->name('admin.settings.fetch');
+    Route::post('/settings', [AdminController::class, 'storeSetting'])->name('admin.settings.store');
+    
     //profile Route
     Route::get('/profile', [AdminController::class, 'profileIndex'])->name('admin.profile');
     Route::post('/profile', [AdminController::class, 'profileUpdate'])->name('admin.profile.update');
@@ -40,6 +46,12 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/fetch-subcategory', [SubcategoryController::class, 'fetch'])->name('admin.subcategory.fetch');
     Route::post('/subcategory', [SubcategoryController::class, 'store'])->name('admin.subcategory.store');
     Route::post('/subcategory/delete', [SubcategoryController::class, 'destroy'])->name('admin.subcategory.destroy');
+
+    //news Route
+    Route::get('/news', [NewsController::class, 'index'])->name('admin.news.index');
+    Route::get('/fetch-news', [NewsController::class, 'fetch'])->name('admin.news.fetch');
+    Route::post('/news', [NewsController::class, 'store'])->name('admin.news.store');
+    Route::post('/news/delete', [NewsController::class, 'destroy'])->name('admin.news.destroy');
 
     //user Route
     Route::get('/user', [AdminAccessController::class, 'index'])->name('admin.user.index');

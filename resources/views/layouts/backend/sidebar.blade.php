@@ -17,11 +17,17 @@
                         <li class="sidebar-item">
                             <a href="{{route('admin.subcategory.index')}}" class="sidebar-link {{Request::is('admin.subcategory.index') ? 'active':''}}"><i class="fas fa-list"></i><span class="hide-menu"> Subcategory Entry </span></a>
                         </li>
+                        <li class="sidebar-item">
+                            <a href="{{route('admin.news.index')}}" class="sidebar-link {{Request::is('admin.news.index') ? 'active':''}}"><i class="fas fa-list"></i><span class="hide-menu"> News Entry </span></a>
+                        </li>
                     </ul>
                 </li>
 
                 <li class="sidebar-item {{Request::is('admin.user.index') ? 'selected':''}}">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin.user.index')}}" aria-expanded="false"><i class="mdi mdi-account-multiple-plus"></i><span class="hide-menu">User Entry</span></a>
+                </li>
+                <li class="sidebar-item {{Request::is('admin.settings') ? 'selected':''}}">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin.settings')}}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Settings</span></a>
                 </li>
                 <li class="sidebar-item {{Request::is('admin.logout') ? 'selected':''}}">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin.logout')}}" aria-expanded="false"><i class="mdi mdi-logout-variant"></i><span class="hide-menu">Logout</span></a>
