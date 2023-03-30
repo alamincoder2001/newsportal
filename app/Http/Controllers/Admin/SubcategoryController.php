@@ -25,7 +25,11 @@ class SubcategoryController extends Controller
 
     public function fetch()
     {
-        $data = DB::select();
+        $data = DB::select("SELECT 
+                    sc.*,
+                    c.name as category_name
+                FROM subcategories sc
+                LEFT JOIN categories c on c.id = sc.category_id");
         return $data;
     }
 

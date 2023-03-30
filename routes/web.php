@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\SubcategoryController;
 
 // frontend section route
 Route::get('/', [HomeController::class, 'index'])->name('website');
@@ -35,10 +36,10 @@ Route::group(["prefix" => "admin"], function () {
     Route::post('/category/delete', [CategoryController::class, 'destroy'])->name('admin.category.destroy');
 
     //subcategory Route
-    Route::get('/subcategory', [CategoryController::class, 'index'])->name('admin.subcategory.index');
-    Route::get('/fetch-subcategory', [CategoryController::class, 'fetch'])->name('admin.subcategory.fetch');
-    Route::post('/subcategory', [CategoryController::class, 'store'])->name('admin.subcategory.store');
-    Route::post('/subcategory/delete', [CategoryController::class, 'destroy'])->name('admin.subcategory.destroy');
+    Route::get('/subcategory', [SubcategoryController::class, 'index'])->name('admin.subcategory.index');
+    Route::get('/fetch-subcategory', [SubcategoryController::class, 'fetch'])->name('admin.subcategory.fetch');
+    Route::post('/subcategory', [SubcategoryController::class, 'store'])->name('admin.subcategory.store');
+    Route::post('/subcategory/delete', [SubcategoryController::class, 'destroy'])->name('admin.subcategory.destroy');
 
     //user Route
     Route::get('/user', [AdminAccessController::class, 'index'])->name('admin.user.index');

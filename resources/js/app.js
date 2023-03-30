@@ -15,6 +15,7 @@ Vue.component("v-select", vSelect);
 
 Vue.component('Dashboard', require('./components/Dashboard.vue').default);
 Vue.component('Category', require('./components/Category.vue').default);
+Vue.component('Subcategory', require('./components/Subcategory.vue').default);
 
 
 const app = new Vue({
