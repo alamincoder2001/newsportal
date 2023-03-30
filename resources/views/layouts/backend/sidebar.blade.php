@@ -8,6 +8,18 @@
                     <a class="sidebar-link waves-effect waves-dark sidebar-link {{Request::is('admin.dashboard') ? 'active':''}}" href="{{route('admin.dashboard')}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a>
                 </li>
 
+                <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-earth"></i><span class="hide-menu"> Website Content </span></a>
+                    <ul aria-expanded="false" class="collapse first-level">
+                        <li class="sidebar-item">
+                            <a href="{{route('admin.category.index')}}" class="sidebar-link {{Request::is('admin.category.index') ? 'active':''}}"><i class="fas fa-list"></i><span class="hide-menu"> Category Entry </span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{route('admin.subcategory.index')}}" class="sidebar-link {{Request::is('admin.subcategory.index') ? 'active':''}}"><i class="fas fa-list"></i><span class="hide-menu"> Subcategory Entry </span></a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="sidebar-item {{Request::is('admin.user.index') ? 'selected':''}}">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin.user.index')}}" aria-expanded="false"><i class="mdi mdi-account-multiple-plus"></i><span class="hide-menu">User Entry</span></a>
                 </li>

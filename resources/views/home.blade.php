@@ -144,7 +144,6 @@
 
                 <div class="col-8 col-md-7 d-flex align-items-end justify-content-center mobileViewRow">
                     <span class="text-end mobileview">
-
                         <p id="dateEnglish" class="m-0" style="font-weight: bold;color:brown;"></p>
                         <p id="dateArabic" class="m-0" style="font-weight: bold;color:green;"></p>
                         <p id="dateBangla" class="m-0" style="font-weight: bold;color:hsl(0, 0%, 14%);"></p>
@@ -180,7 +179,6 @@
                                         <li><a class="dropdown-item" href="campus-online">ক্যাম্পাস</a></li>
                                         <li><a class="dropdown-item" href="corporate-corner">কর্পোরেট কর্নার</a></li>
                                         <li><a class="dropdown-item" href="islam">ইসলাম</a></li>
-                                        <li><a class="dropdown-item" href="health-tips">হেলথ কর্নার</a></li>
                                         <li><a class="dropdown-item" href="life">জীবন ধারা</a></li>
                                         <li><a class="dropdown-item" href="open-air-theater">মুক্তমঞ্চ</a></li>
                                         <li><a class="dropdown-item" href="mixter">পাঁচফোড়ন</a></li>
@@ -194,7 +192,6 @@
                                         <li><a class="dropdown-item" href="chayer-desh">চায়ের দেশ</a></li>
                                         <li><a class="dropdown-item" href="kolkata">ওপার বাংলা</a></li>
                                         <li><a class="dropdown-item" href="chittagong-pratidin">চট্টগ্রাম প্রতিদিন</a></li>
-                                        <li><a class="dropdown-item" href="facebook">ফেসবুক কর্নার</a></li>
                                         <li><a class="dropdown-item" href="tech-world">টেক ওয়ার্ল্ড</a></li>
                                         <li><a class="dropdown-item" href="city-roundup">নগর পরিক্রমা</a></li>
                                         <li><a class="dropdown-item" href="agriculture-nature">কৃষি ও প্রকৃতি</a></li>
@@ -234,7 +231,6 @@
                             </a></li>
                         <li><a href="international-news/2023/03/20/868857">এবার ক্রেডিট সুইস ব্যাংক দেউলিয়া হওয়া নিয়ে আতঙ্ক</a></li>
                         <li><a href="national/2023/03/20/868856">বঙ্গভবনে রাষ্ট্রপতির সঙ্গে সৌদি রাষ্ট্রদূতের সৌজন্য সাক্ষাৎ</a></li>
-                        <li><a href="city-news/2023/03/20/868855">হেলেনা জাহাঙ্গীরসহ ৫ জনের মামলার রায় আজ</a></li>
                         <li><a href="sports/2023/03/20/868854">
                                 পয়েন্ট তালিকায় শীর্ষে ফেরা হলো না বায়ার্নের </a></li>
                         <li><a href="sports/2023/03/20/868853">ঘরের মাঠেও জুভেন্টাসে ধরাশায়ী ইন্টার</a></li>
@@ -291,11 +287,11 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="carousel-item">
-                            <a href="city-news/2023/03/20/868855">
-                                <img src="{{asset('frontend')}}/assets/news_images/thumbnails/091146_bangladesh_pratidin_ima.png" class="d-block w-100" alt="হেলেনা জাহাঙ্গীরসহ ৫ জনের মামলার রায় আজ">
+                        <div class="carousel-item ">
+                            <a href="last-page/2023/03/20/868825">
+                                <img src="{{asset('frontend')}}/assets/news_images/thumbnails/Bd-Pratidin-20-03-23-F-12.png" class="d-block w-100" alt="অস্ট্রেলিয়ার বাণিজ্যে চীনের বিকল্প বাংলাদেশ">
                                 <div class="carousel-caption d-none d-md-block">
-                                    <h5>হেলেনা জাহাঙ্গীরসহ ৫ জনের মামলার রায় আজ</h5>
+                                    <h5>অস্ট্রেলিয়ার বাণিজ্যে চীনের বিকল্প বাংলাদেশ</h5>
                                 </div>
                             </a>
                         </div>
@@ -398,17 +394,6 @@
                                     </p>
                                     <p class="col-md-4 ps-0">
                                         <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/092547_bangladesh_pratidin_0000777.jpg?v=1679286286" alt="বঙ্গভবনে রাষ্ট্রপতির সঙ্গে সৌদি রাষ্ট্রদূতের সৌজন্য সাক্ষাৎ">
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="city-news/2023/03/20/868855" class="row">
-                                    <p class="col-md-8">
-                                        <strong>হেলেনা জাহাঙ্গীরসহ ৫ জনের মামলার রায় আজ</strong>
-                                        <span><i class="bi bi-stopwatch"></i> ১ ঘন্টা আগে | <small>নগর জীবন</small></span>
-                                    </p>
-                                    <p class="col-md-4 ps-0">
-                                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/091146_bangladesh_pratidin_ima.jpg?v=1679286286" alt="হেলেনা জাহাঙ্গীরসহ ৫ জনের মামলার রায় আজ">
                                     </p>
                                 </a>
                             </li>
@@ -1200,11 +1185,6 @@
                                     <li class="bi bi-hand-index-thumb"><a href="sports/2023/03/20/868851">
                                             <p class="m-0 py-0 px-2">
                                                 <strong>এল ক্ল্যাসিকোয় বাজিমাত, ফের বার্সেলোনার রিয়াল বধ</strong>
-                                            </p>
-                                        </a></li>
-                                    <li class="bi bi-hand-index-thumb"><a href="city-news/2023/03/20/868855">
-                                            <p class="m-0 py-0 px-2">
-                                                <strong>হেলেনা জাহাঙ্গীরসহ ৫ জনের মামলার রায় আজ</strong>
                                             </p>
                                         </a></li>
                                     <li class="bi bi-hand-index-thumb"><a href="country/2023/03/20/868823">
