@@ -5640,6 +5640,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -5660,21 +5662,46 @@ __webpack_require__.r(__webpack_exports__);
         description: "",
         image: ""
       },
+      categories: [],
+      selectedCategory: null,
+      subcategories: [],
+      selectedSubcategory: null,
       imageSrc: location.origin + "/noImage.jpg"
     };
   },
   created: function created() {
+    this.getCategory();
     this.getNews();
   },
   methods: {
-    getNews: function getNews() {
+    getCategory: function getCategory() {
       var _this = this;
-      axios.get(location.origin + "/admin/fetch-news").then(function (res) {
-        _this.newss = res.data;
+      axios.get(location.origin + "/admin/fetch-category").then(function (res) {
+        _this.categories = res.data;
       });
     },
-    saveNews: function saveNews(event) {
+    getSubcategory: function getSubcategory() {
       var _this2 = this;
+      axios.get(location.origin + "/admin/fetch-subcategory").then(function (res) {
+        _this2.subcategories = res.data.filter(function (sub) {
+          return sub.category_id == _this2.selectedCategory.id;
+        });
+      });
+    },
+    getNews: function getNews() {
+      var _this3 = this;
+      axios.get(location.origin + "/admin/fetch-news").then(function (res) {
+        _this3.newss = res.data;
+      });
+    },
+    onChangeCategory: function onChangeCategory() {
+      if (this.selectedCategory == null) {
+        return;
+      }
+      this.getSubcategory();
+    },
+    saveNews: function saveNews(event) {
+      var _this4 = this;
       if (this.news.title == "") {
         alert("Title Field is Empty");
         return;
@@ -5685,8 +5712,8 @@ __webpack_require__.r(__webpack_exports__);
       formdata.append("description", this.news.description != null ? this.news.description : "");
       axios.post(location.origin + "/admin/news", formdata).then(function (res) {
         $.notify(res.data, "success");
-        _this2.clearData();
-        _this2.getNews();
+        _this4.clearData();
+        _this4.getNews();
       });
     },
     editRow: function editRow(val) {
@@ -5699,25 +5726,25 @@ __webpack_require__.r(__webpack_exports__);
       this.imageSrc = val.image != null ? location.origin + "/" + val.image : location.origin + "/noImage.jpg";
     },
     deleteRow: function deleteRow(id) {
-      var _this3 = this;
+      var _this5 = this;
       if (confirm("Are you sure want to delete this!")) {
         axios.post(location.origin + "/admin/news/delete", {
           id: id
         }).then(function (res) {
           $.notify(res.data, "success");
-          _this3.getNews();
+          _this5.getNews();
         });
       }
     },
     imageUrl: function imageUrl(event) {
-      var _this4 = this;
+      var _this6 = this;
       if (event.target.files[0]) {
         var img = new Image();
         img.src = window.URL.createObjectURL(event.target.files[0]);
         img.onload = function () {
           if (img.width === 1024 && img.height === 400) {
-            _this4.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-            _this4.news.image = event.target.files[0];
+            _this6.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+            _this6.news.image = event.target.files[0];
           } else {
             alert("This image ".concat(img.width, " X ").concat(img.width, " but require image 1024 X 400"));
           }
@@ -40296,7 +40323,66 @@ var render = function () {
                     }),
                   ]),
                   _vm._v(" "),
-                  _vm._m(0),
+                  _c("div", { staticClass: "row mt-2" }, [
+                    _c("div", { staticClass: "col-lg-6" }, [
+                      _c(
+                        "div",
+                        { staticClass: "form-group mt-2" },
+                        [
+                          _c("label", { attrs: { for: "category" } }, [
+                            _vm._v("Category:"),
+                          ]),
+                          _vm._v(" "),
+                          _c("v-select", {
+                            attrs: {
+                              options: _vm.categories,
+                              name: "category_id",
+                              id: "category",
+                              label: "name",
+                            },
+                            on: { input: _vm.onChangeCategory },
+                            model: {
+                              value: _vm.selectedCategory,
+                              callback: function ($$v) {
+                                _vm.selectedCategory = $$v
+                              },
+                              expression: "selectedCategory",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-6" }, [
+                      _c(
+                        "div",
+                        { staticClass: "form-group mt-2" },
+                        [
+                          _c("label", { attrs: { for: "subcategory" } }, [
+                            _vm._v("Subcategory:"),
+                          ]),
+                          _vm._v(" "),
+                          _c("v-select", {
+                            attrs: {
+                              options: _vm.subcategories,
+                              name: "subcategory_id",
+                              id: "subcategory",
+                              label: "name",
+                            },
+                            model: {
+                              value: _vm.selectedSubcategory,
+                              callback: function ($$v) {
+                                _vm.selectedSubcategory = $$v
+                              },
+                              expression: "selectedSubcategory",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                    ]),
+                  ]),
                   _vm._v(" "),
                   _c(
                     "div",
@@ -40457,26 +40543,7 @@ var render = function () {
     ),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-2" }, [
-      _c("div", { staticClass: "col-lg-6" }, [
-        _c("div", { staticClass: "form-group mt-2" }, [
-          _c("label", { attrs: { for: "phone" } }, [_vm._v("Phone:")]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-6" }, [
-        _c("div", { staticClass: "form-group mt-2" }, [
-          _c("label", { attrs: { for: "youtube" } }, [_vm._v("Youtube Url:")]),
-        ]),
-      ]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

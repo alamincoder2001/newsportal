@@ -14,14 +14,16 @@
                                 <div class="row mt-2">
                                     <div class="col-lg-6">
                                         <div class="form-group mt-2">
-                                            <label for="phone">Phone:</label>
-                                            
+                                            <label for="category">Category:</label>
+                                            <v-select :options="categories" name="category_id" id="category"
+                                            v-model="selectedCategory" label="name" @input="onChangeCategory"></v-select>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group mt-2">
-                                            <label for="youtube">Youtube Url:</label>
-                                            
+                                            <label for="subcategory">Subcategory:</label>
+                                            <v-select :options="subcategories" name="subcategory_id" id="subcategory"
+                                            v-model="selectedSubcategory" label="name"></v-select>
                                         </div>
                                     </div>
                                 </div>
@@ -95,19 +97,43 @@ export default {
                 description: "",
                 image: ""
             },
+            categories: [],
+            selectedCategory: null,
+            subcategories: [],
+            selectedSubcategory: null,
             imageSrc: location.origin + "/noImage.jpg",
         };
     },
 
     created() {
+        this.getCategory();
         this.getNews();
     },
 
     methods: {
+        getCategory() {
+            axios.get(location.origin + "/admin/fetch-category")
+                .then(res => {
+                    this.categories = res.data
+                })
+        },
+        getSubcategory() {
+            axios.get(location.origin + "/admin/fetch-subcategory")
+                .then(res => {
+                    this.subcategories = res.data.filter(sub => sub.category_id == this.selectedCategory.id)
+                })
+        },
         getNews() {
             axios.get(location.origin + "/admin/fetch-news").then((res) => {
                 this.newss = res.data;
             });
+        },
+
+        onChangeCategory(){
+            if (this.selectedCategory == null) {
+                return
+            }
+            this.getSubcategory()
         },
 
         saveNews(event) {
