@@ -143,19 +143,6 @@
             </div>
         </div>
         <div class="col-md-12 col-lg-4 col-xl-4 col-xxl-3">
-            <div data-position="desktop-category-right-top" class="m-0 p-0">
-                <div class="ads bg-light mb-2 d-flex justify-content-center">
-                    <div class="ad_cl-15" data-id="15">
-                        <div id='div-gpt-ad-1631792437164-0' style='min-width: 300px; min-height: 250px;'>
-                            <script>
-                                googletag.cmd.push(function() {
-                                    googletag.display('div-gpt-ad-1631792437164-0');
-                                });
-                            </script>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="details-widget">
                 <h1><a href="./online/todaynews"><span>সর্বশেষ খবর</span> <i class="bi bi-chevron-right"></i></a></h1>
                 <ul class="thumb-list">
