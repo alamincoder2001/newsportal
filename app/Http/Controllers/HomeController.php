@@ -12,7 +12,7 @@ class HomeController extends Controller
         return view("home");
     }
     
-    // category_wise
+    // category_wise method
     public function categoryWise($slug)
     {
         $category = Category::where("slug", $slug)->first();
