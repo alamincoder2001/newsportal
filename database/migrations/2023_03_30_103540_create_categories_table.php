@@ -18,6 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->string("name")->unique();
             $table->string("slug");
             $table->string("image")->nullable();
+            $table->string("is_menu", 10)->default("false");
             $table->char("status", 5)->default("a");
             $table->timestamps();
         });
