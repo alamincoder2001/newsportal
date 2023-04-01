@@ -1,6 +1,6 @@
 @extends("layouts.frontend_master")
 
-@section("title") {{$setting->title}} @endsection
+@section("title") {{$setting->company_name}} @endsection
 
 @section("content")
 

@@ -1,9 +1,11 @@
 @extends("layouts.frontend_master")
 
-@section("title") {{$category->slug}}  @endsection
+@section("title") 
+{{$category->slug}}
+@endsection
 
 @section('content')
-<div class="container">
+<div class="container my-4">
     <div class="row">
         <div class="col-md-12 col-lg-8 col-xl-8 col-xxl-9 category">
             <div class="breadcrumb-bg  details-article">
