@@ -5649,8 +5649,14 @@ __webpack_require__.r(__webpack_exports__);
     return {
       editor: (_ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default()),
       columns: [{
+        label: "NewsId",
+        field: "id"
+      }, {
         label: "News Title",
         field: "title"
+      }, {
+        label: "Addedby",
+        field: "admin_name"
       }, {
         label: "Action",
         field: "before"

@@ -82,8 +82,16 @@ export default {
             editor: ClassicEditor,
             columns: [
                 {
+                    label: "NewsId",
+                    field: "id",
+                },
+                {
                     label: "News Title",
                     field: "title",
+                },
+                {
+                    label: "Addedby",
+                    field: "admin_name",
                 },
                 {
                     label: "Action",
