@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Category;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
@@ -49,8 +48,11 @@ class CategoryController extends Controller
                 return response()->json(["error" => $validator->errors()]);
             }
 
-            $data->name = $request->name;
-            $data->slug = Str::slug($request->name);
+            $data->name    = $request->name;
+            $data->is_menu = $request->is_menu;
+            $data->slug    = $this->make_slug($request->name);
+            // $data->slug    = Str::slug($request->name);
+            
             if ($request->hasFile("image")) {
                 if (isset($old) && $old != "") {
                     if (File::exists($old)) {

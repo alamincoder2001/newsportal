@@ -19,7 +19,7 @@ class CreateNewsTable extends Migration
             $table->string("slug");
             $table->longText("description");
             $table->foreignId("category_id")->constrained("categories", "id")->onDelete("cascade");
-            $table->foreignId("subcategory_id")->constrained("subcategories", "id")->onDelete("cascade");
+            $table->integer("subcategory_id")->default(0);
             $table->foreignId("user_id")->constrained("admins", "id")->onDelete("cascade");
             $table->string("image")->nullable();
             $table->char("status", 5)->default("a");

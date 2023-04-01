@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Subcategory;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
@@ -38,14 +37,14 @@ class SubcategoryController extends Controller
         try {
             if (!empty($request->id)) {
                 $validator = Validator::make($request->all(), [
-                    "name" => "required|unique:categories,name," . $request->id
+                    "name" => "required|unique:subcategories,name," . $request->id
                 ]);
                 $data             = Subcategory::find($request->id);
                 $old              = $data->image;
                 $data->updated_at = Carbon::now();
             } else {
                 $validator = Validator::make($request->all(), [
-                    "name" => "required|unique:categories"
+                    "name" => "required|unique:subcategories"
                 ]);
                 $data             = new Subcategory();
                 $data->created_at = Carbon::now();
@@ -57,7 +56,7 @@ class SubcategoryController extends Controller
 
             $data->name        = $request->name;
             $data->category_id = $request->category_id;
-            $data->slug        = Str::slug($request->name);
+            $data->slug        = $this->make_slug($request->name);
             if ($request->hasFile("image")) {
                 if (isset($old) && $old != "") {
                     if (File::exists($old)) {

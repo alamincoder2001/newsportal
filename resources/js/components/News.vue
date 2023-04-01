@@ -90,6 +90,10 @@ export default {
                     field: "title",
                 },
                 {
+                    label: "Category",
+                    field: "category_name",
+                },
+                {
                     label: "Addedby",
                     field: "admin_name",
                 },
@@ -141,6 +145,7 @@ export default {
             if (this.selectedCategory == null) {
                 return
             }
+            this.selectedSubcategory = null
             this.getSubcategory()
         },
 
@@ -149,10 +154,20 @@ export default {
                 alert("Title Field is Empty");
                 return;
             }
+            if (this.selectedCategory == null) {
+                alert("Category name required")
+                return
+            }
+            if (this.news.description == "") {
+                alert("Description name required")
+                return
+            }
 
             let formdata = new FormData(event.target)
             formdata.append("image", this.news.image)
             formdata.append("id", this.news.id)
+            formdata.append("category_id", this.selectedCategory.id)
+            formdata.append("subcategory_id", this.subcategories.length > 0 ? this.selectedSubcategory != null ? this.selectedSubcategory.id : 0 : 0)
             formdata.append("description", this.news.description != null ? this.news.description : "")
             axios
                 .post(location.origin + "/admin/news", formdata)
@@ -167,9 +182,18 @@ export default {
             this.news = {
                 id: val.id,
                 title: val.title,
-                date: val.date,
                 description: val.description
             };
+            this.selectedCategory = {
+                id: val.category_id,
+                name: val.category_name
+            }
+            if (val.subcategory_id != null) {
+                this.selectedSubcategory = {
+                    id: val.subcategory_id,
+                    name: val.subcategory_name
+                }
+            }
             this.imageSrc = val.image != null ? location.origin + "/" + val.image : location.origin + "/noImage.jpg"
         },
         deleteRow(id) {
@@ -202,7 +226,8 @@ export default {
                 title: "",
                 description: "",
             };
-            this.getNews()
+            this.selectedCategory = null
+            this.selectedSubcategory = null
             this.imageSrc = location.origin + "/noImage.jpg"
         },
     },

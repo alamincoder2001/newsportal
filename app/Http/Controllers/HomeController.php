@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,9 +12,10 @@ class HomeController extends Controller
         return view("home");
     }
     
-    // sports
-    public function sports()
+    // category_wise
+    public function categoryWise($slug)
     {
-        return view("sports");
+        $category = Category::where("slug", $slug)->first();
+        return view("categorywise", compact('category'));
     }
 }

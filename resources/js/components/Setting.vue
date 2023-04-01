@@ -17,6 +17,11 @@
                                     <input type="text" id="title" name="title" class="form-control shadow-none"
                                         v-model="setting.title" autocomplete="off" />
                                 </div>
+                                <div class="form-group mt-2">
+                                    <label for="address">Address:</label>
+                                    <textarea id="address" name="address" class="form-control shadow-none"
+                                        v-model="setting.address" autocomplete="off"></textarea>
+                                </div>
                                 <div class="row mt-2">
                                     <div class="col-lg-6">
                                         <div class="form-group mt-2">
@@ -106,6 +111,7 @@ export default {
             setting: {
                 company_name: "",
                 title: "",
+                address: "",
                 phone: "",
                 facebook: "",
                 instagram: "",
@@ -167,11 +173,11 @@ export default {
                 let img = new Image()
                 img.src = window.URL.createObjectURL(event.target.files[0]);
                 img.onload = () => {
-                    if (img.width === 150 && img.height === 150) {
+                    if (img.width === 552 && img.height === 287) {
                         this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
                         this.setting.logo = event.target.files[0];
                     } else {
-                        alert(`This image ${img.width}px X ${img.height}px but require image 150px X 150px`);
+                        alert(`This image ${img.width}px X ${img.height}px but require image 230px X 50px`);
                     }
                 }
             }
@@ -181,7 +187,7 @@ export default {
                 let img = new Image()
                 img.src = window.URL.createObjectURL(event.target.files[0]);
                 img.onload = () => {
-                    if (img.width === 150 && img.height === 150) {
+                    if (img.width === 552 && img.height === 287) {
                         this.imageSrc1 = window.URL.createObjectURL(event.target.files[0]);
                         this.setting.favicon = event.target.files[0];
                     } else {

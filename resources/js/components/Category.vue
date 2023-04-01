@@ -6,10 +6,18 @@
                     <form @submit.prevent="saveCategory">
                         <div class="row">
                             <div class="col-lg-10">
-                                <div class="form-group mt-5">
+                                <div class="form-group mt-2">
                                     <label for="name">Category Name:</label>
                                     <input type="text" id="name" name="name" class="form-control shadow-none"
                                         v-model="category.name" autocomplete="off" />
+                                </div>
+                                <div class="form-group mt-2">
+                                    <label for="is_menu">Is Menu:</label>
+                                    <select id="is_menu" name="is_menu" class="form-select shadow-none"
+                                        v-model="category.is_menu" autocomplete="off">
+                                        <option value="true">True</option>
+                                        <option value="false">False</option>
+                                    </select>
                                 </div>
                                 <div class="row mt-4">
                                     <label for="previous_due" class="col-5 col-lg-4 d-flex align-items-center"></label>
@@ -77,6 +85,10 @@ export default {
                     field: "slug",
                 },
                 {
+                    label: "IsMenu",
+                    field: "is_menu",
+                },
+                {
                     label: "Action",
                     field: "before",
                 },
@@ -84,9 +96,10 @@ export default {
             categories: [],
 
             category: {
-                id: "",
-                name: "",
-                image: "",
+                id        : "",
+                name      : "",
+                is_menu: "true",
+                image     : "",
             },
 
             imageSrc: location.origin + "/noImage.jpg",
@@ -127,9 +140,10 @@ export default {
 
         editRow(val) {
             this.category = {
-                id: val.id,
-                name: val.name,
-                image: val.image
+                id        : val.id,
+                name      : val.name,
+                is_menu: val.is_menu,
+                image     : val.image
             }
             this.imageSrc = val.image != null ? location.origin + "/" + val.image : location.origin + "/noImage.jpg"
         },
@@ -162,6 +176,7 @@ export default {
             this.category = {
                 id: "",
                 name: "",
+                is_menu: "true",
                 image: "",
             }
             this.imageSrc = location.origin + "/noImage.jpg"

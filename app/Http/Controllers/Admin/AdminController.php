@@ -136,6 +136,7 @@ class AdminController extends Controller
             $data               = Setting::first();
             $data->company_name = $request->company_name;
             $data->title        = $request->title;
+            $data->address      = $request->address;
             $data->phone        = $request->phone;
             $data->facebook     = $request->facebook;
             $data->instagram    = $request->instagram;
