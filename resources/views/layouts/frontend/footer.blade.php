@@ -160,11 +160,11 @@
     });
 
     function dateTime() {
-        let day = ["Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday", "Sunday"];
+        let day = ["Sunday", "Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday"];
         let month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         time = new Date().toLocaleTimeString();
         // english date
-        engDay = day[new Date().getDay() - 1];
+        engDay = day[new Date().getDay()];
         engMonth = month[new Date().getMonth()];
         let englishDate = engDay + ', ' + new Date().getDate() + " " + engMonth + " " + new Date().getFullYear()
         // bangla date

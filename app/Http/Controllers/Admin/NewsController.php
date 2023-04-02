@@ -34,7 +34,8 @@ class NewsController extends Controller
                     FROM news n
                     LEFT JOIN admins u ON u.id = n.user_id
                     LEFT JOIN categories c ON c.id = n.category_id
-                    LEFT JOIN subcategories sc ON sc.id = n.subcategory_id");
+                    LEFT JOIN subcategories sc ON sc.id = n.subcategory_id
+                    WHERE n.status = 'a'");
     }
 
     public function store(Request $request)
@@ -46,6 +47,7 @@ class NewsController extends Controller
             if (!empty($request->id)) {
                 $data             = News::find($request->id);
                 $old              = $data->image;
+                $oldtwo              = $data->thumbnail;
                 $data->updated_at = Carbon::now();
             } else {
                 $data             = new News();
@@ -67,16 +69,22 @@ class NewsController extends Controller
                     if (File::exists($old)) {
                         File::delete($old);
                     }
+                    if (File::exists($oldtwo)) {
+                        File::delete($oldtwo);
+                    }
                 }
-                $data->image = $this->imageUpload($request, 'image', 'uploads/news') ?? '';
 
                 //for thumbnail
-                $image = $request->file('image');
-                // $filename = uniqid() . "-" . time() . "." . $image->getClientOriginalExtension();
-                $filename = $image->getClientOriginalName() . '_' . uniqId() . '.' . $image->getClientOriginalExtension();
-                Image::make($image)->resize(420, 282)->save(public_path('uploads/news/thumbnail/' . $filename));
-                $data->thumbnail = "uploads/news/thumbnail/" . $filename;
+                $img = $request->file('image');
+                $filename = pathinfo($img->getClientOriginalName(), PATHINFO_FILENAME) . '_' . uniqId() . '.' . $img->getClientOriginalExtension();
+                Image::make($img)->resize(420, 282)->save(public_path('uploads/thumbnail/' . $filename));
+                $data->thumbnail = "uploads/thumbnail/" . $filename;
+
+                //for main image
+                $data->image = $this->imageUpload($request, 'image', 'uploads/news') ?? '';
+                
             }
+
             $data->save();
 
             if (!empty($request->id)) {
@@ -85,7 +93,7 @@ class NewsController extends Controller
                 return "News insert successfully";
             }
         } catch (\Throwable $e) {
-            return "Something went wrong";
+            return "Something went wrong" . $e->getMessage();
         }
     }
 
