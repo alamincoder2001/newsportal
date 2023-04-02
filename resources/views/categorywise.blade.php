@@ -42,7 +42,6 @@
                 <div class="row mt-3">
                     <div class="col-md-12 text-end "><a class="btn btn-success" href="sports/14">এই বিভাগের আরও খবর »</a></div>
                 </div>
-                <figure class="media"><oembed url="https://www.youtube.com/watch?v=6DDqkpR65Ak"></oembed></figure>
             </div>
         </div>
         <div class="col-md-12 col-lg-4 col-xl-4 col-xxl-3">
