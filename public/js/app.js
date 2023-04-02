@@ -5656,6 +5656,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -5740,10 +5744,6 @@ __webpack_require__.r(__webpack_exports__);
       }
       if (this.news.description == "") {
         alert("Description field required");
-        return;
-      }
-      if (this.news.subtitle == "") {
-        alert("Subtitle  required");
         return;
       }
       var formdata = new FormData(event.target);
@@ -40432,6 +40432,34 @@ var render = function () {
                             return
                           }
                           _vm.$set(_vm.news, "title", $event.target.value)
+                        },
+                      },
+                    }),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group mt-2" }, [
+                    _c("label", { attrs: { for: "subtitle" } }, [
+                      _vm._v("Sub Title:"),
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.news.subtitle,
+                          expression: "news.subtitle",
+                        },
+                      ],
+                      staticClass: "form-control shadow-none",
+                      attrs: { type: "text", name: "subtitle", id: "subtitle" },
+                      domProps: { value: _vm.news.subtitle },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.news, "subtitle", $event.target.value)
                         },
                       },
                     }),

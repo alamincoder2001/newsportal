@@ -11,6 +11,10 @@
                                     <input type="text" name="title" v-model="news.title" id="title"
                                         class="form-control shadow-none">
                                 </div>
+                                <div class="form-group mt-2">
+                                    <label for="subtitle">Sub Title:</label>
+                                    <input type="text" name="subtitle" v-model="news.subtitle" id="subtitle" class="form-control shadow-none">
+                                </div>
                                 <div class="row mt-2">
                                     <div class="col-lg-6">
                                         <div class="form-group mt-2">
@@ -165,10 +169,6 @@ export default {
             }
             if (this.news.description == "") {
                 alert("Description field required")
-                return
-            }
-            if (this.news.subtitle == "") {
-                alert("Subtitle  required")
                 return
             }
 
