@@ -5785,11 +5785,11 @@ __webpack_require__.r(__webpack_exports__);
         var img = new Image();
         img.src = window.URL.createObjectURL(event.target.files[0]);
         img.onload = function () {
-          if (img.width === 966 && img.height === 648) {
+          if (img.width === 740 && img.height === 450) {
             _this6.imageSrc = window.URL.createObjectURL(event.target.files[0]);
             _this6.news.image = event.target.files[0];
           } else {
-            alert("This image ".concat(img.width, " X ").concat(img.width, " but require image 966px X 648px"));
+            alert("This image ".concat(img.width, " X ").concat(img.width, " but require image 740px X 450px"));
           }
         };
       }

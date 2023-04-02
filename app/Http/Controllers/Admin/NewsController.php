@@ -77,7 +77,7 @@ class NewsController extends Controller
                 //for thumbnail
                 $img = $request->file('image');
                 $filename = pathinfo($img->getClientOriginalName(), PATHINFO_FILENAME) . '_' . uniqId() . '.' . $img->getClientOriginalExtension();
-                Image::make($img)->resize(420, 282)->save(public_path('uploads/thumbnail/' . $filename));
+                Image::make($img)->resize(420, 280)->save(public_path('uploads/thumbnail/' . $filename));
                 $data->thumbnail = "uploads/thumbnail/" . $filename;
 
                 //for main image

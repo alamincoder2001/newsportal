@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\News;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,6 +20,7 @@ class HomeController extends Controller
         if(empty($category)){
             return back();
         }
-        return view("categorywise", compact('category'));
+        $categorywisenews = News::where("category_id", $category->id)->get(); 
+        return view("categorywise", compact('category', 'categorywisenews'));
     }
 }

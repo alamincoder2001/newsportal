@@ -210,11 +210,11 @@ export default {
                 let img = new Image()
                 img.src = window.URL.createObjectURL(event.target.files[0]);
                 img.onload = () => {
-                    if (img.width === 966 && img.height === 648) {
+                    if (img.width === 740 && img.height === 450) {
                         this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
                         this.news.image = event.target.files[0];
                     } else {
-                        alert(`This image ${img.width} X ${img.width} but require image 966px X 648px`);
+                        alert(`This image ${img.width} X ${img.width} but require image 740px X 450px`);
                     }
                 }
             }

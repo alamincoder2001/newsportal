@@ -1,6 +1,6 @@
 @extends("layouts.frontend_master")
 
-@section("title") 
+@section("title")
 {{$category->slug}}
 @endsection
 
@@ -8,6 +8,7 @@
 <div class="container my-4">
     <div class="row">
         <div class="col-md-12 col-lg-8 col-xl-8 col-xxl-9 category">
+            @if(count($categorywisenews) > 0)
             <div class="breadcrumb-bg  details-article">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item bi bi-arrow-left"><a href="http://127.0.0.1:8000/">হোম</a></li>
@@ -16,13 +17,13 @@
                 <span class="edition-version"> অনলাইন ভার্সন </span>
             </div>
             <div class="cat-lead">
-                <a href="sports/2023/03/20/868918">
-                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/160831_bangladesh_pratidin_tamim.jpg?v=1679306985" alt="প্রথম বাংলাদেশি হিসেবে তামিমের ১৫ হাজার রান">
-                    <span>প্রথম বাংলাদেশি হিসেবে তামিমের ১৫ হাজার রান
-                    </span>
+                <a href="{{route('singlenews', $categorywisenews[0]->slug)}}">
+                    <img class="lazy" src="{{asset($categorywisenews[0]->image != null ? $categorywisenews[0]->image: 'noImage.jpg')}}" alt="{{count($categorywisenews) > 0 ? $categorywisenews[0]->title: ''}}">
+                    <span>{{count($categorywisenews) > 0 ? $categorywisenews[0]->title: ''}}</span>
                 </a>
-                <p>আয়ারল্যান্ডের বিপক্ষে ওয়ানডে সিরিজের দ্বিতীয় ম্যাচে মাঠে বাংলাদেশ। এই ম্যাচেই প্রথম বাংলাদেশি ব্যাটসম্যান হিসেবে আন্তর্জাতিক ক্রিকেটে&#8230;</p>
+                <p>{!! count($categorywisenews) > 0 ? $categorywisenews[0]->description: '' !!}&#8230;</p>
             </div>
+            @endif
             <div class="row">
                 <div class="col-md-6 mt-4">
                     <div class="cat-2nd-lead">
@@ -219,21 +220,6 @@
                     </li>
                 </ul>
             </div>
-            <div data-position="desktop-category-after-latest-news" class="m-0 p-0">
-                <div class="ads bg-light mb-2 d-flex justify-content-center">
-                    <div class="ad_cl-415" data-id="415">
-                        <div id="elm-esk-1277367521354-zpp">
-                            <script>
-                                esadt.cmd.push({
-                                    render: ['esk-1277367521354-zpp', 'elm-esk-1277367521354-zpp', {
-                                        'macro': '%%CLICK_URL_UNESC%%'
-                                    }]
-                                });
-                            </script>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="details-widget mt-3">
                 <h1>
                     <p class="p-0 m-0"><span>সর্বাধিক পঠিত</span> <i class="bi bi-chevron-down"></i></p>
@@ -250,21 +236,7 @@
                         </a></li>
                 </ul>
             </div>
-            <div data-position="desktop-category-after-most-read" class="m-0 p-0">
-                <div class="ads bg-light mb-2 d-flex justify-content-center">
-                    <div class="ad_cl-416" data-id="416">
-                        <div id="elm-esk-80379672771-uvu">
-                            <script>
-                                esadt.cmd.push({
-                                    render: ['esk-80379672771-uvu', 'elm-esk-80379672771-uvu', {
-                                        'macro': '%%CLICK_URL_UNESC%%'
-                                    }]
-                                });
-                            </script>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             <div class="details-widget mt-3">
                 <h1>
                     <p class="p-0 m-0"><span>প্রিন্ট সর্বাধিক</span> <i class="bi bi-chevron-down"></i></p>
