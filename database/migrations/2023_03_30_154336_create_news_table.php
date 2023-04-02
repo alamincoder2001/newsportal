@@ -22,6 +22,7 @@ class CreateNewsTable extends Migration
             $table->integer("subcategory_id")->default(0);
             $table->foreignId("user_id")->constrained("admins", "id")->onDelete("cascade");
             $table->string("image")->nullable();
+            $table->string("thumbnail")->nullable();
             $table->char("status", 5)->default("a");
             $table->timestamps();
         });
