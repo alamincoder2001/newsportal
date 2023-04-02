@@ -182,4 +182,10 @@
         }, 1000)
     }
     dateTime()
+
+    $(document).ready(() => {
+        $("table").attr("border", "1px")
+        $("table").attr("cellspacing", 0)
+        $("table").attr("cellpadding", 5)
+    })
 </script>
