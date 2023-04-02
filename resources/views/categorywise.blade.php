@@ -25,6 +25,8 @@
             </div>
             @endif
             <div class="row">
+                @foreach($categorywisenews as $key => $item)
+                @if($key != 0)
                 <div class="col-md-6 mt-4">
                     <div class="cat-2nd-lead">
                         <a href="sports/2023/03/20/868898" class="row">
@@ -35,106 +37,8 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-6 mt-4">
-                    <div class="cat-2nd-lead">
-                        <a href="sports/2023/03/20/868892" class="row">
-                            <div class="col-md-5 text">শ্রীলঙ্কাকে হোয়াইটওয়াশ করলো নিউজিল্যান্ড
-                            </div>
-                            <div class="col-md-7 pe-0">
-                                <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/140625_bangladesh_pratidin_nz-news-pic.jpg?v=1679306985" alt="">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 mt-4">
-                    <div class="cat-2nd-lead">
-                        <a href="sports/2023/03/20/868886" class="row">
-                            <div class="col-md-5 text">টস হেরে ব্যাটিংয়ে বাংলাদেশ </div>
-                            <div class="col-md-7 pe-0">
-                                <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/134046_bangladesh_pratidin_9999.jpg?v=1679306985" alt="">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 mt-4">
-                    <div class="cat-2nd-lead">
-                        <a href="sports/2023/03/20/868875" class="row">
-                            <div class="col-md-5 text">আর্জেন্টিনার জালে ১৩ গোল, কোপা'র শিরোপা জয় ব্রাজিলের</div>
-                            <div class="col-md-7 pe-0">
-                                <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/122538_bangladesh_pratidin_6d4.jpg?v=1679306985" alt="">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 mt-4">
-                    <div class="cat-2nd-lead">
-                        <a href="sports/2023/03/20/868865" class="row">
-                            <div class="col-md-5 text">সিরিজের দ্বিতীয় ওয়ানডে: আজও অনিশ্চিত মিরাজ</div>
-                            <div class="col-md-7 pe-0">
-                                <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/105802_bangladesh_pratidin_tttre.jpg?v=1679306985" alt="">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 mt-4">
-                    <div class="cat-2nd-lead">
-                        <a href="sports/2023/03/20/868854" class="row">
-                            <div class="col-md-5 text">
-                                পয়েন্ট তালিকায় শীর্ষে ফেরা হলো না বায়ার্নের </div>
-                            <div class="col-md-7 pe-0">
-                                <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/085343_bangladesh_pratidin_000ure.jpg?v=1679306985" alt="">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 mt-4">
-                    <a class="list-item" href="sports/2023/03/20/868853">
-                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/082955_bangladesh_pratidin_14.jpg?v=1679306985" alt="">
-                        <p>ঘরের মাঠেও জুভেন্টাসে ধরাশায়ী ইন্টার</p>
-                    </a>
-                </div>
-                <div class="col-md-3 mt-4">
-                    <a class="list-item" href="sports/2023/03/20/868851">
-                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/042602_bangladesh_pratidin_BD-pratidin--6.jpg?v=1679306985" alt="">
-                        <p>এল ক্ল্যাসিকোয় বাজিমাত, ফের বার্সেলোনার রিয়াল বধ</p>
-                    </a>
-                </div>
-                <div class="col-md-3 mt-4">
-                    <a class="list-item" href="sports/2023/03/20/868840">
-                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/011941_bangladesh_pratidin_BD-pratidin--3.jpg?v=1679306985" alt="">
-                        <p>ছিলেন মেসি-এমবাপ্পে, তবুও লজ্জায় ডুবল পিএসজি</p>
-                    </a>
-                </div>
-                <div class="col-md-3 mt-4">
-                    <a class="list-item" href="sports/2023/03/19/868722">
-                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/184116_bangladesh_pratidin_virat-bdp.jpg?v=1679306985" alt="">
-                        <p>৩৭ ওভারেই শেষ ১০০ ওভারের খেলা, ১০ উইকেটে হারল ভারত</p>
-                    </a>
-                </div>
-                <div class="col-md-3 mt-4">
-                    <a class="list-item" href="sports/2023/03/19/868707">
-                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/174214_bangladesh_pratidin_archarry-news-pic.jpg?v=1679306985" alt="">
-                        <p>এশিয়া কাপ আর্চারিতে সোনা জিতল বাংলাদেশ</p>
-                    </a>
-                </div>
-                <div class="col-md-3 mt-4">
-                    <a class="list-item" href="sports/2023/03/19/868685">
-                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/151159_bangladesh_pratidin_zzzzzaaa.jpg?v=1679306985" alt="">
-                        <p>আইপিএলে খেলার ছাড়পত্র চাইলেন লিটন ও সাকিব; কী বলল বিসিবি?</p>
-                    </a>
-                </div>
-                <div class="col-md-3 mt-4">
-                    <a class="list-item" href="sports/2023/03/19/868684">
-                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/143129_bangladesh_pratidin_zzzzzzzzzzzaaa.jpg?v=1679306985" alt="">
-                        <p>বৃষ্টির দিনে একাই অনুশীলন করলেন তামিম</p>
-                    </a>
-                </div>
-                <div class="col-md-3 mt-4">
-                    <a class="list-item" href="sports/2023/03/19/868681">
-                        <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/19/mob/131247_bangladesh_pratidin_zzzzzzzzzzaa.jpg?v=1679306985" alt="">
-                        <p>৩০ গজ দূর থেকে রোনালদোর ফ্রি-কিক গোল (ভিডিও)</p>
-                    </a>
-                </div>
+                @endif
+                @endforeach
                 <div class="row mt-3">
                     <div class="col-md-12 text-end "><a class="btn btn-success" href="sports/14">এই বিভাগের আরও খবর »</a></div>
                 </div>
