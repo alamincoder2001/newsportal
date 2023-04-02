@@ -11,7 +11,7 @@
             @if(count($categorywisenews) > 0)
             <div class="breadcrumb-bg  details-article">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item bi bi-arrow-left"><a href="http://127.0.0.1:8000/">হোম</a></li>
+                    <li class="breadcrumb-item bi bi-arrow-left"><a href="{{route('website')}}">হোম</a></li>
                     <li class="breadcrumb-item active" aria-current="page">{{$category->name}}</li>
                 </ol>
                 <span class="edition-version"> অনলাইন ভার্সন </span>
@@ -21,7 +21,7 @@
                     <img class="lazy" src="{{asset($categorywisenews[0]->image != null ? $categorywisenews[0]->image: 'noImage.jpg')}}" alt="{{count($categorywisenews) > 0 ? $categorywisenews[0]->title: ''}}">
                     <span>{{count($categorywisenews) > 0 ? $categorywisenews[0]->title: ''}}</span>
                 </a>
-                <p>{!! count($categorywisenews) > 0 ? $categorywisenews[0]->description: '' !!}&#8230;</p>
+                {!! count($categorywisenews) > 0 ? $categorywisenews[0]->description: '' !!}
             </div>
             @endif
             <div class="row">
@@ -29,10 +29,10 @@
                 @if($key != 0)
                 <div class="col-md-6 mt-4">
                     <div class="cat-2nd-lead">
-                        <a href="sports/2023/03/20/868898" class="row">
-                            <div class="col-md-5 text">শ্রীলঙ্কাকে ইনিংস ব্যবধানে হারের লজ্জা দিলো নিউজিল্যান্ড</div>
+                        <a href="{{route('singlenews', $item->slug)}}" class="row">
+                            <div class="col-md-5 text">{{$item->title}}</div>
                             <div class="col-md-7 pe-0">
-                                <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/thumbnails/142640_bangladesh_pratidin_5a.jpg?v=1679306985" alt="">
+                                <img src="{{asset($item->thumbnail != null ? $item->thumbnail: 'noImage.jpg')}}" alt="{{$item->title}}">
                             </div>
                         </a>
                     </div>
@@ -42,6 +42,7 @@
                 <div class="row mt-3">
                     <div class="col-md-12 text-end "><a class="btn btn-success" href="sports/14">এই বিভাগের আরও খবর »</a></div>
                 </div>
+                <figure class="media"><oembed url="https://www.youtube.com/watch?v=6DDqkpR65Ak"></oembed></figure>
             </div>
         </div>
         <div class="col-md-12 col-lg-4 col-xl-4 col-xxl-3">

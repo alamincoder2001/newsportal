@@ -90,6 +90,10 @@ export default {
                     field: "title",
                 },
                 {
+                    label: "Sub Title",
+                    field: "subtitle",
+                },
+                {
                     label: "Category",
                     field: "category_name",
                 },
@@ -106,6 +110,7 @@ export default {
             news: {
                 id: "",
                 title: "",
+                subtitle: "",
                 description: "",
                 image: ""
             },
@@ -151,7 +156,7 @@ export default {
 
         saveNews(event) {
             if (this.news.title == "") {
-                alert("Title Field is Empty");
+                alert("Title field is required");
                 return;
             }
             if (this.selectedCategory == null) {
@@ -159,7 +164,11 @@ export default {
                 return
             }
             if (this.news.description == "") {
-                alert("Description name required")
+                alert("Description field required")
+                return
+            }
+            if (this.news.subtitle == "") {
+                alert("Subtitle  required")
                 return
             }
 
@@ -182,6 +191,7 @@ export default {
             this.news = {
                 id: val.id,
                 title: val.title,
+                subtitle: val.subtitle,
                 description: val.description
             };
             this.selectedCategory = {
@@ -224,6 +234,7 @@ export default {
             this.news = {
                 id: "",
                 title: "",
+                subtitle: "",
                 description: "",
             };
             this.selectedCategory = null

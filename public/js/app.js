@@ -5669,6 +5669,9 @@ __webpack_require__.r(__webpack_exports__);
         label: "News Title",
         field: "title"
       }, {
+        label: "Sub Title",
+        field: "subtitle"
+      }, {
         label: "Category",
         field: "category_name"
       }, {
@@ -5682,6 +5685,7 @@ __webpack_require__.r(__webpack_exports__);
       news: {
         id: "",
         title: "",
+        subtitle: "",
         description: "",
         image: ""
       },
@@ -5727,7 +5731,7 @@ __webpack_require__.r(__webpack_exports__);
     saveNews: function saveNews(event) {
       var _this4 = this;
       if (this.news.title == "") {
-        alert("Title Field is Empty");
+        alert("Title field is required");
         return;
       }
       if (this.selectedCategory == null) {
@@ -5735,7 +5739,11 @@ __webpack_require__.r(__webpack_exports__);
         return;
       }
       if (this.news.description == "") {
-        alert("Description name required");
+        alert("Description field required");
+        return;
+      }
+      if (this.news.subtitle == "") {
+        alert("Subtitle  required");
         return;
       }
       var formdata = new FormData(event.target);
@@ -5754,6 +5762,7 @@ __webpack_require__.r(__webpack_exports__);
       this.news = {
         id: val.id,
         title: val.title,
+        subtitle: val.subtitle,
         description: val.description
       };
       this.selectedCategory = {
@@ -5798,6 +5807,7 @@ __webpack_require__.r(__webpack_exports__);
       this.news = {
         id: "",
         title: "",
+        subtitle: "",
         description: ""
       };
       this.selectedCategory = null;

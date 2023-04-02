@@ -16,6 +16,7 @@ class CreateNewsTable extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->id();
             $table->string("title");
+            $table->text("subtitle")->nullable();
             $table->string("slug");
             $table->longText("description");
             $table->foreignId("category_id")->constrained("categories", "id")->onDelete("cascade");

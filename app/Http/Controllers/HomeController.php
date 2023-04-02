@@ -23,4 +23,14 @@ class HomeController extends Controller
         $categorywisenews = News::where("category_id", $category->id)->get(); 
         return view("categorywise", compact('category', 'categorywisenews'));
     }
+
+    // category_wise method
+    public function singleNews($slug)
+    {
+        $news = News::where("slug", $slug)->first();
+        if(empty($news)){
+            return back();
+        }
+        return view("singlepage", compact('news'));
+    }
 }

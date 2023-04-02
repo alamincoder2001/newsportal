@@ -76,15 +76,11 @@
             <div class="row">
                 <div class="col-12 col-md-4 col-lg-4 pt-3">
                     <ul>
-                        <li><a href="./national">জাতীয়</a></li>
-                        <li><a href="./city-news">নগর জীবন</a></li>
-                        <li><a href="./country">দেশ</a></li>
-                        <li><a href="./international-news">আন্তর্জাতিক খবর</a></li>
-                        <li><a href="./entertainment">শোবিজ</a></li>
-                        <li><a href="./chayer-desh">চায়ের দেশ</a></li>
-                        <li><a href="./first-page">প্রথম পাতা</a></li>
-                        <li><a href="./sport-news">মাঠে ময়দানে</a></li>
-                        <li><a href="./last-page">পেছনের পৃষ্ঠা</a></li>
+                        @foreach($categories->take(9) as $item)
+                        <li>
+                            <a href="{{route('categorywise', $item->slug)}}">{{$item->name}}</a>
+                        </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="col-12 col-md-4 col-lg-5"></div>
