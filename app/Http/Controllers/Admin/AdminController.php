@@ -123,6 +123,7 @@ class AdminController extends Controller
     public function storeSetting(Request $request)
     {
         try {
+
             $validator = Validator::make($request->all(), [
                 "company_name" => "required",
                 "title" => "required",

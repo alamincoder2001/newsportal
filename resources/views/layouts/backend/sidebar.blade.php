@@ -20,6 +20,12 @@
                         <li class="sidebar-item">
                             <a href="{{route('admin.news.index')}}" class="sidebar-link {{Request::is('admin.news.index') ? 'active':''}}"><i class="fas fa-list"></i><span class="hide-menu"> News Entry </span></a>
                         </li>
+                        <li class="sidebar-item">
+                            <a href="{{route('admin.banner.index')}}" class="sidebar-link {{Request::is('admin.banner.index') ? 'active':''}}"><i class="fas fa-list"></i><span class="hide-menu"> Banner Entry </span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{route('admin.ad.index')}}" class="sidebar-link {{Request::is('admin.ad.index') ? 'active':''}}"><i class="fas fa-list"></i><span class="hide-menu"> Ads Entry </span></a>
+                        </li>
                     </ul>
                 </li>
 

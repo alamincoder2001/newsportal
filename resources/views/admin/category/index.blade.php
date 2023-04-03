@@ -5,5 +5,5 @@
 @section("breadcrumb_item", "Category Create")
 
 @section("content")
-    <Category></Category>
+<Category></Category>
 @endsection

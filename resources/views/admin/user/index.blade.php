@@ -105,7 +105,7 @@
                 render: data => {
                     return `
                             ${'<a href="/admin/user/permission/'+data.id+'" class="btn btn-warning shadow-none btn-sm"><i class="mdi mdi-account-settings-variant"></i></a>'}
-                            ${'<button type="button" onclick="Edit('+data.id+')" class="btn btn-primary shadow-none btn-sm"><i class="mdi mdi-account-edit"></i></button>'}            
+                            ${'<button type="button" onclick="Edit('+data.id+')" class="btn btn-primary shadow-none btn-sm"><i class="mdi mdi-account-edit"></i></button>'}
                             ${'<button type="button" onclick="Delete('+data.id+')" class="btn btn-danger shadow-none btn-sm"><i class="mdi mdi-account-remove"></i></button>'}
                         `;
                 }
@@ -117,7 +117,8 @@
     function addUser(event) {
         event.preventDefault();
 
-        var formdata = new FormData(event.target)
+        var formdata = new FormData()
+        console.log(formdata);
         $.ajax({
             url: location.origin + "/admin/user",
             method: "POST",

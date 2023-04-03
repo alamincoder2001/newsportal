@@ -16,13 +16,13 @@ Vue.component("v-select", vSelect);
 import CKEditor from '@ckeditor/ckeditor5-vue2';
 Vue.use( CKEditor );
 
-
 Vue.component('Dashboard', require('./components/Dashboard.vue').default);
 Vue.component('Category', require('./components/Category.vue').default);
 Vue.component('Subcategory', require('./components/Subcategory.vue').default);
 Vue.component('News', require('./components/News.vue').default);
 Vue.component('Setting', require('./components/Setting.vue').default);
-
+Vue.component('Slider', require('./components/Banner.vue').default);
+Vue.component('Ad', require('./components/Ad.vue').default);
 
 const app = new Vue({
     el: '#app',

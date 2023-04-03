@@ -1,23 +1,15 @@
 <template>
     <div class="row">
-        <div class="col-12 col-lg-12">
+        <div class="col-lg-12 col-12">
             <div class="card">
                 <div class="card-body">
-                    <form @submit.prevent="saveCategory">
+                    <form @submit.prevent="saveAd">
                         <div class="row">
                             <div class="col-lg-10">
                                 <div class="form-group mt-2">
-                                    <label for="name">Category Name:</label>
-                                    <input type="text" id="name" name="name" class="form-control shadow-none"
-                                        v-model="category.name" autocomplete="off" />
-                                </div>
-                                <div class="form-group mt-2">
-                                    <label for="is_menu">Is Menu:</label>
-                                    <select id="is_menu" name="is_menu" class="form-select shadow-none"
-                                        v-model="category.is_menu" autocomplete="off">
-                                        <option value="true">True</option>
-                                        <option value="false">False</option>
-                                    </select>
+                                    <label for="name">Ad Title:</label>
+                                    <input type="text" id="title" name="title" class="form-control shadow-none"
+                                        v-model="ad.title" autocomplete="off" />
                                 </div>
                                 <div class="row mt-4">
                                     <label for="previous_due" class="col-5 col-lg-4 d-flex align-items-center"></label>
@@ -27,7 +19,7 @@
                                             Reset
                                         </button>
                                         <button type="submit" class="btn btn-sm btn-outline-success shadow-none">
-                                            Save Category
+                                            Save Banner
                                         </button>
                                     </div>
                                 </div>
@@ -43,12 +35,11 @@
                     </form>
                 </div>
             </div>
-
         </div>
 
-        <!-- list of category -->
+        <!-- list of Banner -->
         <div class="col-12 col-lg-12" style="overflow-x: auto">
-            <vue-good-table :columns="columns" :rows="categories" :fixed-header="true" :pagination-options="{
+            <vue-good-table :columns="columns" :rows="ads" :fixed-header="true" :pagination-options="{
                 enabled: true,
                 perPage: 15,
             }" :search-options="{ enabled: true }" :line-numbers="true" styleClass="vgt-table" max-height="550px">
@@ -69,82 +60,80 @@
 
 <script>
 export default {
-    data() {
+    data(){
         return {
+
             columns: [
                 {
-                    label: "CategoryId",
+                    label: "AdId",
                     field: "id",
                 },
                 {
-                    label: "Category Name",
-                    field: "name",
+                    label: "Ad Title",
+                    field: "title",
                 },
                 {
                     label: "Slug",
                     field: "slug",
                 },
                 {
-                    label: "IsMenu",
-                    field: "is_menu",
-                },
-                {
                     label: "Action",
                     field: "before",
                 },
             ],
-            categories: [],
 
-            category: {
-                id        : "",
-                name      : "",
-                is_menu   : "true",
-                image     : "",
+            ads : [],
+
+            ad : {
+                id : '',
+                title : '',
+                image: '',
             },
 
             imageSrc: location.origin + "/noImage.jpg",
         }
     },
 
-    created() {
-        this.getCategory();
+    created(){
+        this.getAds();
     },
 
-    methods: {
-        getCategory() {
-            axios.get(location.origin + "/admin/fetch-category")
+    methods :{
+
+        getAds() {
+            axios.get(location.origin + "/admin/fetch-ad")
                 .then(res => {
-                    this.categories = res.data
+                    this.ads = res.data
                 })
         },
 
-        saveCategory(event) {
 
-            if (this.category.name == '') {
-                alert("Category name required");
-                return
+        saveAd(event){
+
+            if(this.ad.title == ''){
+                alert('Give the title');
+                return;
             }
 
-            let formdata = new FormData(event.target)
-            formdata.append("id", this.category.id)
-            formdata.append("image", this.category.image)
-            axios.post(location.origin + "/admin/category", formdata)
-                .then(res => {
-                    if (res.data.error) {
-                        alert(res.data.error.name[0])
-                    }else{
-                        $.notify(res.data, "success");
-                        this.clearData();
-                        this.getCategory();
-                    }
-                })
-        },
+            let formdata = new FormData(event.target);
 
+            formdata.append('id', this.ad.id);
+            formdata.append('image', this.ad.image);
+            axios.post(location.origin + "/admin/ad", formdata)
+            .then( res => {
+                if(res.data.error){
+                   alert(res.data.error.name[0]);
+                }else {
+                    $.notify(res.data, "Success");
+                    this.getAds();
+                    this.clearData();
+                }
+            })
+        },
         editRow(val) {
-            this.category = {
+            this.ad = {
                 id        : val.id,
-                name      : val.name,
-                is_menu: val.is_menu,
+                title      : val.title,
                 image     : val.image
             }
             this.imageSrc = val.image != null ? location.origin + "/" + val.image : location.origin + "/noImage.jpg"
@@ -152,9 +141,9 @@ export default {
 
         deleteRow(id) {
             if (confirm("Are you sure want to delete this!")) {
-                axios.post(location.origin + "/admin/category/delete", { id: id }).then((res) => {
+                axios.post(location.origin + "/admin/ad/delete", { id: id }).then((res) => {
                     $.notify(res.data, "success");
-                    this.getCategory();
+                    this.getAds();
                 });
             }
         },
@@ -166,7 +155,7 @@ export default {
                 img.onload = () => {
                     if (img.width === 150 && img.height === 150) {
                         this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-                        this.category.image = event.target.files[0];
+                        this.ad.image = event.target.files[0];
                     } else {
                         alert(`This image ${img.width}px X ${img.height}px but require image 150px X 150px`);
                     }
@@ -175,14 +164,14 @@ export default {
         },
 
         clearData() {
-            this.category = {
+            this.ad = {
                 id: "",
-                name: "",
-                is_menu: "true",
+                title: "",
                 image: "",
             }
             this.imageSrc = location.origin + "/noImage.jpg"
         }
-    },
+    }
 }
+
 </script>

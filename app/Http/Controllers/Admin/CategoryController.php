@@ -52,7 +52,7 @@ class CategoryController extends Controller
             $data->is_menu = $request->is_menu;
             $data->slug    = $this->make_slug($request->name);
             // $data->slug    = Str::slug($request->name);
-            
+
             if ($request->hasFile("image")) {
                 if (isset($old) && $old != "") {
                     if (File::exists($old)) {
@@ -61,6 +61,7 @@ class CategoryController extends Controller
                 }
                 $data->image = $this->imageUpload($request, 'image', 'uploads/categories') ?? '';
             }
+
             $data->save();
 
             if (!empty($request->id)) {
