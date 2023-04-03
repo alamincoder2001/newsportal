@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\SubcategoryController;
 // frontend section route
 Route::get('/', [HomeController::class, 'index'])->name('website');
 Route::get('/category/{slug?}', [HomeController::class, 'categoryWise'])->name('categorywise');
+Route::get('/single-news/{slug?}', [HomeController::class, 'singleNews'])->name('singlenews');
 
 
 

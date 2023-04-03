@@ -76,15 +76,11 @@
             <div class="row">
                 <div class="col-12 col-md-4 col-lg-4 pt-3">
                     <ul>
-                        <li><a href="./national">জাতীয়</a></li>
-                        <li><a href="./city-news">নগর জীবন</a></li>
-                        <li><a href="./country">দেশ</a></li>
-                        <li><a href="./international-news">আন্তর্জাতিক খবর</a></li>
-                        <li><a href="./entertainment">শোবিজ</a></li>
-                        <li><a href="./chayer-desh">চায়ের দেশ</a></li>
-                        <li><a href="./first-page">প্রথম পাতা</a></li>
-                        <li><a href="./sport-news">মাঠে ময়দানে</a></li>
-                        <li><a href="./last-page">পেছনের পৃষ্ঠা</a></li>
+                        @foreach($categories->take(9) as $item)
+                        <li>
+                            <a href="{{route('categorywise', $item->slug)}}">{{$item->name}}</a>
+                        </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="col-12 col-md-4 col-lg-5"></div>
@@ -160,11 +156,11 @@
     });
 
     function dateTime() {
-        let day = ["Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday", "Sunday"];
+        let day = ["Sunday", "Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday"];
         let month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         time = new Date().toLocaleTimeString();
         // english date
-        engDay = day[new Date().getDay() - 1];
+        engDay = day[new Date().getDay()];
         engMonth = month[new Date().getMonth()];
         let englishDate = engDay + ', ' + new Date().getDate() + " " + engMonth + " " + new Date().getFullYear()
         // bangla date
@@ -186,4 +182,10 @@
         }, 1000)
     }
     dateTime()
+
+    $(document).ready(() => {
+        $("table").attr("border", "1px")
+        $("table").attr("cellspacing", 0)
+        $("table").attr("cellpadding", 5)
+    })
 </script>

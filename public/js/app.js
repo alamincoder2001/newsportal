@@ -6002,6 +6002,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -6014,6 +6018,9 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         label: "News Title",
         field: "title"
+      }, {
+        label: "Sub Title",
+        field: "subtitle"
       }, {
         label: "Category",
         field: "category_name"
@@ -6028,6 +6035,7 @@ __webpack_require__.r(__webpack_exports__);
       news: {
         id: "",
         title: "",
+        subtitle: "",
         description: "",
         image: ""
       },
@@ -6073,7 +6081,7 @@ __webpack_require__.r(__webpack_exports__);
     saveNews: function saveNews(event) {
       var _this4 = this;
       if (this.news.title == "") {
-        alert("Title Field is Empty");
+        alert("Title field is required");
         return;
       }
       if (this.selectedCategory == null) {
@@ -6081,7 +6089,7 @@ __webpack_require__.r(__webpack_exports__);
         return;
       }
       if (this.news.description == "") {
-        alert("Description name required");
+        alert("Description field required");
         return;
       }
       var formdata = new FormData(event.target);
@@ -6100,6 +6108,7 @@ __webpack_require__.r(__webpack_exports__);
       this.news = {
         id: val.id,
         title: val.title,
+        subtitle: val.subtitle,
         description: val.description
       };
       this.selectedCategory = {
@@ -6131,11 +6140,11 @@ __webpack_require__.r(__webpack_exports__);
         var img = new Image();
         img.src = window.URL.createObjectURL(event.target.files[0]);
         img.onload = function () {
-          if (img.width === 1024 && img.height === 400) {
+          if (img.width === 740 && img.height === 450) {
             _this6.imageSrc = window.URL.createObjectURL(event.target.files[0]);
             _this6.news.image = event.target.files[0];
           } else {
-            alert("This image ".concat(img.width, " X ").concat(img.width, " but require image 1024 X 400"));
+            alert("This image ".concat(img.width, " X ").concat(img.width, " but require image 740px X 450px"));
           }
         };
       }
@@ -6144,6 +6153,7 @@ __webpack_require__.r(__webpack_exports__);
       this.news = {
         id: "",
         title: "",
+        subtitle: "",
         description: ""
       };
       this.selectedCategory = null;
@@ -41352,6 +41362,34 @@ var render = function () {
                             return
                           }
                           _vm.$set(_vm.news, "title", $event.target.value)
+                        },
+                      },
+                    }),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group mt-2" }, [
+                    _c("label", { attrs: { for: "subtitle" } }, [
+                      _vm._v("Sub Title:"),
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.news.subtitle,
+                          expression: "news.subtitle",
+                        },
+                      ],
+                      staticClass: "form-control shadow-none",
+                      attrs: { type: "text", name: "subtitle", id: "subtitle" },
+                      domProps: { value: _vm.news.subtitle },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.news, "subtitle", $event.target.value)
                         },
                       },
                     }),

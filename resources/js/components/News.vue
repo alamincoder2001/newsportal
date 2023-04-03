@@ -11,6 +11,10 @@
                                     <input type="text" name="title" v-model="news.title" id="title"
                                         class="form-control shadow-none">
                                 </div>
+                                <div class="form-group mt-2">
+                                    <label for="subtitle">Sub Title:</label>
+                                    <input type="text" name="subtitle" v-model="news.subtitle" id="subtitle" class="form-control shadow-none">
+                                </div>
                                 <div class="row mt-2">
                                     <div class="col-lg-6">
                                         <div class="form-group mt-2">
@@ -90,6 +94,10 @@ export default {
                     field: "title",
                 },
                 {
+                    label: "Sub Title",
+                    field: "subtitle",
+                },
+                {
                     label: "Category",
                     field: "category_name",
                 },
@@ -106,6 +114,7 @@ export default {
             news: {
                 id: "",
                 title: "",
+                subtitle: "",
                 description: "",
                 image: ""
             },
@@ -151,7 +160,7 @@ export default {
 
         saveNews(event) {
             if (this.news.title == "") {
-                alert("Title Field is Empty");
+                alert("Title field is required");
                 return;
             }
             if (this.selectedCategory == null) {
@@ -159,7 +168,7 @@ export default {
                 return
             }
             if (this.news.description == "") {
-                alert("Description name required")
+                alert("Description field required")
                 return
             }
 
@@ -182,6 +191,7 @@ export default {
             this.news = {
                 id: val.id,
                 title: val.title,
+                subtitle: val.subtitle,
                 description: val.description
             };
             this.selectedCategory = {
@@ -210,11 +220,11 @@ export default {
                 let img = new Image()
                 img.src = window.URL.createObjectURL(event.target.files[0]);
                 img.onload = () => {
-                    if (img.width === 1024 && img.height === 400) {
+                    if (img.width === 740 && img.height === 450) {
                         this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
                         this.news.image = event.target.files[0];
                     } else {
-                        alert(`This image ${img.width} X ${img.width} but require image 1024 X 400`);
+                        alert(`This image ${img.width} X ${img.width} but require image 740px X 450px`);
                     }
                 }
             }
@@ -224,6 +234,7 @@ export default {
             this.news = {
                 id: "",
                 title: "",
+                subtitle: "",
                 description: "",
             };
             this.selectedCategory = null

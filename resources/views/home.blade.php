@@ -1285,7 +1285,7 @@
                 </div>
             </div>
             <div data-position="desktop-home-islam-below" class="m-0 mt-3 p-0">
-                <div class="ads bg-light mb-2 d-flex justify-content-center"> <a href="http://127.0.0.1:8000/" class="ad_cl-848" data-id="848" target="_blank">
+                <div class="ads bg-light mb-2 d-flex justify-content-center"> <a href="{{route('website')}}" class="ad_cl-848" data-id="848" target="_blank">
                         <img src="https://www.bd-pratidin.com/assets/images/banner/20221129021445.jpg" alt="desktop-home-islam-below" /> </a>
                 </div>
             </div>
