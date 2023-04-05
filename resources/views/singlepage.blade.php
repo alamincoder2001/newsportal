@@ -146,7 +146,7 @@
                             </div>
                             <div class="col-md-3 mb-4">
                                 <a class="list-item" href="entertainment/2023/03/18/868499">
-                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/204927_bangladesh_pratidin_mahi-news-pic.jpg?v=1679308723" alt="কারামুক্ত হলেন মাহি 
+                                    <img class="lazy" src="https://www.bd-pratidin.com/assets/news_images/2023/03/18/mob/204927_bangladesh_pratidin_mahi-news-pic.jpg?v=1679308723" alt="কারামুক্ত হলেন মাহি
 
 ">
                                     <p>কারামুক্ত হলেন মাহি
@@ -336,7 +336,7 @@
                         </a></li>
                     <li class="mb-2"><a href="national/2023/03/20/868916" class="row">
                             <span class="col-md-4 pe-0">
-                                <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/160036_bangladesh_pratidin_ranga-news-pic.jpg?v=1679308723" alt="সাংবিধানিক ধারা মেনেই আগামী নির্বাচনে অংশ নিবো : রওশন এরশাদ 
+                                <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/160036_bangladesh_pratidin_ranga-news-pic.jpg?v=1679308723" alt="সাংবিধানিক ধারা মেনেই আগামী নির্বাচনে অংশ নিবো : রওশন এরশাদ
 
 ">
                             </span>
@@ -659,7 +659,7 @@
                         </a></li>
                     <li class="mb-2"><a href="international-news/2023/03/20/868878" class="row">
                             <span class="col-md-4 pe-0">
-                                <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/125251_bangladesh_pratidin_london.jpg?v=1679308723" alt="রমজানের আগমনে বর্ণিল সাজে লন্ডন 
+                                <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/125251_bangladesh_pratidin_london.jpg?v=1679308723" alt="রমজানের আগমনে বর্ণিল সাজে লন্ডন
 
 ">
                             </span>
@@ -745,7 +745,7 @@
                         </a></li>
                     <li class="mb-2"><a href="international-news/2023/03/20/868868" class="row">
                             <span class="col-md-4 pe-0">
-                                <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/112034_bangladesh_pratidin_Kim-Jong-Un.jpg?v=1679308723" alt="যুক্তরাষ্ট্র ও দক্ষিণ কোরিয়ার বিরুদ্ধে পারমাণবিক হামলার প্রস্তুতির নির্দেশ কিমের 
+                                <img src="https://www.bd-pratidin.com/assets/news_images/2023/03/20/mob/112034_bangladesh_pratidin_Kim-Jong-Un.jpg?v=1679308723" alt="যুক্তরাষ্ট্র ও দক্ষিণ কোরিয়ার বিরুদ্ধে পারমাণবিক হামলার প্রস্তুতির নির্দেশ কিমের
 
 ">
                             </span>

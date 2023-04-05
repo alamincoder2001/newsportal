@@ -12,7 +12,7 @@ class HomeController extends Controller
     {
         return view("home");
     }
-    
+
     // category_wise method
     public function categoryWise($slug)
     {
@@ -20,7 +20,7 @@ class HomeController extends Controller
         if(empty($category)){
             return back();
         }
-        $categorywisenews = News::where("category_id", $category->id)->get(); 
+        $categorywisenews = News::where("category_id", $category->id)->get();
         return view("categorywise", compact('category', 'categorywisenews'));
     }
 

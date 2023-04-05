@@ -9,35 +9,35 @@
     <div class="row">
         <div class="col-md-12 col-lg-8 col-xl-8 col-xxl-9 category">
             @if(count($categorywisenews) > 0)
-            <div class="breadcrumb-bg  details-article">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item bi bi-arrow-left"><a href="{{route('website')}}">হোম</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">{{$category->name}}</li>
-                </ol>
-                <span class="edition-version"> অনলাইন ভার্সন </span>
-            </div>
-            <div class="cat-lead">
-                <a href="{{route('singlenews', $categorywisenews[0]->slug)}}">
-                    <img class="lazy" src="{{asset($categorywisenews[0]->image != null ? $categorywisenews[0]->image: 'noImage.jpg')}}" alt="{{count($categorywisenews) > 0 ? $categorywisenews[0]->title: ''}}">
-                    <span>{{count($categorywisenews) > 0 ? $categorywisenews[0]->title: ''}}</span>
-                </a>
-                {!! count($categorywisenews) > 0 ? $categorywisenews[0]->description: '' !!}
-            </div>
+                <div class="breadcrumb-bg  details-article">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item bi bi-arrow-left"><a href="{{route('website')}}">হোম</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{$category->name}}</li>
+                    </ol>
+                    <span class="edition-version"> অনলাইন ভার্সন </span>
+                </div>
+                <div class="cat-lead">
+                    <a href="{{route('singlenews', $categorywisenews[0]->slug)}}">
+                        <img class="lazy" src="{{asset($categorywisenews[0]->image != null ? $categorywisenews[0]->image: 'noImage.jpg')}}" alt="{{count($categorywisenews) > 0 ? $categorywisenews[0]->title: ''}}">
+                        <span>{{count($categorywisenews) > 0 ? $categorywisenews[0]->title: ''}}</span>
+                    </a>
+                    {!! count($categorywisenews) > 0 ? $categorywisenews[0]->description: '' !!}
+                </div>
             @endif
             <div class="row">
                 @foreach($categorywisenews as $key => $item)
-                @if($key != 0)
-                <div class="col-md-6 mt-4">
-                    <div class="cat-2nd-lead">
-                        <a href="{{route('singlenews', $item->slug)}}" class="row">
-                            <div class="col-md-5 text">{{$item->title}}</div>
-                            <div class="col-md-7 pe-0">
-                                <img src="{{asset($item->thumbnail != null ? $item->thumbnail: 'noImage.jpg')}}" alt="{{$item->title}}">
+                    @if($key != 0)
+                        <div class="col-md-6 mt-4">
+                            <div class="cat-2nd-lead">
+                                <a href="{{route('singlenews', $item->slug)}}" class="row">
+                                    <div class="col-md-5 text">{{$item->title}}</div>
+                                    <div class="col-md-7 pe-0">
+                                        <img src="{{asset($item->thumbnail != null ? $item->thumbnail: 'noImage.jpg')}}" alt="{{$item->title}}">
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                </div>
-                @endif
+                        </div>
+                    @endif
                 @endforeach
                 <div class="row mt-3">
                     <div class="col-md-12 text-end "><a class="btn btn-success" href="sports/14">এই বিভাগের আরও খবর »</a></div>

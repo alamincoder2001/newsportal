@@ -17,8 +17,6 @@ Route::get('/category/{slug?}', [HomeController::class, 'categoryWise'])->name('
 Route::get('/single-news/{slug?}', [HomeController::class, 'singleNews'])->name('singlenews');
 
 
-
-
 // Admin Login Route
 Route::group(["prefix" => "admin"], function () {
     Route::get('/', [LoginController::class, 'showAdminLoginForm']);
