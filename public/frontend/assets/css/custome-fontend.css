@@ -1,0 +1,83 @@
+
+.section-13 ul li a, .section_16 ul li a, .section_16 a {
+    font-size: 16px !important;
+}
+.section_16 .title {
+    font-size: 30px !important;
+    color: #fff !important;
+    text-align:center;
+}
+.news-tab-area .tab-content ul li a strong {
+    font-size: 16px;
+}
+.section-1 .lead-item .description p {
+    font-size: 16px;
+}
+.section-1 .list-item p {
+    font-size: 16px;
+}
+.section-1 .section-1-list-iteam li a p {
+    font-size: 16px;
+}
+.section-10 .section-10-list-iteam li a p {
+    font-size: 16px;
+}
+.section-14 .section-14-list-iteam li a p {
+    font-size: 16px;
+}
+footer .footer-mid ul li a {
+    font-size: 16px;
+}
+
+
+/* singlenews page */
+.details-article article {
+    font-size: 16px;
+}
+.details-widget .thumb-list li a p {
+    font-size: 16px;
+}
+.details-widget ul.title-list li a {
+    font-size: 16px;
+}
+.details-more .list-item p {
+    font-size: 16px;
+}
+.details-article h1 {
+    font-size: 32px;
+}
+
+/* Category wise page */
+
+.category .cat-lead p {
+    font-size: 16px;
+}
+.category .cat-2nd-lead .text {
+    font-size: 20px;
+}
+.category .list-item p {
+    font-size: 16px;
+}
+
+/* logo css */
+header .logo {
+    display: block;
+    padding-top: 8px;
+    text-align: center;
+}
+header .logo img {
+    width: 100px;
+    height: auto;
+}
+
+header .navbar-title-text {
+    font-family: 'solaimanlipi';
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: left;
+}
+header .navbar-subTitle-text {
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: left;
+}

@@ -52,7 +52,7 @@ class CategoryController extends Controller
             $data->is_menu = $request->is_menu;
             $data->slug    = $this->make_slug($request->name);
             // $data->slug    = Str::slug($request->name);
-            
+
             if ($request->hasFile("image")) {
                 if (isset($old) && $old != "") {
                     if (File::exists($old)) {
@@ -75,7 +75,7 @@ class CategoryController extends Controller
 
     public function destroy(Request $request)
     {
-        try{
+        try {
             $data = Category::find($request->id);
             $old = $data->image;
             if (File::exists($old)) {
@@ -83,7 +83,7 @@ class CategoryController extends Controller
             }
             $data->delete();
             return "Category delete successfully";
-        }catch(\Throwable $e){
+        } catch (\Throwable $e) {
             return "Opps! something went wrong";
         }
     }

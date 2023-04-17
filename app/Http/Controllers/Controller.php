@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -36,7 +37,44 @@ class Controller extends BaseController
         return false;
     }
 
-    function make_slug($string) {
+    function make_slug($string)
+    {
         return preg_replace('/\s+/u', '-', trim($string));
+    }
+
+    function getUniqueId()
+    {
+        $lastNewsId = News::select('unique_id')->orderBy('unique_id', 'Desc')->take('1')->get();
+
+        if (count($lastNewsId) > 0) {
+            return $lastNewsId[0]->unique_id + 1;
+        } else {
+            return date('Y') . '000001';
+        }
+    }
+
+    public function getCategoryData($category, $order = null)
+    {
+        // $data = News::whereHas('category', function ($query) use ($category) {
+        //     return $query->where('category_id', $category);
+        // })->with(['category' => function ($query) use ($category) {
+        //     return $query->where('category_id', $category);
+        // }])->get();
+
+        if ($order == null) {
+            $data = News::whereHas('category', function ($query) use ($category) {
+                return $query->where('category_id', $category);
+            })->with(['category' => function ($query) use ($category) {
+                return $query->where('category_id', $category);
+            }])->get();
+        } else {
+            $data = News::whereHas('category', function ($query) use ($category) {
+                return $query->where('category_id', $category);
+            })->with(['category' => function ($query) use ($category) {
+                return $query->where('category_id', $category);
+            }])->orderBy('id', $order)->get();
+        }
+
+        return $data;
     }
 }

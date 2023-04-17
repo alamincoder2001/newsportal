@@ -86,7 +86,8 @@ class AdminController extends Controller
             $admin = Auth::guard('admin')->user();
 
             $validator = Validator::make($request->all(), [
-                "image" => "mimes:jpg,png,jpeg|dimensions:width=200,height=200"
+                // "image" => "mimes:jpg,png,jpeg|dimensions:width=200,height=200"
+                "image" => "mimes:jpg,png,jpeg"
             ], ["image.dimensions" => "Image dimension must be (200 x 200)"]);
 
             if ($validator->fails()) {
@@ -125,8 +126,8 @@ class AdminController extends Controller
         try {
             $validator = Validator::make($request->all(), [
                 "company_name" => "required",
-                "title" => "required",
-                "phone" => "required",
+                "title"        => "required",
+                "phone"        => "required",
             ]);
 
             if ($validator->fails()) {
