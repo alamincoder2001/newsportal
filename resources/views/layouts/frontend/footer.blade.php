@@ -64,9 +64,9 @@
 <footer class="mt-5">
     <div class="container">
         <div class="footer-top">
-            <img class="logo" src="{{asset('frontend')}}/assets/img/logo.png">
+            <img class="logo" src="{{ asset('frontend') }}/assets/img/logo.png">
             <div class="footer-editor">
-                <h2><span>সম্পাদক :</span> নিরভয় নিউজ</h2>
+                <h2><span>সম্পাদক :</span> নির্ভয় নিউজ</h2>
 
             </div>
         </div>
@@ -76,10 +76,10 @@
             <div class="row">
                 <div class="col-12 col-md-4 col-lg-4 pt-3">
                     <ul>
-                        @foreach($categories->take(9) as $item)
-                        <li>
-                            <a href="{{route('categorywise', $item->slug)}}">{{$item->name}}</a>
-                        </li>
+                        @foreach ($categories->take(9) as $item)
+                            <li>
+                                <a href="{{ route('categorywise', $item->slug) }}">{{ $item->name }}</a>
+                            </li>
                         @endforeach
                     </ul>
                 </div>
@@ -88,8 +88,10 @@
                     <div class="app-info">
                         <h3>মোবাইল অ্যাপ ডাউনলোড করুন</h3>
                         <div class="clearfix"></div>
-                        <a target="_blank" href="#" class="android"><img src="{{asset('frontend')}}/assets/img/android.png"></a>
-                        <a target="_blank" href="#" class="ios"><img src="{{asset('frontend')}}/assets/img/ios-app.png"></a>
+                        <a target="_blank" href="#" class="android"><img
+                                src="{{ asset('frontend') }}/assets/img/android.png"></a>
+                        <a target="_blank" href="#" class="ios"><img
+                                src="{{ asset('frontend') }}/assets/img/ios-app.png"></a>
                         <ul class="mt-3">
 
                             <li><a target="_blank" href="#"><i class="bi bi-instagram"></i></a></li>
@@ -119,13 +121,13 @@
 </div>
 <a href="#" id="back-to-top" title="Back to top"><i class="bi bi-chevron-up"></i></a>
 
-<script src="{{asset('frontend')}}/assets/js/bootstrap.min.js"></script>
-<script src="{{asset('frontend')}}/assets/js/acmeticker.min.js"></script>
-<script src="{{asset('frontend')}}/assets/js/theme-script.js"></script>
-<script src="{{asset('frontend')}}/assets/js/jquery.date-dropdowns.js"></script>
-<script src="{{asset('frontend')}}/assets/js/calendar.js"></script>
-<script type='text/javascript' src="{{asset('frontend')}}/assets/js/bangla-date.js"></script>
-<script type='text/javascript' src="{{asset('frontend')}}/assets/js/arabic.js"></script>
+<script src="{{ asset('frontend') }}/assets/js/bootstrap.min.js"></script>
+<script src="{{ asset('frontend') }}/assets/js/acmeticker.min.js"></script>
+<script src="{{ asset('frontend') }}/assets/js/theme-script.js"></script>
+<script src="{{ asset('frontend') }}/assets/js/jquery.date-dropdowns.js"></script>
+<script src="{{ asset('frontend') }}/assets/js/calendar.js"></script>
+<script type='text/javascript' src="{{ asset('frontend') }}/assets/js/bangla-date.js"></script>
+<script type='text/javascript' src="{{ asset('frontend') }}/assets/js/arabic.js"></script>
 <script type="text/javascript">
     $(function() {
         $("#btnArchive").click(function(e) {
@@ -157,7 +159,9 @@
 
     function dateTime() {
         let day = ["Sunday", "Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday"];
-        let month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        let month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
+            "November", "December"
+        ];
         time = new Date().toLocaleTimeString();
         // english date
         engDay = day[new Date().getDay()];

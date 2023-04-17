@@ -1,9 +1,9 @@
-@extends("layouts.backend_master")
+@extends('layouts.backend_master')
 
-@section("title", "Admin Category")
-@section("breadcrumb_title", "Category")
-@section("breadcrumb_item", "Category Create")
+@section('title', 'Admin Category')
+@section('breadcrumb_title', 'Manage Category')
+@section('breadcrumb_item', 'Category Create')
 
-@section("content")
+@section('content')
     <Category></Category>
 @endsection

@@ -8,12 +8,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Admin Login</title>
     <!-- Favicon icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('frontend/assets/img/logo.png')}}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/assets/img/logo.png') }}" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="{{asset('css/app.css')}}" />
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     <style>
         .rounded-t-5 {
             border-top-left-radius: 0.5rem;
@@ -39,12 +39,14 @@
     <section class="text-center text-lg-start position-fixed w-100 d-flex align-items-center justify-content-center">
         <div class="card mb-3 w-50">
             <div class="row g-0 d-flex align-items-center">
-                <div class="col-lg-5 d-none d-lg-flex justify-content-center align-items-center gap-2" style="flex-direction: column;margin-top:-85px;">
+                <div class="col-lg-5 d-none d-lg-flex justify-content-center align-items-center gap-2"
+                    style="flex-direction: column;margin-top:-85px;">
                     <div style="width: 180px;height:60px;">
-                        <img style="width: 180px;height:60px;" src="{{asset('frontend/assets/img/logo.png')}}" alt="Water Market BD"/>
+                        <img style="width: 180px;height:60px;" src="{{ asset('frontend/assets/img/logo.png') }}"
+                            alt="Water Market BD" />
                     </div>
                     <div>
-                        <a href="{{route('website')}}">
+                        <a href="{{ route('website') }}">
                             <h4 class="m-0">নির্ভয় নিউজ</h4>
                         </a>
                     </div>
@@ -55,13 +57,16 @@
                         <form onsubmit="AdminLogin(event)">
                             <!-- Email input -->
                             <div class="form-outline mb-4">
-                                <input type="text" name="username" id="form2Example1" class="form-control" autocomplete="off"/>
-                                <label class="form-label error-username" for="form2Example1">Username or Email Address</label>
+                                <input type="text" name="username" id="form2Example1" class="form-control"
+                                    autocomplete="off" value="admin" />
+                                <label class="form-label error-username" for="form2Example1">Username or Email
+                                    Address</label>
                             </div>
 
                             <!-- Password input -->
                             <div class="form-outline mb-4">
-                                <input type="password" name="password" id="form2Example2" class="form-control" autocomplete="off"/>
+                                <input type="password" name="password" id="form2Example2" class="form-control"
+                                    autocomplete="off" value="1" />
                                 <label class="form-label error-password" for="form2Example2">Password</label>
                             </div>
 

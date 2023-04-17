@@ -4,33 +4,166 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <li class="sidebar-item {{Request::is('admin.dashboard') ? 'selected':''}}">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link {{Request::is('admin.dashboard') ? 'active':''}}" href="{{route('admin.dashboard')}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a>
+                <li class="sidebar-item {{ Request::is('admin.dashboard') ? 'selected' : '' }}">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link {{ Request::is('admin.dashboard') ? 'active' : '' }}"
+                        href="{{ route('admin.dashboard') }}" aria-expanded="false">
+                        <i class="mdi mdi-view-dashboard"></i>
+                        <span class="hide-menu">Dashboard</span>
+                    </a>
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-earth"></i><span class="hide-menu"> Website Content </span></a>
+                    <a href="" class="sidebar-link {{ Request::is('admin.category.index') ? 'active' : '' }}"><i
+                            class="fas fa-spinner"></i><span class="hide-menu"> Pending News </span></a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ route('admin.news.create') }}"
+                        class="sidebar-link {{ Request::is('admin.news.create') ? 'active' : '' }}">
+                        <i class="fas fa-plus"></i>
+                        <span class="hide-menu"> News Entry </span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ route('admin.news.manage') }}"
+                        class="sidebar-link {{ Request::is('admin.subcategory.index') ? 'active' : '' }}">
+                        <i class="fas fa-arrow-right"></i>
+                        <span class="hide-menu"> News List </span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ route('admin.news.create') }}"
+                        class="sidebar-link {{ Request::is('admin.news.create') ? 'active' : '' }}">
+                        <i class="fas fa-arrow-right"></i>
+                        <span class="hide-menu"> News Archieve </span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ route('admin.employee.entry') }}"
+                        class="sidebar-link {{ Request::is('admin.employee.entry') ? 'active' : '' }}"><i
+                            class="fas fa-plus"></i><span class="hide-menu"> Employee Entry </span></a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{ route('admin.employee.list') }}"
+                        class="sidebar-link {{ Request::is('admin.employee.list') ? 'active' : '' }}"><i
+                            class="fas fa-list-ol"></i><span class="hide-menu"> Employee List </span></a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                        aria-expanded="false">
+                        <i class="mdi mdi-earth"></i>
+                        <span class="hide-menu"> Manage Advertisement</span>
+                    </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
-                            <a href="{{route('admin.category.index')}}" class="sidebar-link {{Request::is('admin.category.index') ? 'active':''}}"><i class="fas fa-list"></i><span class="hide-menu"> Category Entry </span></a>
+                            <a href="{{ route('admin.advertise_one.create') }}"
+                                class="sidebar-link {{ Request::is('admin.advertise_one.create') ? 'active' : '' }}">
+                                <i class="fas fa-plus"></i>
+                                <span class="hide-menu"> Advertisement Entry 1 </span>
+                            </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="{{route('admin.subcategory.index')}}" class="sidebar-link {{Request::is('admin.subcategory.index') ? 'active':''}}"><i class="fas fa-list"></i><span class="hide-menu"> Subcategory Entry </span></a>
+                            <a href="{{ route('admin.advertise_two.create') }}"
+                                class="sidebar-link {{ Request::is('admin.advertise_two.create') ? 'active' : '' }}">
+                                <i class="fas fa-plus"></i>
+                                <span class="hide-menu"> Advertisement Entry 2 </span>
+                            </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="{{route('admin.news.index')}}" class="sidebar-link {{Request::is('admin.news.index') ? 'active':''}}"><i class="fas fa-list"></i><span class="hide-menu"> News Entry </span></a>
+                            <a href="{{ route('admin.advertise_three.create') }}"
+                                class="sidebar-link {{ Request::is('admin.advertise_three.create') ? 'active' : '' }}">
+                                <i class="fas fa-plus"></i>
+                                <span class="hide-menu"> Advertisement Entry 3 </span>
+                            </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a href="{{ route('admin.advertise_four.create') }}"
+                                class="sidebar-link {{ Request::is('admin.advertise_four.create') ? 'active' : '' }}">
+                                <i class="fas fa-plus"></i>
+                                <span class="hide-menu"> Advertisement Entry 4 </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ route('admin.advertise_five.create') }}"
+                                class="sidebar-link {{ Request::is('admin.advertise_five.create') ? 'active' : '' }}">
+                                <i class="fas fa-plus"></i>
+                                <span class="hide-menu"> Advertisement Entry 5 </span>
+                            </a>
+                        </li>
+
                     </ul>
                 </li>
+                <li class="sidebar-item">
+                    <a href="{{ route('admin.category.index') }}"
+                        class="sidebar-link {{ Request::is('admin.category.index') ? 'active' : '' }}"><i
+                            class="fas fa-plus"></i><span class="hide-menu"> Category Entry </span></a>
+                </li>
+                {{-- <li class="sidebar-item">
+                    <a href="{{ route('admin.subcategory.index') }}"
+                        class="sidebar-link {{ Request::is('admin.subcategory.index') ? 'active' : '' }}"><i
+                            class="fas fa-list-ol"></i><span class="hide-menu"> Manage Subcategory </span></a>
+                </li> --}}
 
-                <li class="sidebar-item {{Request::is('admin.user.index') ? 'selected':''}}">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin.user.index')}}" aria-expanded="false"><i class="mdi mdi-account-multiple-plus"></i><span class="hide-menu">User Entry</span></a>
+                {{-- <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                        aria-expanded="false"><i class="mdi mdi-earth"></i><span class="hide-menu"> Website Content
+                        </span></a>
+                    <ul aria-expanded="false" class="collapse first-level">
+                        <li class="sidebar-item">
+                            <a href="{{ route('admin.category.index') }}"
+                                class="sidebar-link {{ Request::is('admin.category.index') ? 'active' : '' }}"><i
+                                    class="fas fa-list"></i><span class="hide-menu"> Category Entry </span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ route('admin.subcategory.index') }}"
+                                class="sidebar-link {{ Request::is('admin.subcategory.index') ? 'active' : '' }}"><i
+                                    class="fas fa-list"></i><span class="hide-menu"> Subcategory Entry </span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ route('admin.news.index') }}"
+                                class="sidebar-link {{ Request::is('admin.news.index') ? 'active' : '' }}"><i
+                                    class="fas fa-list"></i><span class="hide-menu"> News Entry </span></a>
+                        </li>
+                    </ul>
+                </li> --}}
+                {{-- <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
+                        aria-expanded="false">
+                        <i class="mdi mdi-earth"></i>
+                        <span class="hide-menu"> Manage News</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level">
+                        <li class="sidebar-item">
+                            <a href="{{ route('admin.news.create') }}"
+                                class="sidebar-link {{ Request::is('admin.news.create') ? 'active' : '' }}">
+                                <i class="fas fa-arrow-right"></i>
+                                <span class="hide-menu"> Upload News </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{ route('admin.news.manage') }}"
+                                class="sidebar-link {{ Request::is('admin.subcategory.index') ? 'active' : '' }}">
+                                <i class="fas fa-arrow-right"></i>
+                                <span class="hide-menu"> Manage News </span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> --}}
+
+                <li class="sidebar-item {{ Request::is('admin.user.create') ? 'selected' : '' }}">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="{{ route('admin.user.create') }}" aria-expanded="false"><i
+                            class="fa fa-user-plus"></i><span class="hide-menu">User
+                            Entry</span></a>
                 </li>
-                <li class="sidebar-item {{Request::is('admin.settings') ? 'selected':''}}">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin.settings')}}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Settings</span></a>
+                <li class="sidebar-item {{ Request::is('admin.settings') ? 'selected' : '' }}">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.settings') }}"
+                        aria-expanded="false"><i class="mdi mdi-settings"></i><span
+                            class="hide-menu">Settings</span></a>
                 </li>
-                <li class="sidebar-item {{Request::is('admin.logout') ? 'selected':''}}">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin.logout')}}" aria-expanded="false"><i class="mdi mdi-logout-variant"></i><span class="hide-menu">Logout</span></a>
+                <li class="sidebar-item {{ Request::is('admin.logout') ? 'selected' : '' }}">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.logout') }}"
+                        aria-expanded="false"><i class="mdi mdi-logout-variant"></i><span
+                            class="hide-menu">Logout</span></a>
                 </li>
             </ul>
         </nav>

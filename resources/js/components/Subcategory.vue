@@ -1,37 +1,35 @@
 <template>
     <div class="row">
-        <div class="col-12 col-lg-12">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
                     <form @submit.prevent="saveSubcategory">
-                        <div class="row">
-                            <div class="col-lg-10">
-                                <div class="form-group mt-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                <div class="form-group mt-2">
+                                    <label for="name">Category Name:</label>
+                                    <v-select :options="categories" name="category_id" id="category"
+                                        v-model="selectedCategory" label="name"></v-select>
+                                </div>
+                                <div class="form-group mt-2">
                                     <label for="name">Subcategory Name:</label>
                                     <input type="text" id="name" name="name" class="form-control shadow-none"
                                         v-model="subcategory.name" autocomplete="off" />
                                 </div>
-                                <div class="form-group mt-2">
-                                    <label for="name">Category Name:</label>
-                                    <v-select :options="categories" name="category_id" id="category"
-                                            v-model="selectedCategory" label="name"></v-select>
-                                </div>
-                                <div class="row mt-4">
-                                    <label for="previous_due" class="col-5 col-lg-4 d-flex align-items-center"></label>
-                                    <div class="col-7 col-lg-8 text-end">
-                                        <button type="button" @click="clearData"
-                                            class="btn btn-sm btn-outline-secondary shadow-none">
-                                            Reset
-                                        </button>
-                                        <button type="submit" class="btn btn-sm btn-outline-success shadow-none">
-                                            Save Subcategory
-                                        </button>
-                                    </div>
+                                <div class="form-group mt-4 text-end">
+                                    <button type="button" @click="clearData" class="btn btn-danger">
+                                        Reset
+                                    </button>
+                                    <button type="submit" class="btn btn-success text-light">
+                                        <i class="fa fa-floppy-o pe-1" aria-hidden="true"></i>
+                                        Save
+                                    </button>
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-2 d-flex justify-content-center align-items-center">
+                            <div class="col-md-2 d-flex justify-content-center align-items-center">
                                 <div class="form-group ImageBackground">
                                     <img :src="imageSrc" class="imageShow" />
+                                    <p style="text-align: center;font-size: 11px;margin: 0px;">150px X 150px</p>
                                     <label for="image">Image</label>
                                     <input type="file" id="image" class="form-control shadow-none" @change="imageUrl" />
                                 </div>
@@ -44,7 +42,7 @@
         </div>
 
         <!-- list of category -->
-        <div class="col-12 col-lg-12" style="overflow-x: auto">
+        <div class="col-md-12" style="overflow-x: auto">
             <vue-good-table :columns="columns" :rows="subcategories" :fixed-header="true" :pagination-options="{
                 enabled: true,
                 perPage: 15,
@@ -92,13 +90,16 @@ export default {
             ],
             subcategories: [],
             subcategory: {
-                id         : "",
+                id: "",
                 category_id: "",
-                name       : "",
-                image      : "",
+                name: "",
+                image: "",
             },
             categories: [],
-            selectedCategory: null,
+            selectedCategory: {
+                id: '',
+                name: 'Select Category',
+            },
 
             imageSrc: location.origin + "/noImage.jpg",
         }
@@ -141,7 +142,7 @@ export default {
                 .then(res => {
                     if (res.data.error) {
                         alert(res.data.error.name[0])
-                    }else{
+                    } else {
                         $.notify(res.data, "success");
                         this.clearData();
                         this.getSubcategory();
@@ -151,10 +152,10 @@ export default {
 
         editRow(val) {
             this.subcategory = {
-                id         : val.id,
+                id: val.id,
                 category_id: val.category_id,
-                name       : val.name,
-                image      : val.image
+                name: val.name,
+                image: val.image
             }
             this.selectedCategory = {
                 id: val.category_id,
@@ -189,10 +190,10 @@ export default {
 
         clearData() {
             this.subcategory = {
-                id         : "",
+                id: "",
                 category_id: "",
-                name       : "",
-                image      : "",
+                name: "",
+                image: "",
             }
             this.selectedCategory = null
             this.imageSrc = location.origin + "/noImage.jpg"

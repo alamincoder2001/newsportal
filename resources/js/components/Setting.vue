@@ -127,13 +127,13 @@ export default {
         }
     },
 
-    created(){
+    created() {
         this.getSetting()
     },
 
     methods: {
-        getSetting(){
-            axios.get(location.origin+"/admin/settings-fetch")
+        getSetting() {
+            axios.get(location.origin + "/admin/settings-fetch")
                 .then(res => {
                     this.setting = res.data
                     this.imageSrc = res.data.logo != null ? location.origin + "/" + res.data.logo : location.origin + "/noImage.jpg"
@@ -161,7 +161,7 @@ export default {
                 .then(res => {
                     if (res.data.error) {
                         alert(res.data.error.company_name[0])
-                    }else{
+                    } else {
                         $.notify(res.data, "success");
                         this.getSetting();
                     }
@@ -173,12 +173,12 @@ export default {
                 let img = new Image()
                 img.src = window.URL.createObjectURL(event.target.files[0]);
                 img.onload = () => {
-                    if (img.width === 552 && img.height === 287) {
-                        this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-                        this.setting.logo = event.target.files[0];
-                    } else {
-                        alert(`This image ${img.width}px X ${img.height}px but require image 230px X 50px`);
-                    }
+                    // if (img.width === 552 && img.height === 287) {
+                    this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+                    this.setting.logo = event.target.files[0];
+                    // } else {
+                    // alert(`This image ${img.width}px X ${img.height}px but require image 230px X 50px`);
+                    // }
                 }
             }
         },

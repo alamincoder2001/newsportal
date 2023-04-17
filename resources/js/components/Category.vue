@@ -1,40 +1,40 @@
 <template>
     <div class="row">
-        <div class="col-12 col-lg-12">
+        <div class="col-12">
             <div class="card">
                 <div class="card-body">
                     <form @submit.prevent="saveCategory">
-                        <div class="row">
-                            <div class="col-lg-10">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
                                 <div class="form-group mt-2">
                                     <label for="name">Category Name:</label>
                                     <input type="text" id="name" name="name" class="form-control shadow-none"
-                                        v-model="category.name" autocomplete="off" />
+                                        v-model="category.name" placeholder="Category name" autocomplete="off" />
                                 </div>
                                 <div class="form-group mt-2">
                                     <label for="is_menu">Is Menu:</label>
                                     <select id="is_menu" name="is_menu" class="form-select shadow-none"
                                         v-model="category.is_menu" autocomplete="off">
+                                        <option value="" selected>Select</option>
                                         <option value="true">True</option>
                                         <option value="false">False</option>
+                                        <option value="others">Others</option>
                                     </select>
                                 </div>
-                                <div class="row mt-4">
-                                    <label for="previous_due" class="col-5 col-lg-4 d-flex align-items-center"></label>
-                                    <div class="col-7 col-lg-8 text-end">
-                                        <button type="button" @click="clearData"
-                                            class="btn btn-sm btn-outline-secondary shadow-none">
-                                            Reset
-                                        </button>
-                                        <button type="submit" class="btn btn-sm btn-outline-success shadow-none">
-                                            Save Category
-                                        </button>
-                                    </div>
+                                <div class="form-group mt-4 text-end">
+                                    <button type="reset" class="btn btn-danger">
+                                        Reset
+                                    </button>
+                                    <button type="submit" class="btn btn-success text-light">
+                                        <i class="fa fa-floppy-o pe-1" aria-hidden="true"></i>
+                                        Save
+                                    </button>
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-2 d-flex justify-content-center align-items-center">
+                            <div class="col-md-2 d-flex justify-content-center align-items-center">
                                 <div class="form-group ImageBackground">
                                     <img :src="imageSrc" class="imageShow" />
+                                    <p style="text-align: center;font-size: 11px;margin: 0px;">150px X 150px</p>
                                     <label for="image">Image</label>
                                     <input type="file" id="image" class="form-control shadow-none" @change="imageUrl" />
                                 </div>
@@ -43,23 +43,27 @@
                     </form>
                 </div>
             </div>
-
         </div>
 
         <!-- list of category -->
-        <div class="col-12 col-lg-12" style="overflow-x: auto">
-            <vue-good-table :columns="columns" :rows="categories" :fixed-header="true" :pagination-options="{
+        <div class="col-md-12" style="overflow-x: auto">
+            <vue-good-table :columns="columns" :rows="categories" :fixed-header="false" :pagination-options="{
                 enabled: true,
-                perPage: 15,
-            }" :search-options="{ enabled: true }" :line-numbers="true" styleClass="vgt-table" max-height="550px">
+                perPage: 10,
+            }" :search-options="{ enabled: true }" :line-numbers="true" styleClass="vgt-table striped bordered"
+                max-height="550px">
                 <template slot="table-row" slot-scope="props">
-                    <span v-if="props.column.field == 'before'">
-                        <button class="btn btn-sm btn-outline-primary shadow-none" @click="editRow(props.row)">
-                            Edit
-                        </button>
-                        <button class="btn btn-sm btn-outline-danger shadow-none" @click="deleteRow(props.row.id)">
-                            Delete
-                        </button>
+                    <span v-if="props.column.field == 'img'">
+                    </span>
+                </template>
+                <template slot="table-row" slot-scope="props">
+                    <span v-if="props.column.field == 'after'">
+                        <a href="" @click.prevent="editRow(props.row)">
+                            <i class="fas fa-edit text-info"></i>
+                        </a>
+                        <a href="" @click.prevent="deleteRow(props.row.id)">
+                            <i class="fas fa-trash text-danger"></i>
+                        </a>
                     </span>
                 </template>
             </vue-good-table>
@@ -67,42 +71,29 @@
     </div>
 </template>
 
+
 <script>
 export default {
     data() {
         return {
-            columns: [
-                {
-                    label: "CategoryId",
-                    field: "id",
-                },
-                {
-                    label: "Category Name",
-                    field: "name",
-                },
-                {
-                    label: "Slug",
-                    field: "slug",
-                },
-                {
-                    label: "IsMenu",
-                    field: "is_menu",
-                },
-                {
-                    label: "Action",
-                    field: "before",
-                },
-            ],
-            categories: [],
-
             category: {
-                id        : "",
-                name      : "",
-                is_menu: "true",
-                image     : "",
+                id: "",
+                name: "",
+                is_menu: "",
+                image: "",
             },
-
+            categories: [],
             imageSrc: location.origin + "/noImage.jpg",
+
+            columns: [
+                { label: 'Category name', field: 'name' },
+                { label: 'Slug', field: 'slug' },
+                { label: 'Is Menu', field: 'is_menu' },
+                { label: "Image", field: "img", html: true, },
+                { label: "Action", field: "after" },
+            ],
+            page: 1,
+            per_page: 10,
         }
     },
 
@@ -111,16 +102,24 @@ export default {
     },
 
     methods: {
-        getCategory() {
-            axios.get(location.origin + "/admin/fetch-category")
+        async getCategory() {
+            axios.get("/admin/fetch-category")
                 .then(res => {
-                    this.categories = res.data
+                    this.categories = res.data.map(c => {
+                        c.img = c.image == '' ? '' : '<img src="/' + c.image + '" width="60px">'
+                        return c;
+                    })
                 })
+
         },
 
         saveCategory(event) {
             if (this.category.name == '') {
                 alert("Category name required");
+                return
+            }
+            if (this.category.is_menu == '') {
+                alert("Is Menu required");
                 return
             }
             let formdata = new FormData(event.target)
@@ -130,7 +129,7 @@ export default {
                 .then(res => {
                     if (res.data.error) {
                         alert(res.data.error.name[0])
-                    }else{
+                    } else {
                         $.notify(res.data, "success");
                         this.clearData();
                         this.getCategory();
@@ -140,10 +139,10 @@ export default {
 
         editRow(val) {
             this.category = {
-                id        : val.id,
-                name      : val.name,
+                id: val.id,
+                name: val.name,
                 is_menu: val.is_menu,
-                image     : val.image
+                image: val.image
             }
             this.imageSrc = val.image != null ? location.origin + "/" + val.image : location.origin + "/noImage.jpg"
         },
@@ -176,7 +175,7 @@ export default {
             this.category = {
                 id: "",
                 name: "",
-                is_menu: "true",
+                is_menu: "",
                 image: "",
             }
             this.imageSrc = location.origin + "/noImage.jpg"

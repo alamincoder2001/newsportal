@@ -52,8 +52,8 @@ header .navbar-title {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 22px;
-    margin-left: -50px;
+    /* margin-top: 22px;
+    margin-left: -50px; */
 }
 
 header .navbar-title-text {

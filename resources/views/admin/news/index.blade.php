@@ -1,9 +1,9 @@
-@extends("layouts.backend_master")
+@extends('layouts.backend_master')
 
-@section("title", "Admin News")
-@section("breadcrumb_title", "News")
-@section("breadcrumb_item", "News Create")
+@section('title', 'Manage News')
+@section('breadcrumb_title', 'Manage News')
+@section('breadcrumb_item', 'Manage News')
 
-@section("content")
-    <News></News>
+@section('content')
+    <manage-news></manage-news>
 @endsection

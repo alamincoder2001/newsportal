@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <title>@yield('title')</title>
 
-    @include("layouts.frontend.style")
+    @include('layouts.frontend.style')
 </head>
 
 <body class="home ">
@@ -17,7 +17,7 @@
 
 
     @yield('content')
-    
+
     @include('layouts.frontend.footer')
 </body>
 

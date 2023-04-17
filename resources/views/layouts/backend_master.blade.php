@@ -6,22 +6,33 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template" />
-    <meta name="description" content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework" />
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Matrix lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Matrix admin lite design, Matrix admin lite dashboard bootstrap 5 dashboard template" />
+    <meta name="description"
+        content="Matrix Admin Lite Free Version is powerful and clean admin dashboard template, inpired from Bootstrap Framework" />
     <meta name="robots" content="noindex,nofollow" />
     <title>@yield('title')</title>
     <!-- Favicon icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset($setting->favicon != null ? $setting->favicon : 'noImage.jpg')}}" />
-    @include("layouts.backend.style")
+    <link rel="shortcut icon" type="image/x-icon"
+        href="{{ asset($setting->favicon != null ? $setting->favicon : 'noImage.jpg') }}" />
+
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link href="{{ asset('backend') }}/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <link href="{{ asset('backend') }}/dist/css/font-awesome.css" rel="stylesheet" />
+    <link href="{{ asset('backend') }}/dist/css/style.min.css" rel="stylesheet" />
+    <link href="{{ asset('backend') }}/dist/css/custom.css" rel="stylesheet" />
+
+    @stack('css')
 </head>
 
 <body>
     <main id="app">
-        <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
-            @include("layouts.backend.navbar")
+        <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+            data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+            @include('layouts.backend.navbar')
             <!-- End Topbar header -->
             <!-- left sidebar -->
-            @include("layouts.backend.sidebar")
+            @include('layouts.backend.sidebar')
 
             <!-- Page wrapper  -->
             <div class="page-wrapper">
@@ -32,7 +43,8 @@
                             <div class="ms-auto text-end">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a>
+                                        </li>
                                         <li class="breadcrumb-item" aria-current="page">
                                             @yield('breadcrumb_item')
                                         </li>
@@ -46,7 +58,7 @@
 
                 <div class="container-fluid">
                     <div class="row">
-                        @yield("content")
+                        @yield('content')
                     </div>
                 </div>
                 <footer class="footer text-center">
@@ -56,7 +68,7 @@
             </div>
         </div>
     </main>
-    @include("layouts.backend.script")
+    @include('layouts.backend.script')
     <script>
         function dateTime() {
             d = new Date().toDateString();
