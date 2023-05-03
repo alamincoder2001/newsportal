@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\DB;
 
 class Controller extends BaseController
 {
@@ -44,8 +45,7 @@ class Controller extends BaseController
 
     function getUniqueId()
     {
-        $lastNewsId = News::select('unique_id')->orderBy('unique_id', 'Desc')->take('1')->get();
-
+        $lastNewsId = DB::table('news')->select('unique_id')->orderBy('unique_id', 'Desc')->take('1')->get();
         if (count($lastNewsId) > 0) {
             return $lastNewsId[0]->unique_id + 1;
         } else {

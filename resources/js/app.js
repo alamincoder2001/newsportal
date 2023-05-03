@@ -27,7 +27,7 @@ Vue.component("Category", require("./components/Category.vue").default);
 Vue.component("Subcategory", require("./components/Subcategory.vue").default);
 Vue.component("Designation", require("./components/Designation.vue").default);
 Vue.component("Department", require("./components/Department.vue").default);
-Vue.component("UploadNews", require("./components/UploadNews.vue").default);
+Vue.component("upload-news", require("./components/UploadNews.vue").default);
 Vue.component("ManageNews", require("./components/ManageNews.vue").default);
 Vue.component("PendingNews", require("./components/PendingNews.vue").default);
 Vue.component("ArchiveNews", require("./components/ArchiveNews.vue").default);
