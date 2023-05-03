@@ -11,4 +11,13 @@ class Employee extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
+    }
+    public function designation()
+    {
+        return $this->belongsTo(Designation::class);
+    }
 }

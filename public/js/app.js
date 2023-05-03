@@ -5334,6 +5334,145 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ArchiveNews.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ArchiveNews.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ckeditor/ckeditor5-build-classic */ "./node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js");
+/* harmony import */ var _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      newses: [],
+      columns: [
+      // { label: 'id', field: 'id' },
+      {
+        label: 'News Title',
+        field: 'title'
+      }, {
+        label: 'Category Name',
+        field: 'categories'
+      }, {
+        label: 'Description',
+        field: 'description',
+        html: true
+      }, {
+        label: "Thumbnail",
+        field: "img",
+        html: true
+      }, {
+        label: "Action",
+        field: "after"
+      }]
+    };
+  },
+  created: function created() {
+    this.getNews();
+  },
+  methods: {
+    getNews: function getNews() {
+      var _this = this;
+      axios.get(location.origin + "/admin/get-archive-news").then(function (res) {
+        _this.newses = res.data.map(function (n) {
+          n.img = n.thumbnail == '' ? '' : '<img src="' + n.thumbnail + '" width="100px">';
+          n.categories = n.category.map(function (c) {
+            return c.category_name.name;
+          });
+          return n;
+        });
+      });
+    },
+    categories: function categories() {
+      return 'Sohel';
+    },
+    showError: function showError(error) {
+      if (error.title) {
+        $('#title').addClass('is-invalid');
+      } else {
+        $('#title').removeClass('is-invalid');
+      }
+      // if (error.user_name) {
+      //     toastr.error(error.user_name);
+      //     $('#subtitle').addClass('is-invalid');
+      // } else {
+      //     $('#subtitle').removeClass('is-invalid');
+      // }
+      if (error.category_id) {
+        $('#category').addClass('is-invalid');
+      } else {
+        $('#category').removeClass('is-invalid');
+      }
+    },
+    editRow: function editRow(val) {
+      window.open('/admin/news/' + val.id, "_self");
+    },
+    deleteRow: function deleteRow(id) {
+      var _this2 = this;
+      if (confirm("Are you sure want to delete the news!")) {
+        axios.post(location.origin + "/admin/news/delete", {
+          id: id
+        }).then(function (res) {
+          $.notify(res.data, "success");
+          _this2.getNews();
+        });
+      }
+    },
+    UndoRow: function UndoRow(id) {
+      var _this3 = this;
+      if (confirm("Are you sure want to undo the news!")) {
+        axios.post(location.origin + "/admin/news/undo", {
+          id: id
+        }).then(function (res) {
+          $.notify(res.data, "success");
+          _this3.getNews();
+        });
+      }
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Category.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Category.vue?vue&type=script&lang=js& ***!
@@ -6457,40 +6596,46 @@ __webpack_require__.r(__webpack_exports__);
       designations: [],
       departments: [],
       imageSrc: location.origin + "/noImage.jpg",
-      users: [],
+      employees: [],
       columns: [
       // { label: 'id', field: 'id' },
       {
-        label: "Image",
-        field: "img",
-        html: true
-      }, {
         label: 'Name',
         field: 'name'
-      }, {
-        label: 'User Name',
-        field: 'username'
       }, {
         label: 'Email',
         field: 'email'
       }, {
-        label: 'Role',
-        field: 'role'
+        label: 'Mobile',
+        field: 'mobile'
+      }, {
+        label: 'Department',
+        field: 'department.department_name'
+      }, {
+        label: 'Designation',
+        field: 'designation.designation_name'
+      }, {
+        label: 'Join Date',
+        field: 'join_date'
+      }, {
+        label: 'National Id',
+        field: 'nidFile',
+        html: true
+      }, {
+        label: "Photo",
+        field: "img",
+        html: true
       }, {
         label: "Action",
         field: "after"
       }]
-      // rows: [],
-      // page: 1,
-      // per_page: 10,
     };
   },
   created: function created() {
     this.getDesignation();
     this.getDepartment();
-    // this.getUser();
+    this.getEmployee();
   },
-
   methods: {
     getDesignation: function getDesignation() {
       var _this = this;
@@ -6504,16 +6649,18 @@ __webpack_require__.r(__webpack_exports__);
         _this2.departments = res.data;
       });
     },
-    // getUser() {
-    //     axios.get("/admin/get-user").then(res => {
-    //         this.users = res.data.data.map(c => {
-    //             c.img = c.image == null ? '' : '<img src="' + c.image + '" width="60px">'
-    //             return c;
-    //         })
-    //     })
-    // },
-    saveUser: function saveUser() {
+    getEmployee: function getEmployee() {
       var _this3 = this;
+      axios.get(location.origin + "/admin/get-employee").then(function (res) {
+        _this3.employees = res.data.map(function (p) {
+          p.nidFile = p.nid_file == null ? '' : '<a href="' + p.nid_file + '" target="_blank"> NID file</a>';
+          p.img = p.photo == null ? '<img src="/noImage.jpg" width="60px">' : '<img src="' + p.photo + '" width="60px">';
+          return p;
+        });
+      });
+    },
+    saveUser: function saveUser() {
+      var _this4 = this;
       this.form.nid_length = this.form.nid_no.length;
       var url = "/admin/save-employee";
       if (this.form.id != '') {
@@ -6523,13 +6670,14 @@ __webpack_require__.r(__webpack_exports__);
       // return
       this.form.post(url).then(function (res) {
         if (res.data.status == "error") {
-          _this3.showError(res.data.message);
+          _this4.showError(res.data.message);
           return;
         }
         $.notify(res.data.message, "success");
         if (res.data.status) {
-          _this3.clearData();
-          _this3.getUser();
+          location.reload();
+          // this.clearData();
+          // this.getUser();
         }
       });
     },
@@ -6607,22 +6755,40 @@ __webpack_require__.r(__webpack_exports__);
         $('.error-salary').empty();
       }
     },
-    editRow: function editRow(val) {
-      this.form.id = val.id;
-      this.form.name = val.name;
-      this.form.username = val.username;
-      this.form.email = val.email;
-      this.form.role = val.role;
-      this.imageSrc = val.image != null ? location.origin + val.image : location.origin + "/noImage.jpg";
+    editRow: function editRow(data) {
+      this.form.id = data.id;
+      this.form.name = data.name;
+      this.form.email = data.email;
+      this.form.mobile = data.mobile;
+      this.form.gender = data.gender;
+      this.form.join_date = data.join_date;
+      this.form.birth_date = data.birth_date;
+      this.form.nid_no = data.nid_no;
+      this.form.designation = data.designation_id;
+      this.form.department = data.department_id;
+      this.form.father_name = data.father_name;
+      this.form.mother_name = data.mother_name;
+      this.form.present_address = data.present_address;
+      this.form.permanent_address = data.permanent_address;
+      this.form.salary = data.salary;
+      this.imageSrc = data.photo != null ? location.origin + data.photo : location.origin + "/noImage.jpg";
+      console.log(this.form);
+
+      // this.form.id = val.id;
+      // this.form.name = val.name;
+      // this.form.username = val.username;
+      // this.form.email = val.email;
+      // this.form.role = val.role;
+      // this.imageSrc = val.image != null ? location.origin + val.image : location.origin + "/noImage.jpg"
     },
     deleteRow: function deleteRow(id) {
-      var _this4 = this;
+      var _this5 = this;
       if (confirm("Are you sure want to delete this!")) {
-        axios.post(location.origin + "/admin/user/delete", {
+        axios.post(location.origin + "/admin/employee/delete", {
           id: id
         }).then(function (res) {
           $.notify(res.data, "success");
-          _this4.getUser();
+          _this5.getEmployee();
         });
       }
     },
@@ -6630,30 +6796,29 @@ __webpack_require__.r(__webpack_exports__);
       this.form.nid_file = event.target.files[0];
     },
     imageUrl: function imageUrl(event) {
-      var _this5 = this;
+      var _this6 = this;
       if (event.target.files[0]) {
         var img = new Image();
         img.src = window.URL.createObjectURL(event.target.files[0]);
         img.onload = function () {
           // if (img.width === 150 && img.height === 150) {
-          _this5.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-          _this5.form.photo = event.target.files[0];
+          _this6.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+          _this6.form.photo = event.target.files[0];
           // } else {
           //     alert(`This image ${img.width}px X ${img.height}px but require image 150px X 150px`);
           // }
         };
       }
-    },
-    clearData: function clearData() {
-      this.form.id = "";
-      this.form.name = "";
-      this.form.username = "";
-      this.form.email = "";
-      this.form.role = "";
-      this.form.password = "";
-      this.imageSrc = '';
-      delete this.form.image;
-    }
+    } // clearData() {
+    //     this.form.id = "";
+    //     this.form.name = "";
+    //     this.form.username = "";
+    //     this.form.email = "";
+    //     this.form.role = "";
+    //     this.form.password = "";
+    //     this.imageSrc = '';
+    //     delete (this.form.image)
+    // }
   }
 });
 
@@ -6700,6 +6865,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -6709,23 +6878,34 @@ __webpack_require__.r(__webpack_exports__);
       columns: [
       // { label: 'id', field: 'id' },
       {
-        label: 'News Title',
-        field: 'title'
+        label: 'Name',
+        field: 'name'
       }, {
-        label: 'Category Name',
-        field: 'categories'
+        label: 'Email',
+        field: 'email'
       }, {
-        label: 'Description',
-        field: 'description',
+        label: 'Mobile',
+        field: 'mobile'
+      }, {
+        label: 'Department',
+        field: 'department.department_name'
+      }, {
+        label: 'Designation',
+        field: 'designation.designation_name'
+      }, {
+        label: 'Join Date',
+        field: 'join_date'
+      }, {
+        label: 'National Id',
+        field: 'nidFile',
         html: true
       }, {
-        label: "Thumbnail",
+        label: "Photo",
         field: "img",
         html: true
-      }, {
-        label: "Action",
-        field: "after"
-      }]
+      }
+      // { label: "Action", field: "after" },
+      ]
     };
   },
   created: function created() {
@@ -6735,12 +6915,10 @@ __webpack_require__.r(__webpack_exports__);
     getEmployee: function getEmployee() {
       var _this = this;
       axios.get(location.origin + "/admin/get-employee").then(function (res) {
-        _this.employees = res.data.map(function (n) {
-          n.img = n.thumbnail == '' ? '' : '<img src="' + n.thumbnail + '" width="100px">';
-          n.categories = n.category.map(function (c) {
-            return c.category_name.name;
-          });
-          return n;
+        _this.employees = res.data.map(function (p) {
+          p.nidFile = p.nid_file == null ? '' : '<a href="' + p.nid_file + '" target="_blank"> NID file</a>';
+          p.img = p.photo == null ? '<img src="/noImage.jpg" width="60px">' : '<img src="' + p.photo + '" width="60px">';
+          return p;
         });
       });
     },
@@ -6773,6 +6951,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ckeditor/ckeditor5-build-classic */ "./node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js");
 /* harmony import */ var _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
 //
 //
 //
@@ -6867,7 +7048,9 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     editRow: function editRow(val) {
-      window.open('/admin/news/' + val.id, "_self");
+      if (confirm("Are you sure to edit the news!")) {
+        window.open('/admin/news/' + val.id, "_self");
+      }
       // console.log(val);
       // return;
       // this.news = {
@@ -6888,14 +7071,164 @@ __webpack_require__.r(__webpack_exports__);
       // }
       // this.imageSrc = val.image != null ? location.origin + "/" + val.image : location.origin + "/noImage.jpg"
     },
+    archiveRow: function archiveRow(id) {
+      var _this2 = this;
+      if (confirm("Are you sure to archive the news!")) {
+        axios.post(location.origin + "/admin/news/archive", {
+          id: id
+        }).then(function (res) {
+          $.notify(res.data, "success");
+          _this2.getNews();
+        });
+      }
+    },
+    deleteRow: function deleteRow(id) {
+      var _this3 = this;
+      if (confirm("Are you sure to delete the news!")) {
+        axios.post(location.origin + "/admin/news/delete", {
+          id: id
+        }).then(function (res) {
+          $.notify(res.data, "success");
+          _this3.getNews();
+        });
+      }
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PendingNews.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PendingNews.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ckeditor/ckeditor5-build-classic */ "./node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js");
+/* harmony import */ var _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      newses: [],
+      columns: [
+      // { label: 'id', field: 'id' },
+      {
+        label: 'News Title',
+        field: 'title'
+      }, {
+        label: 'Category Name',
+        field: 'categories'
+      }, {
+        label: 'Description',
+        field: 'description',
+        html: true
+      }, {
+        label: "Thumbnail",
+        field: "img",
+        html: true
+      }, {
+        label: "Action",
+        field: "after"
+      }]
+    };
+  },
+  created: function created() {
+    this.getNews();
+  },
+  methods: {
+    getNews: function getNews() {
+      var _this = this;
+      axios.get(location.origin + "/admin/get-pending-news").then(function (res) {
+        _this.newses = res.data.map(function (n) {
+          n.img = n.thumbnail == '' ? '' : '<img src="' + n.thumbnail + '" width="100px">';
+          n.categories = n.category.map(function (c) {
+            return c.category_name.name;
+          });
+          return n;
+        });
+      });
+    },
+    categories: function categories() {
+      return 'Sohel';
+    },
+    showError: function showError(error) {
+      if (error.title) {
+        $('#title').addClass('is-invalid');
+      } else {
+        $('#title').removeClass('is-invalid');
+      }
+      // if (error.user_name) {
+      //     toastr.error(error.user_name);
+      //     $('#subtitle').addClass('is-invalid');
+      // } else {
+      //     $('#subtitle').removeClass('is-invalid');
+      // }
+      if (error.category_id) {
+        $('#category').addClass('is-invalid');
+      } else {
+        $('#category').removeClass('is-invalid');
+      }
+    },
+    editRow: function editRow(val) {
+      window.open('/admin/news/' + val.id, "_self");
+    },
     deleteRow: function deleteRow(id) {
       var _this2 = this;
-      if (confirm("Are you sure want to delete this!")) {
+      if (confirm("Are you sure want to delete the news!")) {
         axios.post(location.origin + "/admin/news/delete", {
           id: id
         }).then(function (res) {
           $.notify(res.data, "success");
           _this2.getNews();
+        });
+      }
+    },
+    approveRow: function approveRow(id) {
+      var _this3 = this;
+      if (confirm("Are you sure want to approve the news!")) {
+        axios.post(location.origin + "/admin/news/approve", {
+          id: id
+        }).then(function (res) {
+          $.notify(res.data, "success");
+          _this3.getNews();
         });
       }
     }
@@ -7101,12 +7434,12 @@ __webpack_require__.r(__webpack_exports__);
         var img = new Image();
         img.src = window.URL.createObjectURL(event.target.files[0]);
         img.onload = function () {
-          if (img.width === 552 && img.height === 287) {
-            _this4.imageSrc1 = window.URL.createObjectURL(event.target.files[0]);
-            _this4.setting.favicon = event.target.files[0];
-          } else {
-            alert("This image ".concat(img.width, "px X ").concat(img.height, "px but require image 150px X 150px"));
-          }
+          // if (img.width === 552 && img.height === 287) {
+          _this4.imageSrc1 = window.URL.createObjectURL(event.target.files[0]);
+          _this4.setting.favicon = event.target.files[0];
+          // } else {
+          //     alert(`This image ${img.width}px X ${img.height}px but require image 150px X 150px`);
+          // }
         };
       }
     }
@@ -7431,24 +7764,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -7540,13 +7855,13 @@ __webpack_require__.r(__webpack_exports__);
         _this3.imageSrc = data.image != null ? location.origin + data.image : location.origin + "/noImage.jpg";
       });
     },
-    onChangeCategory: function onChangeCategory() {
-      if (this.selectedCategory == null) {
-        return;
-      }
-      // this.selectedSubcategory = null
-      this.getSubcategory();
-    },
+    // onChangeCategory() {
+    //     if (this.selectedCategory == null) {
+    //         return
+    //     }
+    //     // this.selectedSubcategory = null
+    //     this.getSubcategory()
+    // },
     saveNews: function saveNews() {
       var _this4 = this;
       // if (this.news.title == "") {
@@ -7588,33 +7903,51 @@ __webpack_require__.r(__webpack_exports__);
       this.form.post(url).then(function (res) {
         if (res.data.status == "error") {
           _this4.showError(res.data.message);
+          return;
         }
         $.notify(res.data.message, "success");
         if (res.data.status && url == "/admin/news") {
           _this4.clearData();
-        } else if (res.data.status && url == "/admin/update/news") {
+        } else if (res.data.status && url == "/admin/update/news" && res.data.is_archive == 'no') {
           window.open('/admin/manage-news/', "_self");
+        } else {
+          window.open('/admin/news-archive/', "_self");
         }
         // this.getNews();
       });
     },
     showError: function showError(error) {
       if (error.title) {
-        $('#title').addClass('is-invalid');
+        $('.error-title').html(error.title);
       } else {
-        $('#title').removeClass('is-invalid');
+        $('.error-title').empty();
       }
+      if (error.description) {
+        $('.error-description').html(error.description);
+      } else {
+        $('.error-description').empty();
+      }
+      if (error.categories) {
+        $('.error-category').html(error.categories);
+      } else {
+        $('.error-category').empty();
+      }
+      // if (error.title) {
+      //     $('#title').addClass('is-invalid');
+      // } else {
+      //     $('#title').removeClass('is-invalid');
+      // }
       // if (error.user_name) {
       //     toastr.error(error.user_name);
       //     $('#subtitle').addClass('is-invalid');
       // } else {
       //     $('#subtitle').removeClass('is-invalid');
       // }
-      if (error.category_id) {
-        $('#category').addClass('is-invalid');
-      } else {
-        $('#category').removeClass('is-invalid');
-      }
+      // if (error.category_id) {
+      //     $('#category').addClass('is-invalid');
+      // } else {
+      //     $('#category').removeClass('is-invalid');
+      // }
     },
     deleteRow: function deleteRow(id) {
       var _this5 = this;
@@ -7746,6 +8079,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -7753,9 +8096,10 @@ __webpack_require__.r(__webpack_exports__);
       form: new Form({
         title: "",
         url: "",
-        image: ""
+        image: "",
+        status: ""
       }),
-      imageSrc: location.origin + "/noImage.jpg"
+      imageSrc: location.origin + "/600x300.jpg"
     };
   },
   created: function created() {
@@ -7766,7 +8110,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
       axios.get(location.origin + "/admin/get-advertise-five").then(function (res) {
         _this.form = res.data;
-        _this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/noImage.jpg";
+        _this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/600x300.jpg";
       });
     },
     updateAdvertise: function updateAdvertise(event) {
@@ -7852,6 +8196,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -7859,9 +8213,10 @@ __webpack_require__.r(__webpack_exports__);
       form: new Form({
         title: "",
         url: "",
-        image: ""
+        image: "",
+        status: ""
       }),
-      imageSrc: location.origin + "/noImage.jpg"
+      imageSrc: location.origin + "/600x1200.jpg"
     };
   },
   created: function created() {
@@ -7872,7 +8227,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
       axios.get(location.origin + "/admin/get-advertise-four").then(function (res) {
         _this.form = res.data;
-        _this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/noImage.jpg";
+        _this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/600x1200.jpg";
       });
     },
     updateAdvertise: function updateAdvertise(event) {
@@ -7958,6 +8313,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -7965,9 +8330,10 @@ __webpack_require__.r(__webpack_exports__);
       form: new Form({
         title: "",
         url: "",
-        image: ""
+        image: "",
+        status: ""
       }),
-      imageSrc: location.origin + "/noImage.jpg"
+      imageSrc: location.origin + "/1200x200.jpg"
     };
   },
   created: function created() {
@@ -7978,7 +8344,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
       axios.get(location.origin + "/admin/get-advertise-one").then(function (res) {
         _this.form = res.data;
-        _this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/noImage.jpg";
+        _this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/1200x200.jpg";
       });
     },
     updateAdvertise: function updateAdvertise(event) {
@@ -8064,6 +8430,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -8071,9 +8447,10 @@ __webpack_require__.r(__webpack_exports__);
       form: new Form({
         title: "",
         url: "",
-        image: ""
+        image: "",
+        status: ""
       }),
-      imageSrc: location.origin + "/noImage.jpg"
+      imageSrc: location.origin + "/600x600.jpg"
     };
   },
   created: function created() {
@@ -8084,7 +8461,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
       axios.get(location.origin + "/admin/get-advertise-three").then(function (res) {
         _this.form = res.data;
-        _this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/noImage.jpg";
+        _this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/600x600.jpg";
       });
     },
     updateAdvertise: function updateAdvertise(event) {
@@ -8170,6 +8547,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -8177,9 +8564,10 @@ __webpack_require__.r(__webpack_exports__);
       form: new Form({
         title: "",
         url: "",
-        image: ""
+        image: "",
+        status: ""
       }),
-      imageSrc: location.origin + "/noImage.jpg"
+      imageSrc: location.origin + "/1200x300.jpg"
     };
   },
   created: function created() {
@@ -8190,7 +8578,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
       axios.get(location.origin + "/admin/get-advertise-two").then(function (res) {
         _this.form = res.data;
-        _this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/noImage.jpg";
+        _this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/1200x300.jpg";
       });
     },
     updateAdvertise: function updateAdvertise(event) {
@@ -8264,17 +8652,20 @@ vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("Designation", (__webpack_
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("Department", (__webpack_require__(/*! ./components/Department.vue */ "./resources/js/components/Department.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("UploadNews", (__webpack_require__(/*! ./components/UploadNews.vue */ "./resources/js/components/UploadNews.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("ManageNews", (__webpack_require__(/*! ./components/ManageNews.vue */ "./resources/js/components/ManageNews.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("PendingNews", (__webpack_require__(/*! ./components/PendingNews.vue */ "./resources/js/components/PendingNews.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("ArchiveNews", (__webpack_require__(/*! ./components/ArchiveNews.vue */ "./resources/js/components/ArchiveNews.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("Setting", (__webpack_require__(/*! ./components/Setting.vue */ "./resources/js/components/Setting.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("CreateUser", (__webpack_require__(/*! ./components/CreateUser.vue */ "./resources/js/components/CreateUser.vue")["default"]));
-//advertise
-vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("Advertise_one", (__webpack_require__(/*! ./components/advertise/AdvertiseOne.vue */ "./resources/js/components/advertise/AdvertiseOne.vue")["default"]));
-vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("Advertise_two", (__webpack_require__(/*! ./components/advertise/AdvertiseTwo.vue */ "./resources/js/components/advertise/AdvertiseTwo.vue")["default"]));
-vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("Advertise_three", (__webpack_require__(/*! ./components/advertise/AdvertiseThree.vue */ "./resources/js/components/advertise/AdvertiseThree.vue")["default"]));
-vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("Advertise_four", (__webpack_require__(/*! ./components/advertise/AdvertiseFour.vue */ "./resources/js/components/advertise/AdvertiseFour.vue")["default"]));
-vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("Advertise_five", (__webpack_require__(/*! ./components/advertise/AdvertiseFive.vue */ "./resources/js/components/advertise/AdvertiseFive.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("EmployeeEntry", (__webpack_require__(/*! ./components/EmployeeEntry.vue */ "./resources/js/components/EmployeeEntry.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("EmployeeList", (__webpack_require__(/*! ./components/EmployeeList.vue */ "./resources/js/components/EmployeeList.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("EmployeeEntry", (__webpack_require__(/*! ./components/EmployeeEntry.vue */ "./resources/js/components/EmployeeEntry.vue")["default"]));
+
+//advertise
+vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("AdvertiseOne", (__webpack_require__(/*! ./components/advertise/AdvertiseOne.vue */ "./resources/js/components/advertise/AdvertiseOne.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("AdvertiseTwo", (__webpack_require__(/*! ./components/advertise/AdvertiseTwo.vue */ "./resources/js/components/advertise/AdvertiseTwo.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("AdvertiseThree", (__webpack_require__(/*! ./components/advertise/AdvertiseThree.vue */ "./resources/js/components/advertise/AdvertiseThree.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("AdvertiseFour", (__webpack_require__(/*! ./components/advertise/AdvertiseFour.vue */ "./resources/js/components/advertise/AdvertiseFour.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("AdvertiseFive", (__webpack_require__(/*! ./components/advertise/AdvertiseFive.vue */ "./resources/js/components/advertise/AdvertiseFive.vue")["default"]));
 var app = new vue__WEBPACK_IMPORTED_MODULE_2__["default"]({
   el: "#app"
 });
@@ -41712,6 +42103,45 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 /***/ }),
 
+/***/ "./resources/js/components/ArchiveNews.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/components/ArchiveNews.vue ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ArchiveNews_vue_vue_type_template_id_69fe471a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ArchiveNews.vue?vue&type=template&id=69fe471a& */ "./resources/js/components/ArchiveNews.vue?vue&type=template&id=69fe471a&");
+/* harmony import */ var _ArchiveNews_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ArchiveNews.vue?vue&type=script&lang=js& */ "./resources/js/components/ArchiveNews.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ArchiveNews_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ArchiveNews_vue_vue_type_template_id_69fe471a___WEBPACK_IMPORTED_MODULE_0__.render,
+  _ArchiveNews_vue_vue_type_template_id_69fe471a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ArchiveNews.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/Category.vue":
 /*!**********************************************!*\
   !*** ./resources/js/components/Category.vue ***!
@@ -42020,6 +42450,45 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 /* hot reload */
 if (false) { var api; }
 component.options.__file = "resources/js/components/ManageNews.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/PendingNews.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/components/PendingNews.vue ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _PendingNews_vue_vue_type_template_id_46a36a22___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PendingNews.vue?vue&type=template&id=46a36a22& */ "./resources/js/components/PendingNews.vue?vue&type=template&id=46a36a22&");
+/* harmony import */ var _PendingNews_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PendingNews.vue?vue&type=script&lang=js& */ "./resources/js/components/PendingNews.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PendingNews_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PendingNews_vue_vue_type_template_id_46a36a22___WEBPACK_IMPORTED_MODULE_0__.render,
+  _PendingNews_vue_vue_type_template_id_46a36a22___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/PendingNews.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -42336,6 +42805,22 @@ component.options.__file = "resources/js/components/advertise/AdvertiseTwo.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/ArchiveNews.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/ArchiveNews.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ArchiveNews_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ArchiveNews.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ArchiveNews.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ArchiveNews_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/Category.vue?vue&type=script&lang=js&":
 /*!***********************************************************************!*\
   !*** ./resources/js/components/Category.vue?vue&type=script&lang=js& ***!
@@ -42464,6 +42949,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/PendingNews.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/PendingNews.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PendingNews_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./PendingNews.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PendingNews.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PendingNews_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/Setting.vue?vue&type=script&lang=js&":
 /*!**********************************************************************!*\
   !*** ./resources/js/components/Setting.vue?vue&type=script&lang=js& ***!
@@ -42589,6 +43090,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdvertiseTwo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AdvertiseTwo.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/advertise/AdvertiseTwo.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AdvertiseTwo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ArchiveNews.vue?vue&type=template&id=69fe471a&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/ArchiveNews.vue?vue&type=template&id=69fe471a& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ArchiveNews_vue_vue_type_template_id_69fe471a___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ArchiveNews_vue_vue_type_template_id_69fe471a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ArchiveNews_vue_vue_type_template_id_69fe471a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ArchiveNews.vue?vue&type=template&id=69fe471a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ArchiveNews.vue?vue&type=template&id=69fe471a&");
+
 
 /***/ }),
 
@@ -42728,6 +43246,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/PendingNews.vue?vue&type=template&id=46a36a22&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/PendingNews.vue?vue&type=template&id=46a36a22& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PendingNews_vue_vue_type_template_id_46a36a22___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PendingNews_vue_vue_type_template_id_46a36a22___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PendingNews_vue_vue_type_template_id_46a36a22___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./PendingNews.vue?vue&type=template&id=46a36a22& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PendingNews.vue?vue&type=template&id=46a36a22&");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Setting.vue?vue&type=template&id=5f96e096&":
 /*!****************************************************************************!*\
   !*** ./resources/js/components/Setting.vue?vue&type=template&id=5f96e096& ***!
@@ -42860,6 +43395,134 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdvertiseTwo_vue_vue_type_template_id_06dfdf38___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AdvertiseTwo_vue_vue_type_template_id_06dfdf38___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./AdvertiseTwo.vue?vue&type=template&id=06dfdf38& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/advertise/AdvertiseTwo.vue?vue&type=template&id=06dfdf38&");
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ArchiveNews.vue?vue&type=template&id=69fe471a&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ArchiveNews.vue?vue&type=template&id=69fe471a& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c(
+      "div",
+      { staticClass: "col-md-12", staticStyle: { "overflow-x": "auto" } },
+      [
+        _c("vue-good-table", {
+          attrs: {
+            columns: _vm.columns,
+            rows: _vm.newses,
+            "fixed-header": false,
+            "pagination-options": {
+              enabled: true,
+              perPage: 10,
+            },
+            "search-options": { enabled: true },
+            "line-numbers": true,
+            styleClass: "vgt-table striped bordered news_table",
+            "max-height": "550px",
+          },
+          scopedSlots: _vm._u([
+            {
+              key: "table-row",
+              fn: function (props) {
+                return [
+                  props.column.field == "after"
+                    ? _c(
+                        "div",
+                        {
+                          staticStyle: {
+                            "font-size": "16px",
+                            "text-align": "center",
+                          },
+                        },
+                        [
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "", title: "undo" },
+                              on: {
+                                click: function ($event) {
+                                  $event.preventDefault()
+                                  return _vm.UndoRow(props.row.id)
+                                },
+                              },
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "fas fa-undo text-info",
+                                staticStyle: { "font-size": "16px" },
+                              }),
+                            ]
+                          ),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "", title: "edit" },
+                              on: {
+                                click: function ($event) {
+                                  $event.preventDefault()
+                                  return _vm.editRow(props.row)
+                                },
+                              },
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "fas fa-edit text-info",
+                                staticStyle: { "font-size": "16px" },
+                              }),
+                            ]
+                          ),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "", title: "delete" },
+                              on: {
+                                click: function ($event) {
+                                  $event.preventDefault()
+                                  return _vm.deleteRow(props.row.id)
+                                },
+                              },
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "fas fa-trash text-danger",
+                                staticStyle: { "font-size": "16px" },
+                              }),
+                            ]
+                          ),
+                        ]
+                      )
+                    : _vm._e(),
+                ]
+              },
+            },
+          ]),
+        }),
+      ],
+      1
+    ),
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
 
 
 /***/ }),
@@ -44759,7 +45422,7 @@ var render = function () {
         _c("vue-good-table", {
           attrs: {
             columns: _vm.columns,
-            rows: _vm.users,
+            rows: _vm.employees,
             "fixed-header": false,
             "pagination-options": {
               enabled: true,
@@ -45071,46 +45734,14 @@ var render = function () {
             },
             "search-options": { enabled: true },
             "line-numbers": true,
-            styleClass: "vgt-table striped bordered news_table",
+            styleClass: "vgt-table striped bordered",
             "max-height": "550px",
           },
           scopedSlots: _vm._u([
             {
               key: "table-row",
               fn: function (props) {
-                return [
-                  props.column.field == "after"
-                    ? _c("span", [
-                        _c(
-                          "a",
-                          {
-                            attrs: { href: "" },
-                            on: {
-                              click: function ($event) {
-                                $event.preventDefault()
-                                return _vm.editRow(props.row)
-                              },
-                            },
-                          },
-                          [_c("i", { staticClass: "fas fa-edit text-info" })]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          {
-                            attrs: { href: "" },
-                            on: {
-                              click: function ($event) {
-                                $event.preventDefault()
-                                return _vm.deleteRow(props.row.id)
-                              },
-                            },
-                          },
-                          [_c("i", { staticClass: "fas fa-trash text-danger" })]
-                        ),
-                      ])
-                    : _vm._e(),
-                ]
+                return [props.column.field == "after" ? _c("span") : _vm._e()]
               },
             },
           ]),
@@ -45168,11 +45799,154 @@ var render = function () {
               fn: function (props) {
                 return [
                   props.column.field == "after"
-                    ? _c("span", [
+                    ? _c(
+                        "div",
+                        {
+                          staticStyle: {
+                            "text-align": "center",
+                            "font-size": "16px",
+                          },
+                        },
+                        [
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "", title: "archive" },
+                              on: {
+                                click: function ($event) {
+                                  $event.preventDefault()
+                                  return _vm.archiveRow(props.row.id)
+                                },
+                              },
+                            },
+                            [
+                              _c("i", {
+                                staticClass:
+                                  "fa fa-file-archive-o text-bg-warning",
+                                attrs: { "aria-hidden": "true" },
+                              }),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "", title: "edit" },
+                              on: {
+                                click: function ($event) {
+                                  $event.preventDefault()
+                                  return _vm.editRow(props.row)
+                                },
+                              },
+                            },
+                            [_c("i", { staticClass: "fas fa-edit text-info" })]
+                          ),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "", title: "delete" },
+                              on: {
+                                click: function ($event) {
+                                  $event.preventDefault()
+                                  return _vm.deleteRow(props.row.id)
+                                },
+                              },
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "fas fa-trash text-danger",
+                              }),
+                            ]
+                          ),
+                        ]
+                      )
+                    : _vm._e(),
+                ]
+              },
+            },
+          ]),
+        }),
+      ],
+      1
+    ),
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PendingNews.vue?vue&type=template&id=46a36a22&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PendingNews.vue?vue&type=template&id=46a36a22& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c(
+      "div",
+      { staticClass: "col-md-12", staticStyle: { "overflow-x": "auto" } },
+      [
+        _c("vue-good-table", {
+          attrs: {
+            columns: _vm.columns,
+            rows: _vm.newses,
+            "fixed-header": false,
+            "pagination-options": {
+              enabled: true,
+              perPage: 10,
+            },
+            "search-options": { enabled: true },
+            "line-numbers": true,
+            styleClass: "vgt-table striped bordered news_table",
+            "max-height": "550px",
+          },
+          scopedSlots: _vm._u([
+            {
+              key: "table-row",
+              fn: function (props) {
+                return [
+                  props.column.field == "after"
+                    ? _c("div", { staticStyle: { width: "75px" } }, [
                         _c(
                           "a",
                           {
-                            attrs: { href: "" },
+                            attrs: { href: "", title: "approve" },
+                            on: {
+                              click: function ($event) {
+                                $event.preventDefault()
+                                return _vm.approveRow(props.row.id)
+                              },
+                            },
+                          },
+                          [
+                            _c("i", {
+                              staticClass: "fas fa-check-square text-info me-1",
+                              staticStyle: { "font-size": "16px" },
+                            }),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "", title: "edit" },
                             on: {
                               click: function ($event) {
                                 $event.preventDefault()
@@ -45180,13 +45954,18 @@ var render = function () {
                               },
                             },
                           },
-                          [_c("i", { staticClass: "fas fa-edit text-info" })]
+                          [
+                            _c("i", {
+                              staticClass: "fas fa-edit text-info me-1",
+                              staticStyle: { "font-size": "16px" },
+                            }),
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
                           "a",
                           {
-                            attrs: { href: "" },
+                            attrs: { href: "", title: "delete" },
                             on: {
                               click: function ($event) {
                                 $event.preventDefault()
@@ -45194,7 +45973,12 @@ var render = function () {
                               },
                             },
                           },
-                          [_c("i", { staticClass: "fas fa-trash text-danger" })]
+                          [
+                            _c("i", {
+                              staticClass: "fas fa-trash text-danger",
+                              staticStyle: { "font-size": "16px" },
+                            }),
+                          ]
                         ),
                       ])
                     : _vm._e(),
@@ -46000,6 +46784,10 @@ var render = function () {
                         },
                       },
                     }),
+                    _vm._v(" "),
+                    _c("span", {
+                      staticClass: "error-title error text-danger fst-italic",
+                    }),
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "form-group mt-2" }, [
@@ -46027,6 +46815,11 @@ var render = function () {
                           _vm.$set(_vm.form, "subtitle", $event.target.value)
                         },
                       },
+                    }),
+                    _vm._v(" "),
+                    _c("span", {
+                      staticClass:
+                        "error-subtitle error text-danger fst-italic",
                     }),
                   ]),
                   _vm._v(" "),
@@ -46093,6 +46886,11 @@ var render = function () {
                       }),
                       0
                     ),
+                    _vm._v(" "),
+                    _c("span", {
+                      staticClass:
+                        "error-category error text-danger fst-italic",
+                    }),
                   ]),
                   _vm._v(" "),
                   _c(
@@ -46108,6 +46906,11 @@ var render = function () {
                           },
                           expression: "form.description",
                         },
+                      }),
+                      _vm._v(" "),
+                      _c("span", {
+                        staticClass:
+                          "error-description error text-danger fst-italic",
                       }),
                     ],
                     1
@@ -46130,6 +46933,11 @@ var render = function () {
                         { staticStyle: { "font-size": "11px", color: "red" } },
                         [_vm._v("Required size: 966 X 648")]
                       ),
+                      _vm._v(" "),
+                      _c("span", {
+                        staticClass:
+                          "error-masterImage error text-danger fst-italic",
+                      }),
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-6 text-center" }, [
@@ -46358,8 +47166,8 @@ var render = function () {
                         staticStyle: { border: "1px solid #d7d7d7" },
                         attrs: {
                           src: _vm.imageSrc,
-                          width: "300px",
-                          height: "250px",
+                          width: "400px",
+                          height: "200px",
                         },
                       }),
                     ]),
@@ -46378,9 +47186,63 @@ var render = function () {
                       _c(
                         "p",
                         { staticStyle: { "font-size": "11px", color: "red" } },
-                        [_vm._v("Required size: 400 X 250")]
+                        [_vm._v("Required size: 600 X 300")]
                       ),
                     ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group mt-2" }, [
+                    _c("label", { attrs: { for: "status" } }, [
+                      _vm._v("Status:"),
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.status,
+                            expression: "form.status",
+                          },
+                        ],
+                        staticClass: "form-control shadow-none",
+                        attrs: { name: "status", id: "status" },
+                        on: {
+                          change: function ($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function (o) {
+                                return o.selected
+                              })
+                              .map(function (o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              _vm.form,
+                              "status",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          },
+                        },
+                      },
+                      [
+                        _c("option", { attrs: { value: "", selected: "" } }, [
+                          _vm._v("Select"),
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "active" } }, [
+                          _vm._v("Active"),
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "inactive" } }, [
+                          _vm._v("Inactive"),
+                        ]),
+                      ]
+                    ),
                   ]),
                   _vm._v(" "),
                   _vm._m(0),
@@ -46531,8 +47393,8 @@ var render = function () {
                         staticStyle: { border: "1px solid #d7d7d7" },
                         attrs: {
                           src: _vm.imageSrc,
-                          width: "300px",
-                          height: "250px",
+                          width: "200px",
+                          height: "400px",
                         },
                       }),
                     ]),
@@ -46551,9 +47413,63 @@ var render = function () {
                       _c(
                         "p",
                         { staticStyle: { "font-size": "11px", color: "red" } },
-                        [_vm._v("Required size: 400 X 250")]
+                        [_vm._v("Required size: 600 X 1200")]
                       ),
                     ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group mt-2" }, [
+                    _c("label", { attrs: { for: "status" } }, [
+                      _vm._v("Status:"),
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.status,
+                            expression: "form.status",
+                          },
+                        ],
+                        staticClass: "form-control shadow-none",
+                        attrs: { name: "status", id: "status" },
+                        on: {
+                          change: function ($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function (o) {
+                                return o.selected
+                              })
+                              .map(function (o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              _vm.form,
+                              "status",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          },
+                        },
+                      },
+                      [
+                        _c("option", { attrs: { value: "", selected: "" } }, [
+                          _vm._v("Select"),
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "active" } }, [
+                          _vm._v("Active"),
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "inactive" } }, [
+                          _vm._v("Inactive"),
+                        ]),
+                      ]
+                    ),
                   ]),
                   _vm._v(" "),
                   _vm._m(0),
@@ -46704,8 +47620,8 @@ var render = function () {
                         staticStyle: { border: "1px solid #d7d7d7" },
                         attrs: {
                           src: _vm.imageSrc,
-                          width: "300px",
-                          height: "250px",
+                          width: "100%",
+                          height: "200px",
                         },
                       }),
                     ]),
@@ -46724,9 +47640,63 @@ var render = function () {
                       _c(
                         "p",
                         { staticStyle: { "font-size": "11px", color: "red" } },
-                        [_vm._v("Required size: 400 X 250")]
+                        [_vm._v("Required size: 1200 X 200")]
                       ),
                     ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group mt-2" }, [
+                    _c("label", { attrs: { for: "status" } }, [
+                      _vm._v("Status:"),
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.status,
+                            expression: "form.status",
+                          },
+                        ],
+                        staticClass: "form-control shadow-none",
+                        attrs: { name: "status", id: "status" },
+                        on: {
+                          change: function ($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function (o) {
+                                return o.selected
+                              })
+                              .map(function (o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              _vm.form,
+                              "status",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          },
+                        },
+                      },
+                      [
+                        _c("option", { attrs: { value: "", selected: "" } }, [
+                          _vm._v("Select"),
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "active" } }, [
+                          _vm._v("Active"),
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "inactive" } }, [
+                          _vm._v("Inactive"),
+                        ]),
+                      ]
+                    ),
                   ]),
                   _vm._v(" "),
                   _vm._m(0),
@@ -46878,7 +47848,7 @@ var render = function () {
                         attrs: {
                           src: _vm.imageSrc,
                           width: "300px",
-                          height: "250px",
+                          height: "300px",
                         },
                       }),
                     ]),
@@ -46897,9 +47867,63 @@ var render = function () {
                       _c(
                         "p",
                         { staticStyle: { "font-size": "11px", color: "red" } },
-                        [_vm._v("Required size: 400 X 250")]
+                        [_vm._v("Required size: 600 X 600")]
                       ),
                     ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group mt-2" }, [
+                    _c("label", { attrs: { for: "status" } }, [
+                      _vm._v("Status:"),
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.status,
+                            expression: "form.status",
+                          },
+                        ],
+                        staticClass: "form-control shadow-none",
+                        attrs: { name: "status", id: "status" },
+                        on: {
+                          change: function ($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function (o) {
+                                return o.selected
+                              })
+                              .map(function (o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              _vm.form,
+                              "status",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          },
+                        },
+                      },
+                      [
+                        _c("option", { attrs: { value: "", selected: "" } }, [
+                          _vm._v("Select"),
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "active" } }, [
+                          _vm._v("Active"),
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "inactive" } }, [
+                          _vm._v("Inactive"),
+                        ]),
+                      ]
+                    ),
                   ]),
                   _vm._v(" "),
                   _vm._m(0),
@@ -47050,8 +48074,8 @@ var render = function () {
                         staticStyle: { border: "1px solid #d7d7d7" },
                         attrs: {
                           src: _vm.imageSrc,
-                          width: "300px",
-                          height: "250px",
+                          width: "100%",
+                          height: "300px",
                         },
                       }),
                     ]),
@@ -47070,9 +48094,63 @@ var render = function () {
                       _c(
                         "p",
                         { staticStyle: { "font-size": "11px", color: "red" } },
-                        [_vm._v("Required size: 400 X 250")]
+                        [_vm._v("Required size: 1200 X 300")]
                       ),
                     ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group mt-2" }, [
+                    _c("label", { attrs: { for: "status" } }, [
+                      _vm._v("Status:"),
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.status,
+                            expression: "form.status",
+                          },
+                        ],
+                        staticClass: "form-control shadow-none",
+                        attrs: { name: "status", id: "status" },
+                        on: {
+                          change: function ($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function (o) {
+                                return o.selected
+                              })
+                              .map(function (o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              _vm.form,
+                              "status",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          },
+                        },
+                      },
+                      [
+                        _c("option", { attrs: { value: "", selected: "" } }, [
+                          _vm._v("Select"),
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "active" } }, [
+                          _vm._v("Active"),
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "inactive" } }, [
+                          _vm._v("Inactive"),
+                        ]),
+                      ]
+                    ),
                   ]),
                   _vm._v(" "),
                   _vm._m(0),
@@ -59190,7 +60268,7 @@ Vue.compile = compileToFunctions;
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
+module.exports = JSON.parse('{"_args":[["axios@0.21.4","D:\\\\xampp\\\\htdocs\\\\newsportal"]],"_development":true,"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"D:\\\\xampp\\\\htdocs\\\\newsportal","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
 
 /***/ })
 

@@ -86,3 +86,15 @@ table.news_table tbody tr td {
 .form-group.ImageBackground {
     text-align: center;
 }
+.back_image {
+    background: url(../../../admin_background.jpg);
+    /* background-position: cover; */
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.login_center {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

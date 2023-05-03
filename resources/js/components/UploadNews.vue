@@ -10,11 +10,13 @@
                                     <label for="title">Title:</label>
                                     <input type="text" name="title" v-model="form.title" id="title"
                                         class="form-control shadow-none">
+                                    <span class="error-title error text-danger fst-italic"></span>
                                 </div>
                                 <div class="form-group mt-2">
                                     <label for="subtitle">Sub Title:</label>
                                     <input type="text" name="subtitle" v-model="form.subtitle" id="subtitle"
                                         class="form-control shadow-none">
+                                    <span class="error-subtitle error text-danger fst-italic"></span>
                                 </div>
                                 <div class="form-group mt-2">
                                     <label for="subtitle">Published Section:</label>
@@ -25,32 +27,11 @@
                                             {{ category.name }}
                                         </label>
                                     </div>
+                                    <span class="error-category error text-danger fst-italic"></span>
                                 </div>
-                                <!-- <div class="form-group mt-2">
-                                    <label for="subcategory">Subcategory:</label>
-                                    <v-select :options="subcategories" name="subcategory_id" id="subcategory"
-                                        v-model="selectedSubcategory" label="name"></v-select>
-                                </div> -->
-                                <!-- <div class="row mt-2">
-                                    <div class="col-md-6">
-                                        <div class="form-group mt-2">
-                                            <label for="category">Category:</label>
-                                            <v-select :options="categories" class="" name="category_id" id="category"
-                                                v-model="selectedCategory" label="name"
-                                                @input="onChangeCategory"></v-select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group mt-2">
-                                            <label for="subcategory">Subcategory:</label>
-                                            <v-select :options="subcategories" name="subcategory_id" id="subcategory"
-                                                v-model="selectedSubcategory" label="name"></v-select>
-                                        </div>
-                                    </div>
-                                </div> -->
-
                                 <div class="form-group">
                                     <ckeditor :editor="editor" v-model="form.description" row="10"></ckeditor>
+                                    <span class="error-description error text-danger fst-italic"></span>
                                 </div>
 
                                 <div class="form-group row mb-4">
@@ -58,6 +39,7 @@
                                         <label for="subcategory">Master Image:</label>
                                         <input type="file" id="image" class="form-control" @change="imageUrl" />
                                         <p style="font-size: 11px;color: red;">Required size: 966 X 648</p>
+                                        <span class="error-masterImage error text-danger fst-italic"></span>
                                     </div>
                                     <div class="col-md-6 text-center">
                                         <img :src="imageSrc" class="imageShow" width="150px" height="101px" />
@@ -208,13 +190,13 @@ export default {
             });
         },
 
-        onChangeCategory() {
-            if (this.selectedCategory == null) {
-                return
-            }
-            // this.selectedSubcategory = null
-            this.getSubcategory()
-        },
+        // onChangeCategory() {
+        //     if (this.selectedCategory == null) {
+        //         return
+        //     }
+        //     // this.selectedSubcategory = null
+        //     this.getSubcategory()
+        // },
 
         saveNews() {
             // if (this.news.title == "") {
@@ -256,13 +238,16 @@ export default {
             this.form.post(url).then(res => {
                 if (res.data.status == "error") {
                     this.showError(res.data.message);
+                    return;
                 }
                 $.notify(res.data.message, "success");
 
                 if (res.data.status && url == "/admin/news") {
                     this.clearData();
-                } else if (res.data.status && url == "/admin/update/news") {
+                } else if (res.data.status && url == "/admin/update/news" && res.data.is_archive == 'no') {
                     window.open('/admin/manage-news/', "_self");
+                } else {
+                    window.open('/admin/news-archive/', "_self");
                 }
                 // this.getNews();
             });
@@ -270,21 +255,36 @@ export default {
 
         showError(error) {
             if (error.title) {
-                $('#title').addClass('is-invalid');
+                $('.error-title').html(error.title);
             } else {
-                $('#title').removeClass('is-invalid');
+                $('.error-title').empty();
             }
+            if (error.description) {
+                $('.error-description').html(error.description);
+            } else {
+                $('.error-description').empty();
+            }
+            if (error.categories) {
+                $('.error-category').html(error.categories);
+            } else {
+                $('.error-category').empty();
+            }
+            // if (error.title) {
+            //     $('#title').addClass('is-invalid');
+            // } else {
+            //     $('#title').removeClass('is-invalid');
+            // }
             // if (error.user_name) {
             //     toastr.error(error.user_name);
             //     $('#subtitle').addClass('is-invalid');
             // } else {
             //     $('#subtitle').removeClass('is-invalid');
             // }
-            if (error.category_id) {
-                $('#category').addClass('is-invalid');
-            } else {
-                $('#category').removeClass('is-invalid');
-            }
+            // if (error.category_id) {
+            //     $('#category').addClass('is-invalid');
+            // } else {
+            //     $('#category').removeClass('is-invalid');
+            // }
 
         },
 

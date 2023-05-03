@@ -40,15 +40,15 @@
 <meta name="keywords" content="Nirvoy News" />
 <meta name="description" content="Nirvoy News. Most Largest And Popular In Bangladesh for bd bangla news" />
 <meta name="author" content="Nirvoy News" />
-<meta name="url" content="{{ route('website') }}" />
+<meta name="url" content="{{ URL::current() }}" />
 
 <meta property="og:site_name" content="নির্ভয় নিউজ" />
-<meta property="og:url" content="{{ route('website') }}" />
+<meta property="og:url" content="{{ URL::current() }}" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Nirvoy News || Highest Circulated Newspaper" />
 <meta property="og:description" content="Nirvoy News. Most Largest And Popular In Bangladesh for bd news bangla" />
-<meta property="og:image" content="{{ route('website') }}assets/newDesktop/img/default-img.jpg" />
-<meta property="image_url" content="{{ route('website') }}assets/newDesktop/img/default-img.jpg" />
+<meta property="og:image" content="{{ asset('uploads') }}/news/2023000003.jpg" />
+<meta property="image_url" content="{{ asset('uploads') }}/news/2023000003.jpg" />
 
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:domain" content="">

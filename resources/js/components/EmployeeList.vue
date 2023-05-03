@@ -5,20 +5,24 @@
             <vue-good-table :columns="columns" :rows="employees" :fixed-header="false" :pagination-options="{
                 enabled: true,
                 perPage: 10,
-            }" :search-options="{ enabled: true }" :line-numbers="true"
-                styleClass="vgt-table striped bordered news_table" max-height="550px">
+            }" :search-options="{ enabled: true }" :line-numbers="true" styleClass="vgt-table striped bordered"
+                max-height="550px">
+                <template slot="table-row" slot-scope="props">
+                    <span v-if="props.column.field == 'nidFile'">
+                    </span>
+                </template>
                 <template slot="table-row" slot-scope="props">
                     <span v-if="props.column.field == 'img'">
                     </span>
                 </template>
                 <template slot="table-row" slot-scope="props">
                     <span v-if="props.column.field == 'after'">
-                        <a href="" @click.prevent="editRow(props.row)">
+                        <!-- <a href="" @click.prevent="editRow(props.row)">
                             <i class="fas fa-edit text-info"></i>
                         </a>
                         <a href="" @click.prevent="deleteRow(props.row.id)">
                             <i class="fas fa-trash text-danger"></i>
-                        </a>
+                        </a> -->
                     </span>
                 </template>
             </vue-good-table>
@@ -34,11 +38,15 @@ export default {
             employees: [],
             columns: [
                 // { label: 'id', field: 'id' },
-                { label: 'News Title', field: 'title' },
-                { label: 'Category Name', field: 'categories' },
-                { label: 'Description', field: 'description', html: true },
-                { label: "Thumbnail", field: "img", html: true },
-                { label: "Action", field: "after" },
+                { label: 'Name', field: 'name' },
+                { label: 'Email', field: 'email' },
+                { label: 'Mobile', field: 'mobile' },
+                { label: 'Department', field: 'department.department_name' },
+                { label: 'Designation', field: 'designation.designation_name' },
+                { label: 'Join Date', field: 'join_date' },
+                { label: 'National Id', field: 'nidFile', html: true },
+                { label: "Photo", field: "img", html: true },
+                // { label: "Action", field: "after" },
             ],
 
         };
@@ -51,10 +59,10 @@ export default {
     methods: {
         getEmployee() {
             axios.get(location.origin + "/admin/get-employee").then((res) => {
-                this.employees = res.data.map(n => {
-                    n.img = n.thumbnail == '' ? '' : '<img src="' + n.thumbnail + '" width="100px">';
-                    n.categories = n.category.map(c => c.category_name.name);
-                    return n;
+                this.employees = res.data.map(p => {
+                    p.nidFile = p.nid_file == null ? '' : '<a href="' + p.nid_file + '" target="_blank"> NID file</a>';
+                    p.img = p.photo == null ? '<img src="/noImage.jpg" width="60px">' : '<img src="' + p.photo + '" width="60px">';
+                    return p;
                 });
             });
         },

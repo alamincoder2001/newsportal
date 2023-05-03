@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AdvertiseFive;
+use App\Models\AdvertiseFour;
+use App\Models\AdvertiseOne;
+use App\Models\AdvertiseThree;
+use App\Models\AdvertiseTwo;
 use App\Models\News;
 use App\Models\Category;
 use App\Models\NewsCounter;
@@ -25,11 +30,17 @@ class HomeController extends Controller
         $healthCorner   = $this->getCategoryData(8, 'desc')->take(5);
         $coxBazar       = $this->getCategoryData(7, 'desc')->take(9);
 
+        $ad1 = AdvertiseOne::first();
+        $ad2 = AdvertiseTwo::first();
+        $ad3 = AdvertiseThree::first();
+        $ad4 = AdvertiseFour::first();
+        $ad5 = AdvertiseFive::first();
+
         $topJatioNews = NewsCounter::where('category_id', '3')->with('news', 'category')->orderBy('read_count', 'desc')->take(12)->get();
 
-        $categorywisenews = News::with('category')->latest()->get();
+        $categorywisenews = News::with('category')->where('is_published', 'active')->where('is_archive', 'no')->latest()->get();
 
-        return view("home", compact('homeSliders', 'focush', 'highlights', 'jatioNews', 'topJatioNews', 'AntorjatikNews', 'sportsNews', 'homeTopRight', 'jibonDhara', 'binodon', 'healthCorner', 'shilpoBanijjo', 'coxBazar', 'categorywisenews'));
+        return view("home", compact('homeSliders', 'focush', 'highlights', 'jatioNews', 'topJatioNews', 'AntorjatikNews', 'sportsNews', 'homeTopRight', 'jibonDhara', 'binodon', 'healthCorner', 'shilpoBanijjo', 'coxBazar', 'categorywisenews', 'ad1', 'ad2', 'ad3', 'ad4', 'ad5'));
     }
 
     // category_wise method
@@ -41,16 +52,17 @@ class HomeController extends Controller
             return $query->where('category_id', $category->id);
         })->with(['category' => function ($query) use ($category) {
             return $query->where('category_id', $category->id);
-        }])->get();
+        }])->where('is_published', 'active')->where('is_archive', 'no')->latest()->get();
 
-        $latestNews = News::with('category')->latest('id')->take(10)->get();
+        $latestNews = News::where('is_published', 'active')->where('is_archive', 'no')->with('category')->latest('id')->take(10)->get();
         $mostRead = NewsCounter::with('news', 'category')->orderBy('read_count', 'desc')->take(10)->get();
 
+        $ad1 = AdvertiseOne::first();
         // return $categorywisenews = News::with(['category' => function ($query) use ($category) {
         //     return $query->where('category_id', $category->id);
         // }])->get();
 
-        return view("categorywise", compact('category', 'categorywisenews', 'latestNews', 'mostRead'));
+        return view("categorywise", compact('category', 'categorywisenews', 'latestNews', 'mostRead', 'ad1'));
     }
 
 
@@ -62,25 +74,30 @@ class HomeController extends Controller
         $categorywisenews = News::whereHas('category', function ($query) use ($category) {
             return $query->where('category_id', $category->id);
         })
+            ->where('is_published', 'active')
+            ->where('is_archive', 'no')
+            ->latest()
             // ->with(['category' => function ($query) use ($category) {
             //     return $query->where('category_id', $category->id);
             // }])
             ->paginate(12);
 
-        $latestNews = News::with('category')->latest('id')->take(20)->get();
+        $latestNews = News::with('category')->where('is_archive', 'no')->where('is_published', 'active')->latest()->take(20)->get();
         $mostRead = NewsCounter::with('news', 'category')->orderBy('read_count', 'desc')->take(10)->get();
-        return view("categoryWiseAll", compact('category', 'categorywisenews', 'latestNews', 'mostRead'));
+        $ad1 = AdvertiseOne::first();
+
+        return view("categoryWiseAll", compact('category', 'categorywisenews', 'latestNews', 'mostRead', 'ad1'));
     }
 
     // category_wise method
     public function singleNews($cat_slug, $slug)
     {
-        $news = News::where("slug", $slug)->first();
+        $news = News::where("slug", $slug)->where('is_published', 'active')->where('is_archive', 'no')->first();
         $category = Category::where("slug", $cat_slug)->first();
 
         $categorywisenews = News::whereHas('category', function ($query) use ($category) {
             return $query->where('category_id', $category->id);
-        })->paginate(8);
+        })->where('is_published', 'active')->where('is_archive', 'no')->latest()->paginate(8);
 
 
         // Increment the read counter
@@ -96,9 +113,11 @@ class HomeController extends Controller
             ]);
         }
 
-        $latestNews = News::with('category')->latest('id')->take(20)->get();
+        $ad3 = AdvertiseThree::first();
+
+        $latestNews = News::with('category')->where('is_published', 'active')->where('is_archive', 'no')->latest()->take(20)->get();
         $mostRead = NewsCounter::with('news', 'category')->orderBy('read_count', 'desc')->take(10)->get();
 
-        return view("singlepage", compact('news', 'categorywisenews', 'category', 'latestNews', 'mostRead'));
+        return view("singlepage", compact('news', 'categorywisenews', 'category', 'latestNews', 'mostRead', 'ad3'));
     }
 }

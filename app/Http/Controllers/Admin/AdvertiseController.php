@@ -27,15 +27,14 @@ class AdvertiseController extends Controller
     public function store(Request $request)
     {
         try {
-            $uniqueId = date('Y') . '000001';
-
-            $data        = AdvertiseOne::first();
-            $data->title = $request->title;
-            $data->url   = $request->url;
+            $data         = AdvertiseOne::first();
+            $data->title  = $request->title;
+            $data->url    = $request->url;
+            $data->status = $request->status;
             if ($request->hasFile('image')) {
                 $extension = $request->file('image')->extension();
-                $name = $uniqueId . '.' . $extension;
-                $img = Image::make($request->file('image'))->resize(400, 250);
+                $name = '1200x200.' . $extension;
+                $img = Image::make($request->file('image'))->resize(1200, 200);
                 $img->save(public_path('uploads/advertise-one/' . $name));
                 $data->image = "uploads/advertise-one/" . $name;
             }

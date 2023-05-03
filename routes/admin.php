@@ -59,7 +59,6 @@ Route::group(["prefix" => "admin"], function () {
     Route::post('/department', [DepartmentController::class, 'store'])->name('admin.department.store');
     Route::post('/department/delete', [DepartmentController::class, 'destroy'])->name('admin.department.destroy');
 
-
     //news Route
     Route::get('/manage-news', [NewsController::class, 'index'])->name('admin.news.manage');
     Route::get('/get-news/{id?}', [NewsController::class, 'getNews'])->name('admin.news.get');
@@ -67,9 +66,18 @@ Route::group(["prefix" => "admin"], function () {
     Route::post('/news', [NewsController::class, 'store'])->name('admin.news.store');
     Route::post('/update/news', [NewsController::class, 'update'])->name('admin.news.update');
     Route::post('/news/delete', [NewsController::class, 'destroy'])->name('admin.news.destroy');
+    Route::get('/pending-news', [NewsController::class, 'newsPending'])->name('admin.news.pending');
+    Route::get('/get-pending-news', [NewsController::class, 'getPendingNews'])->name('admin.get.pending.news');
+    Route::post('/news/approve', [NewsController::class, 'approve'])->name('admin.news.approve');
+    Route::post('/news/archive', [NewsController::class, 'archive'])->name('admin.news.archive');
+    // Route::get('/archive-all-news', [NewsController::class, 'archiveAllNews'])->name('admin.archiveall.news');
+    Route::get('/news-archive', [NewsController::class, 'newsArchive'])->name('admin.news.archive');
+    Route::get('/get-archive-news', [NewsController::class, 'getArchiveNews'])->name('admin.get.archive.news');
+    Route::post('/news/undo', [NewsController::class, 'newsUndo'])->name('admin.news.undo');
 
     //Employee Route
-    Route::get('/get-employee', [EmployeeController::class, 'index'])->name('admin.employee.list');
+    Route::get('/employee-list', [EmployeeController::class, 'index'])->name('admin.employee.list');
+    Route::get('/get-employee', [EmployeeController::class, 'getEmployee'])->name('admin.employee.get');
     Route::get('/employee-entry', [EmployeeController::class, 'create'])->name('admin.employee.entry');
     Route::post('/save-employee', [EmployeeController::class, 'store'])->name('admin.employee.store');
     Route::post('/update/employee', [EmployeeController::class, 'update'])->name('admin.employee.update');
@@ -88,22 +96,22 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/advertise-one', [AdvertiseController::class, 'create'])->name('admin.advertise_one.create');
     Route::get('/get-advertise-one', [AdvertiseController::class, 'index'])->name('admin.advertise_one.index');
     Route::post('/advertise-one', [AdvertiseController::class, 'store'])->name('admin.advertise_one.store');
- 
+
     // advertise two Route
     Route::get('/advertise-two', [AdvertiseTwoController::class, 'create'])->name('admin.advertise_two.create');
     Route::get('/get-advertise-two', [AdvertiseTwoController::class, 'index'])->name('admin.advertise_two.index');
     Route::post('/advertise-two', [AdvertiseTwoController::class, 'store'])->name('admin.advertise_two.store');
-  
+
     // advertise three Route
     Route::get('/advertise-three', [AdvertiseThreeController::class, 'create'])->name('admin.advertise_three.create');
     Route::get('/get-advertise-three', [AdvertiseThreeController::class, 'index'])->name('admin.advertise_three.index');
     Route::post('/advertise-three', [AdvertiseThreeController::class, 'store'])->name('admin.advertise_three.store');
-  
+
     // advertise four Route
     Route::get('/advertise-four', [AdvertiseFourController::class, 'create'])->name('admin.advertise_four.create');
     Route::get('/get-advertise-four', [AdvertiseFourController::class, 'index'])->name('admin.advertise_four.index');
     Route::post('/advertise-four', [AdvertiseFourController::class, 'store'])->name('admin.advertise_four.store');
-    
+
     // advertise five Route
     Route::get('/advertise-five', [AdvertiseFiveController::class, 'create'])->name('admin.advertise_five.create');
     Route::get('/get-advertise-five', [AdvertiseFiveController::class, 'index'])->name('admin.advertise_five.index');

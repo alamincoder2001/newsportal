@@ -5,6 +5,22 @@
 @endsection
 
 @section('content')
+    @if ($ad1->status == 'active')
+        <div class="container my-3">
+            <div class="col-md-12">
+                <div data-position="desktop-home-after-lead-area" class="m-0 p-0">
+                    <div class="ads bg-light mb-2 d-flex justify-content-center">
+                        <div class="ad_cl-4" data-id="4">
+                            <a href="{{ $ad1->url }}" target="_blank">
+                                <img src="{{ asset($ad1->image != null ? $ad1->image : '1200x200.jpg') }}"
+                                    alt="{{ $ad1->title }}">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
     <div class="container my-4">
         <div class="row">
             <div class="col-md-12 col-lg-8 col-xl-8 col-xxl-9 category">
@@ -18,13 +34,19 @@
                     </div>
                     <div class="cat-lead">
                         {{-- <a href="{{ route('singlenews', $categorywisenews[0]->slug) }}"> --}}
-                        <a href="{{ route('singlenews', [$category->slug, $categorywisenews[0]->slug]) }}">
-                            <img class="lazy"
-                                src="{{ asset($categorywisenews[0]->image != null ? $categorywisenews[0]->image : 'noImage.jpg') }}"
-                                alt="{{ count($categorywisenews) > 0 ? $categorywisenews[0]->title : '' }}">
-                            <span>{{ count($categorywisenews) > 0 ? $categorywisenews[0]->title : '' }}</span>
-                        </a>
+                        @if ($categorywisenews[0]->image != null)
+                            <a href="{{ route('singlenews', [$category->slug, $categorywisenews[0]->slug]) }}">
+                                <img class="lazy"
+                                    src="{{ asset($categorywisenews[0]->image != null ? $categorywisenews[0]->image : 'noImage_front.jpg') }}"
+                                    alt="{{ count($categorywisenews) > 0 ? $categorywisenews[0]->title : '' }}">
+                                <span>{{ count($categorywisenews) > 0 ? $categorywisenews[0]->title : '' }}</span>
+                            </a>
+                        @else
+                            <h2>{{ count($categorywisenews) > 0 ? $categorywisenews[0]->title : '' }}</h2>
+                        @endif
                         {!! Str::of(count($categorywisenews) > 0 ? $categorywisenews[0]->description : '')->words(25, ' ...') !!}
+                        <a class="more_link"
+                            href="{{ route('singlenews', [$category->slug, $categorywisenews[0]->slug]) }}">আরও পরুন।</a>
                     </div>
                 @endif
                 <div class="row">
@@ -35,7 +57,7 @@
                                     {{-- <a href="{{ route('singlenews', $item->slug) }}" class="row"> --}}
                                     <div class="col-md-5 text">{{ $item->title }}</div>
                                     <div class="col-md-7 pe-0">
-                                        <img src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}"
+                                        <img src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage_front.jpg') }}"
                                             alt="{{ $item->title }}">
                                     </div>
                                 </a>
@@ -52,7 +74,7 @@
                     @foreach ($categorywisenews->skip(7)->take(8) as $key => $item)
                         <div class="col-md-3 mt-4">
                             <a class="list-item" href="{{ route('singlenews', [$category->slug, $item->slug]) }}">
-                                <img src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}"
+                                <img src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage_front.jpg') }}"
                                     alt="{{ $item->title }}">
                                 <p>{{ $item->title }}</p>
                             </a>
@@ -95,7 +117,7 @@
                             <li class="mb-2">
                                 <a href="{{ route('singlenews', [$category->slug, $item->slug]) }}" class="row">
                                     <span class="col-md-4 pe-0">
-                                        <img src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}"
+                                        <img src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage_front.jpg') }}"
                                             alt="{{ $item->title }}">
                                     </span>
                                     <span class="col-md-8">

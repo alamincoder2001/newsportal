@@ -29,18 +29,41 @@ Vue.component("Designation", require("./components/Designation.vue").default);
 Vue.component("Department", require("./components/Department.vue").default);
 Vue.component("UploadNews", require("./components/UploadNews.vue").default);
 Vue.component("ManageNews", require("./components/ManageNews.vue").default);
+Vue.component("PendingNews", require("./components/PendingNews.vue").default);
+Vue.component("ArchiveNews", require("./components/ArchiveNews.vue").default);
 Vue.component("Setting", require("./components/Setting.vue").default);
 Vue.component("CreateUser", require("./components/CreateUser.vue").default);
-//advertise
-Vue.component("Advertise_one", require("./components/advertise/AdvertiseOne.vue").default);
-Vue.component("Advertise_two", require("./components/advertise/AdvertiseTwo.vue").default);
-Vue.component("Advertise_three", require("./components/advertise/AdvertiseThree.vue").default);
-Vue.component("Advertise_four", require("./components/advertise/AdvertiseFour.vue").default);
-Vue.component("Advertise_five", require("./components/advertise/AdvertiseFive.vue").default);
-
-Vue.component( "EmployeeEntry", require("./components/EmployeeEntry.vue").default);
+Vue.component(
+    "EmployeeEntry",
+    require("./components/EmployeeEntry.vue").default
+);
 Vue.component("EmployeeList", require("./components/EmployeeList.vue").default);
-Vue.component("EmployeeEntry", require("./components/EmployeeEntry.vue").default);
+Vue.component(
+    "EmployeeEntry",
+    require("./components/EmployeeEntry.vue").default
+);
+
+//advertise
+Vue.component(
+    "AdvertiseOne",
+    require("./components/advertise/AdvertiseOne.vue").default
+);
+Vue.component(
+    "AdvertiseTwo",
+    require("./components/advertise/AdvertiseTwo.vue").default
+);
+Vue.component(
+    "AdvertiseThree",
+    require("./components/advertise/AdvertiseThree.vue").default
+);
+Vue.component(
+    "AdvertiseFour",
+    require("./components/advertise/AdvertiseFour.vue").default
+);
+Vue.component(
+    "AdvertiseFive",
+    require("./components/advertise/AdvertiseFive.vue").default
+);
 
 const app = new Vue({
     el: "#app",

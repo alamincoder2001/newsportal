@@ -81,3 +81,19 @@ header .navbar-subTitle-text {
     letter-spacing: 1px;
     text-align: left;
 }
+.img_ad {
+    float: right;
+    margin-left: 25px;
+    width: 300px;
+    height: auto;
+    margin-top: 9px;
+}
+footer .footer-top img {
+    width: 75px;
+    float: left;
+}
+a.more_link {
+    text-align: right;
+    margin-top: -23px !important;
+    height: 20px !important;
+}

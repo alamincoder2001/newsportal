@@ -201,7 +201,7 @@
 
         <!-- list of category -->
         <div class="col-md-12" style="overflow-x: auto">
-            <vue-good-table :columns="columns" :rows="users" :fixed-header="false" :pagination-options="{
+            <vue-good-table :columns="columns" :rows="employees" :fixed-header="false" :pagination-options="{
                 enabled: true,
                 perPage: 10,
             }" :search-options="{ enabled: true }" :line-numbers="true" styleClass="vgt-table striped bordered"
@@ -255,27 +255,26 @@ export default {
             departments: [],
 
             imageSrc: location.origin + "/noImage.jpg",
-            users: [],
-
+            employees: [],
             columns: [
                 // { label: 'id', field: 'id' },
-                { label: "Image", field: "img", html: true, },
                 { label: 'Name', field: 'name' },
-                { label: 'User Name', field: 'username' },
                 { label: 'Email', field: 'email' },
-                { label: 'Role', field: 'role' },
+                { label: 'Mobile', field: 'mobile' },
+                { label: 'Department', field: 'department.department_name' },
+                { label: 'Designation', field: 'designation.designation_name' },
+                { label: 'Join Date', field: 'join_date' },
+                { label: 'National Id', field: 'nidFile', html: true },
+                { label: "Photo", field: "img", html: true },
                 { label: "Action", field: "after" },
             ],
-            // rows: [],
-            // page: 1,
-            // per_page: 10,
         }
     },
 
     created() {
         this.getDesignation();
         this.getDepartment();
-        // this.getUser();
+        this.getEmployee();
     },
 
     methods: {
@@ -289,14 +288,15 @@ export default {
                 this.departments = res.data
             })
         },
-        // getUser() {
-        //     axios.get("/admin/get-user").then(res => {
-        //         this.users = res.data.data.map(c => {
-        //             c.img = c.image == null ? '' : '<img src="' + c.image + '" width="60px">'
-        //             return c;
-        //         })
-        //     })
-        // },
+        getEmployee() {
+            axios.get(location.origin + "/admin/get-employee").then((res) => {
+                this.employees = res.data.map(p => {
+                    p.nidFile = p.nid_file == null ? '' : '<a href="' + p.nid_file + '" target="_blank"> NID file</a>';
+                    p.img = p.photo == null ? '<img src="/noImage.jpg" width="60px">' : '<img src="' + p.photo + '" width="60px">';
+                    return p;
+                });
+            });
+        },
 
         saveUser() {
             this.form.nid_length = this.form.nid_no.length;
@@ -314,8 +314,9 @@ export default {
                 $.notify(res.data.message, "success");
 
                 if (res.data.status) {
-                    this.clearData();
-                    this.getUser();
+                    location.reload();
+                    // this.clearData();
+                    // this.getUser();
                 }
             });
         },
@@ -397,20 +398,41 @@ export default {
 
         },
 
-        editRow(val) {
-            this.form.id = val.id;
-            this.form.name = val.name;
-            this.form.username = val.username;
-            this.form.email = val.email;
-            this.form.role = val.role;
-            this.imageSrc = val.image != null ? location.origin + val.image : location.origin + "/noImage.jpg"
+        editRow(data) {
+
+            this.form.id = data.id;
+            this.form.name = data.name;
+            this.form.email = data.email;
+            this.form.mobile = data.mobile;
+            this.form.gender = data.gender;
+            this.form.join_date = data.join_date;
+            this.form.birth_date = data.birth_date;
+            this.form.nid_no = data.nid_no;
+            this.form.designation = data.designation_id;
+            this.form.department = data.department_id;
+            this.form.father_name = data.father_name;
+            this.form.mother_name = data.mother_name;
+            this.form.present_address = data.present_address;
+            this.form.permanent_address = data.permanent_address;
+            this.form.salary = data.salary;
+            this.imageSrc = data.photo != null ? location.origin + data.photo : location.origin + "/noImage.jpg";
+
+            console.log(this.form);
+
+
+            // this.form.id = val.id;
+            // this.form.name = val.name;
+            // this.form.username = val.username;
+            // this.form.email = val.email;
+            // this.form.role = val.role;
+            // this.imageSrc = val.image != null ? location.origin + val.image : location.origin + "/noImage.jpg"
         },
 
         deleteRow(id) {
             if (confirm("Are you sure want to delete this!")) {
-                axios.post(location.origin + "/admin/user/delete", { id: id }).then((res) => {
+                axios.post(location.origin + "/admin/employee/delete", { id: id }).then((res) => {
                     $.notify(res.data, "success");
-                    this.getUser();
+                    this.getEmployee();
                 });
             }
         },
@@ -433,16 +455,16 @@ export default {
             }
         },
 
-        clearData() {
-            this.form.id = "";
-            this.form.name = "";
-            this.form.username = "";
-            this.form.email = "";
-            this.form.role = "";
-            this.form.password = "";
-            this.imageSrc = '';
-            delete (this.form.image)
-        }
+        // clearData() {
+        //     this.form.id = "";
+        //     this.form.name = "";
+        //     this.form.username = "";
+        //     this.form.email = "";
+        //     this.form.role = "";
+        //     this.form.password = "";
+        //     this.imageSrc = '';
+        //     delete (this.form.image)
+        // }
     },
 }
 </script>

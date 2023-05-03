@@ -19,29 +19,34 @@ class AdvertiseOneSeeder extends Seeder
     public function run()
     {
         AdvertiseOne::create([
-            'title'    => "Title here",
+            'title'  => "Title here",
             'url'    => "https://www.youtube.com",
-            'image'   => '/noImage.jpg',
+            'image'  => '/1200x200.jpg',
+            'status' => 'active',
         ]);
         AdvertiseTwo::create([
-            'title'    => "Title here",
+            'title'  => "Title here",
             'url'    => "https://www.youtube.com",
-            'image'   => '/noImage.jpg',
+            'image'  => '/1200x300.jpg',
+            'status' => 'active',
         ]);
         AdvertiseThree::create([
-            'title'    => "Title here",
+            'title'  => "Title here",
             'url'    => "https://www.youtube.com",
-            'image'   => '/noImage.jpg',
+            'image'  => '/600x600.jpg',
+            'status' => 'active',
         ]);
         AdvertiseFour::create([
-            'title'    => "Title here",
+            'title'  => "Title here",
             'url'    => "https://www.youtube.com",
-            'image'   => '/noImage.jpg',
+            'image'  => '/600x1200.jpg',
+            'status' => 'active',
         ]);
         AdvertiseFive::create([
-            'title'    => "Title here",
+            'title'  => "Title here",
             'url'    => "https://www.youtube.com",
-            'image'   => '/noImage.jpg',
+            'image'  => '/600x300.jpg',
+            'status' => 'active',
         ]);
     }
 }

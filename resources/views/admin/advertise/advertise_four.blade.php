@@ -5,5 +5,5 @@
 @section('breadcrumb_item', 'Advertise Four')
 
 @section('content')
-    <Advertise_four></Advertise_four>
+    <advertise-four></advertise-four>
 @endsection

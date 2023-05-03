@@ -13,7 +13,8 @@
                 </li>
 
                 <li class="sidebar-item">
-                    <a href="" class="sidebar-link {{ Request::is('admin.category.index') ? 'active' : '' }}"><i
+                    <a href="{{ route('admin.news.pending') }}"
+                        class="sidebar-link {{ Request::is('admin.news.pending') ? 'active' : '' }}"><i
                             class="fas fa-spinner"></i><span class="hide-menu"> Pending News </span></a>
                 </li>
                 <li class="sidebar-item">
@@ -31,10 +32,10 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="{{ route('admin.news.create') }}"
-                        class="sidebar-link {{ Request::is('admin.news.create') ? 'active' : '' }}">
+                    <a href="{{ route('admin.news.archive') }}"
+                        class="sidebar-link {{ Request::is('admin.news.archive') ? 'active' : '' }}">
                         <i class="fas fa-arrow-right"></i>
-                        <span class="hide-menu"> News Archieve </span>
+                        <span class="hide-menu"> News Archive </span>
                     </a>
                 </li>
                 <li class="sidebar-item">
@@ -91,6 +92,11 @@
                         </li>
 
                     </ul>
+                </li>
+                <li class="sidebar-item {{ Request::is('admin.user.create') ? 'selected' : '' }}">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="{{ route('admin.user.create') }}" aria-expanded="false"><i
+                            class="fa fa-user-plus"></i><span class="hide-menu">User Entry</span></a>
                 </li>
                 <li class="sidebar-item">
                     <a href="{{ route('admin.category.index') }}"
@@ -149,11 +155,15 @@
                     </ul>
                 </li> --}}
 
-                <li class="sidebar-item {{ Request::is('admin.user.create') ? 'selected' : '' }}">
+                <li class="sidebar-item {{ Request::is('admin.designation.create') ? 'selected' : '' }}">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                        href="{{ route('admin.user.create') }}" aria-expanded="false"><i
-                            class="fa fa-user-plus"></i><span class="hide-menu">User
-                            Entry</span></a>
+                        href="{{ route('admin.designation.create') }}" aria-expanded="false"><i
+                            class="fa fa-user-plus"></i><span class="hide-menu">Designation Entry</span></a>
+                </li>
+                <li class="sidebar-item {{ Request::is('admin.department.create') ? 'selected' : '' }}">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="{{ route('admin.department.create') }}" aria-expanded="false"><i
+                            class="fa fa-user-plus"></i><span class="hide-menu">Department Entry</span></a>
                 </li>
                 <li class="sidebar-item {{ Request::is('admin.settings') ? 'selected' : '' }}">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.settings') }}"

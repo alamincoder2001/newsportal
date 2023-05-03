@@ -24,7 +24,7 @@
                                 <span><i class="bi bi-stopwatch"></i> ২০ মার্চ, ২০২৩ ১৩:১৮
                             </div>
                             <div class="col-md-8 col-lg-9 col-xl-8 col-xxl-7 mb-2 pe-0">
-                                <ul class="top-share-area mt-2">
+                                {{-- <ul class="top-share-area mt-2">
                                     <li class="ps-0 ms-0">
                                         <div id="fb-root"></div>
                                         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v11.0"
@@ -62,27 +62,50 @@
                                             class="bg" target="_blank"><img
                                                 src="https://www.bd-pratidin.com/assets/newDesktop/img/google_news.png"></a>
                                     </li>
-                                </ul>
+                                </ul> --}}
                             </div>
                         </div>
                         <h1 class="ps-3 pe-1">{{ $news->title }}</h1>
                         <div class="news-info ps-3 my-3">
                             <h2><i class="bi bi-pencil-square"></i> অনলাইন ডেস্ক</h2>
                         </div>
-                        <div class="news-img">
-                            <img src="{{ asset($news->image != null ? $news->image : 'noImage.jpg') }}"
-                                alt="{{ $news->title }}">
-                            <div class="caption">
-                                <p><span>{{ $news->title }}</span></p>
+                        @if ($news->image != null)
+                            <div class="news-img">
+                                <img src="{{ asset($news->image != null ? $news->image : '') }}" alt="{{ $news->title }}">
+                                <div class="caption">
+                                    <p><span>{{ $news->title }}</span></p>
+                                </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
-                <article class="mt-3" id="bpsepnil">
+                <div class="sub-content">
+                    <div class="description">
+                        @if ($ad3->status == 'active')
+                            <a href="{{ $ad3->url }}" target="_blank">
+                                <img class="img_ad img-fluid img-thumbnail"
+                                    src="{{ asset($ad3->image != null ? $ad3->image : '600x600.jpg') }}"
+                                    alt="{{ $ad3->title }}">
+                            </a>
+                        @endif
+                        <article class="mt-3" id="bpsepnil">
+
+                            {!! $news->description !!}
+                        </article>
+
+                    </div>
+                    {{-- <div class="ads">
+                        <a class="list-item" href="#">
+
+                        </a>
+                    </div> --}}
+                </div>
+
+                {{-- <article class="mt-3" id="bpsepnil">
                     {!! $news->description !!}
-                </article>
+                </article> --}}
                 <div class="clearfix"></div>
-                <ul class="bottom-share">
+                {{-- <ul class="bottom-share">
                     <li><a target="_blank"
                             href="https://twitter.com/intent/tweet?url=https://www.bd-pratidin.com/entertainment/2023/03/20/868881"><i
                                 class="bi bi-twitter"></i></a></li>
@@ -90,11 +113,11 @@
                             href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.bd-pratidin.com/entertainment/2023/03/20/868881"><i
                                 class="bi bi-linkedin"></i></a></li>
                     <li><a target="_blank"
-                            href="https://www.facebook.com/sharer.php?u=https://www.bd-pratidin.com/entertainment/2023/03/20/868881"><i
+                            href="https://www.facebook.com/sharer.php?u=https://nirvoynews.com/cat/%E0%A6%B9%E0%A7%8B%E0%A6%AE-%E0%A6%B8%E0%A7%8D%E0%A6%B2%E0%A6%BE%E0%A6%87%E0%A6%A1%E0%A6%BE%E0%A6%B0/2023000498172941"><i
                                 class="bi bi-facebook"></i></a></li>
-                </ul>
+                </ul> --}}
                 <div class="clearfix"></div>
-                <div class="tagArea mt-3">
+                {{-- <div class="tagArea mt-3">
                     <h4>এই রকম আরও টপিক</h4>
                     <ul class="mt-2">
                         <li><a href="./topic/অভিনেত্রী">অভিনেত্রী</a></li>
@@ -102,7 +125,7 @@
                         <li><a href="./topic/অনন্য"> অনন্য</a></li>
                         <li><a href="./topic/অর্জন"> অর্জন</a></li>
                     </ul>
-                </div>
+                </div> --}}
                 {{-- <div class="mt-3">
                     <div data-position="desktop-details-after-topic" class="m-0 p-0">
                         <div class="ads bg-light mb-2 d-flex justify-content-center">
@@ -129,7 +152,7 @@
                                     <div class="col-md-3 mt-4">
                                         <a class="list-item"
                                             href="{{ route('singlenews', [$category->slug, $item->slug]) }}">
-                                            <img src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}"
+                                            <img src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage_front.jpg') }}"
                                                 alt="{{ $item->title }}">
                                             <p>{{ $item->title }}</p>
                                         </a>
@@ -187,7 +210,7 @@
                             <li class="mb-2">
                                 <a href="{{ route('singlenews', [$category->slug, $item->slug]) }}" class="row">
                                     <span class="col-md-4 pe-0">
-                                        <img src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}"
+                                        <img src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage_front.jpg') }}"
                                             alt="{{ $item->title }}">
                                     </span>
                                     <span class="col-md-8">

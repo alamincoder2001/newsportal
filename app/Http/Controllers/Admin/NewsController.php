@@ -28,7 +28,7 @@ class NewsController extends Controller
         if ($id != '') {
             $news = News::with('category')->where('id', $id)->first();
         } else {
-            $news = News::with('category')->latest()->get();
+            $news = News::with('category')->latest()->where('is_archive', 'no')->get();
         }
 
         return $news;
@@ -60,10 +60,10 @@ class NewsController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            'title'       => ['required', 'string'],
-            // 'category_id' => ['required'],
-            // 'description' => ['required', 'string'],
-            'masterImage' => ['required']
+            'title'       => 'required|string|min:5|max:191',
+            'categories'  => 'required|array|min:1',
+            'description' => 'required|string',
+            // 'masterImage' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -79,6 +79,8 @@ class NewsController extends Controller
             if ($request->hasFile('masterImage')) {
                 $extension = $request->file('masterImage')->extension();
                 $name = $uniqueId . '.' . $extension;
+            } else {
+                $name = null;
             }
 
             $news = News::create([
@@ -90,8 +92,8 @@ class NewsController extends Controller
                 'is_published' => Auth::guard('admin')->user()->role == 'admin' ? 'active' : 'pending',
                 // 'subcategory_id' => $request->subcategory_id == '' ? 0 : $request->subcategory_id,
                 'user_id'        => Auth::guard('admin')->user()->id,
-                'image'          => '/uploads/news/' . $name,
-                'thumbnail'      => '/uploads/thumbnail/' . $name,
+                'image'          => $name == null ? null : '/uploads/news/' . $name,
+                'thumbnail'      => $name == null ? null : '/uploads/thumbnail/' . $name,
             ]);
 
             foreach ($request->categories as $key => $category) {
@@ -200,10 +202,10 @@ class NewsController extends Controller
             // $uniqueId = $this->getUniqueId();
 
             if ($request->hasFile('masterImage')) {
-                if (file_exists(public_path($news->image))) {
+                if (file_exists(public_path($news->image)) && $news->image != null) {
                     unlink(public_path($news->image));
                 }
-                if (file_exists(public_path($news->thumbnail))) {
+                if (file_exists(public_path($news->thumbnail)) && $news->image != null) {
                     unlink(public_path($news->thumbnail));
                 }
                 // if (File::exists($news->image)) {
@@ -214,9 +216,11 @@ class NewsController extends Controller
                 // }
                 $extension = $request->file('masterImage')->extension();
                 $name = $news->unique_id . '.' . $extension;
-            } else {
+            } else if ($news->image != null) {
                 $last = explode('/', $news->image);
                 $name = end($last);
+            } else {
+                $name = null;
             }
 
             $news->title        = $request->title;
@@ -225,8 +229,8 @@ class NewsController extends Controller
             $news->description  = $request->description;
             $news->is_published = Auth::guard('admin')->user()->role == 'admin' ? 'active' : 'pending';
             $news->user_id      = Auth::guard('admin')->user()->id;
-            $news->image        = '/uploads/news/' . $name;
-            $news->thumbnail    = '/uploads/thumbnail/' . $name;
+            $news->image        = $name == null ? null : '/uploads/news/' . $name;
+            $news->thumbnail    = $name == null ? null : '/uploads/thumbnail/' . $name;
             $news->update();
 
             NewsPublished::where('news_id', $news->id)->delete();
@@ -248,7 +252,8 @@ class NewsController extends Controller
 
             return response()->json([
                 'status'  => 'success',
-                'message' => 'Yea! A News Updated Successfully'
+                'message' => 'Yea! A News Updated Successfully',
+                'is_archive' => $news->is_archive
             ]);
         } catch (Exception $e) {
             return response()->json([
@@ -257,6 +262,71 @@ class NewsController extends Controller
             ]);
         }
     }
+
+    public function newsPending()
+    {
+        return view("admin.news.pending");
+    }
+
+    public function getPendingNews()
+    {
+        $news = News::where('is_published', 'pending')->with('category')->latest()->get();
+        return $news;
+    }
+
+    public function newsArchive()
+    {
+        return view('admin.news.archive');
+    }
+
+    public function getArchiveNews()
+    {
+        $news = News::where('is_archive', 'yes')->with('category')->latest()->get();
+        return $news;
+    }
+
+    public function approve(Request $request)
+    {
+        try {
+            $data = News::find($request->id);
+
+            $data->is_published = 'active';
+            $data->update();
+
+            return "News approved successfully";
+        } catch (\Throwable $e) {
+            return "Opps! something went wrong";
+        }
+    }
+
+    public function archive(Request $request)
+    {
+        try {
+            $data = News::find($request->id);
+
+            $data->is_archive = 'yes';
+            $data->update();
+
+            return "News move to archive successfully";
+        } catch (\Throwable $e) {
+            return "Opps! something went wrong";
+        }
+    }
+
+    public function newsUndo(Request $request)
+    {
+        try {
+            $data = News::find($request->id);
+
+            $data->is_archive = 'no';
+            $data->update();
+
+            return "News move to Normal successfully";
+        } catch (\Throwable $e) {
+            return "Opps! something went wrong";
+        }
+    }
+
 
     public function destroy(Request $request)
     {

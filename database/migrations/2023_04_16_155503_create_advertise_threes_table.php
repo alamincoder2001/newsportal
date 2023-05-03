@@ -18,6 +18,7 @@ class CreateAdvertiseThreesTable extends Migration
             $table->string("title");
             $table->string("url");
             $table->string("image");
+            $table->string("status")->default('active');
             $table->timestamps();
             $table->softDeletes();
         });

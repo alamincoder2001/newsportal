@@ -27,15 +27,15 @@ class AdvertiseThreeController extends Controller
     public function store(Request $request)
     {
         try {
-            $uniqueId = date('Y') . '000001';
 
-            $data        = AdvertiseThree::first();
-            $data->title = $request->title;
-            $data->url   = $request->url;
+            $data         = AdvertiseThree::first();
+            $data->title  = $request->title;
+            $data->url    = $request->url;
+            $data->status = $request->status;
             if ($request->hasFile('image')) {
                 $extension = $request->file('image')->extension();
-                $name = $uniqueId . '.' . $extension;
-                $img = Image::make($request->file('image'))->resize(400, 250);
+                $name = '600x600.' . $extension;
+                $img = Image::make($request->file('image'))->resize(600, 600);
                 $img->save(public_path('uploads/advertise-three/' . $name));
                 $data->image = "uploads/advertise-three/" . $name;
             }

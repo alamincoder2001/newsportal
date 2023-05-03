@@ -5,6 +5,22 @@
 @endsection
 
 @section('content')
+    @if ($ad1->status == 'active')
+        <div class="container my-3">
+            <div class="col-md-12">
+                <div data-position="desktop-home-after-lead-area" class="m-0 p-0">
+                    <div class="ads bg-light mb-2 d-flex justify-content-center">
+                        <div class="ad_cl-4" data-id="4">
+                            <a href="{{ $ad1->url }}" target="_blank">
+                                <img src="{{ asset($ad1->image != null ? $ad1->image : '1200x200.jpg') }}"
+                                    alt="{{ $ad1->title }}">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
     <div class="container mainContainer my-4">
         <div class="row">
             <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6">
@@ -118,40 +134,42 @@
                 <!-- video -->
                 <hr>
                 <ul class="m-0">
-                    <li class="mb-3">
-                        <iframe allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"
-                            style="border-radius: 5px;" width="260" height="175"
-                            src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                        </iframe>
-                    </li>
-                    <li class="mb-3">
-                        <iframe allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"
-                            style="border-radius: 5px;" width="260" height="175"
-                            src="https://www.youtube.com/embed/zAlX1V3lK5s">
-                        </iframe>
-                    </li>
+                    @if ($ad3->status == 'active')
+                        <li class="mb-3">
+                            <a href="{{ $ad3->url }}" target="_blank">
+                                <img src="{{ asset($ad3->image != null ? $ad3->image : '600x600.jpg') }}"
+                                    alt="{{ $ad3->title }}">
+                            </a>
+                        </li>
+                    @endif
+                    @if ($ad5->status == 'active')
+                        <li class="mb-3">
+                            <a href="{{ $ad5->url }}" target="_blank">
+                                <img src="{{ asset($ad5->image != null ? $ad5->image : '600x300.jpg') }}"
+                                    alt="{{ $ad5->title }}">
+                            </a>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </div>
     </div>
-
-    {{-- <div class="container my-3">
-        <div class="col-md-12">
-            <div data-position="desktop-home-after-lead-area" class="m-0 p-0">
-                <div class="ads bg-light mb-2 d-flex justify-content-center">
-                    <div class="ad_cl-4" data-id="4">
-                        <div id='div-gpt-ad-1632991122851-0' style='min-width: 970px; min-height: 250px;'>
-                            <script>
-                            googletag.cmd.push(function() {
-                                googletag.display('div-gpt-ad-1632991122851-0');
-                            });
-                        </script>
+    @if ($ad2->status == 'active')
+        <div class="container my-3">
+            <div class="col-md-12">
+                <div data-position="desktop-home-after-lead-area" class="m-0 p-0">
+                    <div class="ads bg-light mb-2 d-flex justify-content-center">
+                        <div class="ad_cl-4" data-id="4">
+                            <a href="{{ $ad2->url }}" target="_blank">
+                                <img src="{{ asset($ad2->image != null ? $ad2->image : '1200x300.jpg') }}"
+                                    alt="{{ $ad2->title }}">
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div> --}}
+    @endif
 
     <section class="section_16">
         <div class="bg pb-4 mb-3">
@@ -174,23 +192,22 @@
         </div>
     </section>
 
-    {{-- <div class="container">
-        <div class="col-md-12">
-            <div data-position="desktop-home-after-highlight-2nd" class="m-0 p-0">
-                <div class="ads bg-light mb-2 d-flex justify-content-center">
-                    <div class="ad_cl-5" data-id="5">
-                        <div id='div-gpt-ad-1631775223363-0' style='min-width: 728px; min-height: 90px;'>
-                            <script>
-                            googletag.cmd.push(function() {
-                                googletag.display('div-gpt-ad-1631775223363-0');
-                            });
-                        </script>
+    @if ($ad1->status == 'active')
+        <div class="container my-3">
+            <div class="col-md-12">
+                <div data-position="desktop-home-after-lead-area" class="m-0 p-0">
+                    <div class="ads bg-light mb-2 d-flex justify-content-center">
+                        <div class="ad_cl-4" data-id="4">
+                            <a href="{{ $ad1->url }}" target="_blank">
+                                <img src="{{ asset($ad1->image != null ? $ad1->image : '1200x200.jpg') }}"
+                                    alt="{{ $ad1->title }}">
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div> --}}
+    @endif
 
     <div class="container mb-3">
         <div class="row section-1 section-15">
@@ -205,11 +222,13 @@
                                     class="row">
                                     <div class="col-md-4 text">{{ $item->title }}
                                     </div>
-                                    <div class="col-md-8 pe-0">
-                                        <img class="lazy"
-                                            src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}"
-                                            alt="{{ $item->title }}">
-                                    </div>
+                                    @if ($item->thumbnail != null)
+                                        <div class="col-md-8 pe-0">
+                                            <img class="lazy"
+                                                src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}"
+                                                alt="{{ $item->title }}">
+                                        </div>
+                                    @endif
                                     <div class="col-md-12 description">
                                         {{-- <p>{!! Str::limit($item->description, 230) !!} --}}
                                         <p>{!! Str::of($item->description)->words(25, ' ...') !!}
@@ -286,41 +305,24 @@
         </div>
     </div>
 
-    {{-- <div class="container">
-        <div class="col-md-12">
-            <div data-position="desktop-home-after-national" class="m-0 p-0">
-                <div class="ads bg-light mb-2 d-flex justify-content-center">
-                    <div class="ad_cl-6" data-id="6">
-                        <div id='div-gpt-ad-1631775365067-0' style='min-width: 970px; min-height: 90px;'>
-                            <script>
-                            googletag.cmd.push(function() {
-                                googletag.display('div-gpt-ad-1631775365067-0');
-                            });
-                        </script>
-                        </div>
-                    </div>
+    @if ($ad1->status == 'active')
+        <div class="container my-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="{{ $ad1->url }}" target="_blank">
+                        <img src="{{ asset($ad1->image != null ? $ad1->image : '1200x200.jpg') }}"
+                            alt="{{ $ad1->title }}" style="width: 100%;">
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="{{ $ad1->url }}" target="_blank">
+                        <img src="{{ asset($ad1->image != null ? $ad1->image : '1200x200.jpg') }}"
+                            alt="{{ $ad1->title }}" style="width: 100%;">
+                    </a>
                 </div>
             </div>
         </div>
-    </div> --}}
-
-    {{-- <div class="container">
-        <div class="col-md-12">
-            <div data-position="desktop-home-before-international-news" class="m-0 p-0">
-                <div class="ads bg-light mb-2 d-flex justify-content-center">
-                    <div class="ad_cl-9" data-id="9">
-                        <div id='div-gpt-ad-1631791358837-0' style='min-width: 728px; min-height: 90px;'>
-                            <script>
-                            googletag.cmd.push(function() {
-                                googletag.display('div-gpt-ad-1631791358837-0');
-                            });
-                        </script>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
+    @endif
 
     <div class="container">
         <div class="row home-category-area section-1">
@@ -334,11 +336,13 @@
                                 <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}"
                                     class="row">
                                     <div class="col-md-5 text">{{ $item->title }}</div>
-                                    <div class="col-md-7 pe-0">
-                                        <img class="lazy"
-                                            src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}"
-                                            alt="{{ $item->title }}">
-                                    </div>
+                                    @if ($item->thumbnail != null)
+                                        <div class="col-md-7 pe-0">
+                                            <img class="lazy"
+                                                src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}"
+                                                alt="{{ $item->title }}">
+                                        </div>
+                                    @endif
                                     <div class="col-md-12 description">
                                         <p>{!! Str::of($item->description)->words(25, ' ...') !!}
                                             <span>আরও পড়ুন</span>
@@ -679,11 +683,13 @@
                                 <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}"
                                     class="row">
                                     <div class="col-md-5 text">{{ $item->title }}</div>
-                                    <div class="col-md-7 pe-0">
-                                        <img class="lazy"
-                                            src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}"
-                                            alt="{{ $item->title }}">
-                                    </div>
+                                    @if ($item->thumbnail != null)
+                                        <div class="col-md-7 pe-0">
+                                            <img class="lazy"
+                                                src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}"
+                                                alt="{{ $item->title }}">
+                                        </div>
+                                    @endif
                                     <div class="col-md-12 description">
                                         <p>{!! Str::of($item->description)->words(25, ' ...') !!}
                                             <span>আরও পড়ুন</span>
@@ -780,7 +786,12 @@
                 </div>
                 <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-3">
                     <ul class="m-0">
-                        @foreach ($coxBazar->skip(7)->take(2) as $item)
+                        @if ($ad4->status == 'active')
+                            <a href="{{ $ad4->url }}" target="_blank">
+                                <img src="{{ asset($ad4->image != null ? $ad4->image : '600x1200.jpg') }}"
+                                    alt="{{ $ad4->title }}" style="width: 100%;">
+                            </a>
+                            {{-- @foreach ($coxBazar->skip(7)->take(2) as $item)
                             <li class="mb-3">
                                 <a
                                     href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
@@ -790,7 +801,8 @@
                                     <p>{{ $item->title }}</p>
                                 </a>
                             </li>
-                        @endforeach
+                            @endforeach --}}
+                        @endif
                     </ul>
 
                 </div>

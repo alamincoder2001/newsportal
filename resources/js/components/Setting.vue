@@ -187,12 +187,12 @@ export default {
                 let img = new Image()
                 img.src = window.URL.createObjectURL(event.target.files[0]);
                 img.onload = () => {
-                    if (img.width === 552 && img.height === 287) {
-                        this.imageSrc1 = window.URL.createObjectURL(event.target.files[0]);
-                        this.setting.favicon = event.target.files[0];
-                    } else {
-                        alert(`This image ${img.width}px X ${img.height}px but require image 150px X 150px`);
-                    }
+                    // if (img.width === 552 && img.height === 287) {
+                    this.imageSrc1 = window.URL.createObjectURL(event.target.files[0]);
+                    this.setting.favicon = event.target.files[0];
+                    // } else {
+                    //     alert(`This image ${img.width}px X ${img.height}px but require image 150px X 150px`);
+                    // }
                 }
             }
         },

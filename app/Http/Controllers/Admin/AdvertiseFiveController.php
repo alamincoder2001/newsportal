@@ -27,17 +27,17 @@ class AdvertiseFiveController extends Controller
     public function store(Request $request)
     {
         try {
-            $uniqueId = date('Y').'000001';
 
-            $data        = AdvertiseFive::first();
-            $data->title = $request->title;
-            $data->url   = $request->url;
+            $data         = AdvertiseFive::first();
+            $data->title  = $request->title;
+            $data->url    = $request->url;
+            $data->status = $request->status;
             if ($request->hasFile('image')) {
                 $extension = $request->file('image')->extension();
-                $name = $uniqueId . '.' . $extension;
-                $img = Image::make($request->file('image'))->resize(400, 250);
-                $img->save(public_path('uploads/advertise-two/' . $name));
-                $data->image = "uploads/advertise-two/" . $name;
+                $name = '600x300.' . $extension;
+                $img = Image::make($request->file('image'))->resize(600, 300);
+                $img->save(public_path('uploads/advertise-five/' . $name));
+                $data->image = "uploads/advertise-five/" . $name;
             }
 
             $data->save();
@@ -48,4 +48,3 @@ class AdvertiseFiveController extends Controller
         }
     }
 }
-

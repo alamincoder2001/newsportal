@@ -18,14 +18,24 @@
                                 </div>
                                 <div class="form-group row mb-4">
                                     <div class="col-md-12">
-                                        <img :src="imageSrc" class="imageShow" width="300px" height="250px" style="border:1px solid #d7d7d7;" />
+                                        <img :src="imageSrc" class="imageShow" width="400px" height="200px"
+                                            style="border:1px solid #d7d7d7;" />
                                     </div>
                                     <div class="col-md-6">
                                         <label for="image">Master Image:</label>
                                         <input type="file" name="image" id="image" class="form-control"
                                             @change="imageUrl" />
-                                        <p style="font-size: 11px;color: red;">Required size: 400 X 250</p>
+                                        <p style="font-size: 11px;color: red;">Required size: 600 X 300</p>
                                     </div>
+                                </div>
+                                <div class="form-group mt-2">
+                                    <label for="status">Status:</label>
+                                    <select name="status" id="status" v-model="form.status"
+                                        class="form-control shadow-none">
+                                        <option value="" selected>Select</option>
+                                        <option value="active">Active</option>
+                                        <option value="inactive">Inactive</option>
+                                    </select>
                                 </div>
                                 <div class="row mt-2">
                                     <label for="" class="col-5 col-lg-4 d-flex align-items-center"></label>
@@ -51,10 +61,11 @@ export default {
             form: new Form({
                 title: "",
                 url: "",
-                image: ""
+                image: "",
+                status: ""
             }),
 
-            imageSrc: location.origin + "/noImage.jpg",
+            imageSrc: location.origin + "/600x300.jpg",
         }
     },
 
@@ -67,7 +78,7 @@ export default {
             axios.get(location.origin + "/admin/get-advertise-five")
                 .then(res => {
                     this.form = res.data
-                    this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/noImage.jpg"
+                    this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/600x300.jpg"
                 })
         },
 

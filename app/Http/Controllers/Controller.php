@@ -66,13 +66,13 @@ class Controller extends BaseController
                 return $query->where('category_id', $category);
             })->with(['category' => function ($query) use ($category) {
                 return $query->where('category_id', $category);
-            }])->get();
+            }])->where('is_published', 'active')->where('is_archive', 'no')->get();
         } else {
             $data = News::whereHas('category', function ($query) use ($category) {
                 return $query->where('category_id', $category);
             })->with(['category' => function ($query) use ($category) {
                 return $query->where('category_id', $category);
-            }])->orderBy('id', $order)->get();
+            }])->where('is_published', 'active')->where('is_archive', 'no')->orderBy('id', $order)->get();
         }
 
         return $data;

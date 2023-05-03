@@ -64,7 +64,7 @@
 <footer class="mt-5">
     <div class="container">
         <div class="footer-top">
-            <img class="logo" src="{{ asset('frontend') }}/assets/img/logo.png">
+            <img class="logo" src="{{ asset($setting->logo != null ? $setting->logo : 'noImage.jpg') }}">
             <div class="footer-editor">
                 <h2><span>সম্পাদক :</span> নির্ভয় নিউজ</h2>
 
@@ -93,11 +93,14 @@
                         <a target="_blank" href="#" class="ios"><img
                                 src="{{ asset('frontend') }}/assets/img/ios-app.png"></a>
                         <ul class="mt-3">
-
-                            <li><a target="_blank" href="#"><i class="bi bi-instagram"></i></a></li>
-                            <li><a target="_blank" href="#"><i class="bi bi-twitter"></i></a></li>
-                            <li><a target="_blank" href="#"><i class="bi bi-youtube"></i></a></li>
-                            <li><a target="_blank" href="#"><i class="bi bi-facebook"></i></a></li>
+                            <li><a target="_blank" href="{{ $setting->instagram }}"><i class="bi bi-instagram"></i></a>
+                            </li>
+                            <li><a target="_blank" href="{{ $setting->twitter }}"><i class="bi bi-twitter"></i></a>
+                            </li>
+                            <li><a target="_blank" href="{{ $setting->youtube }}"><i class="bi bi-youtube"></i></a>
+                            </li>
+                            <li><a target="_blank" href="{{ $setting->facebook }}"><i class="bi bi-facebook"></i></a>
+                            </li>
                             <li>আমাদের সঙ্গে থাকুন</li>
                         </ul>
                     </div>
@@ -111,9 +114,9 @@
     <div class="container">
         <div class="footer-bottom">
             <ul>
-                <li><a href="./page/contactus">যোগাযোগ</a></li>
-                <li><a href="./page/privacy-policy">গোপনীয়তা নীতি</a></li>
-                <li><a href="./file/Rate_Card_2022.pdf" target="_blank">বিজ্ঞাপনের মূল্য তালিকা</a></li>
+                <li><a href="javascript:">যোগাযোগ</a></li>
+                <li><a href="javascript:">গোপনীয়তা নীতি</a></li>
+                <li><a href="javascript:" target="_blank">বিজ্ঞাপনের মূল্য তালিকা</a></li>
             </ul>
             <p class="copyright m-0">স্বত্ব © ২০২৩ নির্ভয় নিউজ</p>
         </div>

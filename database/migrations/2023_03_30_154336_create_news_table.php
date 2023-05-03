@@ -31,6 +31,7 @@ class CreateNewsTable extends Migration
             $table->string("other_image_4")->nullable();
             $table->string("other_image_5")->nullable();
             $table->string("is_published")->default('pending');
+            $table->string("is_archive")->default('no');
             $table->timestamps();
             $table->softDeletes();
         });
