@@ -41,27 +41,18 @@
 <meta name="description" content="Nirvoy News. Most Largest And Popular In Bangladesh for bd bangla news" />
 <meta name="author" content="Nirvoy News" />
 <meta name="url" content="{{ URL::current() }}" />
-
 <meta property="og:site_name" content="নির্ভয় নিউজ" />
 <meta property="og:url" content="{{ URL::current() }}" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Nirvoy News || Highest Circulated Newspaper" />
-<meta property="og:description" content="Nirvoy News. Most Largest And Popular In Bangladesh for bd news bangla" />
-<meta property="og:image" content="{{ asset('uploads') }}/news/2023000003.jpg" />
-<meta property="image_url" content="{{ asset('uploads') }}/news/2023000003.jpg" />
+@yield('shareLink')
 
-<meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:domain" content="">
-<meta property="twitter:url" content="{{ route('website') }}">
-<meta name="twitter:title" content="Nirvoy News || Highest Circulated Newspaper">
-<meta name="twitter:description" content="Nirvoy News. Most Largest And Popular In Bangladesh for bd news bangla">
-<meta name="twitter:image" content="{{ route('website') }}assets/img/default-img.jpg">
+
 
 <meta property="fb:app_id" content="" />
 <meta property="fb:pages" content="" />
 
 <link rel="canonical" href="{{ route('website') }}">
-<link rel="image_src" href="{{ route('website') }}assets/newDesktop/img/default-img.jpg">
+
 
 <script type="application/ld+json">
     {

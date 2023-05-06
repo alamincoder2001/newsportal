@@ -168,5 +168,5 @@
                 .fadeOut(300);
         }
     );
-    $("img:not([alt])").attr("alt", "বাংলাদেশ প্রতিদিন");
+    $("img:not([alt])").attr("alt", "নির্ভয় নিউজ");
 })(jQuery);
