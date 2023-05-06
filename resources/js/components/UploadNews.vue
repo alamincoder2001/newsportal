@@ -38,7 +38,7 @@
                                     <div class="col-md-6">
                                         <label for="subcategory">Master Image:</label>
                                         <input type="file" id="image" class="form-control" @change="imageUrl" />
-                                        <p style="font-size: 11px;color: red;">Required size: 966 X 648</p>
+                                        <p style="font-size: 11px;color: red;">Required size: width: 966px X height: 648px</p>
                                         <span class="error-masterImage error text-danger fst-italic"></span>
                                     </div>
                                     <div class="col-md-6 text-center">
@@ -232,9 +232,6 @@ export default {
             if (this.form.id != '') {
                 url = "/admin/update/news";
             }
-
-            // console.log(this.form);
-            // return
             this.form.post(url).then(res => {
                 if (res.data.status == "error") {
                     this.showError(res.data.message);

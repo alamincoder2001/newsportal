@@ -19,6 +19,7 @@ class CreateNewsCountersTable extends Migration
             $table->foreignId("category_id")->constrained()->onDelete("cascade");
             $table->bigInteger('read_count');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

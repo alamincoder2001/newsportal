@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\News;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\NewsCounter;
 use App\Models\NewsPublished;
 use Exception;
 use Illuminate\Support\Facades\Auth;
@@ -198,7 +199,7 @@ class NewsController extends Controller
 
         try {
             $news = News::find($request->id);
-
+            
             // $uniqueId = $this->getUniqueId();
 
             if ($request->hasFile('masterImage')) {
@@ -225,7 +226,7 @@ class NewsController extends Controller
 
             $news->title        = $request->title;
             $news->subtitle     = $request->subtitle;
-            $news->slug         = $this->make_slug($news->slug . date('His'));
+            $news->slug         = $this->make_slug($news->unique_id . date('His'));
             $news->description  = $request->description;
             $news->is_published = Auth::guard('admin')->user()->role == 'admin' ? 'active' : 'pending';
             $news->user_id      = Auth::guard('admin')->user()->id;
@@ -336,6 +337,10 @@ class NewsController extends Controller
             //     File::delete($old);
             // }
             $data->delete();
+            $counter = NewsCounter::where("news_id", $request->id)->first();
+            if($counter){
+                $counter->delete();
+            }
             return "News delete successfully";
         } catch (\Throwable $e) {
             return "Opps! something went wrong";

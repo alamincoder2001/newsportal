@@ -36,7 +36,7 @@ class HomeController extends Controller
         $ad4 = AdvertiseFour::first();
         $ad5 = AdvertiseFive::first();
 
-        $topJatioNews = NewsCounter::where('category_id', '3')->with('news', 'category')->orderBy('read_count', 'desc')->take(12)->get();
+        $topJatioNews = NewsCounter::where('category_id', 3)->with('news', 'category')->orderBy('read_count', 'desc')->take(12)->get();
 
         $categorywisenews = News::with('category')->where('is_published', 'active')->where('is_archive', 'no')->latest()->get();
 

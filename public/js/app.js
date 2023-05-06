@@ -7897,9 +7897,6 @@ __webpack_require__.r(__webpack_exports__);
       if (this.form.id != '') {
         url = "/admin/update/news";
       }
-
-      // console.log(this.form);
-      // return
       this.form.post(url).then(function (res) {
         if (res.data.status == "error") {
           _this4.showError(res.data.message);
@@ -46931,7 +46928,7 @@ var render = function () {
                       _c(
                         "p",
                         { staticStyle: { "font-size": "11px", color: "red" } },
-                        [_vm._v("Required size: 966 X 648")]
+                        [_vm._v("Required size: width: 966px X height: 648px")]
                       ),
                       _vm._v(" "),
                       _c("span", {
