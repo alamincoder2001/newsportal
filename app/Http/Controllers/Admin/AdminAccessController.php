@@ -19,10 +19,6 @@ class AdminAccessController extends Controller
         $this->middleware('auth:admin');
     }
 
-    // public function index()
-    // {
-    //     return view("admin.user.index");
-    // }
     public function create()
     {
         return view("admin.user.create");
@@ -58,8 +54,6 @@ class AdminAccessController extends Controller
         }
 
         try {
-            return $request->all();
-
             if ($request->has('image')) {
                 $extension = $request->file('image')->extension();
                 $name = $request->username . '.' . $extension;
@@ -71,7 +65,7 @@ class AdminAccessController extends Controller
                 'email'    => $request->email,
                 'role'     => $request->role,
                 'password' => Hash::make($request->password),
-                'image'    => '/uploads/admins/' . $name,
+                'image'    => isset($name) ? '/uploads/admins/' . $name : null,
             ]);
 
             if ($request->has('image')) {
@@ -99,8 +93,6 @@ class AdminAccessController extends Controller
             'username' => 'required|string|min:3|max:20|unique:admins,username,' . $request->id,
             'email'    => 'required|email:rfc,dns|unique:admins,email,' . $request->id,
             'role'     => 'required|string',
-            // 'image'     => 'required|mimes:jpeg,png,jpg,gif',
-            // 'password'  => 'required|min:5|max:20',
         ]);
 
         if ($validator->fails()) {

@@ -5817,10 +5817,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
+      linkHref: location.origin,
       form: new Form({
         id: "",
         name: "",
@@ -5875,8 +5880,6 @@ __webpack_require__.r(__webpack_exports__);
       if (this.form.id != '') {
         url = "/admin/update/user";
       }
-      // console.log(this.form);
-      // return
       this.form.post(url).then(function (res) {
         if (res.data.status == "error") {
           _this2.showError(res.data.message);
@@ -44143,6 +44146,25 @@ var render = function () {
                 return [
                   props.column.field == "after"
                     ? _c("span", [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "text-danger",
+                            attrs: {
+                              href:
+                                "" +
+                                (_vm.linkHref +
+                                  "/admin/user/permission/" +
+                                  props.row.id),
+                            },
+                          },
+                          [
+                            _vm._v(
+                              "\n                        access\n                        "
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
                         _c(
                           "a",
                           {

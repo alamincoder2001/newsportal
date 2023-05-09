@@ -11,7 +11,7 @@
             <div class="card-header card-header-primary
                             d-flex justify-content-between py-1">
                 <h4 class="card-title m-0 pt-2">User Permission</h4>
-                <a href="{{ route('admin.user.index') }}" class="btn btn-info shadow-none px-3">
+                <a href="{{ route('admin.user.create') }}" class="btn btn-info shadow-none px-3">
                     Users List
                 </a>
             </div>

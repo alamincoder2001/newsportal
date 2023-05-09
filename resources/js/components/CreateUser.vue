@@ -100,6 +100,10 @@
                 </template>
                 <template slot="table-row" slot-scope="props">
                     <span v-if="props.column.field == 'after'">
+                        <a class="text-danger" :href="`${linkHref+'/admin/user/permission/'+props.row.id}`">
+                            access
+                            <!-- <i class="fas fa-edit text-info"></i> -->
+                        </a>
                         <a href="" @click.prevent="editRow(props.row)">
                             <i class="fas fa-edit text-info"></i>
                         </a>
@@ -118,6 +122,7 @@
 export default {
     data() {
         return {
+            linkHref: location.origin,
             form: new Form({
                 id: "",
                 name: "",
@@ -165,8 +170,6 @@ export default {
             if (this.form.id != '') {
                 url = "/admin/update/user";
             }
-            // console.log(this.form);
-            // return
             this.form.post(url).then(res => {
                 if (res.data.status == "error") {
                     this.showError(res.data.message);

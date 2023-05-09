@@ -22,6 +22,12 @@ class PermissionSeederTable extends Seeder
                     'dashboardView'
                 ]
             ],
+            [
+                'group_name' => 'dashboard',
+                'permission_name' => [
+                    'dashboardView'
+                ]
+            ],
         ];
 
         foreach ($permissions as $permission) {
