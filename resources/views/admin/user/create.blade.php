@@ -168,6 +168,8 @@
                             $("#addUser").find(".error-" + index).text(value);
                         })
                     } else {
+                        console.log(res);
+                        return
                         table.ajax.reload()
                         $("#addUser").trigger('reset')
                         $("#addUser").find("#admin_id").val('')

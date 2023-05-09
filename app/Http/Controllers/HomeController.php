@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AdvertiseFive;
-use App\Models\AdvertiseFour;
-use App\Models\AdvertiseOne;
-use App\Models\AdvertiseThree;
-use App\Models\AdvertiseTwo;
+
 use App\Models\News;
 use App\Models\Category;
 use App\Models\NewsCounter;
+use App\Models\AdvertiseOne;
+use App\Models\AdvertiseTwo;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\AdvertiseFive;
+use App\Models\AdvertiseFour;
+use App\Models\AdvertiseThree;
 
 class HomeController extends Controller
 {
@@ -92,7 +92,7 @@ class HomeController extends Controller
     // category_wise method
     public function singleNews($cat_slug, $slug)
     {
-        $news = News::where("slug", $slug)->where('is_published', 'active')->where('is_archive', 'no')->first();
+        $news = News::where("slug", $slug)->where('is_published', 'active')->where('is_archive', 'no')->first();        
         $category = Category::where("slug", $cat_slug)->first();
 
         $categorywisenews = News::whereHas('category', function ($query) use ($category) {

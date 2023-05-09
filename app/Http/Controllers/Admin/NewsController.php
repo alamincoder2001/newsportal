@@ -337,9 +337,11 @@ class NewsController extends Controller
             //     File::delete($old);
             // }
             $data->delete();
-            $counter = NewsCounter::where("news_id", $request->id)->first();
-            if($counter){
-                $counter->delete();
+            $counter = NewsCounter::where("news_id", $request->id)->get();
+            if(count($counter) > 0){
+                foreach($counter as $item){
+                    NewsCounter::find($item->id)->delete();
+                }
             }
             return "News delete successfully";
         } catch (\Throwable $e) {

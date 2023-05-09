@@ -58,6 +58,7 @@ class AdminAccessController extends Controller
         }
 
         try {
+            return $request->all();
 
             if ($request->has('image')) {
                 $extension = $request->file('image')->extension();
