@@ -261,7 +261,6 @@
                             </div>
                             @endif
                             <div class="col-md-12 description">
-                                {{-- <p>{!! Str::limit($item->description, 230) !!} --}}
                                 <p>{!! Str::of($item->description)->words(25, ' ...') !!}
                                     <span>আরও পড়ুন</span>
                                 </p>
