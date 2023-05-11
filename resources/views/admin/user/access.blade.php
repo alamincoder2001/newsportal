@@ -54,7 +54,7 @@
                         </tr>
                         @endforeach
                     </table>
-                    <div class="text-right">
+                    <div class="form-group text-end">
                         <button type="submit" class="btn btn-success shadow-none text-white">Save Permissions</button>
                     </div>
                 </form>

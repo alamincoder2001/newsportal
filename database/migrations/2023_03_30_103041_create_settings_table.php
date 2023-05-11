@@ -16,8 +16,11 @@ class CreateSettingsTable extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string("company_name");
+            $table->string("company_name_english")->nullable();
             $table->string("title");
             $table->string("phone", 15);
+            $table->string("advertise_phone", 15)->nullable();
+            $table->string("editor_phone", 15)->nullable();
             $table->string("address")->nullable();
             $table->string("facebook")->nullable();
             $table->string("instagram")->nullable();

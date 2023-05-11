@@ -141,16 +141,19 @@ class AdminController extends Controller
                 return response()->json(["error" => $validator->errors()]);
             }
 
-            $data               = Setting::first();
-            $data->company_name = $request->company_name;
-            $data->title        = $request->title;
-            $data->address      = $request->address;
-            $data->phone        = $request->phone;
-            $data->facebook     = $request->facebook;
-            $data->instagram    = $request->instagram;
-            $data->twitter      = $request->twitter;
-            $data->linkedin     = $request->linkedin;
-            $data->youtube      = $request->youtube;
+            $data                       = Setting::first();
+            $data->company_name         = $request->company_name;
+            $data->company_name_english = $request->company_name_english;
+            $data->title                = $request->title;
+            $data->address              = $request->address;
+            $data->phone                = $request->phone;
+            $data->advertise_phone      = $request->advertise_phone;
+            $data->editor_phone         = $request->editor_phone;
+            $data->facebook             = $request->facebook;
+            $data->instagram            = $request->instagram;
+            $data->twitter              = $request->twitter;
+            $data->linkedin             = $request->linkedin;
+            $data->youtube              = $request->youtube;
             if ($request->hasFile("logo")) {
                 if (isset($old) && $old != "") {
                     if (File::exists($old)) {

@@ -7,9 +7,15 @@
                         <div class="row">
                             <div class="col-lg-10">
                                 <div class="form-group mt-2">
-                                    <label for="company_name">Company Name:</label>
+                                    <label for="company_name">Company Name Bangla:</label>
                                     <input type="text" id="company_name" name="company_name"
                                         class="form-control shadow-none" v-model="setting.company_name"
+                                        autocomplete="off" />
+                                </div>
+                                <div class="form-group mt-2">
+                                    <label for="company_name_english">Company Name English:</label>
+                                    <input type="text" id="company_name_english" name="company_name_english"
+                                        class="form-control shadow-none" v-model="setting.company_name_english"
                                         autocomplete="off" />
                                 </div>
                                 <div class="form-group mt-2">
@@ -17,17 +23,33 @@
                                     <input type="text" id="title" name="title" class="form-control shadow-none"
                                         v-model="setting.title" autocomplete="off" />
                                 </div>
-                                <div class="form-group mt-2">
-                                    <label for="address">Address:</label>
-                                    <textarea id="address" name="address" class="form-control shadow-none"
-                                        v-model="setting.address" autocomplete="off"></textarea>
-                                </div>
                                 <div class="row mt-2">
+                                    <div class="col-lg-6">
+                                        <div class="form-group mt-2">
+                                            <label for="address">Address:</label>
+                                            <textarea id="address" name="address" class="form-control shadow-none"
+                                                v-model="setting.address" autocomplete="off"></textarea>
+                                        </div>
+                                    </div>
                                     <div class="col-lg-6">
                                         <div class="form-group mt-2">
                                             <label for="phone">Phone:</label>
                                             <input type="text" id="phone" name="phone" class="form-control shadow-none"
                                                 v-model="setting.phone" autocomplete="off" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group mt-2">
+                                            <label for="advertise_phone">Advertise Phone:</label>
+                                            <input type="text" id="advertise_phone" name="advertise_phone" class="form-control shadow-none"
+                                                v-model="setting.advertise_phone" autocomplete="off" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group mt-2">
+                                            <label for="editor_phone">Editor Phone:</label>
+                                            <input type="text" id="editor_phone" name="editor_phone" class="form-control shadow-none"
+                                                v-model="setting.editor_phone" autocomplete="off" />
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -110,9 +132,12 @@ export default {
         return {
             setting: {
                 company_name: "",
+                company_name_english: "",
                 title: "",
                 address: "",
                 phone: "",
+                advertise_phone: "",
+                editor_phone: "",
                 facebook: "",
                 instagram: "",
                 twitter: "",

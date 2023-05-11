@@ -130,7 +130,7 @@ class AdminAccessController extends Controller
             $user->email    = $request->email;
             $user->role     = $request->role;
             $user->image    = $request->has('image') ? '/uploads/admins/' . $name : $user->image;
-            if ($request->password == '') {
+            if (!empty($request->password)) {
                 $user->password = Hash::make($request->password);
             }
             $user->update();

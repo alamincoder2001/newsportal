@@ -7357,15 +7357,40 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       setting: {
         company_name: "",
+        company_name_english: "",
         title: "",
         address: "",
         phone: "",
+        advertise_phone: "",
+        editor_phone: "",
         facebook: "",
         instagram: "",
         twitter: "",
@@ -46053,7 +46078,7 @@ var render = function () {
                 _c("div", { staticClass: "col-lg-10" }, [
                   _c("div", { staticClass: "form-group mt-2" }, [
                     _c("label", { attrs: { for: "company_name" } }, [
-                      _vm._v("Company Name:"),
+                      _vm._v("Company Name Bangla:"),
                     ]),
                     _vm._v(" "),
                     _c("input", {
@@ -46081,6 +46106,43 @@ var render = function () {
                           _vm.$set(
                             _vm.setting,
                             "company_name",
+                            $event.target.value
+                          )
+                        },
+                      },
+                    }),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group mt-2" }, [
+                    _c("label", { attrs: { for: "company_name_english" } }, [
+                      _vm._v("Company Name English:"),
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.setting.company_name_english,
+                          expression: "setting.company_name_english",
+                        },
+                      ],
+                      staticClass: "form-control shadow-none",
+                      attrs: {
+                        type: "text",
+                        id: "company_name_english",
+                        name: "company_name_english",
+                        autocomplete: "off",
+                      },
+                      domProps: { value: _vm.setting.company_name_english },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.setting,
+                            "company_name_english",
                             $event.target.value
                           )
                         },
@@ -46121,39 +46183,45 @@ var render = function () {
                     }),
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "form-group mt-2" }, [
-                    _c("label", { attrs: { for: "address" } }, [
-                      _vm._v("Address:"),
+                  _c("div", { staticClass: "row mt-2" }, [
+                    _c("div", { staticClass: "col-lg-6" }, [
+                      _c("div", { staticClass: "form-group mt-2" }, [
+                        _c("label", { attrs: { for: "address" } }, [
+                          _vm._v("Address:"),
+                        ]),
+                        _vm._v(" "),
+                        _c("textarea", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.setting.address,
+                              expression: "setting.address",
+                            },
+                          ],
+                          staticClass: "form-control shadow-none",
+                          attrs: {
+                            id: "address",
+                            name: "address",
+                            autocomplete: "off",
+                          },
+                          domProps: { value: _vm.setting.address },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.setting,
+                                "address",
+                                $event.target.value
+                              )
+                            },
+                          },
+                        }),
+                      ]),
                     ]),
                     _vm._v(" "),
-                    _c("textarea", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.setting.address,
-                          expression: "setting.address",
-                        },
-                      ],
-                      staticClass: "form-control shadow-none",
-                      attrs: {
-                        id: "address",
-                        name: "address",
-                        autocomplete: "off",
-                      },
-                      domProps: { value: _vm.setting.address },
-                      on: {
-                        input: function ($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(_vm.setting, "address", $event.target.value)
-                        },
-                      },
-                    }),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row mt-2" }, [
                     _c("div", { staticClass: "col-lg-6" }, [
                       _c("div", { staticClass: "form-group mt-2" }, [
                         _c("label", { attrs: { for: "phone" } }, [
@@ -46185,6 +46253,84 @@ var render = function () {
                               _vm.$set(
                                 _vm.setting,
                                 "phone",
+                                $event.target.value
+                              )
+                            },
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-6" }, [
+                      _c("div", { staticClass: "form-group mt-2" }, [
+                        _c("label", { attrs: { for: "advertise_phone" } }, [
+                          _vm._v("Advertise Phone:"),
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.setting.advertise_phone,
+                              expression: "setting.advertise_phone",
+                            },
+                          ],
+                          staticClass: "form-control shadow-none",
+                          attrs: {
+                            type: "text",
+                            id: "advertise_phone",
+                            name: "advertise_phone",
+                            autocomplete: "off",
+                          },
+                          domProps: { value: _vm.setting.advertise_phone },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.setting,
+                                "advertise_phone",
+                                $event.target.value
+                              )
+                            },
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-6" }, [
+                      _c("div", { staticClass: "form-group mt-2" }, [
+                        _c("label", { attrs: { for: "editor_phone" } }, [
+                          _vm._v("Editor Phone:"),
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.setting.editor_phone,
+                              expression: "setting.editor_phone",
+                            },
+                          ],
+                          staticClass: "form-control shadow-none",
+                          attrs: {
+                            type: "text",
+                            id: "editor_phone",
+                            name: "editor_phone",
+                            autocomplete: "off",
+                          },
+                          domProps: { value: _vm.setting.editor_phone },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.setting,
+                                "editor_phone",
                                 $event.target.value
                               )
                             },

@@ -6,13 +6,14 @@ namespace App\Http\Controllers;
 use App\Models\News;
 use App\Models\Category;
 use App\Models\NewsCounter;
+use App\Models\PageVisitor;
 use App\Models\AdvertiseOne;
 use App\Models\AdvertiseTwo;
 use Illuminate\Http\Request;
 use App\Models\AdvertiseFive;
 use App\Models\AdvertiseFour;
 use App\Models\AdvertiseThree;
-use App\Models\PageVisitor;
+use Rajurayhan\Bndatetime\BnDateTimeConverter;
 
 class HomeController extends Controller
 {
@@ -106,6 +107,8 @@ class HomeController extends Controller
         $news = News::where("slug", $slug)->where('is_published', 'active')->where('is_archive', 'no')->first();
         $category = Category::where("slug", $cat_slug)->first();
 
+        $d = new  BnDateTimeConverter();
+        $news->created_banglaDate = $d->getConvertedDateTime($news->created_at,  'BnEn', '');
         $categorywisenews = News::whereHas('category', function ($query) use ($category) {
             return $query->where('category_id', $category->id);
         })->where('is_published', 'active')->where('is_archive', 'no')->latest()->paginate(8);

@@ -36,7 +36,7 @@
                 <div class="area-curve">
                     <div class="row p-3">
                         <div class="col-md-4 col-lg-3 col-xl-4 col-xxl-5 news-info mb-2">
-                            <span><i class="bi bi-stopwatch"></i> ২০ মার্চ, ২০২৩ ১৩:১৮
+                            <span><i class="bi bi-stopwatch"></i> {{$news->created_banglaDate}}
                         </div>
                         <div class="col-md-8 col-lg-9 col-xl-8 col-xxl-7 mb-2 pe-0">
 
@@ -164,6 +164,7 @@
 <div id="printerDiv" style="display:none">
     {!! $news->description !!}
 </div>
+<div id="banglaDate" style="display: none;">{{$news->created_banglaDate}}</div>
 <script>
     async function printPage(event) {
         event.preventDefault();
@@ -197,7 +198,7 @@
                                 </div>
                             </div>
                             <div class="row textJustify">
-                                <p style="padding:15px 0;margin:0;">আপডেট:২০ মার্চ, ২০২৩ ১৩:১৮
+                                <p style="padding:15px 0;margin:0;">আপডেট: ${document.getElementById('banglaDate').innerHTML}
                            </p>
                                 <h1 style="margin:0;padding:0;margin-bottom:5px;">${newsTitle}</h1>
                                 <img src="${location.origin}${newsImage}" style="width:450px !important;padding: 0;margin-bottom: 10px;"/>
