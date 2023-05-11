@@ -64,10 +64,35 @@
 <footer class="mt-5">
     <div class="container">
         <div class="footer-top">
-            <img class="logo" src="{{ asset($setting->logo != null ? $setting->logo : 'noImage.jpg') }}">
+            <div class="imageSectionFooter" style="display: inline-flex;width: 500px;">
+                <div style="width:20%;">
+                    <img class="logo" src="{{ asset($setting->logo != null ? $setting->logo : 'noImage.jpg') }}">
+                </div>
+                <div style="width: 80%;">
+                    <h1 style="font-family:'solaimanlipi';font-weight: 700;letter-spacing: 2px;" class="m-0">{{$setting->company_name}}</h1>
+                    <span style="letter-spacing: 2px;">{{$setting->title}}</span>
+                </div>
+            </div>
             <div class="footer-editor">
-                <h2><span>সম্পাদক :</span> নির্ভয় নিউজ</h2>
-
+                <ul style="list-style: none;padding: 0;display: flex;margin: 0;margin-bottom:10px;justify-content: end;">
+                    <li style="background: #cbcbcb;padding: 0px 6px;"><i class="bi bi-eye"></i></li>
+                    <!-- #ffffff #eeeace-->
+                    <li style="font-style: italic;font-size: 12px;line-height: 2;font-weight: 800;background: #eeeace;padding: 0 5px;">{{$pagevisitors}}</li>
+                    <li style="font-weight:600;font-style: italic;background: #ffffff;padding: 0px 5px;font-size: 12px;text-transform: uppercase;line-height: 2;">{{$pagevisitors > 1 ? 'Visitiors': 'Visitior'}}</li>
+                </ul>
+                <h2 class="m-0"><span>সম্পাদক :</span> নির্ভয় নিউজ</h2>
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="padding: 5px 3px;font-size: 11px;text-transform: uppercase;font-weight: 700;">Advertise Phone</td>
+                        <td style="padding: 0;">:</td>
+                        <td style="padding: 5px 3px;padding-left:5px;font-size: 12px;text-transform: uppercase;font-weight: 700;">01737484046</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px 3px;font-size: 11px;text-transform: uppercase;font-weight: 700;">Editor Phone</td>
+                        <td style="padding: 0;">:</td>
+                        <td style="padding: 5px 3px;padding-left:5px;font-size: 12px;text-transform: uppercase;font-weight: 700;">01737484046</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
@@ -77,9 +102,9 @@
                 <div class="col-12 col-md-4 col-lg-4 pt-3">
                     <ul>
                         @foreach ($categories->take(9) as $item)
-                            <li>
-                                <a href="{{ route('categorywise', $item->slug) }}">{{ $item->name }}</a>
-                            </li>
+                        <li>
+                            <a href="{{ route('categorywise', $item->slug) }}">{{ $item->name }}</a>
+                        </li>
                         @endforeach
                     </ul>
                 </div>
@@ -88,10 +113,8 @@
                     <div class="app-info">
                         <h3>মোবাইল অ্যাপ ডাউনলোড করুন</h3>
                         <div class="clearfix"></div>
-                        <a target="_blank" href="#" class="android"><img
-                                src="{{ asset('frontend') }}/assets/img/android.png"></a>
-                        <a target="_blank" href="#" class="ios"><img
-                                src="{{ asset('frontend') }}/assets/img/ios-app.png"></a>
+                        <a target="_blank" href="#" class="android"><img src="{{ asset('frontend') }}/assets/img/android.png"></a>
+                        <a target="_blank" href="#" class="ios"><img src="{{ asset('frontend') }}/assets/img/ios-app.png"></a>
                         <ul class="mt-3">
                             <li><a target="_blank" href="{{ $setting->instagram }}"><i class="bi bi-instagram"></i></a>
                             </li>

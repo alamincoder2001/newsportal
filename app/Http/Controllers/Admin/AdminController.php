@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Admin;
+use App\Models\Setting;
+use App\Models\AdminAccess;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
@@ -113,6 +114,12 @@ class AdminController extends Controller
     //settings method
     public function setting()
     {
+        $access = AdminAccess::where('admin_id', Auth::guard('admin')->user()->id)
+            ->pluck('permissions')
+            ->toArray();
+        if (!in_array("settingUpdate", $access)) {
+            return view("admin.unauthorize");
+        }
         return view("admin.settings");
     }
 

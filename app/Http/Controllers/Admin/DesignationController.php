@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\AdminAccess;
 use App\Models\Designation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -20,9 +21,15 @@ class DesignationController extends Controller
     {
         return Designation::get();
     }
-    
+
     public function create()
     {
+        $access = AdminAccess::where('admin_id', Auth::guard('admin')->user()->id)
+            ->pluck('permissions')
+            ->toArray();
+        if (!in_array("designationEntry", $access)) {
+            return view("admin.unauthorize");
+        }
         return view("admin.designation.create");
     }
 

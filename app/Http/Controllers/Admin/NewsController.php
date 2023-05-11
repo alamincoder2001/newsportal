@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\News;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Models\NewsCounter;
-use App\Models\NewsPublished;
 use Exception;
+use App\Models\News;
+use App\Models\AdminAccess;
+use App\Models\NewsCounter;
+use Illuminate\Http\Request;
+use App\Models\NewsPublished;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Validator;
@@ -21,6 +22,12 @@ class NewsController extends Controller
 
     public function index()
     {
+        $access = AdminAccess::where('admin_id', Auth::guard('admin')->user()->id)
+            ->pluck('permissions')
+            ->toArray();
+        if (!in_array("newsList", $access)) {
+            return view("admin.unauthorize");
+        }
         return view("admin.news.index");
     }
 
@@ -53,6 +60,21 @@ class NewsController extends Controller
 
     public function create($id = '')
     {
+        if ($id == '') {
+            $access = AdminAccess::where('admin_id', Auth::guard('admin')->user()->id)
+                ->pluck('permissions')
+                ->toArray();
+            if (!in_array("newsEntry", $access)) {
+                return view("admin.unauthorize");
+            }
+        } else {
+            $access = AdminAccess::where('admin_id', Auth::guard('admin')->user()->id)
+                ->pluck('permissions')
+                ->toArray();
+            if (!in_array("newsEdit", $access)) {
+                return view("admin.unauthorize");
+            }
+        }
         $id = $id;
         return view("admin.news.create", compact('id'));
     }
@@ -199,7 +221,7 @@ class NewsController extends Controller
 
         try {
             $news = News::find($request->id);
-            
+
             // $uniqueId = $this->getUniqueId();
 
             if ($request->hasFile('masterImage')) {
@@ -266,6 +288,12 @@ class NewsController extends Controller
 
     public function newsPending()
     {
+        $access = AdminAccess::where('admin_id', Auth::guard('admin')->user()->id)
+            ->pluck('permissions')
+            ->toArray();
+        if (!in_array("pendingNews", $access)) {
+            return view("admin.unauthorize");
+        }
         return view("admin.news.pending");
     }
 
@@ -277,6 +305,12 @@ class NewsController extends Controller
 
     public function newsArchive()
     {
+        $access = AdminAccess::where('admin_id', Auth::guard('admin')->user()->id)
+            ->pluck('permissions')
+            ->toArray();
+        if (!in_array("archiveNews", $access)) {
+            return view("admin.unauthorize");
+        }
         return view('admin.news.archive');
     }
 
@@ -338,8 +372,8 @@ class NewsController extends Controller
             // }
             $data->delete();
             $counter = NewsCounter::where("news_id", $request->id)->get();
-            if(count($counter) > 0){
-                foreach($counter as $item){
+            if (count($counter) > 0) {
+                foreach ($counter as $item) {
                     NewsCounter::find($item->id)->delete();
                 }
             }

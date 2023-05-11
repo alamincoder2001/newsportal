@@ -6,12 +6,12 @@
 <meta property="og:title" content="{{$news->title}}" />
 <meta property="og:image" content="{{ asset($news->image != null ? $news->image : '') }}" />
 <meta property="image_url" content="{{ asset($news->image != null ? $news->image : '') }}" />
-<meta property="og:description" content="Nirvoy News. Most Largest And Popular In Bangladesh for bd news bangla" />
+<meta property="og:description" content="{!! $news->description !!}" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="{{URL::current()}}">
 <meta name="twitter:title" content="{{$news->title}}">
-<meta name="twitter:description" content="Nirvoy News. Most Largest And Popular In Bangladesh for bd news bangla">
+<meta name="twitter:description" content="{!! $news->description !!}">
 <meta name="twitter:image" content="{{ asset($news->image != null ? $news->image : '') }}">
 
 <link rel="image_src" href="{{ asset($news->image != null ? $news->image : '') }}">

@@ -8,6 +8,7 @@ use App\Models\Permission;
 use App\Models\AdminAccess;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Validator;
@@ -21,6 +22,12 @@ class AdminAccessController extends Controller
 
     public function create()
     {
+        $access = AdminAccess::where('admin_id', Auth::guard('admin')->user()->id)
+            ->pluck('permissions')
+            ->toArray();
+        if (!in_array("userEntry", $access)) {
+            return view("admin.unauthorize");
+        }
         return view("admin.user.create");
     }
 
@@ -160,6 +167,13 @@ class AdminAccessController extends Controller
     // permission edit
     public function permissionEdit($id)
     {
+        $access = AdminAccess::where('admin_id', Auth::guard('admin')->user()->id)
+            ->pluck('permissions')
+            ->toArray();
+        if (!in_array("userAccess", $access)) {
+            return view("admin.unauthorize");
+        }
+        
         $user = Admin::find($id);
         $userAccess = AdminAccess::where('admin_id', $id)->pluck('permissions')->toArray();
         $group_name = Permission::pluck('group_name')->unique();
@@ -182,9 +196,9 @@ class AdminAccessController extends Controller
                     ]);
                 }
             }
-            return redirect()->route('admin.user.index')->with('success', 'Permissions added successfullly');
+            return redirect()->route('admin.user.create')->with('success', 'Permissions added successfullly');
         } catch (\Throwable $e) {
-            return redirect()->route('admin.user.index');
+            return redirect()->route('admin.user.create');
         }
     }
 }

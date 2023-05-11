@@ -19,6 +19,15 @@
     @yield('content')
 
     @include('layouts.frontend.footer')
+
+    <div class="fixedShareLink" style="position: fixed;top: 40%;left: 0;">
+        <ul style="list-style:none;margin:0;padding:0;">
+            <li style="background: #1997dd;padding: 5px 13px;text-align:center;"><a style="display: block;padding: 2px;font-size: 12px;font-weight: 900;color: white;font-style:italic;" target="_blank" href="{{$setting->facebook}}"><i class="bi bi-facebook"></i></a></li>
+            <li style="background: #fc0d1b;padding: 5px 13px;text-align:center;"><a style="display: block;padding: 2px;font-size: 12px;font-weight: 900;color: white;font-style:italic;" target="_blank" href="{{$setting->youtube}}"><i class="bi bi-youtube"></i></a></li>
+            <li style="background: linear-gradient(45deg, #c9a35e, #bf0d5f);padding: 5px 13px;text-align:center;"><a style="display: block;padding: 2px;font-size: 12px;font-weight: 900;color: white;font-style:italic;" target="_blank" href="{{$setting->instagram}}"><i class="bi bi-instagram"></i></a></li>
+            <li style="background: rgb(17 219 229);padding: 5px 13px;text-align:center;"><a style="display: block;padding: 2px;font-size: 12px;font-weight: 900;color: white;font-style:italic;" target="_blank" href="{{$setting->twitter}}"><i class="bi bi-twitter"></i></a></li>
+        </ul>
+    </div>
 </body>
 
 </html>

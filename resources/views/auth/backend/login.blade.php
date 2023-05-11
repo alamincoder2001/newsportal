@@ -47,8 +47,8 @@
                         <div style="padding: 10px 31px 10px;text-align: center;">
                             <img style="width: 80px;margin-bottom: 10px;" src="{{ asset('uploads/settings/logo.png') }}"
                                 alt="Water Market BD" />
-                            <h2>নির্ভয় নিউজ</h2>
-                            <p>নির্ভয় সত্যের পথে সাহসী সৈনিক</p>
+                            <h2>{{$setting->company_name}}</h2>
+                            <p>{{$setting->title}}</p>
                         </div>
                     </div>
                     <div class="col-lg-7">

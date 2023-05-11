@@ -33,7 +33,7 @@
                     <table class="table table-bordered">
                         <tr>
                             <td colspan="2">
-                                <input type="checkbox" id="all" value="1">
+                                <input type="checkbox" onchange="selectAll(event)" id="all">
                                 <label for="all">All</label>
                             </td>
                         </tr>
@@ -67,17 +67,16 @@
 
 @push("js")
 <script>
-    $('#all').on('click', function() {
-        if ($(this).is(':checked')) {
-            $('input[type=checkbox').prop('checked', true);
+    function selectAll(event) {
+        if (event.target.checked) {
+            $('input[type="checkbox"]').prop('checked', true);
         } else {
-            $('input[type=checkbox').prop('checked', false);
+            $('input[type="checkbox"]').prop('checked', false);
         }
-    })
+    }
 
     function selectGroup(className) {
         const checkbox = $('.' + className + ' input');
-        console.log(checkbox);
         if ($('#' + className).is(':checked')) {
             checkbox.prop('checked', true);
         } else {

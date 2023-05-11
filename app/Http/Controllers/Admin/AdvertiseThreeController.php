@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\AdminAccess;
 use Illuminate\Http\Request;
 use App\Models\AdvertiseThree;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 
 class AdvertiseThreeController extends Controller
@@ -21,6 +23,12 @@ class AdvertiseThreeController extends Controller
 
     public function create()
     {
+        $access = AdminAccess::where('admin_id', Auth::guard('admin')->user()->id)
+            ->pluck('permissions')
+            ->toArray();
+        if (!in_array("advertiseThree", $access)) {
+            return view("admin.unauthorize");
+        }
         return view("admin.advertise.advertise_three");
     }
 

@@ -48,16 +48,13 @@
                         <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown"> অন্যান্য </a>
                         <ul class="dropdown-menu dropdown-menu-right  multi-column columns-2">
                             <div class="row">
-                                {{-- @foreach (array_chunk($otherscategory, 4) as $cat) --}}
                                 @foreach ($otherscategory as $key => $cat)
                                     <div class="col-sm-6">
                                         <ul class="multi-column-dropdown">
-                                            {{-- @foreach ($cat as $item) --}}
                                             <li>
                                                 <a class="dropdown-item"
                                                     href="{{ route('categorywise', $cat->slug) }}">{{ $cat->name }}</a>
                                             </li>
-                                            {{-- @endforeach --}}
                                         </ul>
                                     </div>
                                 @endforeach

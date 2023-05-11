@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Exception;
 use App\Models\Employee;
-use Illuminate\Support\Str;
+use App\Models\AdminAccess;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -22,6 +22,12 @@ class EmployeeController extends Controller
 
     public function index()
     {
+        $access = AdminAccess::where('admin_id', Auth::guard('admin')->user()->id)
+            ->pluck('permissions')
+            ->toArray();
+        if (!in_array("employeeList", $access)) {
+            return view("admin.unauthorize");
+        }
         return view('admin.employee.employee-list');
     }
     public function getEmployee()
@@ -32,13 +38,18 @@ class EmployeeController extends Controller
 
     public function create()
     {
+        $access = AdminAccess::where('admin_id', Auth::guard('admin')->user()->id)
+            ->pluck('permissions')
+            ->toArray();
+        if (!in_array("employeeEntry", $access)) {
+            return view("admin.unauthorize");
+        }
         return view('admin.employee.create');
     }
 
     public function store(Request $request)
     {
 
-        // return $request->nid_file;
         $validator = Validator::make($request->all(), [
             'name'              => 'required|string|min:3|max:30',
             'email'             => 'required|email:rfc,dns|unique:employees',

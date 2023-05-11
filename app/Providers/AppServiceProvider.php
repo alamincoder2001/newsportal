@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Category;
+use App\Models\PageVisitor;
 use App\Models\Setting;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
@@ -41,5 +42,6 @@ class AppServiceProvider extends ServiceProvider
             ->select('news.id as news_id', 'news.title as title', 'news.slug as news_slug', 'categories.id as cat_id', 'categories.name as cat_name', 'categories.slug as cat_slug')
             ->get());
         // View::share("otherscategory", DB::select("SELECT c.* FROM categories c WHERE c.is_menu = 'false'"));
+        View::share("pagevisitors", PageVisitor::where("date", date('d-m-Y'))->get()->count());
     }
 }

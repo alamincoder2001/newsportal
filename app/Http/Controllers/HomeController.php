@@ -12,11 +12,22 @@ use Illuminate\Http\Request;
 use App\Models\AdvertiseFive;
 use App\Models\AdvertiseFour;
 use App\Models\AdvertiseThree;
+use App\Models\PageVisitor;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        $today = date('d-m-Y');
+        $check = PageVisitor::where("date", $today)->where("ipaddress", request()->ip())->first();
+        if (empty($check)) {
+            PageVisitor::create([
+                'counter' => 1,
+                'date'  => $today,
+                'ipaddress' => request()->ip(),
+            ]);
+        }
+
         $shilpoBanijjo  = $this->getCategoryData(16, 'desc');
         $homeSliders    = $this->getCategoryData(17, 'desc')->take(3);
         $focush         = $this->getCategoryData(18, 'desc')->take(12);
@@ -92,7 +103,7 @@ class HomeController extends Controller
     // category_wise method
     public function singleNews($cat_slug, $slug)
     {
-        $news = News::where("slug", $slug)->where('is_published', 'active')->where('is_archive', 'no')->first();        
+        $news = News::where("slug", $slug)->where('is_published', 'active')->where('is_archive', 'no')->first();
         $category = Category::where("slug", $cat_slug)->first();
 
         $categorywisenews = News::whereHas('category', function ($query) use ($category) {

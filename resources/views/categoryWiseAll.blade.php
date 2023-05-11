@@ -77,27 +77,6 @@
                         @endforeach
                     </ul>
                 </div>
-
-                {{-- <div class="details-widget mt-3">
-                    <h1>
-                        <p class="p-0 m-0"><span>প্রিন্ট সর্বাধিক</span> <i class="bi bi-chevron-down"></i></p>
-                    </h1>
-                    <ul class="title-list mb-2">
-                        <li class="bi bi-caret-right-fill"><a href="first-page/2023/03/20/868809">কে এই আরাভ খান</a></li>
-                        <li class="bi bi-caret-right-fill"><a href="last-page/2023/03/20/868825">অস্ট্রেলিয়ার বাণিজ্যে
-                                চীনের বিকল্প বাংলাদেশ</a></li>
-                        <li class="bi bi-caret-right-fill"><a href="last-page/2023/03/20/868829">হেলিকপ্টার ও হাতি নিয়ে
-                                বিয়ে</a></li>
-                        <li class="bi bi-caret-right-fill"><a href="first-page/2023/03/20/868817">আমজাদের এক হাজার ব্যাংক
-                                হিসাব জব্দ</a></li>
-                        <li class="bi bi-caret-right-fill"><a href="first-page/2023/03/20/868808">মার্কিন নিষেধাজ্ঞা নিয়ে
-                                ঘাবড়ানোর কিছু নেই</a></li>
-                        <li class="bi bi-caret-right-fill"><a href="first-page/2023/03/20/868805">হঠাৎ মৃত্যুপুরী
-                                মাদারীপুর</a></li>
-                        <li class="bi bi-caret-right-fill"><a href="first-page/2023/03/20/868816">চালক শুনছিলেন না কারও
-                                কথাই</a></li>
-                    </ul>
-                </div> --}}
             </div>
         </div>
     </div>

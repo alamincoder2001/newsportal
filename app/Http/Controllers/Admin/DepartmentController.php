@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Department;
+use App\Models\AdminAccess;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
@@ -23,6 +24,12 @@ class DepartmentController extends Controller
 
     public function create()
     {
+        $access = AdminAccess::where('admin_id', Auth::guard('admin')->user()->id)
+            ->pluck('permissions')
+            ->toArray();
+        if (!in_array("departmentEntry", $access)) {
+            return view("admin.unauthorize");
+        }
         return view("admin.department.create");
     }
 

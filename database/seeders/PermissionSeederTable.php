@@ -23,9 +23,62 @@ class PermissionSeederTable extends Seeder
                 ]
             ],
             [
-                'group_name' => 'dashboard',
+                'group_name' => 'Advertisement',
                 'permission_name' => [
-                    'dashboardView'
+                    'advertiseOne',
+                    'advertiseTwo',
+                    'advertiseThree',
+                    'advertiseFour',
+                    'advertiseFive'
+                ]
+            ],
+            [
+                'group_name' => 'Employee',
+                'permission_name' => [
+                    'employeeEntry',
+                    'employeeList',
+                    'employeeEdit'
+                ]
+            ],
+            [
+                'group_name' => 'News',
+                'permission_name' => [
+                    'newsEntry',
+                    'newsEdit',
+                    'newsList',
+                    'pendingNews',
+                    'archiveNews',
+                ]
+            ],
+            [
+                'group_name' => 'User',
+                'permission_name' => [
+                    'userEntry',
+                    'userAccess'
+                ]
+            ],
+            [
+                'group_name' => 'Category',
+                'permission_name' => [
+                    'categoryEntry',
+                ]
+            ],
+            [
+                'group_name' => 'Designation',
+                'permission_name' => [
+                    'designationEntry',
+                ]
+            ],
+            [
+                'group_name' => 'Department',
+                'permission_name' => [
+                    'departmentEntry',
+                ]
+            ],
+            [
+                'group_name' => 'Setting',
+                'permission_name' => [
+                    'settingUpdate',
                 ]
             ],
         ];

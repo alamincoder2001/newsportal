@@ -3493,6 +3493,7 @@ footer .footer-top .footer-editor {
 footer .footer-top .footer-editor h2 {
     display: block;
     font-size: 24px;
+    text-align: right;
 }
 
 footer .footer-top .footer-editor h2 span {
