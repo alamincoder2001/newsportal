@@ -108,6 +108,11 @@ $access = App\Models\AdminAccess::where('admin_id', Auth::guard('admin')->user()
                 </li>
                 @endif
                 @if(in_array("userEntry", $access))
+                <li class="sidebar-item {{ Request::is('admin.epaper.create') ? 'selected' : '' }}">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.epaper.create') }}" aria-expanded="false"><i class="fa fa-user-plus"></i><span class="hide-menu">Epaper Entry</span></a>
+                </li>
+                @endif
+                @if(in_array("userEntry", $access))
                 <li class="sidebar-item {{ Request::is('admin.user.create') ? 'selected' : '' }}">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.user.create') }}" aria-expanded="false"><i class="fa fa-user-plus"></i><span class="hide-menu">User Entry</span></a>
                 </li>

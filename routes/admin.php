@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\DesignationController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Admin\EmployeeController;
+use App\Http\Controllers\Admin\EpaperController;
 
 // Admin Login Route
 Route::group(["prefix" => "admin"], function () {
@@ -116,4 +117,11 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/advertise-five', [AdvertiseFiveController::class, 'create'])->name('admin.advertise_five.create');
     Route::get('/get-advertise-five', [AdvertiseFiveController::class, 'index'])->name('admin.advertise_five.index');
     Route::post('/advertise-five', [AdvertiseFiveController::class, 'store'])->name('admin.advertise_five.store');
+
+    // epaper Route
+    Route::get('/epaper', [EpaperController::class, 'create'])->name('admin.epaper.create');
+    Route::get('/get-epaper', [EpaperController::class, 'index'])->name('admin.epaper.index');
+    Route::post('/epaper', [EpaperController::class, 'store'])->name('admin.epaper.store');
+    Route::post('/epaper/delete', [EpaperController::class, 'destroy'])->name('admin.epaper.destroy');
+
 });

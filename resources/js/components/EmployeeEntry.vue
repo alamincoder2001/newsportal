@@ -227,9 +227,7 @@
 
 
 <script>
-// import DatatableFactory from 'vuejs-datatable';
 export default {
-    // components: { DatatableFactory },
     data() {
         return {
             form: new Form({
@@ -304,8 +302,6 @@ export default {
             if (this.form.id != '') {
                 url = "/admin/update/employee";
             }
-            // console.log(this.form);
-            // return
             this.form.post(url).then(res => {
                 if (res.data.status == "error") {
                     this.showError(res.data.message);
@@ -315,8 +311,6 @@ export default {
 
                 if (res.data.status) {
                     location.reload();
-                    // this.clearData();
-                    // this.getUser();
                 }
             });
         },
@@ -416,16 +410,6 @@ export default {
             this.form.permanent_address = data.permanent_address;
             this.form.salary = data.salary;
             this.imageSrc = data.photo != null ? location.origin + data.photo : location.origin + "/noImage.jpg";
-
-            console.log(this.form);
-
-
-            // this.form.id = val.id;
-            // this.form.name = val.name;
-            // this.form.username = val.username;
-            // this.form.email = val.email;
-            // this.form.role = val.role;
-            // this.imageSrc = val.image != null ? location.origin + val.image : location.origin + "/noImage.jpg"
         },
 
         deleteRow(id) {
@@ -454,17 +438,6 @@ export default {
                 }
             }
         },
-
-        // clearData() {
-        //     this.form.id = "";
-        //     this.form.name = "";
-        //     this.form.username = "";
-        //     this.form.email = "";
-        //     this.form.role = "";
-        //     this.form.password = "";
-        //     this.imageSrc = '';
-        //     delete (this.form.image)
-        // }
     },
 }
 </script>

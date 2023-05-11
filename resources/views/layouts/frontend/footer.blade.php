@@ -75,22 +75,20 @@
             </div>
             <div class="footer-editor">
                 <ul style="list-style: none;padding: 0;display: flex;margin: 0;margin-bottom:10px;justify-content: end;">
-                    <li style="background: #cbcbcb;padding: 0px 6px;"><i class="bi bi-eye"></i></li>
-                    <!-- #ffffff #eeeace-->
-                    <li style="font-style: italic;font-size: 12px;line-height: 2;font-weight: 800;background: #eeeace;padding: 0 5px;">{{$pagevisitors}}</li>
-                    <li style="font-weight:600;font-style: italic;background: #ffffff;padding: 0px 5px;font-size: 12px;text-transform: uppercase;line-height: 2;">{{$pagevisitors > 1 ? 'Visitiors': 'Visitior'}}</li>
+                    <li style="background: #cbcbcb;padding: 0px 6px;"><i class="bi bi-eye"></i><span class="ms-1">{{App\Models\Setting::banglaNumber($pagevisitors)}}</span></li>
+                    <li style="font-weight:600;font-style: italic;background: #ffffff;padding: 0px 5px;font-size: 14px;text-transform: uppercase;line-height: 2;">আজকের পরিদর্শক</li>
                 </ul>
                 <h2 class="m-0"><span>সম্পাদক :</span> নির্ভয় নিউজ</h2>
                 <table style="width: 100%;">
                     <tr>
-                        <td style="padding: 5px 3px;font-size: 11px;text-transform: uppercase;font-weight: 700;">Advertise Phone</td>
+                        <td style="padding: 5px 3px;font-size: 15px;text-transform: uppercase;font-weight: 700;">বিজ্ঞাপণ ফোন</td>
                         <td style="padding: 0;">:</td>
-                        <td style="padding: 5px 3px;padding-left:5px;font-size: 12px;text-transform: uppercase;font-weight: 700;">01737484046</td>
+                        <td style="padding: 5px 3px;padding-left:5px;font-size: 12px;text-transform: uppercase;font-weight: 700;">{{$setting->advertise_phone}}</td>
                     </tr>
                     <tr>
-                        <td style="padding: 5px 3px;font-size: 11px;text-transform: uppercase;font-weight: 700;">Editor Phone</td>
+                        <td style="padding: 5px 3px;font-size: 15px;text-transform: uppercase;font-weight: 700;">ইডিটর ফোন</td>
                         <td style="padding: 0;">:</td>
-                        <td style="padding: 5px 3px;padding-left:5px;font-size: 12px;text-transform: uppercase;font-weight: 700;">01737484046</td>
+                        <td style="padding: 5px 3px;padding-left:5px;font-size: 12px;text-transform: uppercase;font-weight: 700;">{{$setting->editor_phone}}</td>
                     </tr>
                 </table>
             </div>
@@ -141,7 +139,7 @@
                 <li><a href="javascript:">গোপনীয়তা নীতি</a></li>
                 <li><a href="javascript:" target="_blank">বিজ্ঞাপনের মূল্য তালিকা</a></li>
             </ul>
-            <p class="copyright m-0">স্বত্ব © ২০২৩ নির্ভয় নিউজ</p>
+            <p class="copyright m-0">স্বত্ব © {{App\Models\Setting::banglaNumber(date('Y'))}} নির্ভয় নিউজ</p>
         </div>
     </div>
 </div>

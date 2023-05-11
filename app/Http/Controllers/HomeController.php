@@ -113,7 +113,6 @@ class HomeController extends Controller
             return $query->where('category_id', $category->id);
         })->where('is_published', 'active')->where('is_archive', 'no')->latest()->paginate(8);
 
-
         // Increment the read counter
         $counter = NewsCounter::where('news_id', $news->id)->where('category_id', $category->id)->first();
 
