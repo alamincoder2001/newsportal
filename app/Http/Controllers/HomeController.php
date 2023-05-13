@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use App\Models\AdvertiseFive;
 use App\Models\AdvertiseFour;
 use App\Models\AdvertiseThree;
+use App\Models\Epaper;
 use Rajurayhan\Bndatetime\BnDateTimeConverter;
 
 class HomeController extends Controller
@@ -31,7 +32,7 @@ class HomeController extends Controller
 
         $shilpoBanijjo  = $this->getCategoryData(16, 'desc');
         $homeSliders    = $this->getCategoryData(17, 'desc')->take(3);
-        $focush         = $this->getCategoryData(18, 'desc')->take(12);
+        $focush         = $this->getCategoryData(18, 'desc')->take(6);
         $highlights     = $this->getCategoryData(19, 'desc')->take(12);
         $jatioNews      = $this->getCategoryData(3, 'desc')->take(12);
         $AntorjatikNews = $this->getCategoryData(5, 'desc')->take(12);
@@ -48,11 +49,13 @@ class HomeController extends Controller
         $ad4 = AdvertiseFour::first();
         $ad5 = AdvertiseFive::first();
 
+        $epaper = Epaper::first();
+
         $topJatioNews = NewsCounter::where('category_id', 3)->with('news', 'category')->orderBy('read_count', 'desc')->take(12)->get();
 
         $categorywisenews = News::with('category')->where('is_published', 'active')->where('is_archive', 'no')->latest()->get();
 
-        return view("home", compact('homeSliders', 'focush', 'highlights', 'jatioNews', 'topJatioNews', 'AntorjatikNews', 'sportsNews', 'homeTopRight', 'jibonDhara', 'binodon', 'healthCorner', 'shilpoBanijjo', 'coxBazar', 'categorywisenews', 'ad1', 'ad2', 'ad3', 'ad4', 'ad5'));
+        return view("home", compact('homeSliders', 'focush', 'highlights', 'jatioNews', 'topJatioNews', 'AntorjatikNews', 'sportsNews', 'homeTopRight', 'jibonDhara', 'binodon', 'healthCorner', 'shilpoBanijjo', 'coxBazar', 'categorywisenews', 'ad1', 'ad2', 'ad3', 'ad4', 'ad5', 'epaper'));
     }
 
     // category_wise method

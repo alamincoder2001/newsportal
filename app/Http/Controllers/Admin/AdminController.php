@@ -149,6 +149,8 @@ class AdminController extends Controller
             $data->phone                = $request->phone;
             $data->advertise_phone      = $request->advertise_phone;
             $data->editor_phone         = $request->editor_phone;
+            $data->video_link1          = $request->video_link1;
+            $data->video_link2          = $request->video_link2;
             $data->facebook             = $request->facebook;
             $data->instagram            = $request->instagram;
             $data->twitter              = $request->twitter;

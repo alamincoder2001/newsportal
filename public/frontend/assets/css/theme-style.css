@@ -52,8 +52,7 @@ header .navbar-title {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* margin-top: 22px;
-    margin-left: -50px; */
+    margin-top: 10px;
 }
 
 header .navbar-title-text {
@@ -778,7 +777,7 @@ header .header-ad {
 }
 
 .latest-news-top .tab-content ul {
-    height: 1085px
+    height: 926px
 }
 
 .news-tab-area .tab-content ul::-webkit-scrollbar {
@@ -4269,7 +4268,7 @@ footer .footer-bottom .copyright {
     }
 
     .latest-news-top .tab-content ul {
-        height: 1085px
+        height: 926px
     }
 
     .section-1 .lead-item .text {

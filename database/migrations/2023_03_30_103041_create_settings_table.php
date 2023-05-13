@@ -21,6 +21,8 @@ class CreateSettingsTable extends Migration
             $table->string("phone", 15);
             $table->string("advertise_phone", 15)->nullable();
             $table->string("editor_phone", 15)->nullable();
+            $table->string("video_link1")->nullable();
+            $table->string("video_link2")->nullable();
             $table->string("address")->nullable();
             $table->string("facebook")->nullable();
             $table->string("instagram")->nullable();

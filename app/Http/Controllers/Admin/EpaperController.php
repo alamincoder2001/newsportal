@@ -17,7 +17,7 @@ class EpaperController extends Controller
 
     public function index()
     {
-
+        return Epaper::latest()->get();
     }
 
     public function create()
@@ -28,8 +28,8 @@ class EpaperController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'link'       => 'required',
-            'date'       => 'required',
+            'link'         => 'required',
+            'publish_date' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -55,8 +55,8 @@ class EpaperController extends Controller
                 'image'        => $name == null ? null : '/uploads/epaper/' . $name,
             ]);
 
-            if ($request->hasFile('masterImage')) {
-                $img = Image::make($request->file('masterImage'))->resize(1000, 672);
+            if ($request->hasFile('image')) {
+                $img = Image::make($request->file('image'))->resize(300, 450);
                 $img->save(public_path('uploads/epaper/' . $name));
             }
 
@@ -75,5 +75,11 @@ class EpaperController extends Controller
     public function update()
     {
         
+    }
+
+    public function destroy(Request $request)
+    {
+        Epaper::find($request->id)->delete();
+        return "Epaper delete successfully";
     }
 }

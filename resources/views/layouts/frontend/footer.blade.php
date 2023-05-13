@@ -81,7 +81,7 @@
                 <h2 class="m-0"><span>সম্পাদক :</span> নির্ভয় নিউজ</h2>
                 <table style="width: 100%;">
                     <tr>
-                        <td style="padding: 5px 3px;font-size: 15px;text-transform: uppercase;font-weight: 700;">বিজ্ঞাপণ ফোন</td>
+                        <td style="padding: 5px 3px;font-size: 15px;text-transform: uppercase;font-weight: 700;">বিজ্ঞাপণ এর জন্য ফোন</td>
                         <td style="padding: 0;">:</td>
                         <td style="padding: 5px 3px;padding-left:5px;font-size: 12px;text-transform: uppercase;font-weight: 700;">{{$setting->advertise_phone}}</td>
                     </tr>

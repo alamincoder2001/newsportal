@@ -16,6 +16,18 @@
                                     <input type="date" name="publish_date" v-model="epaper.publish_date" id="publish_date"
                                         class="form-control shadow-none">
                                 </div>
+                                <div class="form-group row mb-4">
+                                    <div class="col-md-12">
+                                        <img :src="imageSrc" class="imageShow" width="300px" height="450px"
+                                            style="border:1px solid #d7d7d7;" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="image">Master Image:</label>
+                                        <input type="file" name="image" id="image" class="form-control"
+                                            @change="imageUrl" />
+                                        <p style="font-size: 11px;color: red;">Required size: width:300px X height:450px</p>
+                                    </div>
+                                </div>
                                 <div class="row mt-4">
                                     <div class="col-12 col-lg-12 text-end">
                                         <button type="button" @click="clearData"
@@ -26,13 +38,6 @@
                                             Save Epaper
                                         </button>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-2 d-flex justify-content-center align-items-center">
-                                <div class="form-group ImageBackground">
-                                    <img :src="imageSrc" class="imageShow" />
-                                    <label for="image">Image</label>
-                                    <input type="file" id="image" class="form-control shadow-none" @change="imageUrl" />
                                 </div>
                             </div>
                         </div>
@@ -51,13 +56,10 @@
                     </span>
                 </template>
                 <template slot="table-row" slot-scope="props">
-                    <div style="text-align: center;font-size: 16px;" v-if="props.column.field == 'after'">
-                        <a href="" title="archive" @click.prevent="archiveRow(props.row.id)">
-                            <i class="fa fa-file-archive-o text-bg-warning" aria-hidden="true"></i>
-                        </a> <br>
+                    <div style="text-align: center;font-size: 16px;" v-if="props.column.field == 'before'">
                         <a href="" title="edit" @click.prevent="editRow(props.row)">
                             <i class="fas fa-edit text-info"></i>
-                        </a><br>
+                        </a>
                         <a href="" title="delete" @click.prevent="deleteRow(props.row.id)">
                             <i class="fas fa-trash text-danger"></i>
                         </a>
@@ -74,25 +76,17 @@ export default {
     data() {
         return {
             columns: [
-                {
-                    label: "EpaperId",
-                    field: "id",
-                },
-                {
-                    label: "Link",
-                    field: "link",
-                },
-                {
-                    label: "Action",
-                    field: "before",
-                },
+                { label: "Epaper Image", field: "img", html: true },
+                { label: "Publish Date", field: "publish_date" },
+                { label: "Link", field: "link" },
+                { label: "Action", field: "before" },
             ],
             epapers: [],
             epaper: {
-                id          : "",
-                link        : "",
+                id: "",
+                link: "",
                 publish_date: moment().format("YYYY-MM-DD"),
-                image       : ""
+                image: ""
             },
             imageSrc: location.origin + "/noImage.jpg",
         };
@@ -105,7 +99,10 @@ export default {
     methods: {
         getEpaper() {
             axios.get("/admin/get-epaper").then((res) => {
-                this.epapers = res.data;
+                this.epapers = res.data.map(n => {
+                    n.img = n.image == null ? '' : '<img src="' + n.image + '" width="40px">';
+                    return n;
+                });;
             });
         },
 
@@ -125,34 +122,26 @@ export default {
             axios
                 .post(location.origin + "/admin/epaper", formdata)
                 .then((res) => {
-                    $.notify(res.data, "success");
-                    this.clearData();
-                    this.getEpaper();
+                    if (res.data.status) {
+                        $.notify(res.data.message, "success");
+                        this.clearData();
+                        this.getEpaper();
+                    }
                 });
         },
 
         editRow(val) {
-            this.news = {
+            this.epaper = {
                 id: val.id,
-                title: val.title,
-                subtitle: val.subtitle,
-                description: val.description
+                link: val.link,
+                publish_date: val.publish_date,
+                image: val.image
             };
-            this.selectedCategory = {
-                id: val.category_id,
-                name: val.category_name
-            }
-            if (val.subcategory_id != null) {
-                this.selectedSubcategory = {
-                    id: val.subcategory_id,
-                    name: val.subcategory_name
-                }
-            }
-            this.imageSrc = val.image != null ? location.origin + "/" + val.image : location.origin + "/noImage.jpg"
+            this.imageSrc = val.image != null ? location.origin + val.image : location.origin + "/noImage.jpg"
         },
         deleteRow(id) {
             if (confirm("Are you sure want to delete this!")) {
-                axios.post(location.origin + "/admin/news/delete", { id: id }).then((res) => {
+                axios.post(location.origin + "/admin/epaper/delete", { id: id }).then((res) => {
                     $.notify(res.data, "success");
                     this.getEpaper();
                 });
@@ -160,22 +149,12 @@ export default {
         },
 
         imageUrl(event) {
-            if (event.target.files[0]) {
-                let img = new Image()
-                img.src = window.URL.createObjectURL(event.target.files[0]);
-                img.onload = () => {
-                    if (img.width === 740 && img.height === 450) {
-                        this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-                        this.news.image = event.target.files[0];
-                    } else {
-                        alert(`This image ${img.width} X ${img.width} but require image 740px X 450px`);
-                    }
-                }
-            }
+            this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+            this.epaper.image = event.target.files[0];
         },
 
         clearData() {
-            this.news = {
+            this.epaper = {
                 id: "",
                 link: "",
                 publish_date: moment().format("YYYY-MM-DD"),

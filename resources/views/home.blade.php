@@ -70,6 +70,12 @@
                     @endforeach
                 </ul>
             </div>
+            <ul style="list-style: none;padding:0;margin-top:7px;">
+                <li>
+                    <iframe width="270" height="182" src="https://www.youtube.com/embed/HJtJXMKpl2g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="270" height="182" src="https://www.youtube.com/embed/HJtJXMKpl2g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </li>
+            </ul>
         </div>
         <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3">
             <div class="news-tab-area latest-news-top">
@@ -107,6 +113,16 @@
             </div>
         </div>
         <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3 highlights">
+            <!-- Epaper section -->
+            <ul class="m-0">
+                <li style="background: linear-gradient(to bottom, #f2f2f2 0%, #f2f2f2 50%, #eeeeee 51%, #eeeeee 100%);border-bottom: 1px solid #ed1c24;color: #ec1c24;font-size: 18px;padding: 8px 15px 8px 32px;border-radius: 5px;position: relative;">E-Paper</li>
+                <li class="mb-3">
+                    <a href="{{ $epaper->link }}" target="_blank">
+                        <img src="{{ asset($epaper->image != null ? $epaper->image : '600x600.jpg') }}" alt="{{ $ad3->title }}">
+                    </a>
+                </li>
+            </ul>
+            <hr>
             <ul class="m-0">
                 @foreach ($homeTopRight as $item)
                 <li class="mb-3">
@@ -116,24 +132,6 @@
                     </a>
                 </li>
                 @endforeach
-            </ul>
-            <!-- video -->
-            <hr>
-            <ul class="m-0">
-                @if ($ad3->status == 'active')
-                <li class="mb-3">
-                    <a href="{{ $ad3->url }}" target="_blank">
-                        <img src="{{ asset($ad3->image != null ? $ad3->image : '600x600.jpg') }}" alt="{{ $ad3->title }}">
-                    </a>
-                </li>
-                @endif
-                @if ($ad5->status == 'active')
-                <li class="mb-3">
-                    <a href="{{ $ad5->url }}" target="_blank">
-                        <img src="{{ asset($ad5->image != null ? $ad5->image : '600x300.jpg') }}" alt="{{ $ad5->title }}">
-                    </a>
-                </li>
-                @endif
             </ul>
         </div>
     </div>

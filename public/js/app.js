@@ -6999,14 +6999,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       columns: [{
-        label: "EpaperId",
-        field: "id"
+        label: "Epaper Image",
+        field: "img",
+        html: true
+      }, {
+        label: "Publish Date",
+        field: "publish_date"
       }, {
         label: "Link",
         field: "link"
@@ -7031,7 +7037,11 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
     getEpaper: function getEpaper() {
       var _this = this;
       axios.get("/admin/get-epaper").then(function (res) {
-        _this.epapers = res.data;
+        _this.epapers = res.data.map(function (n) {
+          n.img = n.image == null ? '' : '<img src="' + n.image + '" width="40px">';
+          return n;
+        });
+        ;
       });
     },
     saveEpaper: function saveEpaper(event) {
@@ -7048,34 +7058,26 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       formdata.append("image", this.epaper.image);
       formdata.append("id", this.epaper.id);
       axios.post(location.origin + "/admin/epaper", formdata).then(function (res) {
-        $.notify(res.data, "success");
-        _this2.clearData();
-        _this2.getEpaper();
+        if (res.data.status) {
+          $.notify(res.data.message, "success");
+          _this2.clearData();
+          _this2.getEpaper();
+        }
       });
     },
     editRow: function editRow(val) {
-      this.news = {
+      this.epaper = {
         id: val.id,
-        title: val.title,
-        subtitle: val.subtitle,
-        description: val.description
+        link: val.link,
+        publish_date: val.publish_date,
+        image: val.image
       };
-      this.selectedCategory = {
-        id: val.category_id,
-        name: val.category_name
-      };
-      if (val.subcategory_id != null) {
-        this.selectedSubcategory = {
-          id: val.subcategory_id,
-          name: val.subcategory_name
-        };
-      }
-      this.imageSrc = val.image != null ? location.origin + "/" + val.image : location.origin + "/noImage.jpg";
+      this.imageSrc = val.image != null ? location.origin + val.image : location.origin + "/noImage.jpg";
     },
     deleteRow: function deleteRow(id) {
       var _this3 = this;
       if (confirm("Are you sure want to delete this!")) {
-        axios.post(location.origin + "/admin/news/delete", {
+        axios.post(location.origin + "/admin/epaper/delete", {
           id: id
         }).then(function (res) {
           $.notify(res.data, "success");
@@ -7084,22 +7086,11 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       }
     },
     imageUrl: function imageUrl(event) {
-      var _this4 = this;
-      if (event.target.files[0]) {
-        var img = new Image();
-        img.src = window.URL.createObjectURL(event.target.files[0]);
-        img.onload = function () {
-          if (img.width === 740 && img.height === 450) {
-            _this4.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-            _this4.news.image = event.target.files[0];
-          } else {
-            alert("This image ".concat(img.width, " X ").concat(img.width, " but require image 740px X 450px"));
-          }
-        };
-      }
+      this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+      this.epaper.image = event.target.files[0];
     },
     clearData: function clearData() {
-      this.news = {
+      this.epaper = {
         id: "",
         link: "",
         publish_date: moment().format("YYYY-MM-DD"),
@@ -7162,9 +7153,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       newses: [],
-      columns: [
-      // { label: 'id', field: 'id' },
-      {
+      columns: [{
         label: 'News Title',
         field: 'title'
       }, {
@@ -7550,6 +7539,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -7562,6 +7565,8 @@ __webpack_require__.r(__webpack_exports__);
         phone: "",
         advertise_phone: "",
         editor_phone: "",
+        video_link1: "",
+        video_link2: "",
         facebook: "",
         instagram: "",
         twitter: "",
@@ -67731,6 +67736,38 @@ var render = function () {
                     }),
                   ]),
                   _vm._v(" "),
+                  _c("div", { staticClass: "form-group row mb-4" }, [
+                    _c("div", { staticClass: "col-md-12" }, [
+                      _c("img", {
+                        staticClass: "imageShow",
+                        staticStyle: { border: "1px solid #d7d7d7" },
+                        attrs: {
+                          src: _vm.imageSrc,
+                          width: "300px",
+                          height: "450px",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c("label", { attrs: { for: "image" } }, [
+                        _vm._v("Master Image:"),
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "file", name: "image", id: "image" },
+                        on: { change: _vm.imageUrl },
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        { staticStyle: { "font-size": "11px", color: "red" } },
+                        [_vm._v("Required size: width:300px X height:450px")]
+                      ),
+                    ]),
+                  ]),
+                  _vm._v(" "),
                   _c("div", { staticClass: "row mt-4" }, [
                     _c("div", { staticClass: "col-12 col-lg-12 text-end" }, [
                       _c(
@@ -67764,32 +67801,6 @@ var render = function () {
                     ]),
                   ]),
                 ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "col-12 col-lg-2 d-flex justify-content-center align-items-center",
-                  },
-                  [
-                    _c("div", { staticClass: "form-group ImageBackground" }, [
-                      _c("img", {
-                        staticClass: "imageShow",
-                        attrs: { src: _vm.imageSrc },
-                      }),
-                      _vm._v(" "),
-                      _c("label", { attrs: { for: "image" } }, [
-                        _vm._v("Image"),
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control shadow-none",
-                        attrs: { type: "file", id: "image" },
-                        on: { change: _vm.imageUrl },
-                      }),
-                    ]),
-                  ]
-                ),
               ]),
             ]
           ),
@@ -67820,7 +67831,7 @@ var render = function () {
               key: "table-row",
               fn: function (props) {
                 return [
-                  props.column.field == "after"
+                  props.column.field == "before"
                     ? _c(
                         "div",
                         {
@@ -67830,28 +67841,6 @@ var render = function () {
                           },
                         },
                         [
-                          _c(
-                            "a",
-                            {
-                              attrs: { href: "", title: "archive" },
-                              on: {
-                                click: function ($event) {
-                                  $event.preventDefault()
-                                  return _vm.archiveRow(props.row.id)
-                                },
-                              },
-                            },
-                            [
-                              _c("i", {
-                                staticClass:
-                                  "fa fa-file-archive-o text-bg-warning",
-                                attrs: { "aria-hidden": "true" },
-                              }),
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("br"),
-                          _vm._v(" "),
                           _c(
                             "a",
                             {
@@ -67865,7 +67854,6 @@ var render = function () {
                             },
                             [_c("i", { staticClass: "fas fa-edit text-info" })]
                           ),
-                          _c("br"),
                           _vm._v(" "),
                           _c(
                             "a",
@@ -68286,7 +68274,7 @@ var render = function () {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "row mt-2" }, [
-                    _c("div", { staticClass: "col-lg-6" }, [
+                    _c("div", { staticClass: "col-lg-12" }, [
                       _c("div", { staticClass: "form-group mt-2" }, [
                         _c("label", { attrs: { for: "address" } }, [
                           _vm._v("Address:"),
@@ -68324,7 +68312,7 @@ var render = function () {
                       ]),
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-lg-6" }, [
+                    _c("div", { staticClass: "col-lg-4" }, [
                       _c("div", { staticClass: "form-group mt-2" }, [
                         _c("label", { attrs: { for: "phone" } }, [
                           _vm._v("Phone:"),
@@ -68363,7 +68351,7 @@ var render = function () {
                       ]),
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-lg-6" }, [
+                    _c("div", { staticClass: "col-lg-4" }, [
                       _c("div", { staticClass: "form-group mt-2" }, [
                         _c("label", { attrs: { for: "advertise_phone" } }, [
                           _vm._v("Advertise Phone:"),
@@ -68402,7 +68390,7 @@ var render = function () {
                       ]),
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-lg-6" }, [
+                    _c("div", { staticClass: "col-lg-4" }, [
                       _c("div", { staticClass: "form-group mt-2" }, [
                         _c("label", { attrs: { for: "editor_phone" } }, [
                           _vm._v("Editor Phone:"),
@@ -68433,6 +68421,84 @@ var render = function () {
                               _vm.$set(
                                 _vm.setting,
                                 "editor_phone",
+                                $event.target.value
+                              )
+                            },
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-6" }, [
+                      _c("div", { staticClass: "form-group mt-2" }, [
+                        _c("label", { attrs: { for: "video_link1" } }, [
+                          _vm._v("Video Link 1:"),
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.setting.video_link1,
+                              expression: "setting.video_link1",
+                            },
+                          ],
+                          staticClass: "form-control shadow-none",
+                          attrs: {
+                            type: "url",
+                            id: "video_link1",
+                            name: "video_link1",
+                            autocomplete: "off",
+                          },
+                          domProps: { value: _vm.setting.video_link1 },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.setting,
+                                "video_link1",
+                                $event.target.value
+                              )
+                            },
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-6" }, [
+                      _c("div", { staticClass: "form-group mt-2" }, [
+                        _c("label", { attrs: { for: "video_link2" } }, [
+                          _vm._v("Video Link 2:"),
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.setting.video_link2,
+                              expression: "setting.video_link2",
+                            },
+                          ],
+                          staticClass: "form-control shadow-none",
+                          attrs: {
+                            type: "url",
+                            id: "video_link2",
+                            name: "video_link2",
+                            autocomplete: "off",
+                          },
+                          domProps: { value: _vm.setting.video_link2 },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.setting,
+                                "video_link2",
                                 $event.target.value
                               )
                             },

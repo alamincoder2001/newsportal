@@ -36,7 +36,6 @@ export default {
         return {
             newses: [],
             columns: [
-                // { label: 'id', field: 'id' },
                 { label: 'News Title', field: 'title' },
                 { label: 'Category Name', field: 'categories' },
                 { label: 'Description', field: 'description', html: true },

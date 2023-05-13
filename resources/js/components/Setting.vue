@@ -24,32 +24,46 @@
                                         v-model="setting.title" autocomplete="off" />
                                 </div>
                                 <div class="row mt-2">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-12">
                                         <div class="form-group mt-2">
                                             <label for="address">Address:</label>
                                             <textarea id="address" name="address" class="form-control shadow-none"
                                                 v-model="setting.address" autocomplete="off"></textarea>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-4">
                                         <div class="form-group mt-2">
                                             <label for="phone">Phone:</label>
                                             <input type="text" id="phone" name="phone" class="form-control shadow-none"
                                                 v-model="setting.phone" autocomplete="off" />
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-4">
                                         <div class="form-group mt-2">
                                             <label for="advertise_phone">Advertise Phone:</label>
                                             <input type="text" id="advertise_phone" name="advertise_phone" class="form-control shadow-none"
                                                 v-model="setting.advertise_phone" autocomplete="off" />
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-4">
                                         <div class="form-group mt-2">
                                             <label for="editor_phone">Editor Phone:</label>
                                             <input type="text" id="editor_phone" name="editor_phone" class="form-control shadow-none"
                                                 v-model="setting.editor_phone" autocomplete="off" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group mt-2">
+                                            <label for="video_link1">Video Link 1:</label>
+                                            <input type="url" id="video_link1" name="video_link1" class="form-control shadow-none"
+                                                v-model="setting.video_link1" autocomplete="off" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group mt-2">
+                                            <label for="video_link2">Video Link 2:</label>
+                                            <input type="url" id="video_link2" name="video_link2" class="form-control shadow-none"
+                                                v-model="setting.video_link2" autocomplete="off" />
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -138,6 +152,8 @@ export default {
                 phone: "",
                 advertise_phone: "",
                 editor_phone: "",
+                video_link1: "",
+                video_link2: "",
                 facebook: "",
                 instagram: "",
                 twitter: "",

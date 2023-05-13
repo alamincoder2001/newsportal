@@ -9,7 +9,8 @@
                                 alt=""></a>
                     </div>
                     <div class="col-12 col-lg-8 navbar-title">
-                        <h1 class="m-0 navbar-title-text">{{ $setting->company_name }}<span style="font-size: 12px;color: #f3560c;font-weight: bold;">({{$setting->company_name_english}})</span></h1>
+                        <h1 class="m-0 navbar-title-text">{{ $setting->company_name }}</h1>
+                        <h4 class="m-0" style="color: #ad0000;font-family: inherit;">{{$setting->company_name_english}}</h4>
                         <span class="navbar-subTitle-text">{{ $setting->title }}</span>
                     </div>
                 </div>
