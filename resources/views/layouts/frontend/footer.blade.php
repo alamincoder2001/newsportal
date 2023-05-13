@@ -57,79 +57,134 @@
         height: 125px;
         display: inline-block;
     }
+
+    .column-list {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+
+    .styled-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .styled-list li {
+        position: relative;
+        margin-bottom: 10px;
+        padding-left: 20px;
+        font-size: 16px;
+    }
+
+    .styled-list li a {
+        color: black;
+    }
+
+    .styled-list li:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #333;
+    }
+
+    .styled-list li:after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 11px;
+        width: 18px;
+        height: 2px;
+        background-color: #333;
+        transform: rotate(-45deg);
+    }
 </style>
+
 
 <div class="clearfix"></div>
 
 <footer class="mt-5">
     <div class="container">
-        <div class="footer-top">
-            <div class="imageSectionFooter" style="display: inline-flex;width: 500px;">
-                <div style="width:20%;">
-                    <img class="logo" src="{{ asset($setting->logo != null ? $setting->logo : 'noImage.jpg') }}">
-                </div>
-                <div style="width: 80%;">
-                    <h1 style="font-family:'solaimanlipi';font-weight: 700;letter-spacing: 2px;" class="m-0">{{$setting->company_name}}</h1>
-                    <span style="letter-spacing: 2px;">{{$setting->title}}</span>
-                </div>
-            </div>
-            <div class="footer-editor">
-                <ul style="list-style: none;padding: 0;display: flex;margin: 0;margin-bottom:10px;justify-content: end;">
-                    <li style="background: #cbcbcb;padding: 0px 6px;"><i class="bi bi-eye"></i><span class="ms-1">{{App\Models\Setting::banglaNumber($pagevisitors)}}</span></li>
-                    <li style="font-weight:600;font-style: italic;background: #ffffff;padding: 0px 5px;font-size: 14px;text-transform: uppercase;line-height: 2;">আজকের পরিদর্শক</li>
-                </ul>
-                <h2 class="m-0"><span>সম্পাদক :</span> নির্ভয় নিউজ</h2>
-                <table style="width: 100%;">
-                    <tr>
-                        <td style="padding: 5px 3px;font-size: 15px;text-transform: uppercase;font-weight: 700;">বিজ্ঞাপণ এর জন্য ফোন</td>
-                        <td style="padding: 0;">:</td>
-                        <td style="padding: 5px 3px;padding-left:5px;font-size: 12px;text-transform: uppercase;font-weight: 700;">{{$setting->advertise_phone}}</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 5px 3px;font-size: 15px;text-transform: uppercase;font-weight: 700;">ইডিটর ফোন</td>
-                        <td style="padding: 0;">:</td>
-                        <td style="padding: 5px 3px;padding-left:5px;font-size: 12px;text-transform: uppercase;font-weight: 700;">{{$setting->editor_phone}}</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-    <div class="footer-mid">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-4 col-lg-4 pt-3">
-                    <ul>
-                        @foreach ($categories->take(9) as $item)
-                        <li>
-                            <a href="{{ route('categorywise', $item->slug) }}">{{ $item->name }}</a>
-                        </li>
-                        @endforeach
-                    </ul>
-                </div>
-                <div class="col-12 col-md-4 col-lg-5"></div>
-                <div class="col-12 col-md-4 col-lg-3 pt-3">
-                    <div class="app-info">
-                        <h3>মোবাইল অ্যাপ ডাউনলোড করুন</h3>
-                        <div class="clearfix"></div>
-                        <a target="_blank" href="#" class="android"><img src="{{ asset('frontend') }}/assets/img/android.png"></a>
-                        <a target="_blank" href="#" class="ios"><img src="{{ asset('frontend') }}/assets/img/ios-app.png"></a>
-                        <ul class="mt-3">
-                            <li><a target="_blank" href="{{ $setting->instagram }}"><i class="bi bi-instagram"></i></a>
-                            </li>
-                            <li><a target="_blank" href="{{ $setting->twitter }}"><i class="bi bi-twitter"></i></a>
-                            </li>
-                            <li><a target="_blank" href="{{ $setting->youtube }}"><i class="bi bi-youtube"></i></a>
-                            </li>
-                            <li><a target="_blank" href="{{ $setting->facebook }}"><i class="bi bi-facebook"></i></a>
-                            </li>
-                            <li>আমাদের সঙ্গে থাকুন</li>
-                        </ul>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="{{ route('website') }}" class="logo"><img style="width:80px;" src="{{ asset($setting->logo != null ? $setting->logo : 'noImage.jpg') }}" alt=""></a>
+                    </div>
+                    <div class="col-md-9 navbar-title">
+                        <h1 class="m-0" style="font-weight: bolder;">{{ $setting->company_name }}</h1>
+                        <h4 class="m-0" style="color: #ad0000;font-family: inherit;">{{$setting->company_name_english}}</h4>
+                        <span class="navbar-subTitle-text">{{ $setting->title }}</span>
                     </div>
                 </div>
             </div>
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+                <div class="footer-editor">
+                    <ul style="list-style: none;padding: 0;display: flex;margin: 0;margin-bottom:10px;justify-content: end;">
+                        <li style="background: #cbcbcb;padding: 0px 6px;"><i class="bi bi-eye"></i><span class="ms-1">{{App\Models\Setting::banglaNumber($pagevisitors)}}</span></li>
+                        <li style="font-weight:600;font-style: italic;background: #ffffff;padding: 0px 5px;font-size: 14px;text-transform: uppercase;line-height: 2;">আজকের পরিদর্শক</li>
+                    </ul>
+                    <h2 class="m-0 text-end"><span style="font-size: 25px;">সম্পাদক :</span> নির্ভয় নিউজ</h2>
+                </div>
+            </div>
+        </div>
+        <hr class="my-1">
+        <div class="row py-1">
+            <div class="col-md-4">
+            <h3 style="font-size: 18px;font-weight: 600;border-bottom: 2px dashed #adadad;display: inline-flex;">ক্যাটাগরি:</h3>
+                <ul class="column-list styled-list">
+                    @foreach ($categories->take(9) as $item)
+                    <li>
+                        <a href="{{ route('categorywise', $item->slug) }}">{{ $item->name }}</a>
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h3 style="font-size: 18px;font-weight: 600;border-bottom: 2px dashed #adadad;display: inline-flex;">যোগাযোগের ঠিকানা:-</h3>
+                <table>
+                    <tr>
+                        <td>বিজ্ঞাপন দেওয়ার জন্য যোগাাযোগ করুন- {{$setting->advertise_phone}}</td>
+                    </tr>
+                    <tr>
+                        <td>ইডিটর ফোন- {{$setting->editor_phone}}</td>
+                    </tr>
+                    <tr>
+                        <td>ঠিকানা- {{$setting->address}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <h3 class="m-0 text-end" style="font-size: 20px;font-weight: 600;font-style: italic;">মোবাইল অ্যাপ ডাউনলোড করুন</h3>
+                <div class="d-flex justify-content-end" style="gap: 5px;">
+                    <a target="_blank" href="#" class="android"><img width="150px;" src="{{ asset('frontend') }}/assets/img/android.png"></a>
+                    <a target="_blank" href="#" class="ios"><img width="150px;" src="{{ asset('frontend') }}/assets/img/ios-app.png"></a>
+                </div>
+                <ul style="display: flex;flex-direction: row-reverse;list-style: none;padding: 0;gap: 15px;margin-top: 5px;padding-left:50px;">
+                    <li>
+                        <a target="_blank" href="{{ $setting->instagram }}" style="color:#df1111fa;"><i class="bi bi-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="{{ $setting->twitter }}" style="color:#11dbe5;"><i class="bi bi-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="{{ $setting->youtube }}" style="color:red;"><i class="bi bi-youtube"></i></a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="{{ $setting->facebook }}"><i class="bi bi-facebook"></i></a>
+                    </li>
+                    <li>আমাদের সঙ্গে থাকুন</li>
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="clearfix"></div>
 </footer>
 <div style="background: black;">
     <div class="container">

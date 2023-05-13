@@ -72,8 +72,8 @@
             </div>
             <ul style="list-style: none;padding:0;margin-top:7px;">
                 <li>
-                    <iframe width="270" height="182" src="https://www.youtube.com/embed/HJtJXMKpl2g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <iframe width="270" height="182" src="https://www.youtube.com/embed/HJtJXMKpl2g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="270" height="182" src="{{$setting->video_link1}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="270" height="182" src="{{$setting->video_link2}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </li>
             </ul>
         </div>
@@ -115,7 +115,7 @@
         <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3 highlights">
             <!-- Epaper section -->
             <ul class="m-0">
-                <li style="background: linear-gradient(to bottom, #f2f2f2 0%, #f2f2f2 50%, #eeeeee 51%, #eeeeee 100%);border-bottom: 1px solid #ed1c24;color: #ec1c24;font-size: 18px;padding: 8px 15px 8px 32px;border-radius: 5px;position: relative;">E-Paper</li>
+                <li style="margin-bottom:5px;text-align:center;background: linear-gradient(to bottom, #f2f2f2 0%, #f2f2f2 50%, #eeeeee 51%, #eeeeee 100%);border-bottom: 1px solid #ed1c24;color: #ec1c24;font-size: 18px;padding: 8px 15px 8px 32px;border-radius: 5px;position: relative;">E-Paper</li>
                 <li class="mb-3">
                     <a href="{{ $epaper->link }}" target="_blank">
                         <img src="{{ asset($epaper->image != null ? $epaper->image : '600x600.jpg') }}" alt="{{ $ad3->title }}">
@@ -137,7 +137,7 @@
     </div>
 </div>
 @if ($ad2->status == 'active')
-<div class="container my-3">
+<div class="container mt-4">
     <div class="col-md-12">
         <div data-position="desktop-home-after-lead-area" class="m-0 p-0">
             <div class="ads bg-light mb-2 d-flex justify-content-center">
@@ -153,7 +153,7 @@
 @endif
 
 <section class="section_16">
-    <div class="bg pb-4 mb-3">
+    <div class="bg pb-4 mb-4">
         <div class="container">
             <a href="" class="title title_highlight">{{ 'হাইলাইটস' }}</a>
             <div class="clearfix"></div>
@@ -171,11 +171,11 @@
     </div>
 </section>
 
-<div class="section-11 section-14 mt-4">
+<div class="section-11 section-14 mt-4" style="background:#d7e3f4;padding: 2px 0;margin-bottom: 10px;">
     <div class="container mt-3">
         <div class="row home-category-area section-14">
             <h1>
-                <a href="chittagong-pratidin">
+                <a href="/cat/কক্সবাজার-জেলা">
                     <span>কক্সবাজার প্রতিদিন</span>
                     <i class="bi bi-chevron-right">আরও</i>
                 </a>
@@ -226,7 +226,7 @@
 </div>
 
 @if ($ad1->status == 'active')
-<div class="container my-3">
+<div class="container my-4">
     <div class="col-md-12">
         <div data-position="desktop-home-after-lead-area" class="m-0 p-0">
             <div class="ads bg-light mb-2 d-flex justify-content-center">
@@ -241,79 +241,81 @@
 </div>
 @endif
 
-<div class="container mb-3">
-    <div class="row section-1 section-15">
-        <div class="col-md-8 home-category-area">
-            <h1><a href="/cat/জাতীয়"><span>জাতীয়</span> <i class="bi bi-chevron-right">আরও</i></a></h1>
-            <div class="clearfix"></div>
-            <div class="row">
-                @foreach ($jatioNews->take(1) as $item)
-                <div class="col-md-12 mb-3">
-                    <div class="lead-item">
-                        <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}" class="row">
-                            <div class="col-md-4 text">{{ $item->title }}
-                            </div>
-                            @if ($item->thumbnail != null)
-                            <div class="col-md-8 pe-0">
-                                <img class="lazy" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="{{ $item->title }}">
-                            </div>
-                            @endif
-                            <div class="col-md-12 description">
-                                <p>{!! Str::of($item->description)->words(25, ' ...') !!}
-                                    <span>আরও পড়ুন</span>
-                                </p>
-                            </div>
+<div class="mt-4" style="background: #96a0ad;padding: 15px 0;margin-bottom: 10px;">
+    <div class="container mb-3">
+        <div class="row section-1 section-15">
+            <div class="col-md-8 home-category-area">
+                <h1><a style="background: rgb(16 63 195);" href="/cat/জাতীয়"><span>জাতীয়</span> <i class="bi bi-chevron-right">আরও</i></a></h1>
+                <div class="clearfix"></div>
+                <div class="row">
+                    @foreach ($jatioNews->take(1) as $item)
+                    <div class="col-md-12 mb-3">
+                        <div class="lead-item">
+                            <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}" class="row">
+                                <div class="col-md-4 text">{{ $item->title }}
+                                </div>
+                                @if ($item->thumbnail != null)
+                                <div class="col-md-8 pe-0">
+                                    <img class="lazy" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="{{ $item->title }}">
+                                </div>
+                                @endif
+                                <div class="col-md-12 description">
+                                    <p>{!! Str::of($item->description)->words(25, ' ...') !!}
+                                        <span>আরও পড়ুন</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    @endforeach
+                    @foreach ($jatioNews->skip(1)->take(4) as $item)
+                    <div class="col-md-3">
+                        <a class="list-item" href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
+                            <img class="lazy" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="{{ $item->title }}">
+                            <p>{{ $item->title }}</p>
                         </a>
                     </div>
+                    @endforeach
                 </div>
-                @endforeach
-                @foreach ($jatioNews->skip(1)->take(4) as $item)
-                <div class="col-md-3">
-                    <a class="list-item" href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
-                        <img class="lazy" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="{{ $item->title }}">
-                        <p>{{ $item->title }}</p>
-                    </a>
-                </div>
-                @endforeach
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="row">
-                <div class="news-tab-area my-tabs">
-                    <ul id="newsTab" class="nav nav-tabs" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="latest-news-tab" data-bs-toggle="tab" data-bs-target="#latest-news" type="button" role="tab" aria-controls="latest-news" aria-selected="true">সাম্প্রতিক</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="most-read-tab" data-bs-toggle="tab" data-bs-target="#most-read" type="button" role="tab" aria-controls="most-read" aria-selected="false">সর্বাধিক পঠিত</button>
-                        </li>
-                    </ul>
-                    <div class="tab-content mt-3" id="myTabContent">
-                        <div class="tab-pane fade" id="latest-news" role="tabpanel" aria-labelledby="latest-news-tab">
-                            <ul>
-                                @foreach ($jatioNews->take(12) as $item)
-                                <li class="bi bi-hand-index-thumb">
-                                    <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
-                                        <p class="m-0 py-0 px-2">
-                                            <strong>{{ $item->title }}</strong>
-                                        </p>
-                                    </a>
-                                </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        <div class="tab-pane fade show active" id="most-read" role="tabpanel" aria-labelledby="most-read-tab">
-                            <ul>
-                                @foreach ($topJatioNews as $item)
-                                <li class="bi bi-hand-index-thumb">
-                                    <a href="{{ route('singlenews', [$item->category->slug, $item->news->slug]) }}">
-                                        <p class="m-0 py-0 px-2">
-                                            <strong> {{ $item->news->title }}</strong>
-                                        </p>
-                                    </a>
-                                </li>
-                                @endforeach
-                            </ul>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="news-tab-area my-tabs">
+                        <ul id="newsTab" class="nav nav-tabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="latest-news-tab" data-bs-toggle="tab" data-bs-target="#latest-news" type="button" role="tab" aria-controls="latest-news" aria-selected="true">সাম্প্রতিক</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="most-read-tab" data-bs-toggle="tab" data-bs-target="#most-read" type="button" role="tab" aria-controls="most-read" aria-selected="false">সর্বাধিক পঠিত</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content mt-3" id="myTabContent">
+                            <div class="tab-pane fade" id="latest-news" role="tabpanel" aria-labelledby="latest-news-tab">
+                                <ul>
+                                    @foreach ($jatioNews->take(12) as $item)
+                                    <li class="bi bi-hand-index-thumb">
+                                        <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong>{{ $item->title }}</strong>
+                                            </p>
+                                        </a>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade show active" id="most-read" role="tabpanel" aria-labelledby="most-read-tab">
+                                <ul>
+                                    @foreach ($topJatioNews as $item)
+                                    <li class="bi bi-hand-index-thumb">
+                                        <a href="{{ route('singlenews', [$item->category->slug, $item->news->slug]) }}">
+                                            <p class="m-0 py-0 px-2">
+                                                <strong> {{ $item->news->title }}</strong>
+                                            </p>
+                                        </a>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -339,72 +341,64 @@
 </div>
 @endif
 
-<div class="container">
-    <div class="row home-category-area section-1">
-        <h1><a href="/cat/আন্তর্জাতিক-খবর"><span>আন্তর্জাতিক খবর</span> <i class="bi bi-chevron-right">আরও</i></a>
-        </h1>
-        <div class="col-md-8">
-            <div class="row">
-                @foreach ($AntorjatikNews->take(1) as $item)
-                <div class="col-md-12 mb-3">
-                    <div class="lead-item">
-                        <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}" class="row">
-                            <div class="col-md-5 text">{{ $item->title }}</div>
-                            @if ($item->thumbnail != null)
-                            <div class="col-md-7 pe-0">
-                                <img class="lazy" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="{{ $item->title }}">
-                            </div>
-                            @endif
-                            <div class="col-md-12 description">
-                                <p>{!! Str::of($item->description)->words(25, ' ...') !!}
-                                    <span>আরও পড়ুন</span>
-                                </p>
-                            </div>
+<div class="mt-4" style="background: #4671a9;padding: 15px 0;margin-bottom: 10px;">
+    <div class="container">
+        <div class="row home-category-area section-1">
+            <h1><a href="/cat/আন্তর্জাতিক-খবর"><span>আন্তর্জাতিক খবর</span> <i class="bi bi-chevron-right">আরও</i></a>
+            </h1>
+            <div class="col-md-8">
+                <div class="row">
+                    @foreach ($AntorjatikNews->take(1) as $item)
+                    <div class="col-md-12 mb-3">
+                        <div class="lead-item">
+                            <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}" class="row">
+                                <div class="col-md-5 text">{{ $item->title }}</div>
+                                @if ($item->thumbnail != null)
+                                <div class="col-md-7 pe-0">
+                                    <img class="lazy" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="{{ $item->title }}">
+                                </div>
+                                @endif
+                                <div class="col-md-12 description">
+                                    <p>{!! Str::of($item->description)->words(25, ' ...') !!}
+                                        <span>আরও পড়ুন</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    @endforeach
+    
+                    @foreach ($AntorjatikNews->skip(1)->take(4) as $item)
+                    <div class="col-md-3">
+                        <a class="list-item" href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
+                            <img class="lazy" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="{{ $item->title }}">
+                            <p>{{ $item->title }}</p>
                         </a>
                     </div>
-                </div>
-                @endforeach
-
-                @foreach ($AntorjatikNews->skip(1)->take(4) as $item)
-                <div class="col-md-3">
-                    <a class="list-item" href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
-                        <img class="lazy" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="{{ $item->title }}">
-                        <p>{{ $item->title }}</p>
-                    </a>
-                </div>
-                @endforeach
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="row">
-                <ul class="section-1-list-iteam">
-                    @foreach ($AntorjatikNews->skip(5)->take(6) as $item)
-                    <li class="mb-2"><a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}" class="row">
-                            <span class="col-md-4 pe-0">
-                                <img class="lazy" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="{{ $item->title }}">
-                            </span>
-                            <span class="col-md-8">
-                                <p>{{ $item->title }}</p>
-                            </span>
-                        </a>
-                    </li>
                     @endforeach
-                </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <ul class="section-1-list-iteam">
+                        @foreach ($AntorjatikNews->skip(5)->take(6) as $item)
+                        <li class="mb-2"><a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}" class="row">
+                                <span class="col-md-4 pe-0">
+                                    <img class="lazy" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="{{ $item->title }}">
+                                </span>
+                                <span class="col-md-8">
+                                    <p>{{ $item->title }}</p>
+                                </span>
+                            </a>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<div class="container my-3">
-    <div class="col-md-12">
-        <div data-position="desktop-home-after-country" class="m-0 p-0">
-        </div>
-    </div>
-</div>
 
-<div class="container">
-    <div class="col-md-12">
-    </div>
-</div>
 <div class="section-10-bg">
     <div class="container mt-3">
         <div class="row home-category-area section-10">
@@ -449,7 +443,7 @@
     </div>
 </div>
 
-<div class="container mt-3 mb-3">
+<div class="container mt-4 mb-3">
     <div class="row section-13">
         <div class="col-md-4 home-category-area">
             <h2><a href="life"><span>জীবন ধারা</span> <i class="bi bi-chevron-right"></i></a></h2>
@@ -506,57 +500,59 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row home-category-area section-1">
-        <h1><a href="/cat/আন্তর্জাতিক-খবর"><span>শিল্প বাণিজ্য</span> <i class="bi bi-chevron-right">আরও</i></a>
-        </h1>
-        <div class="col-md-8">
-            <div class="row">
-                @foreach ($shilpoBanijjo->take(1) as $item)
-                <div class="col-md-12 mb-3">
-                    <div class="lead-item">
-                        <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}" class="row">
-                            <div class="col-md-5 text">{{ $item->title }}</div>
-                            @if ($item->thumbnail != null)
-                            <div class="col-md-7 pe-0">
-                                <img class="lazy" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="{{ $item->title }}">
-                            </div>
-                            @endif
-                            <div class="col-md-12 description">
-                                <p>{!! Str::of($item->description)->words(25, ' ...') !!}
-                                    <span>আরও পড়ুন</span>
-                                </p>
-                            </div>
+<div class="mt-4" style="background: #134200;padding: 15px 0;margin-bottom: 10px;">
+    <div class="container">
+        <div class="row home-category-area section-1">
+            <h1><a href="/cat/আন্তর্জাতিক-খবর"><span>শিল্প বাণিজ্য</span> <i class="bi bi-chevron-right">আরও</i></a>
+            </h1>
+            <div class="col-md-8">
+                <div class="row">
+                    @foreach ($shilpoBanijjo->take(1) as $item)
+                    <div class="col-md-12 mb-3">
+                        <div class="lead-item">
+                            <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}" class="row">
+                                <div class="col-md-5 text">{{ $item->title }}</div>
+                                @if ($item->thumbnail != null)
+                                <div class="col-md-7 pe-0">
+                                    <img class="lazy" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="{{ $item->title }}">
+                                </div>
+                                @endif
+                                <div class="col-md-12 description">
+                                    <p>{!! Str::of($item->description)->words(25, ' ...') !!}
+                                        <span>আরও পড়ুন</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    @endforeach
+    
+                    @foreach ($shilpoBanijjo->skip(1)->take(4) as $item)
+                    <div class="col-md-3">
+                        <a class="list-item" href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
+                            <img class="lazy" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="{{ $item->title }}">
+                            <p>{{ $item->title }}</p>
                         </a>
                     </div>
-                </div>
-                @endforeach
-
-                @foreach ($shilpoBanijjo->skip(1)->take(4) as $item)
-                <div class="col-md-3">
-                    <a class="list-item" href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
-                        <img class="lazy" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="{{ $item->title }}">
-                        <p>{{ $item->title }}</p>
-                    </a>
-                </div>
-                @endforeach
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="row">
-                <ul class="section-1-list-iteam">
-                    @foreach ($shilpoBanijjo->skip(5)->take(6) as $item)
-                    <li class="mb-2"><a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}" class="row">
-                            <span class="col-md-4 pe-0">
-                                <img class="lazy" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="{{ $item->title }}">
-                            </span>
-                            <span class="col-md-8">
-                                <p>{{ $item->title }}</p>
-                            </span>
-                        </a>
-                    </li>
                     @endforeach
-                </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <ul class="section-1-list-iteam">
+                        @foreach ($shilpoBanijjo->skip(5)->take(6) as $item)
+                        <li class="mb-2"><a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}" class="row">
+                                <span class="col-md-4 pe-0">
+                                    <img class="lazy" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="{{ $item->title }}">
+                                </span>
+                                <span class="col-md-8">
+                                    <p>{{ $item->title }}</p>
+                                </span>
+                            </a>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

@@ -32,7 +32,7 @@ class HomeController extends Controller
 
         $shilpoBanijjo  = $this->getCategoryData(16, 'desc');
         $homeSliders    = $this->getCategoryData(17, 'desc')->take(3);
-        $focush         = $this->getCategoryData(18, 'desc')->take(6);
+        $focush         = $this->getCategoryData(18, 'desc')->take(7);
         $highlights     = $this->getCategoryData(19, 'desc')->take(12);
         $jatioNews      = $this->getCategoryData(3, 'desc')->take(12);
         $AntorjatikNews = $this->getCategoryData(5, 'desc')->take(12);
