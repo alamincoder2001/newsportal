@@ -114,6 +114,7 @@
         </div>
         <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3 highlights">
             <!-- Epaper section -->
+            @if(!empty($epaper))
             <ul class="m-0">
                 <li style="margin-bottom:5px;text-align:center;background: linear-gradient(to bottom, #f2f2f2 0%, #f2f2f2 50%, #eeeeee 51%, #eeeeee 100%);border-bottom: 1px solid #ed1c24;color: #ec1c24;font-size: 18px;padding: 8px 15px 8px 32px;border-radius: 5px;position: relative;">E-Paper</li>
                 <li class="mb-3">
@@ -123,6 +124,7 @@
                 </li>
             </ul>
             <hr>
+            @endif
             <ul class="m-0">
                 @foreach ($homeTopRight as $item)
                 <li class="mb-3">

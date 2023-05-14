@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Epaper;
+use App\Models\AdminAccess;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Validator;
 
@@ -22,6 +24,12 @@ class EpaperController extends Controller
 
     public function create()
     {
+        $access = AdminAccess::where('admin_id', Auth::guard('admin')->user()->id)
+            ->pluck('permissions')
+            ->toArray();
+        if (!in_array("epaperEntry", $access)) {
+            return view("admin.unauthorize");
+        }
         return view("admin.epaper.create");
     }
 
@@ -38,7 +46,7 @@ class EpaperController extends Controller
                 'message' => $validator->errors()
             ]);
         }
-        
+
         try {
             $uniqueId = $this->generateCode("Epaper", "EP");
 
@@ -74,7 +82,6 @@ class EpaperController extends Controller
 
     public function update()
     {
-        
     }
 
     public function destroy(Request $request)
