@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
+use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
@@ -70,9 +71,9 @@ class AdminController extends Controller
                     return response()->json(["errors" => "Old password does not match"]);
                 }
             }
-            $data->name = $request->name;
+            $data->name     = $request->name;
             $data->username = $request->username;
-            $data->email = $request->email;
+            $data->email    = $request->email;
             $data->save();
             return "Admin Profile Updated";
         } catch (\Throwable $e) {
@@ -87,7 +88,6 @@ class AdminController extends Controller
             $admin = Auth::guard('admin')->user();
 
             $validator = Validator::make($request->all(), [
-                // "image" => "mimes:jpg,png,jpeg|dimensions:width=200,height=200"
                 "image" => "mimes:jpg,png,jpeg"
             ], ["image.dimensions" => "Image dimension must be (200 x 200)"]);
 
@@ -98,11 +98,17 @@ class AdminController extends Controller
             $old = $data->image;
 
             if (!empty($old) && isset($old)) {
-                if (File::exists($old)) {
-                    File::delete($old);
+                if (file_exists(public_path($old)) && $old != null) {
+                    unlink(public_path($old));
                 }
             }
-            $data->image = $this->imageUpload($request, 'image', 'uploads/admins') ?? '';
+            if ($request->has('image')) {
+                $extension = $request->file('image')->extension();
+                $name = $data->username . '.' . $extension;
+                $img = Image::make($request->file('image'))->resize(150, 150);
+                $img->save(public_path('uploads/admins/' . $name));
+                $data->image = isset($name) ? '/uploads/admins/' . $name : null;
+            }
 
             $data->save();
             return "Image Upload successfully";
