@@ -25,7 +25,8 @@
             <li style="margin-bottom:4px;background: #1997dd;padding: 6px 10px;text-align:center;"><a style="display: block;padding: 1px;font-size: 15px;font-weight: 900;color: white;font-style:italic;" target="_blank" href="{{$setting->facebook}}"><i class="bi bi-facebook"></i></a></li>
             <li style="margin-bottom:4px;background: #fc0d1b;padding: 6px 10px;text-align:center;"><a style="display: block;padding: 1px;font-size: 15px;font-weight: 900;color: white;font-style:italic;" target="_blank" href="{{$setting->youtube}}"><i class="bi bi-youtube"></i></a></li>
             <li style="margin-bottom:4px;background: rgb(17 219 229);padding: 6px 10px;text-align:center;"><a style="display: block;padding: 1px;font-size: 15px;font-weight: 900;color: white;font-style:italic;" target="_blank" href="{{$setting->twitter}}"><i class="bi bi-twitter"></i></a></li>
-            <li style="background: linear-gradient(45deg, #c9a35e, #bf0d5f);padding: 6px 10px;text-align:center;"><a style="display: block;padding: 1px;font-size: 15px;font-weight: 900;color: white;font-style:italic;" target="_blank" href="{{$setting->instagram}}"><i class="bi bi-instagram"></i></a></li>
+            <li style="margin-bottom:4px;background: linear-gradient(45deg, #c9a35e, #bf0d5f);padding: 6px 10px;text-align:center;"><a style="display: block;padding: 1px;font-size: 15px;font-weight: 900;color: white;font-style:italic;" target="_blank" href="{{$setting->instagram}}"><i class="bi bi-instagram"></i></a></li>
+            <li style="background: #0e76a8;padding: 6px 10px;text-align:center;"><a style="display: block;padding: 1px;font-size: 15px;font-weight: 900;color: white;font-style:italic;" target="_blank" href="{{$setting->linkedin}}"><i class="bi bi-linkedin"></i></a></li>
         </ul>
     </div>
 </body>

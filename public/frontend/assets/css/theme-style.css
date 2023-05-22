@@ -905,7 +905,8 @@ header .header-ad {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    overflow: hidden
+    overflow: hidden;
+    padding: 7px;
 }
 
 .home-category-area h1 span {

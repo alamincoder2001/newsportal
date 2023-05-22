@@ -151,13 +151,9 @@
                 <h3 style="font-size: 18px;font-weight: 600;border-bottom: 2px dashed #adadad;display: inline-flex;">যোগাযোগের ঠিকানা:-</h3>
                 <table>
                     <tr>
-                        <td>বিজ্ঞাপন দেওয়ার জন্য যোগাাযোগ করুন- {{$setting->advertise_phone}}</td>
-                    </tr>
-                    <tr>
-                        <td>ইডিটর ফোন- {{$setting->editor_phone}}</td>
-                    </tr>
-                    <tr>
-                        <td>ঠিকানা- {{$setting->address}}</td>
+                        <td>ঠিকানা</td>
+                        <td>:</td>
+                        <td>{{$setting->address}}</td>
                     </tr>
                 </table>
             </div>
@@ -168,6 +164,9 @@
                     <a target="_blank" href="#" class="ios"><img width="150px;" src="{{ asset('frontend') }}/assets/img/ios-app.png"></a>
                 </div>
                 <ul style="display: flex;flex-direction: row-reverse;list-style: none;padding: 0;gap: 15px;margin-top: 5px;padding-left:50px;">
+                    <li>
+                        <a target="_blank" href="{{ $setting->linkedin }}" style="color:#0e76a8;"><i class="bi bi-linkedin"></i></a>
+                    </li>
                     <li>
                         <a target="_blank" href="{{ $setting->instagram }}" style="color:#df1111fa;"><i class="bi bi-instagram"></i></a>
                     </li>

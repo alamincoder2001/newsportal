@@ -96,13 +96,7 @@
             </div>
             <div class="clearfix"></div>
             <ul class="bottom-share">
-                <!-- <li>
-                        <a target="_blank"
-                            href="https://twitter.com/intent/tweet?url={{URL::current()}}"><i
-                                class="bi bi-twitter"></i>
-                        </a>
-                        
-                    </li> -->
+                <!-- <li> <a target="_blank" href="https://twitter.com/intent/tweet?url={{URL::current()}}"><i class="bi bi-twitter"></i></a></li> -->
 
                 <li><a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{URL::current()}}"><i class="bi bi-linkedin"></i></a></li>
                 <li><a target="_blank" href="https://www.facebook.com/sharer.php?u={{URL::current()}}"><i class="bi bi-facebook"></i></a></li>

@@ -94,9 +94,9 @@
                                         $minutes = now()->diffInMinutes($item->created_at);
                                         @endphp
                                         @if ($minutes > 60)
-                                        {{ floor(now()->diffInMinutes($item->created_at) / 60) }} ঘন্টা আগে ।
+                                        {{ App\Models\Setting::banglaNumber(floor(now()->diffInMinutes($item->created_at) / 60)) }} ঘন্টা আগে ।
                                         @else
-                                        {{ now()->diffInMinutes($item->created_at) % 60 }} মিনিট আগে |
+                                        {{ App\Models\Setting::banglaNumber(now()->diffInMinutes($item->created_at) % 60) }} মিনিট আগে |
                                         @endif
 
                                         <small>{{ $item->category[0]->categoryName->name }}</small>
@@ -176,11 +176,11 @@
 <div class="section-11 section-14 mt-4" style="background:#d7e3f4;padding: 2px 0;margin-bottom: 10px;">
     <div class="container mt-3">
         <div class="row home-category-area section-14">
-            <h1>
-                <a href="/cat/কক্সবাজার-জেলা">
-                    <span>কক্সবাজার প্রতিদিন</span>
-                    <i class="bi bi-chevron-right">আরও</i>
+            <h1 class="d-flex mb-3 align-items-center">
+                <a href="/cat/কক্সবাজার-জেলা" class="text-center">
+                    কক্সবাজার প্রতিদিন
                 </a>
+                <i class="bi bi-chevron-right d-flex" style="flex-direction: row-reverse;">আরও</i>
             </h1>
             @foreach ($coxBazar->take(1) as $item)
             <div class="col-md-5 col-lg-5 col-xl-5 col-xxl-6">
@@ -247,7 +247,10 @@
     <div class="container mb-3">
         <div class="row section-1 section-15">
             <div class="col-md-8 home-category-area">
-                <h1><a style="background: rgb(16 63 195);" href="/cat/জাতীয়"><span>জাতীয়</span> <i class="bi bi-chevron-right">আরও</i></a></h1>
+                <h1 class="d-flex mb-3 align-items-center">
+                    <a class="text-center" style="background: rgb(16 63 195);color:#fff4f4;" href="/cat/জাতীয়">জাতীয়</a>
+                    <i class="bi bi-chevron-right d-flex" style="flex-direction: row-reverse;">আরও</i>
+                </h1>
                 <div class="clearfix"></div>
                 <div class="row">
                     @foreach ($jatioNews->take(1) as $item)
@@ -346,7 +349,9 @@
 <div class="mt-4" style="background: #4671a9;padding: 15px 0;margin-bottom: 10px;">
     <div class="container">
         <div class="row home-category-area section-1">
-            <h1><a href="/cat/আন্তর্জাতিক-খবর"><span>আন্তর্জাতিক খবর</span> <i class="bi bi-chevron-right">আরও</i></a>
+            <h1 class="d-flex mb-3 align-items-center">
+                <a href="/cat/আন্তর্জাতিক-খবর" class="text-center"> আন্তর্জাতিক খবর</a>
+                <i class="bi bi-chevron-right d-flex" style="flex-direction: row-reverse;">আরও</i>
             </h1>
             <div class="col-md-8">
                 <div class="row">
@@ -369,7 +374,7 @@
                         </div>
                     </div>
                     @endforeach
-    
+
                     @foreach ($AntorjatikNews->skip(1)->take(4) as $item)
                     <div class="col-md-3">
                         <a class="list-item" href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
@@ -404,7 +409,10 @@
 <div class="section-10-bg">
     <div class="container mt-3">
         <div class="row home-category-area section-10">
-            <h1><a href="/cat/খেলাধুলা"><span>খেলাধুলা</span> <i class="bi bi-chevron-right">আরও</i></a></h1>
+            <h1 class="d-flex align-items-center mb-3">
+                <a class="text-center" href="/cat/খেলাধুলা">খেলাধুলা</a>
+                <i class="bi bi-chevron-right d-flex" style="flex-direction: row-reverse;">আরও</i>
+            </h1>
             <div class="col-md-3">
                 @foreach ($sportsNews->skip(1)->take(2) as $item)
                 <div class="col-md-12 mb-4">
@@ -505,7 +513,9 @@
 <div class="mt-4" style="background: #134200;padding: 15px 0;margin-bottom: 10px;">
     <div class="container">
         <div class="row home-category-area section-1">
-            <h1><a href="/cat/আন্তর্জাতিক-খবর"><span>শিল্প বাণিজ্য</span> <i class="bi bi-chevron-right">আরও</i></a>
+            <h1 class="d-flex align-items-center mb-3">
+                <a class="text-center" href="/cat/আন্তর্জাতিক-খবর">শিল্প বাণিজ্য</a>
+                <i class="bi bi-chevron-right d-flex" style="flex-direction: row-reverse;">আরও</i>
             </h1>
             <div class="col-md-8">
                 <div class="row">
@@ -528,7 +538,7 @@
                         </div>
                     </div>
                     @endforeach
-    
+
                     @foreach ($shilpoBanijjo->skip(1)->take(4) as $item)
                     <div class="col-md-3">
                         <a class="list-item" href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
