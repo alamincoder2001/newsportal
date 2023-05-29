@@ -61,7 +61,7 @@
                 </button>
             </div>
             <div class="lead-2nd mt-4">
-                <h1 class="mb-0 pb-0 d-block"><a href=""><span class="blink"></span><span>ফোকাস</span> <i class="bi bi-chevron-right"></i></a></h1>
+                <h1 class="mb-0 pb-0 d-block"><a href=""><span class="blink"></span><span>আজকের খবর</span> <i class="bi bi-chevron-right"></i></a></h1>
                 <ul class="m-0">
                     @foreach ($focush as $key => $item)
                     <li class="bi bi-caret-right-fill">

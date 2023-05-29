@@ -18,12 +18,12 @@
             <div class="col-3 col-md-4 p-md-0">
                 <table style="margin-top:30px;">
                     <tr>
-                        <td style="font-size: 13px;font-weight:900;">বিজ্ঞাপন দেওয়ার জন্য যোগাাযোগ করুন</td>
+                        <td style="font-size: 13px;font-weight:900;">বিজ্ঞাপন দেওয়ার জন্য যোগাযোগ করুন</td>
                         <td style="font-size: 13px;">:</td>
                         <td style="font-size: 13px;">{{$setting->advertise_phone}}</td>
                     </tr>
                     <tr>
-                        <td style="font-size: 13px;font-weight:900;">ইডিটর এর সাথে যোগাাযোগের নাম্বার</td>
+                        <td style="font-size: 13px;font-weight:900;">সম্পাদক এর সাথে যোগাযোগ করুন</td>
                         <td style="font-size: 13px;">:</td>
                         <td style="font-size: 13px;">{{$setting->editor_phone}}</td>
                     </tr>
