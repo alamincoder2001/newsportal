@@ -20,15 +20,15 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $today = date('d-m-Y');
-        $check = PageVisitor::where("date", $today)->where("ipaddress", request()->ip())->first();
-        if (empty($check)) {
-            PageVisitor::create([
-                'counter' => 1,
-                'date'  => $today,
-                'ipaddress' => request()->ip(),
-            ]);
-        }
+        // $today = date('d-m-Y');
+        // $check = PageVisitor::where("date", $today)->where("ipaddress", request()->ip())->first();
+        // if (empty($check)) {
+        //     PageVisitor::create([
+        //         'counter' => 1,
+        //         'date'  => $today,
+        //         'ipaddress' => request()->ip(),
+        //     ]);
+        // }
 
         $shilpoBanijjo  = $this->getCategoryData(16, 'desc');
         $homeSliders    = $this->getCategoryData(17, 'desc')->take(3);
