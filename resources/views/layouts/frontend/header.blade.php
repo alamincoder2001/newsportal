@@ -23,7 +23,7 @@
                         <td style="font-size: 13px;">{{$setting->advertise_phone}}</td>
                     </tr>
                     <tr>
-                        <td style="font-size: 13px;font-weight:900;">সম্পাদক এর সাথে যোগাযোগ করুন</td>
+                        <td style="font-size: 13px;font-weight:900;">সম্পাদক</td>
                         <td style="font-size: 13px;">:</td>
                         <td style="font-size: 13px;">{{$setting->editor_phone}}</td>
                     </tr>

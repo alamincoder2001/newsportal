@@ -154,10 +154,10 @@
 </div>
 @endif
 
-<section class="section_16">
+<!-- <section class="section_16">
     <div class="bg pb-4 mb-4">
         <div class="container">
-            <a href="" class="title title_highlight">{{ 'হাইলাইটস' }}</a>
+            <a href="/cat/হাইলাইটস" class="title title_highlight">হাইলাইটস</a>
             <div class="clearfix"></div>
             <div class="row">
                 @foreach ($highlights as $key => $item)
@@ -171,9 +171,79 @@
             </div>
         </div>
     </div>
+</section> -->
+
+<section class="bg-section mt-3">
+    <a href="/cat/কক্সবাজার-জেলা" class="section-bg-header"><span>কক্সবাজার প্রতিদিন</span></a>
+    <div class="bg pb-3">
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-7 mb-2 mb-md-0">
+                    @foreach ($coxBazar->take(1) as $item)
+                    <div class="card" style="border-radius: 0;">
+                        <div class="card-body">
+                            <div class="row g-0">
+                                <div class="col-md-5">
+                                    <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
+                                        <h3 class="card-title m-0">{{$item->title}}</h3>
+                                    </a>
+                                </div>
+                                <div class="col-md-7">
+                                    <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
+                                        <img class="card-img-top" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="Card image">
+                                    </a>
+                                </div>
+                                <div class="col-md-12 mt-2">
+                                    <p class="card-text text ellipsis">
+                                        {!! Str::words($item->description, '25') !!}
+                                    </p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                <div class="col-md-3">
+                    <div class="row g-0">
+                        @foreach ($coxBazar->skip(1)->take(4) as $item)
+                        <div class="col-md-12">
+                            <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
+                                <div class="card mb-2" title="{{$item->title}}" style="background:#EEEEEE;">
+                                    <div class="row g-0">
+                                        <div class="col-md-4 col-10 offset-1 offset-md-0">
+                                            <img class="img-fluid rounded-start h-100" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="Card image">
+                                        </div>
+                                        <div class="col-md-8 col-10 offset-1 offset-md-0">
+                                            <div class="card-body">
+                                                <p class="card-title m-0 text ellipsis">{!! (nl2br(e(Str::words($item->title, '4')))) !!}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <ul class="m-0 p-0">
+                        @if ($ad4->status == 'active')
+                        <a href="{{ $ad4->url }}" target="_blank">
+                            <img src="{{ asset($ad4->image != null ? $ad4->image : '600x1200.jpg') }}" alt="{{ $ad4->title }}" style="width: 100%;height:353px;">
+                        </a>
+                        @endif
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="/cat/কক্সবাজার-জেলা" class="section-bg-footer">
+        আরও আছে...
+    </a>
 </section>
 
-<div class="section-11 section-14 mt-4" style="background:#d7e3f4;padding: 2px 0;margin-bottom: 10px;">
+<!-- <div class="section-11 section-14 mt-4" style="background:#d7e3f4;padding: 2px 0;margin-bottom: 10px;">
     <div class="container mt-3">
         <div class="row home-category-area section-14">
             <h1 class="d-flex mb-3 align-items-center">
@@ -225,9 +295,9 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
-@if ($ad1->status == 'active')
+<!-- @if ($ad1->status == 'active')
 <div class="container my-4">
     <div class="col-md-12">
         <div data-position="desktop-home-after-lead-area" class="m-0 p-0">
@@ -241,9 +311,9 @@
         </div>
     </div>
 </div>
-@endif
+@endif -->
 
-<div class="mt-4" style="background: #96a0ad;padding: 15px 0;margin-bottom: 10px;">
+<!-- <div class="mt-4" style="background: #96a0ad;padding: 15px 0;margin-bottom: 10px;">
     <div class="container mb-3">
         <div class="row section-1 section-15">
             <div class="col-md-8 home-category-area">
@@ -327,9 +397,9 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
-@if ($ad1->status == 'active')
+<!-- @if ($ad1->status == 'active')
 <div class="container my-3">
     <div class="row">
         <div class="col-md-6">
@@ -344,9 +414,9 @@
         </div>
     </div>
 </div>
-@endif
+@endif -->
 
-<div class="mt-4" style="background: #4671a9;padding: 15px 0;margin-bottom: 10px;">
+<!-- <div class="mt-4" style="background: #4671a9;padding: 15px 0;margin-bottom: 10px;">
     <div class="container">
         <div class="row home-category-area section-1">
             <h1 class="d-flex mb-3 align-items-center">
@@ -568,5 +638,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 @endsection

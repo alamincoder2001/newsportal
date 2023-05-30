@@ -665,7 +665,7 @@ header .header-ad {
 
 .highlights ul li {
     list-style: none;
-    display: block
+    display: block;
 }
 
 .highlights ul li a {
@@ -679,7 +679,12 @@ header .header-ad {
 }
 
 .highlights ul li a img {
-    width: 100%
+    width: 100%;
+    transition-duration: 1s;
+}
+.highlights ul li:hover a img {
+    transform: scale(1.5);
+    transition-duration: 1s;
 }
 
 .highlights ul li a p {
@@ -2237,6 +2242,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, #5959ec 35%, hsl(241, 90%,
 
 .section_16 a {
     background: #eee;
+    font-weight: bold;
     font-size: 18px;
     display: block;
     padding-bottom: 10px;
@@ -4465,4 +4471,57 @@ footer .footer-bottom .copyright {
     .radio {
         overflow: hidden;
     }
+}
+
+/* my own css */
+a{
+    color: black;
+}
+.bg-section{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, #5959ec 35%, hsl(241, 90%, 26%) 100%);
+}
+.bg-section .bg{
+    background-image: url('../img/section-bg-body.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.bg-section .section-bg-header {
+    /* background: repeating-linear-gradient(45deg, #069553, black 100px); */
+    background: linear-gradient(300deg, #00c369, #b1b1b19e);
+    display: block;
+    text-align: center;
+    padding: 3px 0;
+    /* background: url('../img/section-bd-header.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%; */
+}
+.bg-section .section-bg-header span{
+    color: white;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.bg-section .section-bg-footer {
+        /* background: url('../img/section-bg-footer.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%; */
+    background: linear-gradient(92deg, #00c369, #b1b1b19e);
+    display: block;
+    text-align: center;
+    padding: 13px 0;
+    color: white;
+    font-weight: 900;
+    transition-duration: 1s;
+}
+
+.bg-section .section-bg-footer:hover{
+    transition-duration: 1s;
+    box-shadow: 1px 5px 0px 0px #7c3636;
+}
+
+.bg-section .card .card-img-top{
+    height: 200px;
 }
