@@ -59,10 +59,10 @@
                 </div>
                 @endforeach
             </div>
-            <div class="row">
+            <div class="row News">
                 @foreach ($categorywisenews->skip(7)->take(8) as $key => $item)
                 <div class="col-md-3 mt-4">
-                    <a class="list-item" href="{{ route('singlenews', [$category->slug, $item->slug]) }}">
+                    <a class="list-item NewsHover" href="{{ route('singlenews', [$category->slug, $item->slug]) }}">
                         <img src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage_front.jpg') }}" alt="{{ $item->title }}">
                         <p>{{ $item->title }}</p>
                     </a>

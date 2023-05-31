@@ -1,7 +1,7 @@
 <header>
     <div class="container mb-3">
         <div class="row">
-            <div class="col-9 col-md-6">
+            <div class="col-9 col-md-5">
                 <div class="row">
                     <div class="col-4 col-md-3 p-md-0">
                         <a href="{{ route('website') }}" class="logo"><img src="{{ asset($setting->logo != null ? $setting->logo : 'noImage.jpg') }}" alt=""></a>
@@ -15,8 +15,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3 col-md-4 p-md-0">
-                <table style="margin-top:30px;">
+            <div class="col-3 col-md-4 p-md-0 text-end">
+                <table style="margin-top:30px;float:right;">
                     <tr>
                         <td style="font-size: 13px;font-weight:900;">বিজ্ঞাপন দেওয়ার জন্য যোগাযোগ করুন</td>
                         <td style="font-size: 13px;">:</td>
@@ -29,7 +29,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="col-6 col-md-2 p-md-0 d-md-block d-none d-flex align-items-end justify-content-center mobileViewRow">
+            <div class="col-6 col-md-3 p-md-0 d-md-block d-none d-flex align-items-end justify-content-center mobileViewRow">
                 <span class="text-end mobileview">
                     <p id="dateEnglish" class="m-0" style="font-size:13px;font-weight: bold;color:brown;"></p>
                     <p id="dateArabic" class="m-0" style="font-size:13px;font-weight: bold;color:green;"></p>

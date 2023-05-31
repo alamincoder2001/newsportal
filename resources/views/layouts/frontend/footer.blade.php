@@ -104,10 +104,7 @@
     }
 </style>
 
-
-<div class="clearfix"></div>
-
-<footer class="mt-5">
+<footer class="mt-2">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -275,4 +272,10 @@
         $("table").attr("cellspacing", 0)
         $("table").attr("cellpadding", 5)
     })
+
+    // remove add all
+    function hideAdd(event) {
+        event.preventDefault();
+        event.target.offsetParent.remove();
+    }
 </script>

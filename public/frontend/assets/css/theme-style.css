@@ -12,6 +12,19 @@
     margin: 0
 }
 
+/* customize scrollbar */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* body::-webkit-scrollbar-track {
+    background: #ddce64;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: white;
+} */
+
 img {
     border: none
 }
@@ -267,9 +280,10 @@ header .header-ad {
 }
 
 @media(max-width:767px) {
-    header{
+    header {
         height: 95px !important;
     }
+
     #navbar_top .dropdown-menu.multi-column {
         min-width: 240px !important;
         overflow-x: hidden
@@ -292,19 +306,21 @@ header .header-ad {
         margin-left: 5px;
     }
 
-    header .navbar-title .navbar-title-text{
+    header .navbar-title .navbar-title-text {
         font-size: 8px;
         text-align: center;
     }
-    header .navbar-title .navbar-subTitle-text{
+
+    header .navbar-title .navbar-subTitle-text {
         font-size: 6px;
         text-align: center;
     }
 
-    header .logo{
+    header .logo {
         text-align: center;
     }
-    header .logo img{
+
+    header .logo img {
         width: 65px !important;
         margin-left: 6px;
     }
@@ -682,6 +698,7 @@ header .header-ad {
     width: 100%;
     transition-duration: 1s;
 }
+
 .highlights ul li:hover a img {
     transform: scale(1.5);
     transition-duration: 1s;
@@ -911,7 +928,6 @@ header .header-ad {
     -moz-border-radius: 5px;
     border-radius: 5px;
     overflow: hidden;
-    padding: 7px;
 }
 
 .home-category-area h1 span {
@@ -2218,8 +2234,8 @@ body.t20-world-cup-2021 .category .cat-lead p {
 
 .section_16 {
     /* background-image: linear-gradient(to right, #b8b8b8, #c4c4c4, #d1d1d1, #dddddd, #eaeaea) */
-   background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, #5959ec 35%, hsl(241, 90%, 26%) 100%);
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, #5959ec 35%, hsl(241, 90%, 26%) 100%);
 }
 
 .section_16 .bg {
@@ -4474,40 +4490,36 @@ footer .footer-bottom .copyright {
 }
 
 /* my own css */
-a{
+a {
     color: black;
 }
-.bg-section{
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, #5959ec 35%, hsl(241, 90%, 26%) 100%);
+
+.bg-section {
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, #5959ec 35%, hsl(241, 90%, 26%) 100%);
 }
-.bg-section .bg{
+
+.bg-section .bg {
     background-image: url('../img/section-bg-body.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
 }
+
 .bg-section .section-bg-header {
-    /* background: repeating-linear-gradient(45deg, #069553, black 100px); */
     background: linear-gradient(300deg, #00c369, #b1b1b19e);
     display: block;
     text-align: center;
     padding: 3px 0;
-    /* background: url('../img/section-bd-header.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%; */
 }
-.bg-section .section-bg-header span{
+
+.bg-section .section-bg-header span {
     color: white;
     font-size: 30px;
     font-weight: bolder;
 }
 
 .bg-section .section-bg-footer {
-        /* background: url('../img/section-bg-footer.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%; */
+
     background: linear-gradient(92deg, #00c369, #b1b1b19e);
     display: block;
     text-align: center;
@@ -4517,11 +4529,33 @@ a{
     transition-duration: 1s;
 }
 
-.bg-section .section-bg-footer:hover{
+.bg-section .section-bg-footer:hover {
     transition-duration: 1s;
     box-shadow: 1px 5px 0px 0px #7c3636;
 }
 
-.bg-section .card .card-img-top{
+.bg-section .card .card-img-top {
     height: 200px;
+}
+
+/* News */
+.News .NewsHover{
+    transition-duration: 2s;
+}
+.News .NewsHover:hover{
+    transition-duration: 2s;
+    transform: scale3d(1.5, 1.5, 1.5);
+    z-index: 999;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 320px)  {
+    .video_one{
+        width: 100%;
+    }
+    .video_two{
+        width: 100%;
+    }
+    .News .NewsHover{
+        height: 280px !important;
+    }
 }
