@@ -185,24 +185,20 @@
     <div class="bg pb-3">
         <div class="container mt-3">
             <div class="row">
-                <div class="col-md-7 mb-2 mb-md-0">
+                <div class="col-md-8 mb-2 mb-md-0">
                     @foreach ($coxBazar->take(1) as $item)
-                    <div class="card" style="border-radius: 0;">
+                    <div class="card mb-2" style="border-radius: 0;">
                         <div class="card-body">
                             <div class="row g-0">
-                                <div class="col-md-5">
-                                    <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
-                                        <h3 class="card-title m-0">{{$item->title}}</h3>
-                                    </a>
-                                </div>
-                                <div class="col-md-7">
+                                <div class="col-md-12 mt-2">
                                     <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
                                         <img class="card-img-top" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="Card image">
                                     </a>
-                                </div>
-                                <div class="col-md-12 mt-2">
-                                    <p class="card-text text ellipsis">
-                                        {!! Str::words($item->description, '25') !!}
+                                    <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
+                                        <h3 class="card-title mb-2">{{$item->title}}</h3>
+                                    </a>
+                                    <p class="card-text text ellipsis" style="text-align: justify;">
+                                        {!! Str::words($item->description, '80') !!}
                                     </p>
                                     @php
                                     $minutes = now()->diffInMinutes($item->created_at);
@@ -222,8 +218,8 @@
                     </div>
                     @endforeach
                     <div class="row mt-3">
-                        @foreach ($coxBazar->skip(1)->take(3) as $item)
-                        <div class="col-md-4 col-10 offset-1 offset-md-0 mb-2 mb-md-0">
+                        @foreach ($coxBazar->skip(1)->take(8) as $item)
+                        <div class="col-md-3 col-10 offset-1 offset-md-0 mb-2">
                             <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}" title="{{$item->title}}">
                                 <div class="card NewsHover" style="height: 250px;">
                                     <img class="rounded-start" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="Card image">
@@ -236,7 +232,7 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="col-md-3">
+                <!-- <div class="col-md-3">
                     <div class="row g-0">
                         @foreach ($coxBazar->skip(4)->take(7) as $item)
                         <div class="col-md-12">
@@ -248,7 +244,7 @@
                                         </div>
                                         <div class="col-md-8 col-10 offset-1 offset-md-0">
                                             <div class="card-body">
-                                                <p class="card-title m-0 text ellipsis">{!! (nl2br(e(Str::words($item->title, '4')))) !!}</p>
+                                                <p class="card-title mb-2 text ellipsis">{!! (nl2br(e(Str::words($item->title, '4')))) !!}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -257,8 +253,8 @@
                         </div>
                         @endforeach
                     </div>
-                </div>
-                <div class="col-md-2">
+                </div> -->
+                <div class="col-md-4">
                     <ul class="m-0 p-0" style="position: relative;">
                         <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
                         @if ($ad4->status == 'active')
@@ -284,22 +280,18 @@
             <div class="row">
                 <div class="col-md-8 mb-2 mb-md-0">
                     @foreach ($jatioNews->take(1) as $item)
-                    <div class="card mb-3" style="border-radius: 0;">
+                    <div class="card mb-2" style="border-radius: 0;">
                         <div class="card-body">
                             <div class="row g-0">
-                                <div class="col-md-5">
-                                    <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
-                                        <h3 class="card-title m-0">{{$item->title}}</h3>
-                                    </a>
-                                </div>
-                                <div class="col-md-7">
+                                <div class="col-md-12 mt-2">
                                     <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
                                         <img class="card-img-top" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="Card image">
                                     </a>
-                                </div>
-                                <div class="col-md-12 mt-2">
-                                    <p class="card-text text ellipsis">
-                                        {!! Str::words($item->description, '25') !!}
+                                    <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
+                                        <h3 class="card-title mb-2">{{$item->title}}</h3>
+                                    </a>
+                                    <p class="card-text text ellipsis" style="text-align: justify;">
+                                        {!! Str::words($item->description, '80') !!}
                                     </p>
                                     @php
                                     $minutes = now()->diffInMinutes($item->created_at);
@@ -319,35 +311,13 @@
                     </div>
                     @endforeach
                     <div class="row">
-                        @foreach ($jatioNews->skip(1)->take(4) as $item)
-                        <div class="col-md-3 col-10 offset-1 offset-md-0 mb-2 mb-md-0">
+                        @foreach ($jatioNews->skip(1)->take(8) as $item)
+                        <div class="col-md-3 col-10 offset-1 offset-md-0 mb-2">
                             <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}" title="{{$item->title}}">
                                 <div class="card NewsHover" style="height: 250px;">
                                     <img class="rounded-start" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="Card image">
                                     <div class="card-body">
                                         <p class="card-text">{{$item->title}}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="row g-0">
-                        @foreach ($jatioNews->skip(5)->take(7) as $item)
-                        <div class="col-md-12">
-                            <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
-                                <div class="card mb-2" title="{{$item->title}}" style="background:#EEEEEE;">
-                                    <div class="row g-0">
-                                        <div class="col-md-4 col-10 offset-1 offset-md-0">
-                                            <img class="img-fluid rounded-start h-100" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="Card image">
-                                        </div>
-                                        <div class="col-md-8 col-10 offset-1 offset-md-0">
-                                            <div class="card-body">
-                                                <p class="card-title m-0 text ellipsis">{!! (nl2br(e(Str::words($item->title, '4')))) !!}</p>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -388,22 +358,18 @@
             <div class="row">
                 <div class="col-md-8 mb-2 mb-md-0">
                     @foreach ($AntorjatikNews->take(1) as $item)
-                    <div class="card mb-3" style="border-radius: 0;">
+                    <div class="card mb-2" style="border-radius: 0;">
                         <div class="card-body">
                             <div class="row g-0">
-                                <div class="col-md-5">
-                                    <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
-                                        <h3 class="card-title m-0">{{$item->title}}</h3>
-                                    </a>
-                                </div>
-                                <div class="col-md-7">
+                                <div class="col-md-12 mt-2">
                                     <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
                                         <img class="card-img-top" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="Card image">
                                     </a>
-                                </div>
-                                <div class="col-md-12 mt-2">
-                                    <p class="card-text text ellipsis">
-                                        {!! Str::words($item->description, '25') !!}
+                                    <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
+                                        <h3 class="card-title mb-2">{{$item->title}}</h3>
+                                    </a>
+                                    <p class="card-text text ellipsis" style="text-align: justify;">
+                                        {!! Str::words($item->description, '80') !!}
                                     </p>
                                     @php
                                     $minutes = now()->diffInMinutes($item->created_at);
@@ -423,8 +389,8 @@
                     </div>
                     @endforeach
                     <div class="row">
-                        @foreach ($AntorjatikNews->skip(1)->take(4) as $item)
-                        <div class="col-md-3 col-10 offset-1 offset-md-0 mb-2 mb-md-0">
+                        @foreach ($AntorjatikNews->skip(1)->take(8) as $item)
+                        <div class="col-md-3 col-10 offset-1 offset-md-0 mb-2">
                             <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}" title="{{$item->title}}">
                                 <div class="card NewsHover" style="height: 250px;">
                                     <img class="rounded-start" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="Card image">
@@ -437,7 +403,7 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                     <div class="row g-0">
                         @foreach ($AntorjatikNews->skip(5)->take(7) as $item)
                         <div class="col-md-12">
@@ -449,7 +415,7 @@
                                         </div>
                                         <div class="col-md-8 col-10 offset-1 offset-md-0">
                                             <div class="card-body">
-                                                <p class="card-title m-0 text ellipsis">{!! (nl2br(e(Str::words($item->title, '4')))) !!}</p>
+                                                <p class="card-title mb-2 text ellipsis">{!! (nl2br(e(Str::words($item->title, '4')))) !!}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -458,7 +424,7 @@
                         </div>
                         @endforeach
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -475,22 +441,18 @@
             <div class="row">
                 <div class="col-md-8 mb-2 mb-md-0">
                     @foreach ($sportsNews->take(1) as $item)
-                    <div class="card mb-3" style="border-radius: 0;">
+                    <div class="card mb-2" style="border-radius: 0;">
                         <div class="card-body">
                             <div class="row g-0">
-                                <div class="col-md-5">
-                                    <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
-                                        <h3 class="card-title m-0">{{$item->title}}</h3>
-                                    </a>
-                                </div>
-                                <div class="col-md-7">
+                                <div class="col-md-12 mt-2">
                                     <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
                                         <img class="card-img-top" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="Card image">
                                     </a>
-                                </div>
-                                <div class="col-md-12 mt-2">
-                                    <p class="card-text text ellipsis">
-                                        {!! Str::words($item->description, '25') !!}
+                                    <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
+                                        <h3 class="card-title mb-2">{{$item->title}}</h3>
+                                    </a>
+                                    <p class="card-text text ellipsis" style="text-align: justify;">
+                                        {!! Str::words($item->description, '80') !!}
                                     </p>
                                     @php
                                     $minutes = now()->diffInMinutes($item->created_at);
@@ -510,8 +472,8 @@
                     </div>
                     @endforeach
                     <div class="row">
-                        @foreach ($sportsNews->skip(1)->take(4) as $item)
-                        <div class="col-md-3 col-10 offset-1 offset-md-0 mb-2 mb-md-0">
+                        @foreach ($sportsNews->skip(1)->take(8) as $item)
+                        <div class="col-md-3 col-10 offset-1 offset-md-0 mb-2">
                             <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}" title="{{$item->title}}">
                                 <div class="card NewsHover" style="height: 250px;">
                                     <img class="rounded-start" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="Card image">
@@ -524,7 +486,7 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                     <div class="row g-0">
                         @foreach ($sportsNews->skip(5)->take(7) as $item)
                         <div class="col-md-12">
@@ -536,7 +498,7 @@
                                         </div>
                                         <div class="col-md-8 col-10 offset-1 offset-md-0">
                                             <div class="card-body">
-                                                <p class="card-title m-0 text ellipsis">{!! (nl2br(e(Str::words($item->title, '4')))) !!}</p>
+                                                <p class="card-title mb-2 text ellipsis">{!! (nl2br(e(Str::words($item->title, '4')))) !!}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -545,7 +507,7 @@
                         </div>
                         @endforeach
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -641,22 +603,18 @@
             <div class="row">
                 <div class="col-md-8 mb-2 mb-md-0">
                     @foreach ($shilpoBanijjo->take(1) as $item)
-                    <div class="card mb-3" style="border-radius: 0;">
+                    <div class="card mb-2" style="border-radius: 0;">
                         <div class="card-body">
                             <div class="row g-0">
-                                <div class="col-md-5">
-                                    <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
-                                        <h3 class="card-title m-0">{{$item->title}}</h3>
-                                    </a>
-                                </div>
-                                <div class="col-md-7">
+                                <div class="col-md-12 mt-2">
                                     <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
                                         <img class="card-img-top" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="Card image">
                                     </a>
-                                </div>
-                                <div class="col-md-12 mt-2">
-                                    <p class="card-text text ellipsis">
-                                        {!! Str::words($item->description, '25') !!}
+                                    <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
+                                        <h3 class="card-title mb-2">{{$item->title}}</h3>
+                                    </a>
+                                    <p class="card-text text ellipsis" style="text-align: justify;">
+                                        {!! Str::words($item->description, '80') !!}
                                     </p>
                                     @php
                                     $minutes = now()->diffInMinutes($item->created_at);
@@ -676,35 +634,13 @@
                     </div>
                     @endforeach
                     <div class="row">
-                        @foreach ($shilpoBanijjo->skip(1)->take(4) as $item)
-                        <div class="col-md-3 col-10 offset-1 offset-md-0 mb-2 mb-md-0">
+                        @foreach ($shilpoBanijjo->skip(1)->take(8) as $item)
+                        <div class="col-md-3 col-10 offset-1 offset-md-0 mb-2">
                             <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}" title="{{$item->title}}">
                                 <div class="card NewsHover" style="height: 250px;">
                                     <img class="rounded-start" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="Card image">
                                     <div class="card-body">
                                         <p class="card-text">{{$item->title}}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="row g-0">
-                        @foreach ($shilpoBanijjo->skip(5)->take(7) as $item)
-                        <div class="col-md-12">
-                            <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
-                                <div class="card mb-2" title="{{$item->title}}" style="background:#EEEEEE;">
-                                    <div class="row g-0">
-                                        <div class="col-md-4 col-10 offset-1 offset-md-0">
-                                            <img class="img-fluid rounded-start h-100" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="Card image">
-                                        </div>
-                                        <div class="col-md-8 col-10 offset-1 offset-md-0">
-                                            <div class="card-body">
-                                                <p class="card-title m-0 text ellipsis">{!! (nl2br(e(Str::words($item->title, '4')))) !!}</p>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </a>
