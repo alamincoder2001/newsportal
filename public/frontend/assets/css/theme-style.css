@@ -308,21 +308,20 @@ header .header-ad {
 
     header .navbar-title .navbar-title-text {
         font-size: 8px;
-        text-align: center;
+        text-align: left;
     }
 
     header .navbar-title .navbar-subTitle-text {
-        font-size: 6px;
-        text-align: center;
+        font-size: 8px;
+        text-align: left;
     }
 
     header .logo {
-        text-align: center;
+        text-align: left;
     }
 
     header .logo img {
-        width: 65px !important;
-        margin-left: 6px;
+        width: 45px !important;
     }
 }
 
@@ -4557,5 +4556,21 @@ a {
     }
     .News .NewsHover{
         height: 280px !important;
+    }
+
+    header table{
+        margin-top: 25px !important;
+    }
+    header table tr td{
+        font-size: 6px !important;
+    }
+
+    header .logo {
+        text-align: left !important;
+    }
+
+    header .navbar-title .navbar-title-text span{
+        display: block;
+        font-size: 10px !important;
     }
 }

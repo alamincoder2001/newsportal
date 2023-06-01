@@ -88,10 +88,8 @@
                     </a>
                     @endif
                     <article class="mt-3" id="bpsepnil">
-
                         {!! $news->description !!}
                     </article>
-
                 </div>
             </div>
             <div class="clearfix"></div>

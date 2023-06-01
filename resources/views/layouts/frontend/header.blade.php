@@ -1,12 +1,12 @@
 <header>
     <div class="container mb-3">
         <div class="row">
-            <div class="col-9 col-md-5">
+            <div class="col-6 col-md-5">
                 <div class="row">
-                    <div class="col-4 col-md-3 p-md-0">
+                    <div class="col-md-3 p-md-0 text-left">
                         <a href="{{ route('website') }}" class="logo"><img src="{{ asset($setting->logo != null ? $setting->logo : 'noImage.jpg') }}" alt=""></a>
                     </div>
-                    <div class="col-8 col-md-9 p-md-0 navbar-title">
+                    <div class="col-md-9 p-md-0 navbar-title">
                         <h1 class="m-0 navbar-title-text">
                             {{ $setting->company_name }}
                             <span style="font-size: 18px;color:#ad0000;">({{$setting->company_name_english}})</span>
@@ -15,7 +15,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3 col-md-4 p-md-0 text-end">
+            <div class="col-6 col-md-4 p-md-0 text-end">
                 <table style="margin-top:30px;float:right;">
                     <tr>
                         <td style="font-size: 13px;font-weight:900;">বিজ্ঞাপন দেওয়ার জন্য যোগাযোগ করুন</td>
