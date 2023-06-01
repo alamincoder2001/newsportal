@@ -119,8 +119,14 @@ export default {
             let formdata = new FormData(event.target)
             formdata.append("image", this.epaper.image)
             formdata.append("id", this.epaper.id)
+            let url;
+            if (this.epaper.id == '') {
+                url = '/admin/epaper';
+            } else {
+                url = '/admin/update/epaper'
+            }
             axios
-                .post(location.origin + "/admin/epaper", formdata)
+                .post(url, formdata)
                 .then((res) => {
                     if (res.data.status) {
                         $.notify(res.data.message, "success");

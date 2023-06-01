@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Epaper;
-use App\Models\AdminAccess;
 use Illuminate\Http\Request;
+use App\Models\CategorywiseAdds;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Validator;
 
-class EpaperController extends Controller
+class CategorywiseAddController extends Controller
 {
     public function __construct()
     {
@@ -19,25 +17,19 @@ class EpaperController extends Controller
 
     public function index()
     {
-        return Epaper::latest()->get();
+        return CategorywiseAdds::with('category')->latest()->get();
     }
 
     public function create()
     {
-        $access = AdminAccess::where('admin_id', Auth::guard('admin')->user()->id)
-            ->pluck('permissions')
-            ->toArray();
-        if (!in_array("epaperEntry", $access)) {
-            return view("admin.unauthorize");
-        }
-        return view("admin.epaper.create");
+        return view("admin.categorywiseadds.create");
     }
 
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'link'         => 'required',
-            'publish_date' => 'required',
+            'title'       => 'required',
+            'category_id' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -48,7 +40,7 @@ class EpaperController extends Controller
         }
 
         try {
-            $uniqueId = $this->generateCode("Epaper", "EP");
+            $uniqueId = $this->generateCode("CategorywiseAdds", "Ad");
 
             if ($request->hasFile('image')) {
                 $extension = $request->file('image')->extension();
@@ -57,22 +49,23 @@ class EpaperController extends Controller
                 $name = null;
             }
 
-            Epaper::create([
-                'publish_date' => $request->publish_date,
-                'link'         => $request->link,
-                'image'        => $name == null ? null : '/uploads/epaper/' . $name,
+            CategorywiseAdds::create([
+                'title'       => $request->title,
+                'url'         => $request->url,
+                'category_id' => $request->category_id,
+                'image'        => $name == null ? null : '/uploads/categorywiseadds/' . $name,
             ]);
 
             if ($request->hasFile('image')) {
-                $img = Image::make($request->file('image'))->resize(300, 450);
-                $img->save(public_path('uploads/epaper/' . $name));
+                $img = Image::make($request->file('image'))->resize(350, 480);
+                $img->save(public_path('uploads/categorywiseadds/' . $name));
             }
 
             return response()->json([
                 'status'  => true,
-                'message' => 'Yea! Epaper Upload Successfully'
+                'message' => 'Yea! A Adds Upload Successfully'
             ]);
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             return response()->json([
                 'status'  => false,
                 'message' => $e->getMessage()
@@ -83,8 +76,8 @@ class EpaperController extends Controller
     public function update(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'link'         => 'required',
-            'publish_date' => 'required',
+            'title'       => 'required',
+            'category_id' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -95,29 +88,35 @@ class EpaperController extends Controller
         }
 
         try {
-            $uniqueId = $this->generateCode("Epaper", "EP");
-            $epaper = Epaper::find($request->id);
+            $uniqueId = $this->generateCode("CategorywiseAdds", "EP");
+            $categorywiseadd = CategorywiseAdds::find($request->id);
             if ($request->hasFile('image')) {
-                if (file_exists(public_path($epaper->image)) && $epaper->image != null) {
-                    unlink(public_path($epaper->image));
+                if (file_exists(public_path($categorywiseadd->image)) && $categorywiseadd->image != null) {
+                    unlink(public_path($categorywiseadd->image));
                 }
                 $extension = $request->file('image')->extension();
                 $name = $uniqueId . '.' . $extension;
-            } else if ($epaper->image != null) {
-                $last = explode('/', $epaper->image);
+            } else if ($categorywiseadd->image != null) {
+                $last = explode('/', $categorywiseadd->image);
                 $name = end($last);
             } else {
                 $name = null;
             }
-            
-            $epaper->link         = $request->link;
-            $epaper->publish_date = $request->publish_date;
-            $epaper->image        = $name == null ? null : '/uploads/epaper/' . $name;
-            $epaper->update();
+
+            $categorywiseadd->title       = $request->title;
+            $categorywiseadd->url         = $request->url;
+            $categorywiseadd->category_id = $request->category_id;
+            $categorywiseadd->image       = $name == null ? null : '/uploads/categorywiseadds/' . $name;
+            $categorywiseadd->update();
+
+            if ($request->hasFile('image')) {
+                $img = Image::make($request->file('image'))->resize(350, 480);
+                $img->save(public_path('uploads/categorywiseadds/' . $name));
+            }
 
             return response()->json([
                 'status'  => true,
-                'message' => 'Yea! A Epaper Updated Successfully'
+                'message' => 'Yea! A Adds Updated Successfully'
             ]);
         } catch (\Throwable $e) {
             return response()->json([
@@ -129,7 +128,7 @@ class EpaperController extends Controller
 
     public function destroy(Request $request)
     {
-        Epaper::find($request->id)->delete();
-        return "Epaper delete successfully";
+        CategorywiseAdds::find($request->id)->delete();
+        return "Adds delete successfully";
     }
 }

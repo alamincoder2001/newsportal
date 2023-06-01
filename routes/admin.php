@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\AdvertiseFourController;
 use App\Http\Controllers\Admin\AdvertiseThreeController;
 use App\Http\Controllers\Admin\AdvertiseTwoController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CategorywiseAddController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\DesignationController;
 use App\Http\Controllers\Admin\NewsController;
@@ -122,6 +123,13 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/epaper', [EpaperController::class, 'create'])->name('admin.epaper.create');
     Route::get('/get-epaper', [EpaperController::class, 'index'])->name('admin.epaper.index');
     Route::post('/epaper', [EpaperController::class, 'store'])->name('admin.epaper.store');
+    Route::post('/update/epaper', [EpaperController::class, 'update'])->name('admin.epaper.update');
     Route::post('/epaper/delete', [EpaperController::class, 'destroy'])->name('admin.epaper.destroy');
-
+    
+    // categorywise add
+    Route::get('/category_wise_add', [CategorywiseAddController::class, 'create'])->name('admin.categorywiseadds.create');
+    Route::get('/get-category_wise_add', [CategorywiseAddController::class, 'index'])->name('admin.categorywiseadds.index');
+    Route::post('/category_wise_add', [CategorywiseAddController::class, 'store'])->name('admin.categorywiseadds.store');
+    Route::post('/update/category_wise_add', [CategorywiseAddController::class, 'update'])->name('admin.categorywiseadds.update');
+    Route::post('/category_wise_add/delete', [CategorywiseAddController::class, 'destroy'])->name('admin.categorywiseadds.destroy');
 });

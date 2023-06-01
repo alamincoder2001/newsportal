@@ -82,6 +82,12 @@ class PermissionSeederTable extends Seeder
                 ]
             ],
             [
+                'group_name' => 'CategoryWiseAdds',
+                'permission_name' => [
+                    'categorywiseaddsEntry',
+                ]
+            ],
+            [
                 'group_name' => 'Setting',
                 'permission_name' => [
                     'settingUpdate',

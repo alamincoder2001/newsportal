@@ -107,6 +107,11 @@ $access = App\Models\AdminAccess::where('admin_id', Auth::guard('admin')->user()
                     </ul>
                 </li>
                 @endif
+                @if(in_array("categorywiseaddsEntry", $access))
+                <li class="sidebar-item {{ Request::is('admin.categorywiseadds.create') ? 'selected' : '' }}">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.categorywiseadds.create') }}" aria-expanded="false"><i class="fa fa-filter"></i><span class="hide-menu">Category Wise Adds</span></a>
+                </li>
+                @endif
                 @if(in_array("epaperEntry", $access))
                 <li class="sidebar-item {{ Request::is('admin.epaper.create') ? 'selected' : '' }}">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.epaper.create') }}" aria-expanded="false"><i class="fa fa-file"></i><span class="hide-menu">Epaper Entry</span></a>
@@ -122,70 +127,26 @@ $access = App\Models\AdminAccess::where('admin_id', Auth::guard('admin')->user()
                     <a href="{{ route('admin.category.index') }}" class="sidebar-link {{ Request::is('admin.category.index') ? 'active' : '' }}"><i class="fas fa-plus"></i><span class="hide-menu"> Category Entry </span></a>
                 </li>
                 @endif
-                {{-- <li class="sidebar-item">
-                    <a href="{{ route('admin.subcategory.index') }}"
-                class="sidebar-link {{ Request::is('admin.subcategory.index') ? 'active' : '' }}"><i class="fas fa-list-ol"></i><span class="hide-menu"> Manage Subcategory </span></a>
-                </li> --}}
 
-                {{-- <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
-                        aria-expanded="false"><i class="mdi mdi-earth"></i><span class="hide-menu"> Website Content
-                        </span></a>
-                    <ul aria-expanded="false" class="collapse first-level">
-                        <li class="sidebar-item">
-                            <a href="{{ route('admin.category.index') }}"
-                class="sidebar-link {{ Request::is('admin.category.index') ? 'active' : '' }}"><i class="fas fa-list"></i><span class="hide-menu"> Category Entry </span></a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="{{ route('admin.subcategory.index') }}" class="sidebar-link {{ Request::is('admin.subcategory.index') ? 'active' : '' }}"><i class="fas fa-list"></i><span class="hide-menu"> Subcategory Entry </span></a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="{{ route('admin.news.index') }}" class="sidebar-link {{ Request::is('admin.news.index') ? 'active' : '' }}"><i class="fas fa-list"></i><span class="hide-menu"> News Entry </span></a>
-                </li>
-            </ul>
-            </li> --}}
-            {{-- <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
-                        aria-expanded="false">
-                        <i class="mdi mdi-earth"></i>
-                        <span class="hide-menu"> Manage News</span>
-                    </a>
-                    <ul aria-expanded="false" class="collapse first-level">
-                        <li class="sidebar-item">
-                            <a href="{{ route('admin.news.create') }}"
-            class="sidebar-link {{ Request::is('admin.news.create') ? 'active' : '' }}">
-            <i class="fas fa-arrow-right"></i>
-            <span class="hide-menu"> Upload News </span>
-            </a>
-            </li>
-            <li class="sidebar-item">
-                <a href="{{ route('admin.news.manage') }}" class="sidebar-link {{ Request::is('admin.subcategory.index') ? 'active' : '' }}">
-                    <i class="fas fa-arrow-right"></i>
-                    <span class="hide-menu"> Manage News </span>
-                </a>
-            </li>
-            </ul>
-            </li> --}}
+                @if(in_array("designationEntry", $access))
 
-            @if(in_array("designationEntry", $access))
-
-            <li class="sidebar-item {{ Request::is('admin.designation.create') ? 'selected' : '' }}">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.designation.create') }}" aria-expanded="false"><i class="fa fa-user-plus"></i><span class="hide-menu">Designation Entry</span></a>
-            </li>
-            @endif
-            @if(in_array("departmentEntry", $access))
-            <li class="sidebar-item {{ Request::is('admin.department.create') ? 'selected' : '' }}">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.department.create') }}" aria-expanded="false"><i class="fa fa-user-plus"></i><span class="hide-menu">Department Entry</span></a>
-            </li>
-            @endif
-            @if(in_array("settingUpdate", $access))
-            <li class="sidebar-item {{ Request::is('admin.settings') ? 'selected' : '' }}">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.settings') }}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Settings</span></a>
-            </li>
-            @endif
-            <li class="sidebar-item {{ Request::is('admin.logout') ? 'selected' : '' }}">
-                <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.logout') }}" aria-expanded="false"><i class="mdi mdi-logout-variant"></i><span class="hide-menu">Logout</span></a>
-            </li>
+                <li class="sidebar-item {{ Request::is('admin.designation.create') ? 'selected' : '' }}">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.designation.create') }}" aria-expanded="false"><i class="fa fa-user-plus"></i><span class="hide-menu">Designation Entry</span></a>
+                </li>
+                @endif
+                @if(in_array("departmentEntry", $access))
+                <li class="sidebar-item {{ Request::is('admin.department.create') ? 'selected' : '' }}">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.department.create') }}" aria-expanded="false"><i class="fa fa-user-plus"></i><span class="hide-menu">Department Entry</span></a>
+                </li>
+                @endif
+                @if(in_array("settingUpdate", $access))
+                <li class="sidebar-item {{ Request::is('admin.settings') ? 'selected' : '' }}">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.settings') }}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Settings</span></a>
+                </li>
+                @endif
+                <li class="sidebar-item {{ Request::is('admin.logout') ? 'selected' : '' }}">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.logout') }}" aria-expanded="false"><i class="mdi mdi-logout-variant"></i><span class="hide-menu">Logout</span></a>
+                </li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

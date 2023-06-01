@@ -203,7 +203,7 @@
                                     @php
                                     $minutes = now()->diffInMinutes($item->created_at);
                                     @endphp
-                                    <p class="card-text">
+                                    <p class="card-text mt-1" style="border-top: 1px solid #d5d5d5;">
                                         <small class="text-muted">
                                             @if ($minutes > 60)
                                             {{ App\Models\Setting::banglaNumber(floor(now()->diffInMinutes($item->created_at) / 60)) }} ঘন্টা আগে ।
@@ -233,14 +233,14 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <ul class="m-0 p-0" style="position: relative;">
+                    @foreach(\App\Models\CategorywiseAdds::where('category_id', 7)->take(2)->latest()->get() as $item)
+                    <ul class="m-0 mb-3 p-0" style="position: relative;">
                         <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
-                        @if ($ad4->status == 'active')
-                        <a href="{{ $ad4->url }}" target="_blank">
-                            <img src="{{ asset($ad4->image != null ? $ad4->image : '600x1200.jpg') }}" alt="{{ $ad4->title }}" style="width: 100%;height:450px;">
+                        <a href="{{ $item->url }}" target="_blank">
+                            <img src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}" style="width: 100%;height:480px;">
                         </a>
-                        @endif
                     </ul>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -304,14 +304,14 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <ul class="m-0 p-0" style="position: relative;">
+                    @foreach(\App\Models\CategorywiseAdds::where('category_id', 3)->take(2)->latest()->get() as $item)
+                    <ul class="m-0 mb-3 p-0" style="position: relative;">
                         <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
-                        @if ($ad4->status == 'active')
-                        <a href="{{ $ad4->url }}" target="_blank">
-                            <img src="{{ asset($ad4->image != null ? $ad4->image : '600x1200.jpg') }}" alt="{{ $ad4->title }}" style="width: 100%;height:450px;">
+                        <a href="{{ $item->url }}" target="_blank">
+                            <img src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}" style="width: 100%;height:480px;">
                         </a>
-                        @endif
                     </ul>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -392,14 +392,14 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <ul class="m-0 p-0" style="position: relative;">
+                    @foreach(\App\Models\CategorywiseAdds::where('category_id', 5)->take(2)->latest()->get() as $item)
+                    <ul class="m-0 mb-3 p-0" style="position: relative;">
                         <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
-                        @if ($ad4->status == 'active')
-                        <a href="{{ $ad4->url }}" target="_blank">
-                            <img src="{{ asset($ad4->image != null ? $ad4->image : '600x1200.jpg') }}" alt="{{ $ad4->title }}" style="width: 100%;height:450px;">
+                        <a href="{{ $item->url }}" target="_blank">
+                            <img src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}" style="width: 100%;height:480px;">
                         </a>
-                        @endif
                     </ul>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -463,14 +463,14 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <ul class="m-0 p-0" style="position: relative;">
+                    @foreach(\App\Models\CategorywiseAdds::where('category_id', 4)->take(2)->latest()->get() as $item)
+                    <ul class="m-0 mb-3 p-0" style="position: relative;">
                         <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
-                        @if ($ad4->status == 'active')
-                        <a href="{{ $ad4->url }}" target="_blank">
-                            <img src="{{ asset($ad4->image != null ? $ad4->image : '600x1200.jpg') }}" alt="{{ $ad4->title }}" style="width: 100%;height:450px;">
+                        <a href="{{ $item->url }}" target="_blank">
+                            <img src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}" style="width: 100%;height:480px;">
                         </a>
-                        @endif
                     </ul>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -613,14 +613,14 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <ul class="m-0 p-0" style="position: relative;">
+                    @foreach(\App\Models\CategorywiseAdds::where('category_id', 16)->take(2)->latest()->get() as $item)
+                    <ul class="m-0 mb-3 p-0" style="position: relative;">
                         <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
-                        @if ($ad4->status == 'active')
-                        <a href="{{ $ad4->url }}" target="_blank">
-                            <img src="{{ asset($ad4->image != null ? $ad4->image : '600x1200.jpg') }}" alt="{{ $ad4->title }}" style="width: 100%;height:450px;">
+                        <a href="{{ $item->url }}" target="_blank">
+                            <img src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}" style="width: 100%;height:480px;">
                         </a>
-                        @endif
                     </ul>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -1,17 +1,22 @@
 @extends('layouts.frontend_master')
+
 @section('title')
 {{ $news->title }}
 @endsection
+
 @section('shareLink')
+@php
+    $tag_remove = strip_tags($news->description);
+@endphp
 <meta property="og:title" content="{{$news->title}}" />
 <meta property="og:image" content="{{ asset($news->image != null ? $news->image : '') }}" />
 <meta property="image_url" content="{{ asset($news->image != null ? $news->image : '') }}" />
-<meta property="og:description" content="{!! $news->description !!}" />
+<meta property="og:description" content="{{ $tag_remove }}" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="{{URL::current()}}">
 <meta name="twitter:title" content="{{$news->title}}">
-<meta name="twitter:description" content="{!! $news->description !!}">
+<meta name="twitter:description" content="{{ $tag_remove }}">
 <meta name="twitter:image" content="{{ asset($news->image != null ? $news->image : '') }}">
 
 <link rel="image_src" href="{{ asset($news->image != null ? $news->image : '') }}">
