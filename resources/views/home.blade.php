@@ -232,28 +232,6 @@
                         @endforeach
                     </div>
                 </div>
-                <!-- <div class="col-md-3">
-                    <div class="row g-0">
-                        @foreach ($coxBazar->skip(4)->take(7) as $item)
-                        <div class="col-md-12">
-                            <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
-                                <div class="card mb-2" title="{{$item->title}}" style="background:#EEEEEE;">
-                                    <div class="row g-0">
-                                        <div class="col-md-4 col-10 offset-1 offset-md-0">
-                                            <img class="img-fluid rounded-start h-100" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="Card image">
-                                        </div>
-                                        <div class="col-md-8 col-10 offset-1 offset-md-0">
-                                            <div class="card-body">
-                                                <p class="card-title mb-2 text ellipsis">{!! (nl2br(e(Str::words($item->title, '4')))) !!}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        @endforeach
-                    </div>
-                </div> -->
                 <div class="col-md-4">
                     <ul class="m-0 p-0" style="position: relative;">
                         <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
@@ -324,6 +302,16 @@
                         </div>
                         @endforeach
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <ul class="m-0 p-0" style="position: relative;">
+                        <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
+                        @if ($ad4->status == 'active')
+                        <a href="{{ $ad4->url }}" target="_blank">
+                            <img src="{{ asset($ad4->image != null ? $ad4->image : '600x1200.jpg') }}" alt="{{ $ad4->title }}" style="width: 100%;height:450px;">
+                        </a>
+                        @endif
+                    </ul>
                 </div>
             </div>
         </div>
@@ -403,28 +391,16 @@
                         @endforeach
                     </div>
                 </div>
-                <!-- <div class="col-md-4">
-                    <div class="row g-0">
-                        @foreach ($AntorjatikNews->skip(5)->take(7) as $item)
-                        <div class="col-md-12">
-                            <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
-                                <div class="card mb-2" title="{{$item->title}}" style="background:#EEEEEE;">
-                                    <div class="row g-0">
-                                        <div class="col-md-4 col-10 offset-1 offset-md-0">
-                                            <img class="img-fluid rounded-start h-100" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="Card image">
-                                        </div>
-                                        <div class="col-md-8 col-10 offset-1 offset-md-0">
-                                            <div class="card-body">
-                                                <p class="card-title mb-2 text ellipsis">{!! (nl2br(e(Str::words($item->title, '4')))) !!}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        @endforeach
-                    </div>
-                </div> -->
+                <div class="col-md-4">
+                    <ul class="m-0 p-0" style="position: relative;">
+                        <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
+                        @if ($ad4->status == 'active')
+                        <a href="{{ $ad4->url }}" target="_blank">
+                            <img src="{{ asset($ad4->image != null ? $ad4->image : '600x1200.jpg') }}" alt="{{ $ad4->title }}" style="width: 100%;height:450px;">
+                        </a>
+                        @endif
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -486,28 +462,16 @@
                         @endforeach
                     </div>
                 </div>
-                <!-- <div class="col-md-4">
-                    <div class="row g-0">
-                        @foreach ($sportsNews->skip(5)->take(7) as $item)
-                        <div class="col-md-12">
-                            <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
-                                <div class="card mb-2" title="{{$item->title}}" style="background:#EEEEEE;">
-                                    <div class="row g-0">
-                                        <div class="col-md-4 col-10 offset-1 offset-md-0">
-                                            <img class="img-fluid rounded-start h-100" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="Card image">
-                                        </div>
-                                        <div class="col-md-8 col-10 offset-1 offset-md-0">
-                                            <div class="card-body">
-                                                <p class="card-title mb-2 text ellipsis">{!! (nl2br(e(Str::words($item->title, '4')))) !!}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        @endforeach
-                    </div>
-                </div> -->
+                <div class="col-md-4">
+                    <ul class="m-0 p-0" style="position: relative;">
+                        <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
+                        @if ($ad4->status == 'active')
+                        <a href="{{ $ad4->url }}" target="_blank">
+                            <img src="{{ asset($ad4->image != null ? $ad4->image : '600x1200.jpg') }}" alt="{{ $ad4->title }}" style="width: 100%;height:450px;">
+                        </a>
+                        @endif
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -647,6 +611,16 @@
                         </div>
                         @endforeach
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <ul class="m-0 p-0" style="position: relative;">
+                        <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
+                        @if ($ad4->status == 'active')
+                        <a href="{{ $ad4->url }}" target="_blank">
+                            <img src="{{ asset($ad4->image != null ? $ad4->image : '600x1200.jpg') }}" alt="{{ $ad4->title }}" style="width: 100%;height:450px;">
+                        </a>
+                        @endif
+                    </ul>
                 </div>
             </div>
         </div>
