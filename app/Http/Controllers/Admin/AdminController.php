@@ -151,6 +151,7 @@ class AdminController extends Controller
             $data->company_name         = $request->company_name;
             $data->company_name_english = $request->company_name_english;
             $data->title                = $request->title;
+            $data->email                = $request->email;
             $data->address              = $request->address;
             $data->phone                = $request->phone;
             $data->advertise_phone      = $request->advertise_phone;

@@ -26,23 +26,13 @@
         <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6">
             <div id="carouselHomeCaptions" class="carousel slide lead-slider" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselHomeCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselHomeCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselHomeCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    @foreach ($homeSliders as $key => $item)
+                    <button type="button" data-bs-target="#carouselHomeCaptions-{{$key}}" data-bs-slide-to="{{$key}}" class="{{$key == '0' ? 'active': ''}}" aria-current="true" aria-label="Slide {{$key}}"></button>
+                    @endforeach
                 </div>
                 <div class="carousel-inner">
-                    @foreach ($homeSliders->take(1) as $key => $item)
-                    <div class="carousel-item active">
-                        <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
-                            <img src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" class="d-block w-100" alt="{{ $item->title }}">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>{{ $item->title }}</h5>
-                            </div>
-                        </a>
-                    </div>
-                    @endforeach
-                    @foreach ($homeSliders->skip(1) as $key => $item)
-                    <div class="carousel-item">
+                    @foreach ($homeSliders as $key => $item)
+                    <div class="carousel-item {{$key == '0' ? 'active': ''}}">
                         <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
                             <img src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" class="d-block w-100" alt="{{ $item->title }}">
                             <div class="carousel-caption d-none d-md-block">
@@ -64,7 +54,7 @@
             <div class="lead-2nd mt-4">
                 <h1 class="mb-0 pb-0 d-block"><a href=""><span class="blink"></span><span>আজকের খবর</span> <i class="bi bi-chevron-right"></i></a></h1>
                 <ul class="m-0">
-                    @foreach ($focush as $key => $item)
+                    @foreach ($focush->take(3) as $key => $item)
                     <li class="bi bi-caret-right-fill">
                         <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">{{ $item->title }}</a>
                     </li>
@@ -73,8 +63,10 @@
             </div>
             <ul style="list-style: none;padding:0;margin-top:7px;">
                 <li>
-                    <iframe class="video_one" width="270" height="182" src="{{$setting->video_link1}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <iframe class="video_two" width="270" height="182" src="{{$setting->video_link2}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="video_one" width="100%" height="210" src="{{$setting->video_link1}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </li>
+                <li>
+                    <iframe class="video_two" width="100%" height="210" src="{{$setting->video_link2}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </li>
             </ul>
         </div>
@@ -197,13 +189,14 @@
                                     <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
                                         <h3 class="card-title mb-2">{{$item->title}}</h3>
                                     </a>
-                                    <p class="card-text text ellipsis" style="text-align: justify;">
-                                        {!! Str::words($item->description, '80') !!}
+                                    <p class="text-helper">
+                                        {!! Str::words($item->description, 80, '') !!}
+                                        <a class="text-more" href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">আরও পড়ুন...</a>
                                     </p>
                                     @php
                                     $minutes = now()->diffInMinutes($item->created_at);
                                     @endphp
-                                    <p class="card-text mt-1" style="border-top: 1px solid #d5d5d5;">
+                                    <p class="card-text mt-1">
                                         <small class="text-muted">
                                             @if ($minutes > 60)
                                             {{ App\Models\Setting::banglaNumber(floor(now()->diffInMinutes($item->created_at) / 60)) }} ঘন্টা আগে ।
@@ -230,6 +223,9 @@
                             </a>
                         </div>
                         @endforeach
+                        <div class="col-md-12">
+                            <a class="more-news" href="/cat/কক্সবাজার-জেলা">আরও...</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -237,7 +233,7 @@
                     <ul class="m-0 mb-3 p-0" style="position: relative;">
                         <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
                         <a href="{{ $item->url }}" target="_blank">
-                            <img src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}" style="width: 100%;height:480px;">
+                            <img class="advertisement" src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}">
                         </a>
                     </ul>
                     @endforeach
@@ -245,9 +241,9 @@
             </div>
         </div>
     </div>
-    <a href="/cat/কক্সবাজার-জেলা" class="section-bg-footer">
+    <!-- <a href="/cat/কক্সবাজার-জেলা" class="section-bg-footer">
         আরও আছে...
-    </a>
+    </a> -->
 </section>
 
 <!-- জাতীয় খবর -->
@@ -268,8 +264,9 @@
                                     <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
                                         <h3 class="card-title mb-2">{{$item->title}}</h3>
                                     </a>
-                                    <p class="card-text text ellipsis" style="text-align: justify;">
-                                        {!! Str::words($item->description, '80') !!}
+                                    <p class="text-helper">
+                                        {!! Str::words($item->description, 80, '') !!}
+                                        <a class="text-more" href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">আরও পড়ুন...</a>
                                     </p>
                                     @php
                                     $minutes = now()->diffInMinutes($item->created_at);
@@ -301,6 +298,9 @@
                             </a>
                         </div>
                         @endforeach
+                        <div class="col-md-12">
+                            <a class="more-news" href="/cat/জাতীয়">আরও...</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -308,7 +308,7 @@
                     <ul class="m-0 mb-3 p-0" style="position: relative;">
                         <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
                         <a href="{{ $item->url }}" target="_blank">
-                            <img src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}" style="width: 100%;height:480px;">
+                            <img class="advertisement" src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}" style="width: 100%;height:480px;">
                         </a>
                     </ul>
                     @endforeach
@@ -316,9 +316,6 @@
             </div>
         </div>
     </div>
-    <a href="/cat/জাতীয়" class="section-bg-footer">
-        আরও আছে...
-    </a>
 </section>
 
 @if ($ad1->status == 'active')
@@ -356,8 +353,9 @@
                                     <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
                                         <h3 class="card-title mb-2">{{$item->title}}</h3>
                                     </a>
-                                    <p class="card-text text ellipsis" style="text-align: justify;">
-                                        {!! Str::words($item->description, '80') !!}
+                                    <p class="text-helper">
+                                        {!! Str::words($item->description, 80, '') !!}
+                                        <a class="text-more" href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">আরও পড়ুন...</a>
                                     </p>
                                     @php
                                     $minutes = now()->diffInMinutes($item->created_at);
@@ -389,6 +387,9 @@
                             </a>
                         </div>
                         @endforeach
+                        <div class="col-md-12">
+                            <a class="more-news" href="/cat/আন্তর্জাতিক-খবর">আরও...</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -396,7 +397,7 @@
                     <ul class="m-0 mb-3 p-0" style="position: relative;">
                         <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
                         <a href="{{ $item->url }}" target="_blank">
-                            <img src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}" style="width: 100%;height:480px;">
+                            <img class="advertisement" src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}" />
                         </a>
                     </ul>
                     @endforeach
@@ -404,9 +405,6 @@
             </div>
         </div>
     </div>
-    <a href="/cat/আন্তর্জাতিক-খবর" class="section-bg-footer">
-        আরও আছে...
-    </a>
 </section>
 
 <!-- খেলাধুলা -->
@@ -427,8 +425,9 @@
                                     <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
                                         <h3 class="card-title mb-2">{{$item->title}}</h3>
                                     </a>
-                                    <p class="card-text text ellipsis" style="text-align: justify;">
-                                        {!! Str::words($item->description, '80') !!}
+                                    <p class="text-helper">
+                                        {!! Str::words($item->description, 80, '') !!}
+                                        <a class="text-more" href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">আরও পড়ুন...</a>
                                     </p>
                                     @php
                                     $minutes = now()->diffInMinutes($item->created_at);
@@ -460,6 +459,9 @@
                             </a>
                         </div>
                         @endforeach
+                        <div class="col-md-12">
+                            <a class="more-news" href="/cat/খেলাধুলা">আরও...</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -467,7 +469,7 @@
                     <ul class="m-0 mb-3 p-0" style="position: relative;">
                         <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
                         <a href="{{ $item->url }}" target="_blank">
-                            <img src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}" style="width: 100%;height:480px;">
+                            <img class="advertisement" src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}" style="width: 100%;height:480px;">
                         </a>
                     </ul>
                     @endforeach
@@ -475,9 +477,6 @@
             </div>
         </div>
     </div>
-    <a href="/cat/খেলাধুলা" class="section-bg-footer">
-        আরও আছে...
-    </a>
 </section>
 
 
@@ -577,8 +576,9 @@
                                     <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
                                         <h3 class="card-title mb-2">{{$item->title}}</h3>
                                     </a>
-                                    <p class="card-text text ellipsis" style="text-align: justify;">
-                                        {!! Str::words($item->description, '80') !!}
+                                    <p class="text-helper">
+                                        {!! Str::words($item->description, 80, '') !!}
+                                        <a class="text-more" href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">আরও পড়ুন...</a>
                                     </p>
                                     @php
                                     $minutes = now()->diffInMinutes($item->created_at);
@@ -610,6 +610,9 @@
                             </a>
                         </div>
                         @endforeach
+                        <div class="col-md-12">
+                            <a class="more-news" href="/cat/শিল্প-বাণিজ্য">আরও...</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -617,7 +620,7 @@
                     <ul class="m-0 mb-3 p-0" style="position: relative;">
                         <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
                         <a href="{{ $item->url }}" target="_blank">
-                            <img src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}" style="width: 100%;height:480px;">
+                            <img class="advertisement" src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}" style="width: 100%;height:480px;">
                         </a>
                     </ul>
                     @endforeach
@@ -625,8 +628,5 @@
             </div>
         </div>
     </div>
-    <a href="/cat/শিল্প-বাণিজ্য" class="section-bg-footer">
-        আরও আছে...
-    </a>
 </section>
 @endsection

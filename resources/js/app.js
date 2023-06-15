@@ -66,6 +66,10 @@ Vue.component(
     "AdvertiseFive",
     require("./components/advertise/AdvertiseFive.vue").default
 );
+Vue.component(
+    "news-letter-adds",
+    require("./components/Newsletteradds.vue").default
+);
 
 const app = new Vue({
     el: "#app",

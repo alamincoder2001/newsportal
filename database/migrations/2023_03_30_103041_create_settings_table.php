@@ -18,6 +18,7 @@ class CreateSettingsTable extends Migration
             $table->string("company_name");
             $table->string("company_name_english")->nullable();
             $table->string("title");
+            $table->string("email", 100)->nullable();
             $table->string("phone", 15);
             $table->string("advertise_phone", 15)->nullable();
             $table->string("editor_phone", 15)->nullable();

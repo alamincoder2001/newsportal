@@ -140,6 +140,12 @@ $access = App\Models\AdminAccess::where('admin_id', Auth::guard('admin')->user()
                 </li>
                 @endif
                 @if(in_array("settingUpdate", $access))
+                <li class="sidebar-item {{ Request::is('admin.newsletteradds') ? 'selected' : '' }}">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.newsletteradds') }}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">NewsLetterAdds</span></a>
+                </li>
+                @endif
+
+                @if(in_array("settingUpdate", $access))
                 <li class="sidebar-item {{ Request::is('admin.settings') ? 'selected' : '' }}">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.settings') }}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Settings</span></a>
                 </li>

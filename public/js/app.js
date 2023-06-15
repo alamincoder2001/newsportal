@@ -5774,6 +5774,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -5825,7 +5826,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.get(location.origin + "/admin/get-category_wise_add").then(function (res) {
         _this2.categorywiseadds = res.data.map(function (ad) {
           ad.category_name = ad.category.name;
-          ad.img = ad.image == '' ? '' : "<img src=\"".concat(ad.image, "\" style=\"width:50px;border: 1px dashed gray;padding: 1px;\" />");
+          ad.img = ad.image == '' ? '' : "<img src=\"/".concat(ad.image, "\" style=\"width:50px;border: 1px dashed gray;padding: 1px;\" />");
           return ad;
         });
       });
@@ -5870,7 +5871,7 @@ __webpack_require__.r(__webpack_exports__);
         id: val.category_id,
         name: val.category_name
       };
-      this.imageSrc = val.image != null ? location.origin + val.image : location.origin + "/noImage.jpg";
+      this.imageSrc = val.image != null ? '/' + val.image : location.origin + "/noImage.jpg";
     },
     deleteRow: function deleteRow(id) {
       var _this4 = this;
@@ -7488,6 +7489,103 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Newsletteradds.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Newsletteradds.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      advertise: {
+        image: "",
+        status: ""
+      },
+      imageSrc: location.origin + "/600x300.jpg"
+    };
+  },
+  created: function created() {
+    this.getAdvertise();
+  },
+  methods: {
+    getAdvertise: function getAdvertise() {
+      var _this = this;
+      axios.get(location.origin + "/admin/get-newsletteradds").then(function (res) {
+        _this.advertise = res.data;
+        _this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/600x300.jpg";
+      });
+    },
+    updateAdvertise: function updateAdvertise(event) {
+      var _this2 = this;
+      var formdata = new FormData(event.target);
+      formdata.append("image", this.advertise.image);
+      axios.post("/admin/newsletteradds", formdata).then(function (res) {
+        $.notify(res.data, "success");
+        _this2.getAdvertise();
+      });
+    },
+    imageUrl: function imageUrl(event) {
+      this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+      this.advertise.image = event.target.files[0];
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PendingNews.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PendingNews.vue?vue&type=script&lang=js& ***!
@@ -7780,6 +7878,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -7788,6 +7893,7 @@ __webpack_require__.r(__webpack_exports__);
         company_name: "",
         company_name_english: "",
         title: "",
+        email: "",
         address: "",
         phone: "",
         advertise_phone: "",
@@ -9096,6 +9202,7 @@ vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("AdvertiseTwo", (__webpack
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("AdvertiseThree", (__webpack_require__(/*! ./components/advertise/AdvertiseThree.vue */ "./resources/js/components/advertise/AdvertiseThree.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("AdvertiseFour", (__webpack_require__(/*! ./components/advertise/AdvertiseFour.vue */ "./resources/js/components/advertise/AdvertiseFour.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("AdvertiseFive", (__webpack_require__(/*! ./components/advertise/AdvertiseFive.vue */ "./resources/js/components/advertise/AdvertiseFive.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_2__["default"].component("news-letter-adds", (__webpack_require__(/*! ./components/Newsletteradds.vue */ "./resources/js/components/Newsletteradds.vue")["default"]));
 var app = new vue__WEBPACK_IMPORTED_MODULE_2__["default"]({
   el: "#app"
 });
@@ -64552,6 +64659,45 @@ component.options.__file = "resources/js/components/ManageNews.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/Newsletteradds.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/components/Newsletteradds.vue ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Newsletteradds_vue_vue_type_template_id_1eeaf9d6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Newsletteradds.vue?vue&type=template&id=1eeaf9d6& */ "./resources/js/components/Newsletteradds.vue?vue&type=template&id=1eeaf9d6&");
+/* harmony import */ var _Newsletteradds_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Newsletteradds.vue?vue&type=script&lang=js& */ "./resources/js/components/Newsletteradds.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Newsletteradds_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Newsletteradds_vue_vue_type_template_id_1eeaf9d6___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Newsletteradds_vue_vue_type_template_id_1eeaf9d6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Newsletteradds.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/PendingNews.vue":
 /*!*************************************************!*\
   !*** ./resources/js/components/PendingNews.vue ***!
@@ -65079,6 +65225,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Newsletteradds.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/Newsletteradds.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Newsletteradds_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Newsletteradds.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Newsletteradds.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Newsletteradds_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/PendingNews.vue?vue&type=script&lang=js&":
 /*!**************************************************************************!*\
   !*** ./resources/js/components/PendingNews.vue?vue&type=script&lang=js& ***!
@@ -65406,6 +65568,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ManageNews_vue_vue_type_template_id_21853afa___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ManageNews_vue_vue_type_template_id_21853afa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ManageNews.vue?vue&type=template&id=21853afa& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ManageNews.vue?vue&type=template&id=21853afa&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Newsletteradds.vue?vue&type=template&id=1eeaf9d6&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/Newsletteradds.vue?vue&type=template&id=1eeaf9d6& ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Newsletteradds_vue_vue_type_template_id_1eeaf9d6___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Newsletteradds_vue_vue_type_template_id_1eeaf9d6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Newsletteradds_vue_vue_type_template_id_1eeaf9d6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Newsletteradds.vue?vue&type=template&id=1eeaf9d6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Newsletteradds.vue?vue&type=template&id=1eeaf9d6&");
 
 
 /***/ }),
@@ -66144,6 +66323,10 @@ var render = function () {
                   },
                   [
                     _c("div", { staticClass: "form-group ImageBackground" }, [
+                      _c("span", { staticClass: "text-danger" }, [
+                        _vm._v("Required Size: width:345px X height:470px"),
+                      ]),
+                      _vm._v(" "),
                       _c("img", {
                         staticClass: "imageShow",
                         attrs: { src: _vm.imageSrc },
@@ -68594,6 +68777,169 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Newsletteradds.vue?vue&type=template&id=1eeaf9d6&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Newsletteradds.vue?vue&type=template&id=1eeaf9d6& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "col-12 col-lg-12" }, [
+      _c("div", { staticClass: "card" }, [
+        _c("div", { staticClass: "card-body" }, [
+          _c(
+            "form",
+            {
+              on: {
+                submit: function ($event) {
+                  $event.preventDefault()
+                  return _vm.updateAdvertise.apply(null, arguments)
+                },
+              },
+            },
+            [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-lg-12" }, [
+                  _c("div", { staticClass: "form-group row mb-4" }, [
+                    _c("div", { staticClass: "col-md-12" }, [
+                      _c("img", {
+                        staticClass: "imageShow",
+                        staticStyle: { border: "1px solid #d7d7d7" },
+                        attrs: {
+                          src: _vm.imageSrc,
+                          width: "400px",
+                          height: "200px",
+                        },
+                      }),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c("label", { attrs: { for: "image" } }, [
+                        _vm._v("Master Image:"),
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "file", name: "image", id: "image" },
+                        on: { change: _vm.imageUrl },
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        { staticStyle: { "font-size": "11px", color: "red" } },
+                        [_vm._v("Required size: 600 X 300")]
+                      ),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group mt-2" }, [
+                    _c("label", { attrs: { for: "status" } }, [
+                      _vm._v("Status:"),
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.advertise.status,
+                            expression: "advertise.status",
+                          },
+                        ],
+                        staticClass: "form-control shadow-none",
+                        attrs: { name: "status", id: "status" },
+                        on: {
+                          change: function ($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function (o) {
+                                return o.selected
+                              })
+                              .map(function (o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              _vm.advertise,
+                              "status",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          },
+                        },
+                      },
+                      [
+                        _c("option", { attrs: { value: "", selected: "" } }, [
+                          _vm._v("Select"),
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "a" } }, [
+                          _vm._v("Active"),
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "p" } }, [
+                          _vm._v("Inactive"),
+                        ]),
+                      ]
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(0),
+                ]),
+              ]),
+            ]
+          ),
+        ]),
+      ]),
+    ]),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row mt-2" }, [
+      _c("label", {
+        staticClass: "col-5 col-lg-4 d-flex align-items-center",
+        attrs: { for: "" },
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-7 col-lg-8 text-end" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-sm btn-outline-success shadow-none",
+            attrs: { type: "submit" },
+          },
+          [
+            _vm._v(
+              "\n                                        Update Advertise\n                                    "
+            ),
+          ]
+        ),
+      ]),
+    ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PendingNews.vue?vue&type=template&id=46a36a22&":
 /*!***********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/PendingNews.vue?vue&type=template&id=46a36a22& ***!
@@ -68852,7 +69198,45 @@ var render = function () {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "row mt-2" }, [
-                    _c("div", { staticClass: "col-lg-12" }, [
+                    _c("div", { staticClass: "col-lg-6" }, [
+                      _c("div", { staticClass: "form-group mt-2" }, [
+                        _c("label", { attrs: { for: "email" } }, [
+                          _vm._v("Email:"),
+                        ]),
+                        _vm._v(" "),
+                        _c("textarea", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.setting.email,
+                              expression: "setting.email",
+                            },
+                          ],
+                          staticClass: "form-control shadow-none",
+                          attrs: {
+                            id: "email",
+                            name: "email",
+                            autocomplete: "off",
+                          },
+                          domProps: { value: _vm.setting.email },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.setting,
+                                "email",
+                                $event.target.value
+                              )
+                            },
+                          },
+                        }),
+                      ]),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-6" }, [
                       _c("div", { staticClass: "form-group mt-2" }, [
                         _c("label", { attrs: { for: "address" } }, [
                           _vm._v("Address:"),

@@ -6,7 +6,7 @@
 
 @section('shareLink')
 @php
-    $tag_remove = strip_tags($news->description);
+$tag_remove = strip_tags($news->description);
 @endphp
 <meta property="og:title" content="{{$news->title}}" />
 <meta property="og:image" content="{{ asset($news->image != null ? $news->image : '') }}" />
@@ -63,11 +63,12 @@
                                     <a class="bg" href="#" id="newsLinkCopy"><i class="bi bi-link-45deg"></i>
                                         কপি লিঙ্ক</a>
                                 </li>
-                                <!--<li class="google_news"><a-->
-                                <!--        href="https://news.google.com/publications/CAAqBwgKMODNpQsws9i9Aw?hl=en-US&gl=US&ceid=US:en"-->
-                                <!--        class="bg" target="_blank"><img-->
-                                <!--            src="https://www.bd-pratidin.com/assets/newDesktop/img/google_news.png"></a>-->
-                                <!--</li>-->
+                                <li class="ps-0 ms-0" style="background: white;text-align: center;width: 30px;height:25px;">
+                                    <i style="cursor: pointer;" onclick="zoomIn()" class="bi bi-zoom-in"></i>
+                                </li>
+                                <li class="ps-0 ms-0" style="background: white;text-align: center;width: 30px;height:25px;">
+                                    <i style="cursor: pointer;" onclick="zoomOut()" class="bi bi-zoom-out"></i>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -101,9 +102,21 @@
             <ul class="bottom-share">
                 <!-- <li> <a target="_blank" href="https://twitter.com/intent/tweet?url={{URL::current()}}"><i class="bi bi-twitter"></i></a></li> -->
 
+                <li style="
+    background: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;">
+                    <i class="bi bi-eye"></i>
+                    {{$news->counter}}
+                </li>
                 <li><a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{URL::current()}}"><i class="bi bi-linkedin"></i></a></li>
                 <li><a target="_blank" href="https://www.facebook.com/sharer.php?u={{URL::current()}}"><i class="bi bi-facebook"></i></a></li>
             </ul>
+
+            <div class="fb-comments" data-href="{{URL::current()}}" data-width="100%" data-numposts="10"></div>
+
             <div class="clearfix"></div>
             <div class="mt-3 details-more">
                 <div class="row">

@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\EpaperController;
+use App\Http\Controllers\Admin\NewsletteraddsController;
 
 // Admin Login Route
 Route::group(["prefix" => "admin"], function () {
@@ -132,4 +133,9 @@ Route::group(["prefix" => "admin"], function () {
     Route::post('/category_wise_add', [CategorywiseAddController::class, 'store'])->name('admin.categorywiseadds.store');
     Route::post('/update/category_wise_add', [CategorywiseAddController::class, 'update'])->name('admin.categorywiseadds.update');
     Route::post('/category_wise_add/delete', [CategorywiseAddController::class, 'destroy'])->name('admin.categorywiseadds.destroy');
+
+    // news letter adds
+    Route::get('/newsletteradds', [NewsletteraddsController::class, 'create'])->name("admin.newsletteradds");
+    Route::get('/get-newsletteradds', [NewsletteraddsController::class, 'index'])->name('admin.newsletteradds.index');
+    Route::post('/newsletteradds', [NewsletteraddsController::class, 'store'])->name('admin.newsletteradds.store');
 });

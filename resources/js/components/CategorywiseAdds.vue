@@ -41,6 +41,7 @@
                             </div>
                             <div class="col-md-4 d-flex justify-content-center align-items-center">
                                 <div class="form-group ImageBackground">
+                                    <span class="text-danger">Required Size: width:345px X height:470px</span>
                                     <img :src="imageSrc" class="imageShow" />
                                     <label for="image">Image</label>
                                     <input type="file" id="image" class="form-control shadow-none" @change="imageUrl" />
@@ -111,7 +112,7 @@ export default {
             axios.get(location.origin + "/admin/get-category_wise_add").then((res) => {
                 this.categorywiseadds = res.data.map(ad => {
                     ad.category_name = ad.category.name;
-                    ad.img = ad.image == '' ? '' : `<img src="${ad.image}" style="width:50px;border: 1px dashed gray;padding: 1px;" />`;
+                    ad.img = ad.image == '' ? '' : `<img src="/${ad.image}" style="width:50px;border: 1px dashed gray;padding: 1px;" />`;
                     return ad;
                 })
             });
@@ -161,7 +162,7 @@ export default {
                 id: val.category_id,
                 name: val.category_name
             }
-            this.imageSrc = val.image != null ? location.origin + val.image : location.origin + "/noImage.jpg"
+            this.imageSrc = val.image != null ? '/'+val.image : location.origin + "/noImage.jpg"
         },
         deleteRow(id) {
             if (confirm("Are you sure want to delete this!")) {

@@ -24,7 +24,14 @@
                                         v-model="setting.title" autocomplete="off" />
                                 </div>
                                 <div class="row mt-2">
-                                    <div class="col-lg-12">
+                                    <div class="col-lg-6">
+                                        <div class="form-group mt-2">
+                                            <label for="email">Email:</label>
+                                            <textarea id="email" name="email" class="form-control shadow-none"
+                                                v-model="setting.email" autocomplete="off"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
                                         <div class="form-group mt-2">
                                             <label for="address">Address:</label>
                                             <textarea id="address" name="address" class="form-control shadow-none"
@@ -148,6 +155,7 @@ export default {
                 company_name: "",
                 company_name_english: "",
                 title: "",
+                email: "",
                 address: "",
                 phone: "",
                 advertise_phone: "",

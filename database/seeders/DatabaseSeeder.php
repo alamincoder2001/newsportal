@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             DesignationSeeder::class,
             DepartmentSeeder::class,
             AdvertiseOneSeeder::class,
+            NewsletteraddsSeederTable::class,
             PermissionSeederTable::class
         ]);
     }

@@ -31,7 +31,7 @@ class HomeController extends Controller
         // }
 
         $shilpoBanijjo  = $this->getCategoryData(16, 'desc');
-        $homeSliders    = $this->getCategoryData(17, 'desc')->take(3);
+        $homeSliders    = $this->getCategoryData(17, 'desc')->take(8);
         $focush         = $this->getCategoryData(18, 'desc')->take(7);
         $highlights     = $this->getCategoryData(19, 'desc')->take(12);
         $jatioNews      = $this->getCategoryData(3, 'desc')->take(12);
@@ -112,6 +112,7 @@ class HomeController extends Controller
 
         $d = new  BnDateTimeConverter();
         $news->created_banglaDate = $d->getConvertedDateTime($news->created_at,  'BnEn', '');
+
         $categorywisenews = News::whereHas('category', function ($query) use ($category) {
             return $query->where('category_id', $category->id);
         })->where('is_published', 'active')->where('is_archive', 'no')->latest()->paginate(8);
@@ -128,6 +129,8 @@ class HomeController extends Controller
                 'read_count'  => 1
             ]);
         }
+
+        $news->counter = NewsCounter::where('news_id', $news->id)->where('category_id', $category->id)->first()->read_count;
 
         $ad3 = AdvertiseThree::first();
 

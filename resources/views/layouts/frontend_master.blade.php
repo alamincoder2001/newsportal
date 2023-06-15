@@ -9,6 +9,22 @@
     <title>@yield('title')</title>
 
     @include('layouts.frontend.style')
+
+    <style>
+        .description {
+            overflow: auto;
+        }
+
+        .modal-content {
+            width: 630px;
+            background-color: #eeeace;
+        }
+
+        iframe {
+            border: 1px solid gray;
+            padding: 2px;
+        }
+    </style>
 </head>
 
 <body class="home ">
@@ -29,6 +45,61 @@
             <li style="background: #0e76a8;padding: 6px 10px;text-align:center;"><a style="display: block;padding: 1px;font-size: 15px;font-weight: 900;color: white;font-style:italic;" target="_blank" href="{{$setting->linkedin}}"><i class="bi bi-linkedin"></i></a></li>
         </ul>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button style="position: absolute;right: 10px;top: 5px;" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="text-center mt-3">
+                        @php
+                        $newsletterImg = App\Models\NewsletterAdd::first();
+                        @endphp
+                        <img style="width: 100%;" src="{{asset($newsletterImg->image)}}" alt="News Letter Image" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0" nonce="aHmWKAbT"></script>
+    <script>
+        function zoomIn() {
+            var element = document.getElementById('bpsepnil');
+            var currentScale = getScale(element);
+            var newScale = currentScale + 0.1;
+            setScale(element, newScale);
+        }
+
+        function zoomOut() {
+            var element = document.getElementById('bpsepnil');
+            var currentScale = getScale(element);
+            var newScale = currentScale - 0.1;
+            setScale(element, newScale);
+        }
+
+        function getScale(element) {
+            var transform = element.style.transform;
+            var scaleMatch = transform.match(/scale\(([^)]+)\)/);
+            if (scaleMatch && scaleMatch[1]) {
+                return parseFloat(scaleMatch[1]);
+            }
+            return 1;
+        }
+
+        function setScale(element, scale) {
+            element.style.transform = 'scale(' + scale + ')';
+        }
+
+        $(() => {
+            let r = "{{Route::is('website')}}";
+            if (r == 1) {
+                $("#staticBackdrop").modal("show");
+            }
+        })
+    </script>
 </body>
 
 </html>

@@ -18,7 +18,7 @@
             <div class="col-6 col-md-4 p-md-0 text-end">
                 <table style="margin-top:30px;float:right;">
                     <tr>
-                        <td style="font-size: 13px;font-weight:900;">বিজ্ঞাপন দেওয়ার জন্য যোগাযোগ করুন</td>
+                        <td style="font-size: 13px;font-weight:900;">বিজ্ঞাপন</td>
                         <td style="font-size: 13px;">:</td>
                         <td style="font-size: 13px;">{{$setting->advertise_phone}}</td>
                     </tr>
@@ -26,6 +26,11 @@
                         <td style="font-size: 13px;font-weight:900;">সম্পাদক</td>
                         <td style="font-size: 13px;">:</td>
                         <td style="font-size: 13px;">{{$setting->editor_phone}}</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 13px;font-weight:900;">ই-মেইল</td>
+                        <td style="font-size: 13px;">:</td>
+                        <td style="font-size: 13px;">{{$setting->email}}</td>
                     </tr>
                 </table>
             </div>

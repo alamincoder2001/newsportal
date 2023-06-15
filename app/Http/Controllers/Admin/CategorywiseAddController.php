@@ -40,26 +40,27 @@ class CategorywiseAddController extends Controller
         }
 
         try {
-            $uniqueId = $this->generateCode("CategorywiseAdds", "Ad");
+            // $uniqueId = $this->generateCode("CategorywiseAdds", "Ad");
 
-            if ($request->hasFile('image')) {
-                $extension = $request->file('image')->extension();
-                $name = $uniqueId . '.' . $extension;
-            } else {
-                $name = null;
-            }
+            // if ($request->hasFile('image')) {
+            //     $extension = $request->file('image')->extension();
+            //     $name = $uniqueId . '.' . $extension;
+            // } else {
+            //     $name = null;
+            // }
 
             CategorywiseAdds::create([
                 'title'       => $request->title,
                 'url'         => $request->url,
                 'category_id' => $request->category_id,
-                'image'        => $name == null ? null : '/uploads/categorywiseadds/' . $name,
+                // 'image'        => $name == null ? null : '/uploads/categorywiseadds/' . $name,
+                'image'        => $this->imageUpload($request, 'image', 'uploads/categorywiseadds/'),
             ]);
 
-            if ($request->hasFile('image')) {
-                $img = Image::make($request->file('image'))->resize(350, 480);
-                $img->save(public_path('uploads/categorywiseadds/' . $name));
-            }
+            // if ($request->hasFile('image')) {
+            //     $img = Image::make($request->file('image'))->resize(350, 480);
+            //     $img->save(public_path('uploads/categorywiseadds/' . $name));
+            // }
 
             return response()->json([
                 'status'  => true,
@@ -88,31 +89,32 @@ class CategorywiseAddController extends Controller
         }
 
         try {
-            $uniqueId = $this->generateCode("CategorywiseAdds", "EP");
+            // $uniqueId = $this->generateCode("CategorywiseAdds", "EP");
             $categorywiseadd = CategorywiseAdds::find($request->id);
-            if ($request->hasFile('image')) {
-                if (file_exists(public_path($categorywiseadd->image)) && $categorywiseadd->image != null) {
-                    unlink(public_path($categorywiseadd->image));
-                }
-                $extension = $request->file('image')->extension();
-                $name = $uniqueId . '.' . $extension;
-            } else if ($categorywiseadd->image != null) {
-                $last = explode('/', $categorywiseadd->image);
-                $name = end($last);
-            } else {
-                $name = null;
-            }
+            // if ($request->hasFile('image')) {
+            //     if (file_exists(public_path($categorywiseadd->image)) && $categorywiseadd->image != null) {
+            //         unlink(public_path($categorywiseadd->image));
+            //     }
+            //     $extension = $request->file('image')->extension();
+            //     $name = $uniqueId . '.' . $extension;
+            // } else if ($categorywiseadd->image != null) {
+            //     $last = explode('/', $categorywiseadd->image);
+            //     $name = end($last);
+            // } else {
+            //     $name = null;
+            // }
 
             $categorywiseadd->title       = $request->title;
             $categorywiseadd->url         = $request->url;
             $categorywiseadd->category_id = $request->category_id;
-            $categorywiseadd->image       = $name == null ? null : '/uploads/categorywiseadds/' . $name;
+            // $categorywiseadd->image       = $name == null ? null : '/uploads/categorywiseadds/' . $name;
+            $categorywiseadd->image       = $this->imageUpload($request, 'image', 'uploads/categorywiseadds');
             $categorywiseadd->update();
 
-            if ($request->hasFile('image')) {
-                $img = Image::make($request->file('image'))->resize(350, 480);
-                $img->save(public_path('uploads/categorywiseadds/' . $name));
-            }
+            // if ($request->hasFile('image')) {
+            //     $img = Image::make($request->file('image'))->resize(350, 480);
+            //     $img->save(public_path('uploads/categorywiseadds/' . $name));
+            // }
 
             return response()->json([
                 'status'  => true,
