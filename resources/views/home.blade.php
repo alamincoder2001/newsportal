@@ -54,7 +54,7 @@
             <div class="lead-2nd mt-4">
                 <h1 class="mb-0 pb-0 d-block"><a href=""><span class="blink"></span><span>আজকের খবর</span> <i class="bi bi-chevron-right"></i></a></h1>
                 <ul class="m-0">
-                    @foreach ($focush->take(3) as $key => $item)
+                    @foreach ($focush->take(6) as $key => $item)
                     <li class="bi bi-caret-right-fill">
                         <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">{{ $item->title }}</a>
                     </li>
@@ -62,11 +62,9 @@
                 </ul>
             </div>
             <ul style="list-style: none;padding:0;margin-top:7px;">
-                <li>
-                    <iframe class="video_one" width="100%" height="210" src="{{$setting->video_link1}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </li>
-                <li>
-                    <iframe class="video_two" width="100%" height="210" src="{{$setting->video_link2}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <li class="d-flex">
+                    <iframe class="video_one" width="50%" height="210" src="{{$setting->video_link1}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="video_two" width="50%" height="210" src="{{$setting->video_link2}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </li>
             </ul>
         </div>
