@@ -127,9 +127,6 @@
                     <ul style="list-style: none;padding: 0;display: flex;margin: 0;margin-bottom:10px;justify-content: end;">
                         <li style="background: #cbcbcb;padding: 0px 6px;"><span class="ms-1">
                             {{App\Models\Setting::banglaNumber($pagevisitors)}}
-                                <!-- Start of CuterCounter Code -->
-                                <!-- <a href="https://www.cutercounter.com/" target="_blank"><img src="https://www.cutercounter.com/hits.php?id=hvxnfofa&nd=6&style=114" border="0" alt="best free website hit counter"></a> -->
-                                <!-- End of CuterCounter Code -->
                             </span></li>
                         <li style="font-weight:600;font-style: italic;background: #ffffff;padding: 0px 5px;font-size: 14px;text-transform: uppercase;line-height: 2;">আজকের পরিদর্শক</li>
                     </ul>
