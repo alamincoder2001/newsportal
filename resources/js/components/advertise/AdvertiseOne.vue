@@ -18,14 +18,14 @@
                                 </div>
                                 <div class="form-group row mb-4">
                                     <div class="col-md-12">
-                                        <img :src="imageSrc" class="imageShow" width="100%" height="200px"
+                                        <img :src="imageSrc" class="imageShow" width="100%" height="130px"
                                             style="border:1px solid #d7d7d7;" />
                                     </div>
                                     <div class="col-md-6">
                                         <label for="image">Master Image:</label>
                                         <input type="file" name="image" id="image" class="form-control"
                                             @change="imageUrl" />
-                                        <p style="font-size: 11px;color: red;">Required size: 1200 X 200</p>
+                                        <p style="font-size: 11px;color: red;">Required size: 1200 X 130</p>
                                     </div>
                                 </div>
                                 <div class="form-group mt-2">
@@ -65,7 +65,7 @@ export default {
                 status: ""
             }),
 
-            imageSrc: location.origin + "/1200x200.jpg",
+            imageSrc: "/1200x130.jpg",
         }
     },
 
@@ -75,10 +75,10 @@ export default {
 
     methods: {
         getAdvertise() {
-            axios.get(location.origin + "/admin/get-advertise-one")
+            axios.get("/admin/get-advertise-one")
                 .then(res => {
                     this.form = res.data
-                    this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/1200x200.jpg"
+                    this.imageSrc = res.data.image != null ? "/" + res.data.image : "/1200x200.jpg"
                 })
         },
 

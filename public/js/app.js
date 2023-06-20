@@ -8867,7 +8867,7 @@ __webpack_require__.r(__webpack_exports__);
         image: "",
         status: ""
       }),
-      imageSrc: location.origin + "/1200x200.jpg"
+      imageSrc: "/1200x130.jpg"
     };
   },
   created: function created() {
@@ -8876,9 +8876,9 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     getAdvertise: function getAdvertise() {
       var _this = this;
-      axios.get(location.origin + "/admin/get-advertise-one").then(function (res) {
+      axios.get("/admin/get-advertise-one").then(function (res) {
         _this.form = res.data;
-        _this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/1200x200.jpg";
+        _this.imageSrc = res.data.image != null ? "/" + res.data.image : "/1200x200.jpg";
       });
     },
     updateAdvertise: function updateAdvertise(event) {
@@ -70916,7 +70916,7 @@ var render = function () {
                         attrs: {
                           src: _vm.imageSrc,
                           width: "100%",
-                          height: "200px",
+                          height: "130px",
                         },
                       }),
                     ]),
@@ -70935,7 +70935,7 @@ var render = function () {
                       _c(
                         "p",
                         { staticStyle: { "font-size": "11px", color: "red" } },
-                        [_vm._v("Required size: 1200 X 200")]
+                        [_vm._v("Required size: 1200 X 130")]
                       ),
                     ]),
                   ]),

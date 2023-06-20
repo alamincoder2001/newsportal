@@ -66,32 +66,18 @@
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0" nonce="aHmWKAbT"></script>
     <script>
-        function zoomIn() {
-            var element = document.getElementById('bpsepnil');
-            var currentScale = getScale(element);
-            var newScale = currentScale + 0.1;
-            setScale(element, newScale);
-        }
-
-        function zoomOut() {
-            var element = document.getElementById('bpsepnil');
-            var currentScale = getScale(element);
-            var newScale = currentScale - 0.1;
-            setScale(element, newScale);
-        }
-
-        function getScale(element) {
-            var transform = element.style.transform;
-            var scaleMatch = transform.match(/scale\(([^)]+)\)/);
-            if (scaleMatch && scaleMatch[1]) {
-                return parseFloat(scaleMatch[1]);
+        $(".font-button").bind("click", function() {
+            var size = parseInt($('#bpsepnil p').css("font-size"));
+            if ($(this).hasClass("plus")) {
+                size = size + 2;
+            } else {
+                size = size - 2;
+                if (size <= 10) {
+                    size = 10;
+                }
             }
-            return 1;
-        }
-
-        function setScale(element, scale) {
-            element.style.transform = 'scale(' + scale + ')';
-        }
+            $('#bpsepnil p').css("font-size", size);
+        })
 
         $(() => {
             let r = "{{Route::is('website')}}";

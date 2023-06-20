@@ -64,10 +64,10 @@ $tag_remove = strip_tags($news->description);
                                         কপি লিঙ্ক</a>
                                 </li>
                                 <li class="ps-0 ms-0" style="background: white;text-align: center;width: 30px;height:25px;">
-                                    <i style="cursor: pointer;" onclick="zoomIn()" class="bi bi-zoom-in"></i>
+                                    <i style="cursor: pointer;" class="bi bi-zoom-in font-button plus"></i>
                                 </li>
                                 <li class="ps-0 ms-0" style="background: white;text-align: center;width: 30px;height:25px;">
-                                    <i style="cursor: pointer;" onclick="zoomOut()" class="bi bi-zoom-out"></i>
+                                    <i style="cursor: pointer;" class="bi bi-zoom-out font-button minus"></i>
                                 </li>
                             </ul>
                         </div>

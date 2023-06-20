@@ -40,7 +40,7 @@ class AppServiceProvider extends ServiceProvider
             ->join('categories', 'news_publisheds.category_id', '=', 'categories.id')
             ->where('news_publisheds.category_id', '=', '20')
             ->select('news.id as news_id', 'news.title as title', 'news.slug as news_slug', 'categories.id as cat_id', 'categories.name as cat_name', 'categories.slug as cat_slug')
-            ->get());
+            ->orderBy('news.id', 'DESC')->get());
         // View::share("otherscategory", DB::select("SELECT c.* FROM categories c WHERE c.is_menu = 'false'"));
         View::share("pagevisitors", PageVisitor::where("date", date('d-m-Y'))->get()->count());
     }
