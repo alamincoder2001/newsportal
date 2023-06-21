@@ -42,8 +42,8 @@ class AdvertiseTwoController extends Controller
             $data->status = $request->status;
             if ($request->hasFile('image')) {
                 $extension = $request->file('image')->extension();
-                $name = '1200x300.' . $extension;
-                $img = Image::make($request->file('image'))->resize(1200, 300);
+                $name = '1200x130.' . $extension;
+                $img = Image::make($request->file('image'))->resize(1200, 130);
                 $img->save(public_path('uploads/advertise-two/' . $name));
                 $data->image = "uploads/advertise-two/" . $name;
             }

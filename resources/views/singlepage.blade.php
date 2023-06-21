@@ -79,9 +79,9 @@ $tag_remove = strip_tags($news->description);
                     @if ($news->image != null)
                     <div class="news-img">
                         <img src="{{ asset($news->image != null ? $news->image : '') }}" alt="{{ $news->title }}">
-                        <div class="caption">
+                        <!-- <div class="caption">
                             <p><span>{{ $news->title }}</span></p>
-                        </div>
+                        </div> -->
                     </div>
                     @endif
                 </div>

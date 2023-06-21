@@ -479,7 +479,7 @@
 
 
 <!-- এডভার্টাইজমেন্ট -->
-@if ($ad1->status == 'active')
+<!-- @if ($ad1->status == 'active')
 <div class="container mt-3">
     <div class="row">
         <div class="col-md-6" style="position: relative;">
@@ -496,7 +496,7 @@
         </div>
     </div>
 </div>
-@endif
+@endif -->
 
 
 <div class="container mt-4 mb-3">

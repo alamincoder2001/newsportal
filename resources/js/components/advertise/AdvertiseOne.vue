@@ -78,7 +78,7 @@ export default {
             axios.get("/admin/get-advertise-one")
                 .then(res => {
                     this.form = res.data
-                    this.imageSrc = res.data.image != null ? "/" + res.data.image : "/1200x200.jpg"
+                    this.imageSrc = res.data.image != null ? "/" + res.data.image : "/1200x130.jpg"
                 })
         },
 
