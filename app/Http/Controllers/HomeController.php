@@ -36,12 +36,12 @@ class HomeController extends Controller
         $highlights     = $this->getCategoryData(19, 'desc')->take(12);
         $jatioNews      = $this->getCategoryData(3, 'desc')->take(12);
         $AntorjatikNews = $this->getCategoryData(5, 'desc')->take(12);
-        $sportsNews     = $this->getCategoryData(4, 'desc')->take(8);
+        $sportsNews     = $this->getCategoryData(4, 'desc')->take(12);
         $homeTopRight   = $this->getCategoryData(21, 'desc')->take(3);
         $jibonDhara     = $this->getCategoryData(12, 'desc')->take(5);
         $binodon        = $this->getCategoryData(2, 'desc')->take(5);
         $healthCorner   = $this->getCategoryData(8, 'desc')->take(5);
-        $coxBazar       = $this->getCategoryData(7, 'desc')->take(9);
+        $coxBazar       = $this->getCategoryData(7, 'desc')->take(12);
 
         $ad1 = AdvertiseOne::first();
         $ad2 = AdvertiseTwo::first();

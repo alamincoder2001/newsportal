@@ -108,7 +108,7 @@ class NewsController extends Controller
             }
 
             if ($request->hasFile('masterImage')) {
-                $img = Image::make($request->file('masterImage'))->resize(1000, 672);
+                $img = Image::make($request->file('masterImage'))->resize(750, 500);
                 $img->save(public_path('uploads/news/' . $name));
 
                 $img = Image::make($request->file('masterImage'))->resize(300, 202);
@@ -190,7 +190,7 @@ class NewsController extends Controller
             }
 
             if ($request->hasFile('masterImage')) {
-                $img = Image::make($request->file('masterImage'))->resize(1000, 672);
+                $img = Image::make($request->file('masterImage'))->resize(750, 500);
                 $img->save(public_path('uploads/news/' . $name));
 
                 $img = Image::make($request->file('masterImage'))->resize(300, 202);
