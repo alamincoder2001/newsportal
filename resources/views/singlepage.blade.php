@@ -74,7 +74,7 @@ $tag_remove = strip_tags($news->description);
                     </div>
                     <h1 class="ps-3 pe-1">{{ $news->title }}</h1>
                     <div class="news-info ps-3 my-3">
-                        <h2><i class="bi bi-pencil-square"></i> অনলাইন ডেস্ক</h2>
+                        <h2><i class="bi bi-pencil-square"></i> {{$news->editor}}</h2>
                     </div>
                     @if ($news->image != null)
                     <div class="news-img">

@@ -68,6 +68,7 @@ class NewsController extends Controller
         $validator = Validator::make($request->all(), [
             'title'       => 'required|string|min:5|max:191',
             'categories'  => 'required|array|min:1',
+            'editor'      => 'required',
             'description' => 'required|string',
         ]);
 
@@ -92,12 +93,13 @@ class NewsController extends Controller
                 'unique_id'    => $uniqueId,
                 'title'        => $request->title,
                 'subtitle'     => $request->subtitle,
+                'editor'       => $request->editor,
                 'slug'         => $this->make_slug($uniqueId . date('His')),
                 'description'  => $request->description,
                 'is_published' => Auth::guard('admin')->user()->role == 'admin' ? 'active' : 'pending',
-                'user_id'        => Auth::guard('admin')->user()->id,
-                'image'          => $name == null ? null : '/uploads/news/' . $name,
-                'thumbnail'      => $name == null ? null : '/uploads/thumbnail/' . $name,
+                'user_id'      => Auth::guard('admin')->user()->id,
+                'image'        => $name == null ? null : '/uploads/news/' . $name,
+                'thumbnail'    => $name == null ? null : '/uploads/thumbnail/' . $name,
             ]);
 
             foreach ($request->categories as $key => $category) {
@@ -130,7 +132,8 @@ class NewsController extends Controller
     public function update(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'title'       => ['required', 'string'],
+            'title'  => ['required', 'string'],
+            'editor' => 'required',
             // 'category_id' => ['required'],
             'description' => ['required', 'string'],
             // 'masterImage' => ['required']
@@ -172,12 +175,13 @@ class NewsController extends Controller
 
             $news->title        = $request->title;
             $news->subtitle     = $request->subtitle;
+            $news->editor       = $request->editor;
             $news->slug         = $this->make_slug($news->unique_id . date('His'));
             $news->description  = $request->description;
             $news->is_published = Auth::guard('admin')->user()->role == 'admin' ? 'active' : 'pending';
             $news->user_id      = Auth::guard('admin')->user()->id;
-            $news->image        = $name == null ? null : '/uploads/news/' . $name;
-            $news->thumbnail    = $name == null ? null : '/uploads/thumbnail/' . $name;
+            $news->image        = $name                              == null ? null : '/uploads/news/' . $name;
+            $news->thumbnail    = $name                              == null ? null : '/uploads/thumbnail/' . $name;
             $news->update();
 
             NewsPublished::where('news_id', $news->id)->delete();

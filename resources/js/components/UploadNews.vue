@@ -12,11 +12,27 @@
                                         class="form-control shadow-none">
                                     <span class="error-title error text-danger fst-italic"></span>
                                 </div>
-                                <div class="form-group mt-2">
-                                    <label for="subtitle">Sub Title:</label>
-                                    <input type="text" name="subtitle" v-model="form.subtitle" id="subtitle"
-                                        class="form-control shadow-none">
-                                    <span class="error-subtitle error text-danger fst-italic"></span>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group mt-2">
+                                            <label for="subtitle">Sub Title:</label>
+                                            <input type="text" name="subtitle" v-model="form.subtitle" id="subtitle"
+                                                class="form-control shadow-none">
+                                            <span class="error-subtitle error text-danger fst-italic"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group mt-2">
+                                            <label for="editor">Editor:</label>
+                                            <select name="editor" v-model="form.editor" id="editor" class="form-control shadow-none">
+                                                <option value="">---ইডিটর পছন্দ করুন---</option>
+                                                <option value="নিজস্ব প্রতিবেদক">নিজস্ব প্রতিবেদক</option>
+                                                <option value="কক্সবাজার প্রতিনিধি">কক্সবাজার প্রতিনিধি</option>
+                                                <option value="বিশেষ প্রতিনিধি">বিশেষ প্রতিনিধি</option>
+                                            </select>
+                                            <span class="error-editor error text-danger fst-italic"></span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group mt-2">
                                     <label for="subtitle">Published Section:</label>
@@ -38,7 +54,8 @@
                                     <div class="col-md-6">
                                         <label for="subcategory">Master Image:</label>
                                         <input type="file" id="image" class="form-control" @change="imageUrl" />
-                                        <p style="font-size: 11px;color: red;">Required size: width: 966px X height: 648px</p>
+                                        <p style="font-size: 11px;" class="text-danger">Required size: width: 966px X height: 648px
+                                        </p>
                                         <span class="error-masterImage error text-danger fst-italic"></span>
                                     </div>
                                     <div class="col-md-6 text-center">
@@ -105,6 +122,7 @@ export default {
                 id: "",
                 title: "",
                 subtitle: "",
+                editor: '',
                 description: "",
             }),
             props: [
@@ -170,21 +188,11 @@ export default {
                 this.form.id = data.id;
                 this.form.title = data.title;
                 this.form.subtitle = data.subtitle;
-                // this.form.category_id = data.category_id;
-                // this.form.subcategory_id = data.subcategory_id;
+                this.form.editor = data.editor;
                 this.form.description = data.description;
                 this.form.title = data.title;
 
                 this.sCategory = data.category.map(c => c.category_id)
-
-                // this.selectedCategory = {
-                //     id: data.category_id,
-                //     name: data.category_name
-                // }
-                // this.selectedSubcategory = {
-                //     id: data.subcategory_id,
-                //     name: data.subcategory_name
-                // }
 
                 this.imageSrc = data.image != null ? location.origin + data.image : location.origin + "/noImage.jpg"
             });
@@ -266,6 +274,11 @@ export default {
             } else {
                 $('.error-category').empty();
             }
+            if (error.editor) {
+                $('.error-editor').html(error.editor);
+            } else {
+                $('.error-editor').empty();
+            }
             // if (error.title) {
             //     $('#title').addClass('is-invalid');
             // } else {
@@ -328,6 +341,7 @@ export default {
             this.form.id = "";
             this.form.title = "";
             this.form.subtitle = "";
+            this.form.editor = "";
             // this.form.category_id = "";
             // this.form.subcategory_id = "";
             this.form.description = "";

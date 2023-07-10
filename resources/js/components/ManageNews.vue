@@ -30,7 +30,6 @@
 </template>
 
 <script>
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 export default {
     data() {
         return {
@@ -60,11 +59,7 @@ export default {
                 });
             });
         },
-
-        categories() {
-            return 'Sohel';
-        },
-
+        
         showError(error) {
             if (error.title) {
                 $('#title').addClass('is-invalid');

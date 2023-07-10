@@ -126,7 +126,7 @@
                 <div class="footer-editor">
                     <ul style="list-style: none;padding: 0;display: flex;margin: 0;margin-bottom:10px;justify-content: end;">
                         <li style="background: #cbcbcb;padding: 0px 6px;"><span class="ms-1">
-                            {{App\Models\Setting::banglaNumber($pagevisitors)}}
+                                {{App\Models\Setting::banglaNumber($pagevisitors)}}
                             </span></li>
                         <li style="font-weight:600;font-style: italic;background: #ffffff;padding: 0px 5px;font-size: 14px;text-transform: uppercase;line-height: 2;">আজকের পরিদর্শক</li>
                     </ul>
@@ -137,7 +137,7 @@
         <hr class="my-1">
         <div class="row py-1">
             <div class="col-md-4">
-            <h3 style="font-size: 18px;font-weight: 600;border-bottom: 2px dashed #adadad;display: inline-flex;">ক্যাটাগরি:</h3>
+                <h3 style="font-size: 18px;font-weight: 600;border-bottom: 2px dashed #adadad;display: inline-flex;">ক্যাটাগরি:</h3>
                 <ul class="column-list styled-list">
                     @foreach ($categories->take(9) as $item)
                     <li>
@@ -186,13 +186,17 @@
 </footer>
 <div style="background: black;">
     <div class="container">
-        <div class="footer-bottom">
-            <ul>
-                <li><a href="javascript:">যোগাযোগ</a></li>
-                <li><a href="javascript:">গোপনীয়তা নীতি</a></li>
-                <li><a href="javascript:" target="_blank">বিজ্ঞাপনের মূল্য তালিকা</a></li>
-            </ul>
-            <p class="copyright m-0">স্বত্ব © {{App\Models\Setting::banglaNumber(date('Y'))}} নির্ভয় নিউজ</p>
+        <div class="footer-bottom row">
+            <div class="col-md-5">
+                <ul>
+                    <li><a href="javascript:">যোগাযোগ</a></li>
+                    <li><a href="javascript:">গোপনীয়তা নীতি</a></li>
+                    <li><a href="javascript:" target="_blank">বিজ্ঞাপনের মূল্য তালিকা</a></li>
+                </ul>
+            </div>
+            <div class="col-md-7">
+                <p class="copyright m-0" style="font-weight: 900;font-size: 18px;">স্বত্ব © {{App\Models\Setting::banglaNumber(date('Y'))}} এন আই গ্রুপ</p>
+            </div>
         </div>
     </div>
 </div>

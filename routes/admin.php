@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\EpaperController;
+use App\Http\Controllers\Admin\HeadingController;
 use App\Http\Controllers\Admin\NewsletteraddsController;
 
 // Admin Login Route
@@ -138,4 +139,9 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/newsletteradds', [NewsletteraddsController::class, 'create'])->name("admin.newsletteradds");
     Route::get('/get-newsletteradds', [NewsletteraddsController::class, 'index'])->name('admin.newsletteradds.index');
     Route::post('/newsletteradds', [NewsletteraddsController::class, 'store'])->name('admin.newsletteradds.store');
+
+    // heading route
+    Route::get('/heading', [HeadingController::class, 'create'])->name('admin.heading.create');
+    Route::post('/get-heading', [HeadingController::class, 'index'])->name('admin.heading.index');
+    Route::post('/heading/delete', [HeadingController::class, 'destroy'])->name('admin.heading.destroy');
 });

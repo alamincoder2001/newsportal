@@ -39,6 +39,14 @@ $access = App\Models\AdminAccess::where('admin_id', Auth::guard('admin')->user()
                     </a>
                 </li>
                 @endif
+                @if(in_array("newsList", $access))
+                <li class="sidebar-item">
+                    <a href="{{ route('admin.heading.create') }}" class="sidebar-link {{ Request::is('admin.heading.create') ? 'active' : '' }}">
+                        <i class="fas fa-arrow-right"></i>
+                        <span class="hide-menu"> News Heading </span>
+                    </a>
+                </li>
+                @endif
                 @if(in_array("archiveNews", $access))
                 <li class="sidebar-item">
                     <a href="{{ route('admin.news.archive') }}" class="sidebar-link {{ Request::is('admin.news.archive') ? 'active' : '' }}">
