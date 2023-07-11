@@ -54,7 +54,7 @@
                                     <div class="col-md-6">
                                         <label for="subcategory">Master Image:</label>
                                         <input type="file" id="image" class="form-control" @change="imageUrl" />
-                                        <p style="font-size: 11px;" class="text-danger">Required size: width: 966px X height: 648px
+                                        <p style="font-size: 11px;" class="text-danger">Required size: width: 750px X height: 500px
                                         </p>
                                         <span class="error-masterImage error text-danger fst-italic"></span>
                                     </div>

@@ -25,7 +25,7 @@
                                         <label for="image">Master Image:</label>
                                         <input type="file" name="image" id="image" class="form-control"
                                             @change="imageUrl" />
-                                        <p style="font-size: 11px;color: red;">Required size: 600 X 600</p>
+                                        <p style="font-size: 11px;color: red;">Required size: (600px X 600px)</p>
                                     </div>
                                 </div>
                                 <div class="form-group mt-2">
@@ -101,9 +101,20 @@ export default {
         },
 
         imageUrl(event) {
-            this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-            this.form.image = event.target.files[0];
-        }
+            if (event.target.files[0]) {
+                let img = new Image()
+                img.src = window.URL.createObjectURL(event.target.files[0]);
+                img.onload = () => {
+                    if (img.width === 600 && img.height === 600) {
+                        this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+                        this.news.image = event.target.files[0];
+                    } else {
+                        alert(`This image ${img.width} X ${img.height} but require image 600px X 600px`);
+                        document.querySelector("[type='file']").value = ''
+                    }
+                }
+            }
+        },
     },
 }
 </script>

@@ -5885,17 +5885,19 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     imageUrl: function imageUrl(event) {
+      var _this5 = this;
       if (event.target.files[0]) {
-        // let img = new Image()
-        // img.src = window.URL.createObjectURL(event.target.files[0]);
-        // img.onload = () => {
-        //     if (img.width === 740 && img.height === 450) {
-        this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-        this.categorywiseadd.image = event.target.files[0];
-        //     } else {
-        //         alert(`This image ${img.width} X ${img.width} but require image 740px X 450px`);
-        //     }
-        // }
+        var img = new Image();
+        img.src = window.URL.createObjectURL(event.target.files[0]);
+        img.onload = function () {
+          if (img.width === 740 && img.height === 450) {
+            _this5.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+            _this5.categorywiseadd.image = event.target.files[0];
+          } else {
+            alert("This image ".concat(img.width, " X ").concat(img.width, " but require image 740px X 450px"));
+            document.querySelector("[type='file']").value = '';
+          }
+        };
       }
     },
     clearData: function clearData() {
@@ -8766,7 +8768,7 @@ __webpack_require__.r(__webpack_exports__);
         image: "",
         status: ""
       }),
-      imageSrc: location.origin + "/600x300.jpg"
+      imageSrc: "/1300x200.jpg"
     };
   },
   created: function created() {
@@ -8777,7 +8779,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
       axios.get(location.origin + "/admin/get-advertise-five").then(function (res) {
         _this.form = res.data;
-        _this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/600x300.jpg";
+        _this.imageSrc = res.data.image != null ? "/" + res.data.image : "/1300x200.jpg";
       });
     },
     updateAdvertise: function updateAdvertise(event) {
@@ -8798,8 +8800,20 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     imageUrl: function imageUrl(event) {
-      this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-      this.form.image = event.target.files[0];
+      var _this3 = this;
+      if (event.target.files[0]) {
+        var img = new Image();
+        img.src = window.URL.createObjectURL(event.target.files[0]);
+        img.onload = function () {
+          if (img.width === 1300 && img.height === 200) {
+            _this3.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+            _this3.news.image = event.target.files[0];
+          } else {
+            alert("This image ".concat(img.width, " X ").concat(img.height, " but require image 1300px X 200px"));
+            document.querySelector("[type='file']").value = '';
+          }
+        };
+      }
     }
   }
 });
@@ -8883,7 +8897,7 @@ __webpack_require__.r(__webpack_exports__);
         image: "",
         status: ""
       }),
-      imageSrc: location.origin + "/600x1200.jpg"
+      imageSrc: location.origin + "/1300x200.jpg"
     };
   },
   created: function created() {
@@ -8894,7 +8908,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
       axios.get(location.origin + "/admin/get-advertise-four").then(function (res) {
         _this.form = res.data;
-        _this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/600x1200.jpg";
+        _this.imageSrc = res.data.image != null ? "/" + res.data.image : "/1300x200.jpg";
       });
     },
     updateAdvertise: function updateAdvertise(event) {
@@ -8915,8 +8929,20 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     imageUrl: function imageUrl(event) {
-      this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-      this.form.image = event.target.files[0];
+      var _this3 = this;
+      if (event.target.files[0]) {
+        var img = new Image();
+        img.src = window.URL.createObjectURL(event.target.files[0]);
+        img.onload = function () {
+          if (img.width === 1300 && img.height === 200) {
+            _this3.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+            _this3.news.image = event.target.files[0];
+          } else {
+            alert("This image ".concat(img.width, " X ").concat(img.height, " but require image 1300px X 200px"));
+            document.querySelector("[type='file']").value = '';
+          }
+        };
+      }
     }
   }
 });
@@ -9000,7 +9026,7 @@ __webpack_require__.r(__webpack_exports__);
         image: "",
         status: ""
       }),
-      imageSrc: "/1200x130.jpg"
+      imageSrc: "/1200x100.jpg"
     };
   },
   created: function created() {
@@ -9011,7 +9037,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
       axios.get("/admin/get-advertise-one").then(function (res) {
         _this.form = res.data;
-        _this.imageSrc = res.data.image != null ? "/" + res.data.image : "/1200x130.jpg";
+        _this.imageSrc = res.data.image != null ? "/" + res.data.image : "/1200x100.jpg";
       });
     },
     updateAdvertise: function updateAdvertise(event) {
@@ -9032,8 +9058,20 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     imageUrl: function imageUrl(event) {
-      this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-      this.form.image = event.target.files[0];
+      var _this3 = this;
+      if (event.target.files[0]) {
+        var img = new Image();
+        img.src = window.URL.createObjectURL(event.target.files[0]);
+        img.onload = function () {
+          if (img.width === 1200 && img.height === 100) {
+            _this3.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+            _this3.news.image = event.target.files[0];
+          } else {
+            alert("This image ".concat(img.width, " X ").concat(img.height, " but require image 1200px X 100px"));
+            document.querySelector("[type='file']").value = '';
+          }
+        };
+      }
     }
   }
 });
@@ -9149,8 +9187,20 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     imageUrl: function imageUrl(event) {
-      this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-      this.form.image = event.target.files[0];
+      var _this3 = this;
+      if (event.target.files[0]) {
+        var img = new Image();
+        img.src = window.URL.createObjectURL(event.target.files[0]);
+        img.onload = function () {
+          if (img.width === 600 && img.height === 600) {
+            _this3.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+            _this3.news.image = event.target.files[0];
+          } else {
+            alert("This image ".concat(img.width, " X ").concat(img.height, " but require image 600px X 600px"));
+            document.querySelector("[type='file']").value = '';
+          }
+        };
+      }
     }
   }
 });
@@ -9234,7 +9284,7 @@ __webpack_require__.r(__webpack_exports__);
         image: "",
         status: ""
       }),
-      imageSrc: location.origin + "/1200x130.jpg"
+      imageSrc: "/1300x200.jpg"
     };
   },
   created: function created() {
@@ -9243,9 +9293,9 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     getAdvertise: function getAdvertise() {
       var _this = this;
-      axios.get(location.origin + "/admin/get-advertise-two").then(function (res) {
+      axios.get("/admin/get-advertise-two").then(function (res) {
         _this.form = res.data;
-        _this.imageSrc = res.data.image != null ? "/" + res.data.image : "/1200x130.jpg";
+        _this.imageSrc = res.data.image != null ? "/" + res.data.image : "/1300x200.jpg";
       });
     },
     updateAdvertise: function updateAdvertise(event) {
@@ -9266,8 +9316,20 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     imageUrl: function imageUrl(event) {
-      this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-      this.form.image = event.target.files[0];
+      var _this3 = this;
+      if (event.target.files[0]) {
+        var img = new Image();
+        img.src = window.URL.createObjectURL(event.target.files[0]);
+        img.onload = function () {
+          if (img.width === 1300 && img.height === 200) {
+            _this3.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+            _this3.news.image = event.target.files[0];
+          } else {
+            alert("This image ".concat(img.width, " X ").concat(img.height, " but require image 1300px X 200px"));
+            document.querySelector("[type='file']").value = '';
+          }
+        };
+      }
     }
   }
 });
@@ -70740,7 +70802,7 @@ var render = function () {
                         },
                         [
                           _vm._v(
-                            "Required size: width: 966px X height: 648px\n                                    "
+                            "Required size: width: 750px X height: 500px\n                                    "
                           ),
                         ]
                       ),
@@ -70977,7 +71039,7 @@ var render = function () {
                         staticStyle: { border: "1px solid #d7d7d7" },
                         attrs: {
                           src: _vm.imageSrc,
-                          width: "400px",
+                          width: "100%",
                           height: "200px",
                         },
                       }),
@@ -70997,7 +71059,7 @@ var render = function () {
                       _c(
                         "p",
                         { staticStyle: { "font-size": "11px", color: "red" } },
-                        [_vm._v("Required size: 600 X 300")]
+                        [_vm._v("Required size: (1300px X 200px)")]
                       ),
                     ]),
                   ]),
@@ -71204,8 +71266,8 @@ var render = function () {
                         staticStyle: { border: "1px solid #d7d7d7" },
                         attrs: {
                           src: _vm.imageSrc,
-                          width: "200px",
-                          height: "400px",
+                          width: "100%",
+                          height: "200px",
                         },
                       }),
                     ]),
@@ -71224,7 +71286,7 @@ var render = function () {
                       _c(
                         "p",
                         { staticStyle: { "font-size": "11px", color: "red" } },
-                        [_vm._v("Required size: 600 X 1200")]
+                        [_vm._v("Required size: (1300px X 200px)")]
                       ),
                     ]),
                   ]),
@@ -71432,7 +71494,7 @@ var render = function () {
                         attrs: {
                           src: _vm.imageSrc,
                           width: "100%",
-                          height: "130px",
+                          height: "100px",
                         },
                       }),
                     ]),
@@ -71451,7 +71513,7 @@ var render = function () {
                       _c(
                         "p",
                         { staticStyle: { "font-size": "11px", color: "red" } },
-                        [_vm._v("Required size: 1200 X 130")]
+                        [_vm._v("Required size: (1200px X 100px)")]
                       ),
                     ]),
                   ]),
@@ -71678,7 +71740,7 @@ var render = function () {
                       _c(
                         "p",
                         { staticStyle: { "font-size": "11px", color: "red" } },
-                        [_vm._v("Required size: 600 X 600")]
+                        [_vm._v("Required size: (600px X 600px)")]
                       ),
                     ]),
                   ]),
@@ -71886,7 +71948,7 @@ var render = function () {
                         attrs: {
                           src: _vm.imageSrc,
                           width: "100%",
-                          height: "130px",
+                          height: "200px",
                         },
                       }),
                     ]),
@@ -71905,7 +71967,7 @@ var render = function () {
                       _c(
                         "p",
                         { staticStyle: { "font-size": "11px", color: "red" } },
-                        [_vm._v("Required size: 1200 X 130")]
+                        [_vm._v("Required size: (1300px X 200px)")]
                       ),
                     ]),
                   ]),

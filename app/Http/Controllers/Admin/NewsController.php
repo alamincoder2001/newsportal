@@ -180,8 +180,8 @@ class NewsController extends Controller
             $news->description  = $request->description;
             $news->is_published = Auth::guard('admin')->user()->role == 'admin' ? 'active' : 'pending';
             $news->user_id      = Auth::guard('admin')->user()->id;
-            $news->image        = $name                              == null ? null : '/uploads/news/' . $name;
-            $news->thumbnail    = $name                              == null ? null : '/uploads/thumbnail/' . $name;
+            $news->image        = $name== null ? null : '/uploads/news/' . $name;
+            $news->thumbnail    = $name== null ? null : '/uploads/thumbnail/' . $name;
             $news->update();
 
             NewsPublished::where('news_id', $news->id)->delete();

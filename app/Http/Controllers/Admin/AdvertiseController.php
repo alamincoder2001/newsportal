@@ -7,6 +7,7 @@ use App\Models\AdvertiseOne;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 
 class AdvertiseController extends Controller
@@ -40,11 +41,15 @@ class AdvertiseController extends Controller
             $data->url    = $request->url;
             $data->status = $request->status;
             if ($request->hasFile('image')) {
-                $extension = $request->file('image')->extension();
-                $name = '1200x130.' . $extension;
-                $img = Image::make($request->file('image'))->resize(1200, 130);
-                $img->save(public_path('uploads/advertise-one/' . $name));
-                $data->image = "uploads/advertise-one/" . $name;
+                // $extension = $request->file('image')->extension();
+                // $name = '1200x100.' . $extension;
+                // $img = Image::make($request->file('image'))->resize(1200, 130);
+                // $img->save(public_path('uploads/advertise-one/' . $name));
+                // $data->image = "uploads/advertise-one/" . $name;
+                if (File::exists($data->image)) {
+                    File::delete($data->image);
+                }
+                $data->image = $this->imageUpload($request, 'image', 'uploads/advertise-one');
             }
 
             $data->save();

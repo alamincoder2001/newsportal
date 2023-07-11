@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\AdvertiseFive;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 
 class AdvertiseFiveController extends Controller
@@ -35,17 +36,15 @@ class AdvertiseFiveController extends Controller
     public function store(Request $request)
     {
         try {
-
             $data         = AdvertiseFive::first();
             $data->title  = $request->title;
             $data->url    = $request->url;
             $data->status = $request->status;
             if ($request->hasFile('image')) {
-                $extension = $request->file('image')->extension();
-                $name = '600x300.' . $extension;
-                $img = Image::make($request->file('image'))->resize(600, 300);
-                $img->save(public_path('uploads/advertise-five/' . $name));
-                $data->image = "uploads/advertise-five/" . $name;
+                if (File::exists($data->image)) {
+                    File::delete($data->image);
+                }
+                $data->image = $this->imageUpload($request, 'image', 'uploads/advertise-five');
             }
 
             $data->save();

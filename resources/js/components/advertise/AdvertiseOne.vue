@@ -18,14 +18,14 @@
                                 </div>
                                 <div class="form-group row mb-4">
                                     <div class="col-md-12">
-                                        <img :src="imageSrc" class="imageShow" width="100%" height="130px"
+                                        <img :src="imageSrc" class="imageShow" width="100%" height="100px"
                                             style="border:1px solid #d7d7d7;" />
                                     </div>
                                     <div class="col-md-6">
                                         <label for="image">Master Image:</label>
                                         <input type="file" name="image" id="image" class="form-control"
                                             @change="imageUrl" />
-                                        <p style="font-size: 11px;color: red;">Required size: 1200 X 130</p>
+                                        <p style="font-size: 11px;color: red;">Required size: (1200px X 100px)</p>
                                     </div>
                                 </div>
                                 <div class="form-group mt-2">
@@ -65,7 +65,7 @@ export default {
                 status: ""
             }),
 
-            imageSrc: "/1200x130.jpg",
+            imageSrc: "/1200x100.jpg",
         }
     },
 
@@ -78,7 +78,7 @@ export default {
             axios.get("/admin/get-advertise-one")
                 .then(res => {
                     this.form = res.data
-                    this.imageSrc = res.data.image != null ? "/" + res.data.image : "/1200x130.jpg"
+                    this.imageSrc = res.data.image != null ? "/" + res.data.image : "/1200x100.jpg"
                 })
         },
 
@@ -101,9 +101,20 @@ export default {
         },
 
         imageUrl(event) {
-            this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-            this.form.image = event.target.files[0];
-        }
+            if (event.target.files[0]) {
+                let img = new Image()
+                img.src = window.URL.createObjectURL(event.target.files[0]);
+                img.onload = () => {
+                    if (img.width === 1200 && img.height === 100) {
+                        this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+                        this.news.image = event.target.files[0];
+                    } else {
+                        alert(`This image ${img.width} X ${img.height} but require image 1200px X 100px`);
+                        document.querySelector("[type='file']").value = ''
+                    }
+                }
+            }
+        },
     },
 }
 </script>

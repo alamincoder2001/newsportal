@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\AdvertiseThree;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 
 class AdvertiseThreeController extends Controller
@@ -41,11 +42,10 @@ class AdvertiseThreeController extends Controller
             $data->url    = $request->url;
             $data->status = $request->status;
             if ($request->hasFile('image')) {
-                $extension = $request->file('image')->extension();
-                $name = '600x600.' . $extension;
-                $img = Image::make($request->file('image'))->resize(600, 600);
-                $img->save(public_path('uploads/advertise-three/' . $name));
-                $data->image = "uploads/advertise-three/" . $name;
+                if (File::exists($data->image)) {
+                    File::delete($data->image);
+                }
+                $data->image = $this->imageUpload($request, 'image', 'uploads/advertise-three');
             }
 
             $data->save();
