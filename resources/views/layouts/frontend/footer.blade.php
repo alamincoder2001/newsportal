@@ -1,9 +1,4 @@
-<div class="container">
-    <div class="col-md-12">
-    </div>
-</div>
-<style>
-    
+<style>    
     .column-list {
         -webkit-column-count: 2;
         -moz-column-count: 2;
