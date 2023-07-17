@@ -13,8 +13,8 @@
                 @if(count($epapers) > 0)
                 @foreach($epapers->take(6) as $item)
                 <div class="col-md-4 mt-4 epaper">
-                    <a href="{{ asset($item->image != null ? $item->image : 'noImage.jpg') }}" class="image-popup-vertical-fit">
-                        <img src="{{ asset($item->image != null ? $item->image : 'noImage.jpg') }}">
+                    <a href="{{ asset($item->image != null ? $item->image : 'noImage.jpg') }}">
+                        <img src="{{ asset($item->image != null ? $item->image : 'noImage.jpg') }}" class="zz_image">
                     </a>
                 </div>
                 @endforeach
