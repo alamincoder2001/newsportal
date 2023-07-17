@@ -14,6 +14,7 @@ use App\Models\AdvertiseFive;
 use App\Models\AdvertiseFour;
 use App\Models\AdvertiseThree;
 use App\Models\Epaper;
+use Illuminate\Support\Facades\DB;
 use Rajurayhan\Bndatetime\BnDateTimeConverter;
 
 class HomeController extends Controller
@@ -138,5 +139,27 @@ class HomeController extends Controller
         $mostRead = NewsCounter::with('news', 'category')->orderBy('read_count', 'desc')->take(10)->get();
 
         return view("singlepage", compact('news', 'categorywisenews', 'category', 'latestNews', 'mostRead', 'ad3'));
+    }
+
+    public function epaper()
+    {
+        $date = date("Y-m-d");
+        $epapers = Epaper::where("publish_date", $date)->latest()->get();
+        return view("epaper", compact('epapers'));
+    }
+
+    public function archive($date)
+    {
+        $news = DB::select("SELECT * FROM news n WHERE n.is_published = 'active' and date(n.created_at) = '$date'");
+        foreach($news as $item){
+            $item->category = DB::select("SELECT np.*,
+                                    c.slug,
+                                    c.name
+                                FROM news_publisheds np
+                                LEFT JOIN categories c ON c.id = np.category_id
+                                WHERE np.news_id = $item->id");
+        }
+
+        return view("archive", compact('news'));
     }
 }

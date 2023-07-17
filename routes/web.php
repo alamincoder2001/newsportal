@@ -7,3 +7,5 @@ Route::get('/', [HomeController::class, 'index'])->name('website');
 Route::get('/cat/{slug?}', [HomeController::class, 'categoryWise'])->name('categorywise');
 Route::get('/all/{slug?}', [HomeController::class, 'categoryWiseAll'])->name('categorywiseall');
 Route::get('/cat/{cat_slug?}/{slug?}', [HomeController::class, 'singleNews'])->name('singlenews');
+Route::get('/epaper/', [HomeController::class, 'epaper'])->name('epaper');
+Route::get('/archive/{date}', [HomeController::class, 'archive'])->name('archive');

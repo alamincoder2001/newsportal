@@ -62,7 +62,7 @@
                 </ul>
             </div>
             <ul style="list-style: none;padding:0;margin-top:7px;">
-                <li class="d-flex">
+                <li class="d-flex mobileViewVideo">
                     <iframe class="video_one" width="50%" height="210" src="{{$setting->video_link1}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <iframe class="video_two" width="50%" height="210" src="{{$setting->video_link2}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </li>
@@ -107,9 +107,9 @@
             <!-- Epaper section -->
             @if(!empty($epaper))
             <ul class="m-0">
-                <li style="margin-bottom:5px;text-align:center;background: linear-gradient(to bottom, #f2f2f2 0%, #f2f2f2 50%, #eeeeee 51%, #eeeeee 100%);border-bottom: 1px solid #ed1c24;color: #ec1c24;font-size: 18px;padding: 8px 15px 8px 32px;border-radius: 5px;position: relative;">E-Paper</li>
+                <li style="margin-bottom:5px;text-align:center;background: linear-gradient(to bottom, #f2f2f2 0%, #f2f2f2 50%, #eeeeee 51%, #eeeeee 100%);border-bottom: 1px solid #ed1c24;color: #ec1c24;font-size: 18px;padding: 8px 15px 8px 32px;border-radius: 5px;position: relative;">ই-পেপার</li>
                 <li class="mb-3">
-                    <a href="{{ $epaper->link }}" target="_blank">
+                    <a href="{{route('epaper')}}" target="_blank">
                         <img src="{{ asset($epaper->image != null ? $epaper->image : '600x600.jpg') }}" alt="{{ $ad3->title }}">
                     </a>
                 </li>
@@ -117,12 +117,15 @@
             <hr>
             @endif
             <ul class="m-0">
-                @foreach ($homeTopRight as $item)
+                @foreach ($homeTopRight->take(1) as $item)
                 <li class="mb-3">
                     <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
                         <img class="lazy" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="{{ $item->title }}">
                         <p>{{ $item->title }}</p>
                     </a>
+                </li>
+                <li class="mb-3 block">
+                    <div class="calendar"></div>
                 </li>
                 @endforeach
             </ul>

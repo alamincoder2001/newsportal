@@ -146,3 +146,28 @@ tr {
 .text-helper p {
     display: inline-block;
 }
+
+.epaper img {
+    border: 1px solid red;
+    width: 100%;
+    cursor: pointer;
+    transition-duration: 1s;
+}
+.epaper img:hover {
+    transition-duration: 1s;
+    transform: scale(1.1);
+}
+
+.description {
+    overflow: auto;
+}
+
+.modal-content {
+    width: 630px;
+    background-color: #eeeace;
+}
+
+iframe {
+    border: 1px solid gray;
+    padding: 2px;
+}

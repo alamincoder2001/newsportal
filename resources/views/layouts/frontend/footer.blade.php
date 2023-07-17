@@ -3,61 +3,7 @@
     </div>
 </div>
 <style>
-    #drag-area {
-        position: fixed;
-        left: 1%;
-        bottom: 10%;
-        width: 125px;
-        height: 125px;
-    }
-
-    #drag-area .bi-arrows-move {
-        font-size: 24px;
-        color: black;
-        position: absolute;
-        right: 0;
-        top: -33px;
-        background: white;
-        border-radius: 5px;
-        padding: 0 5px;
-    }
-
-    #drag-body {
-        background: whitesmoke;
-        position: absolute;
-        z-index: 999999999;
-        width: 125px;
-        height: 125px;
-    }
-
-    #drag-close {
-        background: whitesmoke;
-        position: absolute;
-        left: -18px;
-        top: -16px;
-        border: none;
-        color: red;
-        font-size: 16px;
-        cursor: pointer;
-        z-index: 99999999999999;
-    }
-
-    #drag-bodydrag-area {
-        padding: 10px;
-        cursor: move;
-        z-index: 10;
-        color: #fff;
-        width: 125px;
-        height: 125px;
-    }
-
-    #drag-bodydrag-area:after {
-        content: '';
-        width: 125px;
-        height: 125px;
-        display: inline-block;
-    }
-
+    
     .column-list {
         -webkit-column-count: 2;
         -moz-column-count: 2;
@@ -202,6 +148,7 @@
 </div>
 <a href="#" id="back-to-top" title="Back to top"><i class="bi bi-chevron-up"></i></a>
 
+<script src="{{ asset('frontend') }}/assets/js/jquery.min.js"></script>
 <script src="{{ asset('frontend') }}/assets/js/bootstrap.min.js"></script>
 <script src="{{ asset('frontend') }}/assets/js/acmeticker.min.js"></script>
 <script src="{{ asset('frontend') }}/assets/js/theme-script.js"></script>
@@ -209,6 +156,9 @@
 <script src="{{ asset('frontend') }}/assets/js/calendar.js"></script>
 <script type='text/javascript' src="{{ asset('frontend') }}/assets/js/bangla-date.js"></script>
 <script type='text/javascript' src="{{ asset('frontend') }}/assets/js/arabic.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+<script src="https://www.pigno.se/barn/PIGNOSE-Calendar/dist/js/pignose.calendar.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 <script type="text/javascript">
     $(function() {
         $("#btnArchive").click(function(e) {
@@ -279,4 +229,53 @@
         event.preventDefault();
         event.target.offsetParent.remove();
     }
+
+    $(function() {
+        $('.calendar').pignoseCalendar({
+            click: function(event, context) {
+                location.href = "/archive/" + context.current[0]._i
+            }
+        })
+    });
+
+    $(document).ready(function() {
+        $('.image-popup-vertical-fit').magnificPopup({
+            type: 'image',
+            mainClass: 'mfp-with-zoom',
+            gallery: {
+                enabled: true
+            },
+
+            zoom: {
+                enabled: true,
+                duration: 300,
+                easing: 'ease-in-out',
+                opener: function(openerElement) {
+                    return openerElement.is('img') ? openerElement : openerElement.find('img');
+                }
+            }
+
+        });
+
+    });
+
+    $(".font-button").bind("click", function() {
+        var size = parseInt($('#bpsepnil p').css("font-size"));
+        if ($(this).hasClass("plus")) {
+            size = size + 2;
+        } else {
+            size = size - 2;
+            if (size <= 10) {
+                size = 10;
+            }
+        }
+        $('#bpsepnil p').css("font-size", size);
+    })
+
+    $(() => {
+        let r = "{{Route::is('website')}}";
+        if (r == 1) {
+            $("#staticBackdrop").modal("show");
+        }
+    })
 </script>

@@ -58,6 +58,7 @@
                 @foreach ($categories as $item)
                 <li class="nav-item "><a class="nav-link" href="{{ route('categorywise', $item->slug) }}">{{ $item->name }}</a></li>
                 @endforeach
+                <li class="nav-item "><a class="nav-link" href="{{ route('epaper') }}">ই-পেপার</a></li>
                 @if (count($otherscategory) > 0)
                 <li class="nav-item dropdown">
                     <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown"> অন্যান্য </a>

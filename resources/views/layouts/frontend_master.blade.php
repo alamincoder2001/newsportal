@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="bn" prefix="og: http://ogp.me/ns#">
+<html lang="bn">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -9,22 +9,6 @@
     <title>@yield('title')</title>
 
     @include('layouts.frontend.style')
-
-    <style>
-        .description {
-            overflow: auto;
-        }
-
-        .modal-content {
-            width: 630px;
-            background-color: #eeeace;
-        }
-
-        iframe {
-            border: 1px solid gray;
-            padding: 2px;
-        }
-    </style>
 </head>
 
 <body class="home ">
@@ -62,30 +46,6 @@
             </div>
         </div>
     </div>
-
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0" nonce="aHmWKAbT"></script>
-    <script>
-        $(".font-button").bind("click", function() {
-            var size = parseInt($('#bpsepnil p').css("font-size"));
-            if ($(this).hasClass("plus")) {
-                size = size + 2;
-            } else {
-                size = size - 2;
-                if (size <= 10) {
-                    size = 10;
-                }
-            }
-            $('#bpsepnil p').css("font-size", size);
-        })
-
-        $(() => {
-            let r = "{{Route::is('website')}}";
-            if (r == 1) {
-                $("#staticBackdrop").modal("show");
-            }
-        })
-    </script>
 </body>
 
 </html>

@@ -810,7 +810,7 @@ header .header-ad {
 }
 
 .latest-news-top .tab-content ul {
-    height: 985px
+    height: 955px
 }
 
 .news-tab-area .tab-content ul::-webkit-scrollbar {
@@ -4302,7 +4302,7 @@ footer .footer-bottom .copyright {
     }
 
     .latest-news-top .tab-content ul {
-        height: 985px
+        height: 955px
     }
 
     .section-1 .lead-item .text {
@@ -4605,5 +4605,9 @@ a {
         width: 300px;
         height: auto;
         margin-bottom: 5px;
+    }
+
+    .mobileViewVideo{
+        display: block !important;
     }
 }
