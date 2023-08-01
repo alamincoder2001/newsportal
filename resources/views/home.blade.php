@@ -12,7 +12,7 @@
             <div class="ads bg-light mb-2 d-flex justify-content-center" style="position: relative;">
                 <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
                 <div class="ad_cl-4" data-id="4">
-                    <a href="{{ $ad1->url }}" target="_blank">
+                    <a href="{{ $ad1->url }}" target="_blank" title="{{$ad1->title}}">
                         <img src="{{ asset($ad1->image != null ? $ad1->image : '1200x200.jpg') }}" alt="{{ $ad1->title }}">
                     </a>
                 </div>
@@ -140,7 +140,7 @@
             <div class="ads bg-light mb-2 d-flex justify-content-center" style="position: relative;">
                 <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
                 <div class="ad_cl-4" data-id="4">
-                    <a href="{{ $ad2->url }}" target="_blank">
+                    <a href="{{ $ad2->url }}" target="_blank" title="{{$ad2->title}}">
                         <img src="{{ asset($ad2->image != null ? $ad2->image : '1200x300.jpg') }}" alt="{{ $ad2->title }}">
                     </a>
                 </div>
@@ -234,7 +234,7 @@
                     @foreach(\App\Models\CategorywiseAdds::where('category_id', 7)->take(2)->latest()->get() as $item)
                     <ul class="m-0 mb-3 p-0" style="position: relative;">
                         <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
-                        <a href="{{ $item->url }}" target="_blank">
+                        <a href="{{ $item->url }}" target="_blank" title="{{$item->title}}">
                             <img class="advertisement" src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}">
                         </a>
                     </ul>
@@ -309,7 +309,7 @@
                     @foreach(\App\Models\CategorywiseAdds::where('category_id', 3)->take(2)->latest()->get() as $item)
                     <ul class="m-0 mb-3 p-0" style="position: relative;">
                         <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
-                        <a href="{{ $item->url }}" target="_blank">
+                        <a href="{{ $item->url }}" target="_blank" title="{{$item->title}}">
                             <img class="advertisement" src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}" style="width: 100%;height:480px;">
                         </a>
                     </ul>
@@ -327,7 +327,7 @@
             <div class="ads bg-light mb-2 d-flex justify-content-center" style="position: relative;">
                 <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
                 <div class="ad_cl-4" data-id="4">
-                    <a href="{{ $ad1->url }}" target="_blank">
+                    <a href="{{ $ad1->url }}" target="_blank" title="{{$item->title}}">
                         <img src="{{ asset($ad1->image != null ? $ad1->image : '1200x200.jpg') }}" alt="{{ $ad1->title }}">
                     </a>
                 </div>
@@ -398,7 +398,7 @@
                     @foreach(\App\Models\CategorywiseAdds::where('category_id', 5)->take(2)->latest()->get() as $item)
                     <ul class="m-0 mb-3 p-0" style="position: relative;">
                         <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
-                        <a href="{{ $item->url }}" target="_blank">
+                        <a href="{{ $item->url }}" target="_blank" title="{{$item->title}}">
                             <img class="advertisement" src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}" />
                         </a>
                     </ul>
@@ -470,7 +470,7 @@
                     @foreach(\App\Models\CategorywiseAdds::where('category_id', 4)->take(2)->latest()->get() as $item)
                     <ul class="m-0 mb-3 p-0" style="position: relative;">
                         <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
-                        <a href="{{ $item->url }}" target="_blank">
+                        <a href="{{ $item->url }}" target="_blank" title="{{$item->title}}">
                             <img class="advertisement" src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}" style="width: 100%;height:480px;">
                         </a>
                     </ul>
@@ -621,7 +621,7 @@
                     @foreach(\App\Models\CategorywiseAdds::where('category_id', 16)->take(2)->latest()->get() as $item)
                     <ul class="m-0 mb-3 p-0" style="position: relative;">
                         <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
-                        <a href="{{ $item->url }}" target="_blank">
+                        <a href="{{ $item->url }}" target="_blank" title="{{$item->title}}">
                             <img class="advertisement" src="{{ asset($item->image != null ? $item->image : '600x1200.jpg') }}" alt="{{ $item->title }}" style="width: 100%;height:480px;">
                         </a>
                     </ul>
