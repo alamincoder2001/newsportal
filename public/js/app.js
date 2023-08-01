@@ -5562,6 +5562,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -5570,6 +5575,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         id: "",
         name: "",
         is_menu: "",
+        position: "",
         image: ""
       },
       categories: [],
@@ -5583,6 +5589,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         label: 'Is Menu',
         field: 'is_menu'
+      }, {
+        label: 'Menu Position',
+        field: 'position'
       }, {
         label: "Image",
         field: "img",
@@ -5646,6 +5655,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         id: val.id,
         name: val.name,
         is_menu: val.is_menu,
+        position: val.position,
         image: val.image
       };
       this.imageSrc = val.image != null ? location.origin + "/" + val.image : location.origin + "/noImage.jpg";
@@ -5681,6 +5691,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         id: "",
         name: "",
         is_menu: "",
+        position: "",
         image: ""
       };
       this.imageSrc = location.origin + "/noImage.jpg";
@@ -5890,12 +5901,12 @@ __webpack_require__.r(__webpack_exports__);
         var img = new Image();
         img.src = window.URL.createObjectURL(event.target.files[0]);
         img.onload = function () {
-          if (img.width === 740 && img.height === 450) {
+          if (img.width === 350 && img.height === 470) {
             _this5.imageSrc = window.URL.createObjectURL(event.target.files[0]);
             _this5.categorywiseadd.image = event.target.files[0];
           } else {
-            alert("This image ".concat(img.width, " X ").concat(img.width, " but require image 740px X 450px"));
-            document.querySelector("[type='file']").value = '';
+            alert("This image ".concat(img.width, " X ").concat(img.width, " but require image 350px X 470px"));
+            event.target.value = '';
           }
         };
       }
@@ -5904,7 +5915,8 @@ __webpack_require__.r(__webpack_exports__);
       this.categorywiseadd = {
         id: "",
         title: "",
-        url: ""
+        url: "",
+        image: ""
       };
       this.selectedCategory = null;
       this.imageSrc = location.origin + "/noImage.jpg";
@@ -7316,8 +7328,20 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
       }
     },
     imageUrl: function imageUrl(event) {
-      this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-      this.epaper.image = event.target.files[0];
+      var _this4 = this;
+      if (event.target.files[0]) {
+        var img = new Image();
+        img.src = window.URL.createObjectURL(event.target.files[0]);
+        img.onload = function () {
+          if (img.width === 950 && img.height === 920) {
+            _this4.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+            _this4.epaper.image = event.target.files[0];
+          } else {
+            alert("This image ".concat(img.width, " X ").concat(img.width, " but require image 950px X 920px"));
+            event.target.value = "";
+          }
+        };
+      }
     },
     clearData: function clearData() {
       this.epaper = {
@@ -7687,7 +7711,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
       axios.get(location.origin + "/admin/get-newsletteradds").then(function (res) {
         _this.advertise = res.data;
-        _this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/600x300.jpg";
+        _this.imageSrc = res.data.image != null ? "/" + res.data.image : "/600x300.jpg";
       });
     },
     updateAdvertise: function updateAdvertise(event) {
@@ -7700,8 +7724,20 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     imageUrl: function imageUrl(event) {
-      this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-      this.advertise.image = event.target.files[0];
+      var _this3 = this;
+      if (event.target.files[0]) {
+        var img = new Image();
+        img.src = window.URL.createObjectURL(event.target.files[0]);
+        img.onload = function () {
+          if (img.width === 600 && img.height === 300) {
+            _this3.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+            _this3.advertise.image = event.target.files[0];
+          } else {
+            alert("This image ".concat(img.width, " X ").concat(img.width, " but require image 600px X 300px"));
+            event.target.value = "";
+          }
+        };
+      }
     }
   }
 });
@@ -66267,6 +66303,45 @@ var render = function () {
                     ),
                   ]),
                   _vm._v(" "),
+                  _c("div", { staticClass: "form-group mt-2" }, [
+                    _c("label", { attrs: { for: "position" } }, [
+                      _vm._v("Menu Position:"),
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.category.position,
+                          expression: "category.position",
+                        },
+                      ],
+                      staticClass: "form-control shadow-none",
+                      attrs: {
+                        type: "number",
+                        min: "0",
+                        id: "position",
+                        name: "position",
+                        placeholder: "Menu position",
+                        autocomplete: "off",
+                      },
+                      domProps: { value: _vm.category.position },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.category,
+                            "position",
+                            $event.target.value
+                          )
+                        },
+                      },
+                    }),
+                  ]),
+                  _vm._v(" "),
                   _vm._m(0),
                 ]),
                 _vm._v(" "),
@@ -66592,7 +66667,7 @@ var render = function () {
                   [
                     _c("div", { staticClass: "form-group ImageBackground" }, [
                       _c("span", { staticClass: "text-danger" }, [
-                        _vm._v("Required Size: width:345px X height:470px"),
+                        _vm._v("Required Size: width:350px X height:470px"),
                       ]),
                       _vm._v(" "),
                       _c("img", {
@@ -68772,8 +68847,8 @@ var render = function () {
                         staticStyle: { border: "1px solid #d7d7d7" },
                         attrs: {
                           src: _vm.imageSrc,
-                          width: "300px",
-                          height: "450px",
+                          width: "350",
+                          height: "300",
                         },
                       }),
                     ]),
@@ -68792,7 +68867,7 @@ var render = function () {
                       _c(
                         "p",
                         { staticStyle: { "font-size": "11px", color: "red" } },
-                        [_vm._v("Required size: width:300px X height:450px")]
+                        [_vm._v("Required size: width:950px X height:920px")]
                       ),
                     ]),
                   ]),
@@ -69305,8 +69380,8 @@ var render = function () {
                         staticStyle: { border: "1px solid #d7d7d7" },
                         attrs: {
                           src: _vm.imageSrc,
-                          width: "400px",
-                          height: "200px",
+                          width: "600px",
+                          height: "300px",
                         },
                       }),
                     ]),
@@ -69325,7 +69400,7 @@ var render = function () {
                       _c(
                         "p",
                         { staticStyle: { "font-size": "11px", color: "red" } },
-                        [_vm._v("Required size: 600 X 300")]
+                        [_vm._v("Required size: 600px X 300px")]
                       ),
                     ]),
                   ]),

@@ -58,6 +58,7 @@ class CategoryController extends Controller
 
             $data->name    = $request->name;
             $data->is_menu = $request->is_menu;
+            $data->position = $request->position;
             $data->slug    = $this->make_slug($request->name);
 
             if ($request->hasFile("image")) {

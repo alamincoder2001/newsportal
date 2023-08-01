@@ -21,6 +21,11 @@
                                         <option value="others">Others</option>
                                     </select>
                                 </div>
+                                <div class="form-group mt-2">
+                                    <label for="position">Menu Position:</label>
+                                    <input type="number" min="0" id="position" name="position" class="form-control shadow-none"
+                                        v-model="category.position" placeholder="Menu position" autocomplete="off" />
+                                </div>
                                 <div class="form-group mt-4 text-end">
                                     <button type="reset" class="btn btn-danger">
                                         Reset
@@ -80,6 +85,7 @@ export default {
                 id: "",
                 name: "",
                 is_menu: "",
+                position: "",
                 image: "",
             },
             categories: [],
@@ -89,6 +95,7 @@ export default {
                 { label: 'Category name', field: 'name' },
                 { label: 'Slug', field: 'slug' },
                 { label: 'Is Menu', field: 'is_menu' },
+                { label: 'Menu Position', field: 'position' },
                 { label: "Image", field: "img", html: true, },
                 { label: "Action", field: "after" },
             ],
@@ -142,6 +149,7 @@ export default {
                 id: val.id,
                 name: val.name,
                 is_menu: val.is_menu,
+                position: val.position,
                 image: val.image
             }
             this.imageSrc = val.image != null ? location.origin + "/" + val.image : location.origin + "/noImage.jpg"
@@ -176,6 +184,7 @@ export default {
                 id: "",
                 name: "",
                 is_menu: "",
+                position: "",
                 image: "",
             }
             this.imageSrc = location.origin + "/noImage.jpg"

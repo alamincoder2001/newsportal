@@ -18,14 +18,14 @@
                                 </div>
                                 <div class="form-group row mb-4">
                                     <div class="col-md-12">
-                                        <img :src="imageSrc" class="imageShow" width="300px" height="450px"
+                                        <img :src="imageSrc" class="imageShow" width="350" height="300"
                                             style="border:1px solid #d7d7d7;" />
                                     </div>
                                     <div class="col-md-6">
                                         <label for="image">Master Image:</label>
                                         <input type="file" name="image" id="image" class="form-control"
                                             @change="imageUrl" />
-                                        <p style="font-size: 11px;color: red;">Required size: width:300px X height:450px</p>
+                                        <p style="font-size: 11px;color: red;">Required size: width:950px X height:920px</p>
                                     </div>
                                 </div>
                                 <div class="row mt-4">
@@ -155,8 +155,19 @@ export default {
         },
 
         imageUrl(event) {
-            this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-            this.epaper.image = event.target.files[0];
+            if (event.target.files[0]) {
+                let img = new Image()
+                img.src = window.URL.createObjectURL(event.target.files[0]);
+                img.onload = () => {
+                    if (img.width === 950 && img.height === 920) {
+                        this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+                        this.epaper.image = event.target.files[0];
+                    } else {
+                        alert(`This image ${img.width} X ${img.width} but require image 950px X 920px`);
+                        event.target.value = ""
+                    }
+                }
+            }
         },
 
         clearData() {

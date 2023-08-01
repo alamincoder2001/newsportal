@@ -64,7 +64,7 @@ class EpaperController extends Controller
             ]);
 
             if ($request->hasFile('image')) {
-                $img = Image::make($request->file('image'))->resize(300, 450);
+                $img = Image::make($request->file('image'))->resize(950, 920);
                 $img->save(public_path('uploads/epaper/' . $name));
             }
 

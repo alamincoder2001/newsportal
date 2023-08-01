@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\NewsletterAdd;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\File;
 
 class NewsletteraddsController extends Controller
 {
@@ -39,18 +39,17 @@ class NewsletteraddsController extends Controller
             $data         = NewsletterAdd::first();
             $data->status = $request->status;
             if ($request->hasFile('image')) {
-                $extension = $request->file('image')->extension();
-                $name = '600x300.' . $extension;
-                $img = Image::make($request->file('image'))->resize(600, 300);
-                $img->save(public_path('uploads/newsletteradds/' . $name));
-                $data->image = "uploads/newsletteradds/" . $name;
+                if (File::exists($data->image)) {
+                    File::delete($data->image);
+                }
+                $data->image = $this->imageUpload($request, 'image', 'uploads/newsletteradds');
             }
 
             $data->save();
 
             return "Yea! Update Newsletteradds Successfully";
         } catch (\Throwable $e) {
-            return "Opps! something went wrong". $e->getMessage();
+            return "Opps! something went wrong" . $e->getMessage();
         }
     }
 }

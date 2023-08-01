@@ -41,7 +41,7 @@
                             </div>
                             <div class="col-md-4 d-flex justify-content-center align-items-center">
                                 <div class="form-group ImageBackground">
-                                    <span class="text-danger">Required Size: width:345px X height:470px</span>
+                                    <span class="text-danger">Required Size: width:350px X height:470px</span>
                                     <img :src="imageSrc" class="imageShow" />
                                     <label for="image">Image</label>
                                     <input type="file" id="image" class="form-control shadow-none" @change="imageUrl" />
@@ -162,7 +162,7 @@ export default {
                 id: val.category_id,
                 name: val.category_name
             }
-            this.imageSrc = val.image != null ? '/'+val.image : location.origin + "/noImage.jpg"
+            this.imageSrc = val.image != null ? '/' + val.image : location.origin + "/noImage.jpg"
         },
         deleteRow(id) {
             if (confirm("Are you sure want to delete this!")) {
@@ -178,12 +178,12 @@ export default {
                 let img = new Image()
                 img.src = window.URL.createObjectURL(event.target.files[0]);
                 img.onload = () => {
-                    if (img.width === 740 && img.height === 450) {
-                this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-                this.categorywiseadd.image = event.target.files[0];
+                    if (img.width === 350 && img.height === 470) {
+                        this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+                        this.categorywiseadd.image = event.target.files[0];
                     } else {
-                        alert(`This image ${img.width} X ${img.width} but require image 740px X 450px`);
-                        document.querySelector("[type='file']").value = ''
+                        alert(`This image ${img.width} X ${img.width} but require image 350px X 470px`);
+                        event.target.value = '';
                     }
                 }
             }
@@ -193,7 +193,8 @@ export default {
             this.categorywiseadd = {
                 id: "",
                 title: "",
-                url: ""
+                url: "",
+                image: ""
             };
             this.selectedCategory = null
             this.imageSrc = location.origin + "/noImage.jpg"

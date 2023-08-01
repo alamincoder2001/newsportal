@@ -19,6 +19,7 @@ class CreateCategoriesTable extends Migration
             $table->string("slug");
             $table->string("image")->nullable();
             $table->string("is_menu", 10)->default("false");
+            $table->integer('position')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

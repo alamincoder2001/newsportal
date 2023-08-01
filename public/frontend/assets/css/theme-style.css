@@ -4506,7 +4506,8 @@ a {
 }
 
 .bg-section {
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, #5959ec 35%, hsl(241, 90%, 26%) 100%);
+    /* background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, #5959ec 35%, hsl(241, 90%, 26%) 100%); */
+    background: whitesmoke;
 }
 
 .bg-section .bg {

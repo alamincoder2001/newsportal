@@ -239,8 +239,8 @@
             var body = $('body');
             var container = $('<div id="zz_frame"></div>');
             var frame = $('<div id="zz_media"></div>');
-            var close_btn = $('<button class="zz_close">&times;</button>');
-            var button_zoom = $('<div class="zz_controls"><button type="button" class="zz_zoom-in">Zoom In</button><button type="button" class="zz_zoom-out">Zoom Out</button></div>');
+            // var close_btn = $('');
+            var button_zoom = $('<div class="zz_controls"><button type="button" class="zz_zoom-in"><i class="bi bi-zoom-in"></i></button><button type="button" class="zz_zoom-out"><i class="bi bi-zoom-out"></i></button> <button class="zz_close"><i class="bi bi-x-lg"></i></button></div>');
             var media = $('<img src="" />');
 
             $('.zz_image').click(function(e) {
@@ -252,7 +252,7 @@
 
                 frame.append(media);
                 container.append(frame);
-                container.append(close_btn);
+                // container.append(close_btn);
                 container.append(button_zoom);
 
                 body.append(container);

@@ -53,8 +53,8 @@
             </div>
             <div class="lead-2nd mt-4">
                 <h1 class="mb-0 pb-0 d-block"><a href=""><span class="blink"></span><span>আজকের খবর</span> <i class="bi bi-chevron-right"></i></a></h1>
-                <ul class="m-0">
-                    @foreach ($focush->take(6) as $key => $item)
+                <ul class="m-0 focus" style="height: 363px;overflow-y: scroll;">
+                    @foreach ($focush as $key => $item)
                     <li class="bi bi-caret-right-fill">
                         <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">{{ $item->title }}</a>
                     </li>
@@ -159,7 +159,7 @@
                 @foreach ($highlights->take(12) as $item)
                 <div class="col-md-2 mb-4 col-10 offset-1 offset-md-0">
                     <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}" title="{{$item->title}}">
-                        <div class="card NewsHover" style="height: 250px;border-radius:0;border:0;">
+                        <div class="card NewsHover" style="height: 250px;border-radius:0;">
                             <img class="rounded-start" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="Card image">
                             <div class="card-body">
                                 <p class="card-text text ellipsis">{{ Str::words($item->title, '10') }}</p>

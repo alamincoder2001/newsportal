@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
         Schema::defaultStringLength(191);
         View::share("setting", Setting::first());
-        View::share("categories", Category::where('is_menu', 'true')->get());
+        View::share("categories", Category::orderBy('position', 'asc')->where('is_menu', 'true')->get());
         View::share("otherscategory", Category::where('is_menu', 'false')->get());
         View::share("headlines", DB::table('news')
             ->join('news_publisheds', 'news.id', '=', 'news_publisheds.news_id')

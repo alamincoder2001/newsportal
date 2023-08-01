@@ -8,14 +8,14 @@
                             <div class="col-lg-12">
                                 <div class="form-group row mb-4">
                                     <div class="col-md-12">
-                                        <img :src="imageSrc" class="imageShow" width="400px" height="200px"
+                                        <img :src="imageSrc" class="imageShow" width="600px" height="300px"
                                             style="border:1px solid #d7d7d7;" />
                                     </div>
                                     <div class="col-md-6">
                                         <label for="image">Master Image:</label>
                                         <input type="file" name="image" id="image" class="form-control"
                                             @change="imageUrl" />
-                                        <p style="font-size: 11px;color: red;">Required size: 600 X 300</p>
+                                        <p style="font-size: 11px;color: red;">Required size: 600px X 300px</p>
                                     </div>
                                 </div>
                                 <div class="form-group mt-2">
@@ -65,7 +65,7 @@ export default {
             axios.get(location.origin + "/admin/get-newsletteradds")
                 .then(res => {
                     this.advertise = res.data
-                    this.imageSrc = res.data.image != null ? location.origin + "/" + res.data.image : location.origin + "/600x300.jpg"
+                    this.imageSrc = res.data.image != null ? "/" + res.data.image : "/600x300.jpg"
                 })
         },
 
@@ -80,9 +80,21 @@ export default {
         },
 
         imageUrl(event) {
-            this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-            this.advertise.image = event.target.files[0];
-        }
+            if (event.target.files[0]) {
+                let img = new Image()
+                img.src = window.URL.createObjectURL(event.target.files[0]);
+                img.onload = () => {
+                    if (img.width === 600 && img.height === 300) {
+                        this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+                        this.advertise.image = event.target.files[0];
+                    } else {
+                        alert(`This image ${img.width} X ${img.width} but require image 600px X 300px`);
+                        event.target.value = ""
+                    }
+                }
+            }
+        },
+
     },
 }
 </script>
