@@ -8672,11 +8672,11 @@ __webpack_require__.r(__webpack_exports__);
         var img = new Image();
         img.src = window.URL.createObjectURL(event.target.files[0]);
         img.onload = function () {
-          if (img.width === 750 && img.height === 500) {
+          if (img.width === 600 && img.height === 400) {
             _this6.imageSrc = window.URL.createObjectURL(event.target.files[0]);
             _this6.form.masterImage = event.target.files[0];
           } else {
-            alert("This image ".concat(img.width, " X ").concat(img.width, " but require image 750px X 500px"));
+            alert("This image ".concat(img.width, " X ").concat(img.height, " but require image 600px X 400px"));
             event.target.value = '';
           }
         };
@@ -70881,7 +70881,7 @@ var render = function () {
                         },
                         [
                           _vm._v(
-                            "Required size: width: 750px X\n                                        height: 500px\n                                    "
+                            "Required size: width: 600px X\n                                        height: 400px\n                                    "
                           ),
                         ]
                       ),

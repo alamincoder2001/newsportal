@@ -55,8 +55,8 @@
                                     <div class="col-md-6">
                                         <label for="subcategory">Master Image:</label>
                                         <input type="file" id="image" class="form-control" @change="imageUrl" />
-                                        <p style="font-size: 11px;" class="text-danger">Required size: width: 750px X
-                                            height: 500px
+                                        <p style="font-size: 11px;" class="text-danger">Required size: width: 600px X
+                                            height: 400px
                                         </p>
                                         <span class="error-masterImage error text-danger fst-italic"></span>
                                     </div>
@@ -314,11 +314,11 @@ export default {
                 let img = new Image()
                 img.src = window.URL.createObjectURL(event.target.files[0]);
                 img.onload = () => {
-                    if (img.width === 750 && img.height === 500) {
+                    if (img.width === 600 && img.height === 400) {
                         this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
                         this.form.masterImage = event.target.files[0];
                     } else {
-                        alert(`This image ${img.width} X ${img.width} but require image 750px X 500px`);
+                        alert(`This image ${img.width} X ${img.height} but require image 600px X 400px`);
                         event.target.value = '';
                     }
                 }

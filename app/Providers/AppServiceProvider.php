@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Category;
+use App\Models\NewsletterAdd;
 use App\Models\PageVisitor;
 use App\Models\Setting;
 use Illuminate\Pagination\Paginator;
@@ -33,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
         Schema::defaultStringLength(191);
         View::share("setting", Setting::first());
+        View::share("newsletter", NewsletterAdd::first());
         View::share("categories", Category::orderBy('position', 'asc')->where('is_menu', 'true')->get());
         View::share("otherscategory", Category::where('is_menu', 'false')->get());
         View::share("headlines", DB::table('news')

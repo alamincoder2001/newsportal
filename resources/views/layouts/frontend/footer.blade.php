@@ -347,7 +347,8 @@
 
     $(() => {
         let r = "{{Route::is('website')}}";
-        if (r == 1) {
+        let status = "{{$newsletter->status}}";
+        if (r == 1 && status == 'a') {
             $("#staticBackdrop").modal("show");
         }
     })
