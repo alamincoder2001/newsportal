@@ -24,7 +24,8 @@
                                     <div class="col-md-4">
                                         <div class="form-group mt-2">
                                             <label for="editor">Editor:</label>
-                                            <select name="editor" v-model="form.editor" id="editor" class="form-control shadow-none">
+                                            <select name="editor" v-model="form.editor" id="editor"
+                                                class="form-control shadow-none">
                                                 <option value="">---ইডিটর পছন্দ করুন---</option>
                                                 <option value="নিজস্ব প্রতিবেদক">নিজস্ব প্রতিবেদক</option>
                                                 <option value="কক্সবাজার প্রতিনিধি">কক্সবাজার প্রতিনিধি</option>
@@ -54,7 +55,8 @@
                                     <div class="col-md-6">
                                         <label for="subcategory">Master Image:</label>
                                         <input type="file" id="image" class="form-control" @change="imageUrl" />
-                                        <p style="font-size: 11px;" class="text-danger">Required size: width: 750px X height: 500px
+                                        <p style="font-size: 11px;" class="text-danger">Required size: width: 750px X
+                                            height: 500px
                                         </p>
                                         <span class="error-masterImage error text-danger fst-italic"></span>
                                     </div>
@@ -62,7 +64,7 @@
                                         <img :src="imageSrc" class="imageShow" width="150px" height="101px" />
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <!-- <div class="form-group row">
                                     <div class="col-md-4">
                                         <label for="subcategory">Other Images 1:</label>
                                         <input type="file" id="image" class="form-control" @change="Image1" />
@@ -85,7 +87,7 @@
                                         <label for="subcategory">Other Images 5:</label>
                                         <input type="file" id="image" class="form-control" @change="Image5" />
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="row mt-4">
                                     <div class="col-12 col-md-12 text-end">
                                         <button type="button" @click="clearData" class="btn btn-danger">
@@ -311,14 +313,15 @@ export default {
             if (event.target.files[0]) {
                 let img = new Image()
                 img.src = window.URL.createObjectURL(event.target.files[0]);
-                // img.onload = () => {
-                //     if (img.width === 740 && img.height === 450) {
-                this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-                this.form.masterImage = event.target.files[0];
-                //     } else {
-                //         alert(`This image ${img.width} X ${img.width} but require image 740px X 450px`);
-                //     }
-                // }
+                img.onload = () => {
+                    if (img.width === 750 && img.height === 500) {
+                        this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+                        this.form.masterImage = event.target.files[0];
+                    } else {
+                        alert(`This image ${img.width} X ${img.width} but require image 750px X 500px`);
+                        event.target.value = '';
+                    }
+                }
             }
         },
         Image1(e) {

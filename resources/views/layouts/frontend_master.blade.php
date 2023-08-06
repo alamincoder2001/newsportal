@@ -9,6 +9,12 @@
     <title>@yield('title')</title>
 
     @include('layouts.frontend.style')
+    <style>
+        #staticBackdrop .modal-body{
+            border-top: 8px solid #ffb50d;
+            border-bottom: 5px solid #3a3a3a;
+        }
+    </style>
 </head>
 
 <body class="home ">

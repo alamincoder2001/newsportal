@@ -8476,6 +8476,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -8665,17 +8667,19 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     imageUrl: function imageUrl(event) {
+      var _this6 = this;
       if (event.target.files[0]) {
         var img = new Image();
         img.src = window.URL.createObjectURL(event.target.files[0]);
-        // img.onload = () => {
-        //     if (img.width === 740 && img.height === 450) {
-        this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
-        this.form.masterImage = event.target.files[0];
-        //     } else {
-        //         alert(`This image ${img.width} X ${img.width} but require image 740px X 450px`);
-        //     }
-        // }
+        img.onload = function () {
+          if (img.width === 750 && img.height === 500) {
+            _this6.imageSrc = window.URL.createObjectURL(event.target.files[0]);
+            _this6.form.masterImage = event.target.files[0];
+          } else {
+            alert("This image ".concat(img.width, " X ").concat(img.width, " but require image 750px X 500px"));
+            event.target.value = '';
+          }
+        };
       }
     },
     Image1: function Image1(e) {
@@ -70877,7 +70881,7 @@ var render = function () {
                         },
                         [
                           _vm._v(
-                            "Required size: width: 750px X height: 500px\n                                    "
+                            "Required size: width: 750px X\n                                        height: 500px\n                                    "
                           ),
                         ]
                       ),
@@ -70896,70 +70900,6 @@ var render = function () {
                           width: "150px",
                           height: "101px",
                         },
-                      }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group row" }, [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c("label", { attrs: { for: "subcategory" } }, [
-                        _vm._v("Other Images 1:"),
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "file", id: "image" },
-                        on: { change: _vm.Image1 },
-                      }),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c("label", { attrs: { for: "subcategory" } }, [
-                        _vm._v("Other Images 2:"),
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "file", id: "image" },
-                        on: { change: _vm.Image2 },
-                      }),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c("label", { attrs: { for: "subcategory" } }, [
-                        _vm._v("Other Images 3:"),
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "file", id: "image" },
-                        on: { change: _vm.Image3 },
-                      }),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group row" }, [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c("label", { attrs: { for: "subcategory" } }, [
-                        _vm._v("Other Images 4:"),
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "file", id: "image" },
-                        on: { change: _vm.Image4 },
-                      }),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c("label", { attrs: { for: "subcategory" } }, [
-                        _vm._v("Other Images 5:"),
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: { type: "file", id: "image" },
-                        on: { change: _vm.Image5 },
                       }),
                     ]),
                   ]),
