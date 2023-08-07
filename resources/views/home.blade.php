@@ -320,15 +320,15 @@
     </div>
 </section>
 
-@if ($ad1->status == 'active')
+@if ($ad4->status == 'active')
 <div class="container mt-3">
     <div class="col-md-12">
         <div data-position="desktop-home-after-lead-area" class="m-0 p-0">
             <div class="ads bg-light mb-2 d-flex justify-content-center" style="position: relative;">
                 <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
                 <div class="ad_cl-4" data-id="4">
-                    <a href="{{ $ad1->url }}" target="_blank" title="{{$item->title}}">
-                        <img src="{{ asset($ad1->image != null ? $ad1->image : '1200x200.jpg') }}" alt="{{ $ad1->title }}">
+                    <a href="{{ $ad4->url }}" target="_blank" title="{{$ad4->title}}">
+                        <img src="{{ asset($ad4->image != null ? $ad4->image : '1200x200.jpg') }}" alt="{{ $ad4->title }}">
                     </a>
                 </div>
             </div>
@@ -408,6 +408,23 @@
         </div>
     </div>
 </section>
+
+@if ($ad5->status == 'active')
+<div class="container my-3">
+    <div class="col-md-12">
+        <div data-position="desktop-home-after-lead-area" class="m-0 p-0">
+            <div class="ads bg-light mb-2 d-flex justify-content-center" style="position: relative;">
+                <span onclick="hideAdd(event)" style="position: absolute; top: 0; right: 0; background: red; padding: 5px; color: white; cursor: pointer;">X</span>
+                <div class="ad_cl-4" data-id="4">
+                    <a href="{{ $ad5->url }}" target="_blank" title="{{$ad5->title}}">
+                        <img src="{{ asset($ad5->image != null ? $ad5->image : '1200x200.jpg') }}" alt="{{ $ad5->title }}">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endif
 
 <!-- খেলাধুলা -->
 <section class="bg-section mt-3 News">
