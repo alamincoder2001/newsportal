@@ -63,9 +63,9 @@ header {
 }
 
 header .logo {
-    display: block;
-    padding-top: 17px;
+    display:inline-block;
     text-align: left;
+    box-shadow: 0px 0px 10px 0 #9185008c;
 }
 
 header .logo img {
@@ -77,20 +77,21 @@ header .navbar-title {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 10px;
 }
 
 header .navbar-title-text {
     font-family: 'solaimanlipi';
     font-weight: bold;
     letter-spacing: 2px;
-    text-align: right;
+    text-align: left;
+    display: flex;
+    align-items: center;
 }
 
 header .navbar-subTitle-text {
     font-weight: bold;
     letter-spacing: 1px;
-    text-align: right;
+    text-align: left;
 }
 
 header .line {
@@ -284,11 +285,6 @@ header .header-ad {
 
 .mobileViewRow {
     flex-direction: column;
-    margin-top: 15px;
-}
-
-.mobileview p {
-    font-size: 16px;
 }
 
 @media(max-width:767px) {
@@ -301,39 +297,17 @@ header .header-ad {
         overflow-x: hidden
     }
 
-    .mobileViewRow {
-        margin-top: 50px;
-    }
-
-    .mobileview {
-        margin-top: -30px !important;
-    }
-
-    .mobileview p {
-        font-size: 9px;
-    }
-
     header .navbar-title {
         margin: 0;
-        margin-left: 5px;
-    }
-
-    header .navbar-title .navbar-title-text {
-        font-size: 8px;
-        text-align: left;
     }
 
     header .navbar-title .navbar-subTitle-text {
         font-size: 8px;
-        text-align: left;
-    }
-
-    header .logo {
-        text-align: left;
+        margin-top: 4px;
     }
 
     header .logo img {
-        width: 45px !important;
+        width: 60px !important;
     }
 }
 
@@ -810,7 +784,7 @@ header .header-ad {
 }
 
 .latest-news-top .tab-content ul {
-    height: 955px
+    height: 865px
 }
 
 .news-tab-area .tab-content ul::-webkit-scrollbar {
@@ -4179,7 +4153,7 @@ footer .footer-bottom .copyright {
     }
 
     .latest-news-top .tab-content ul {
-        height: 883px
+        height: 865px
     }
 
     .highlights ul li {
@@ -4302,7 +4276,7 @@ footer .footer-bottom .copyright {
     }
 
     .latest-news-top .tab-content ul {
-        height: 955px
+        height: 865px
     }
 
     .section-1 .lead-item .text {
@@ -4342,7 +4316,7 @@ footer .footer-bottom .copyright {
     }
 
     .latest-news-top .tab-content ul {
-        height: 900px
+        height: 855px
     }
 
     .lead-2nd ul li {
@@ -4435,7 +4409,7 @@ footer .footer-bottom .copyright {
     }
 
     .latest-news-top .tab-content ul {
-        height: 900px
+        height: 865px
     }
 
     .lead-2nd ul li {
@@ -4560,8 +4534,8 @@ a {
 }
 
 .News .NewsHover:hover {
-    transition-duration: 2s;
-    transform: scale3d(1.5, 1.5, 1.5);
+    transition-duration: 1s;
+    transform: scale3d(1.1, 1.1, 1.1);
     z-index: 999;
 }
 
@@ -4595,11 +4569,6 @@ a {
         text-align: left !important;
     }
 
-    header .navbar-title .navbar-title-text span {
-        display: block;
-        font-size: 10px !important;
-    }
-
     .bg-section .card .card-img-top {
         float: none;
         margin: 0 auto;
@@ -4610,5 +4579,28 @@ a {
 
     .mobileViewVideo{
         display: block !important;
+    }
+
+    #dateEnglish , #dateArabic, #dateBangla, #time {
+        font-size: 9px !important;
+    }
+
+    .editor {
+        font-size: 9px !important;
+    }
+    .email {
+        font-size: 7px !important;
+    }
+
+    header .navbar-title-text{
+        display: block;
+    }
+
+    header .navbar-title .company_banglaName {
+        font-size: 23px;
+        display: block !important;
+    }
+    header .navbar-title .company_englishName {
+        font-size: 12px;
     }
 }

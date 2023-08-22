@@ -14,7 +14,7 @@
     .styled-list li {
         position: relative;
         margin-bottom: 10px;
-        padding-left: 20px;
+        padding-left: 14px;
         font-size: 16px;
     }
 
@@ -30,18 +30,7 @@
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        background-color: #333;
-    }
-
-    .styled-list li:after {
-        content: "";
-        position: absolute;
-        left: 5px;
-        top: 11px;
-        width: 18px;
-        height: 2px;
-        background-color: #333;
-        transform: rotate(-45deg);
+        background-color: #9f8989;
     }
 </style>
 
@@ -51,7 +40,7 @@
             <div class="col-md-4">
                 <div class="row">
                     <div class="col-md-3">
-                        <a href="{{ route('website') }}" class="logo"><img style="width:80px;" src="{{ asset($setting->logo != null ? $setting->logo : 'noImage.jpg') }}" alt=""></a>
+                        <a href="{{ route('website') }}" class="logo"><img style="width: 100px;margin-top: 8px;margin-left: -15px;" src="{{ asset($setting->logo != null ? $setting->logo : 'noImage.jpg') }}" alt=""></a>
                     </div>
                     <div class="col-md-9 navbar-title">
                         <h1 class="m-0" style="font-weight: bolder;">{{ $setting->company_name }}</h1>
@@ -130,9 +119,14 @@
         <div class="footer-bottom row">
             <div class="col-md-5">
                 <ul>
-                    <li><a href="javascript:">যোগাযোগ</a></li>
-                    <li><a href="javascript:">গোপনীয়তা নীতি</a></li>
-                    <li><a href="javascript:" target="_blank">বিজ্ঞাপনের মূল্য তালিকা</a></li>
+                    @php
+                    $catsetting = explode(',', $setting->footercategory);
+                    @endphp
+                    @foreach($catsetting as $key => $item)
+                    @if($key == 0 || $key == 1 || $key == 2)
+                    <li><a href="javascript:">{{$item}}</a></li>
+                    @endif
+                    @endforeach
                 </ul>
             </div>
             <div class="col-md-7">
@@ -154,7 +148,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
 <script src="https://www.pigno.se/barn/PIGNOSE-Calendar/dist/js/pignose.calendar.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+@stack("webjs")
+
 <script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     $(function() {
         $("#btnArchive").click(function(e) {
             e.preventDefault();
@@ -233,105 +236,6 @@
         })
     });
 
-    $(document).ready(function() {
-        (function($) {
-
-            var body = $('body');
-            var container = $('<div id="zz_frame"></div>');
-            var frame = $('<div id="zz_media"></div>');
-            // var close_btn = $('');
-            var button_zoom = $('<div class="zz_controls"><button type="button" class="zz_zoom-in"><i class="bi bi-zoom-in"></i></button><button type="button" class="zz_zoom-out"><i class="bi bi-zoom-out"></i></button> <button class="zz_close"><i class="bi bi-x-lg"></i></button></div>');
-            var media = $('<img src="" />');
-
-            $('.zz_image').click(function(e) {
-                e.preventDefault();
-
-                uri = $(this).attr('src');
-
-                media.attr('src', uri);
-
-                frame.append(media);
-                container.append(frame);
-                // container.append(close_btn);
-                container.append(button_zoom);
-
-                body.append(container);
-
-            });
-
-            $('body').on('click', '.zz_zoom-in', function(e) {
-                var myImg = $('#zz_media img');
-                img = myImg.get(0);
-                if (img !== 'undefined') {
-                    nW = parseInt(img.naturalWidth);
-
-                    zLW = nW * 2;
-
-                    offS = myImg.offset();
-                    t = offS.top;
-                    l = offS.left;
-
-                    var cW = myImg.innerWidth();
-
-                    if (cW >= zLW) {
-                        alert("Maximum zoom-in level reached.");
-                    } else {
-                        myImg.innerWidth((cW + 50) + "px");
-                        if (offS.top > 25) {
-                            t = offS.top - 25;
-                        }
-                        if (offS.left > 25) {
-                            l = offS.left - 25;
-                        }
-                        myImg.offset({
-                            top: t,
-                            left: l
-                        });
-                    }
-                }
-            })
-
-            $('body').on('click', '.zz_zoom-out', function(e) {
-                var myImg = $('#zz_media img');
-                mediaOffS = $('#zz_media').offset();
-                img = myImg.get(0);
-                if (img !== 'undefined') {
-                    nW = parseInt(img.naturalWidth);
-
-                    zLW = nW / 2;
-
-                    offS = myImg.offset();
-                    t = offS.top;
-                    l = offS.left;
-
-                    var cW = myImg.innerWidth();
-
-                    if (cW <= zLW) {
-                        alert("Maximum zoom-out level reached.");
-                    } else {
-                        myImg.innerWidth((cW - 50) + "px");
-                        if (offS.top < mediaOffS.top) {
-                            t = offS.top + 25;
-                        }
-                        if (offS.left < mediaOffS.left) {
-                            l = offS.left + 25;
-                        }
-                        myImg.offset({
-                            top: t,
-                            left: l
-                        });
-                    }
-                }
-            })
-
-            $('body').on('click', '.zz_close', function(e) {
-                $('#zz_frame').remove();
-            })
-
-        })(jQuery);
-
-    });
-
     $(".font-button").bind("click", function() {
         var size = parseInt($('#bpsepnil p').css("font-size"));
         if ($(this).hasClass("plus")) {
@@ -352,4 +256,8 @@
             $("#staticBackdrop").modal("show");
         }
     })
+
+    Fancybox.bind('[data-fancybox="gallery"]', {
+        // Your custom options
+    });
 </script>

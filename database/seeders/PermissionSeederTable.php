@@ -76,6 +76,12 @@ class PermissionSeederTable extends Seeder
                 ]
             ],
             [
+                'group_name' => 'Editor',
+                'permission_name' => [
+                    'editorEntry',
+                ]
+            ],
+            [
                 'group_name' => 'Epaper',
                 'permission_name' => [
                     'epaperEntry',

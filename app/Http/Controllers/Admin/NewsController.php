@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\NewsPublished;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Validator;
 
@@ -109,6 +110,22 @@ class NewsController extends Controller
                 ]);
             }
 
+            if ($request->hasFile('otherImage1')) {
+                $news->other_image_1 = $this->imageUpload($request, 'otherImage1', 'uploads/otherImage1');
+            }
+            if ($request->hasFile('otherImage2')) {
+                $news->other_image_2 = $this->imageUpload($request, 'otherImage2', 'uploads/otherImage2');
+            }
+            if ($request->hasFile('otherImage3')) {
+                $news->other_image_3 = $this->imageUpload($request, 'otherImage3', 'uploads/otherImage3');
+            }
+            if ($request->hasFile('otherImage4')) {
+                $news->other_image_4 = $this->imageUpload($request, 'otherImage4', 'uploads/otherImage4');
+            }
+            if ($request->hasFile('otherImage5')) {
+                $news->other_image_5 = $this->imageUpload($request, 'otherImage5', 'uploads/otherImage5');
+            }
+
             if ($request->hasFile('masterImage')) {
                 $img = Image::make($request->file('masterImage'))->resize(600, 400);
                 $img->save(public_path('uploads/news/' . $name));
@@ -134,9 +151,7 @@ class NewsController extends Controller
         $validator = Validator::make($request->all(), [
             'title'  => ['required', 'string'],
             'editor' => 'required',
-            // 'category_id' => ['required'],
             'description' => ['required', 'string'],
-            // 'masterImage' => ['required']
         ]);
 
         if ($validator->fails()) {
@@ -149,8 +164,6 @@ class NewsController extends Controller
         try {
             $news = News::find($request->id);
 
-            // $uniqueId = $this->getUniqueId();
-
             if ($request->hasFile('masterImage')) {
                 if (file_exists(public_path($news->image)) && $news->image != null) {
                     unlink(public_path($news->image));
@@ -158,12 +171,6 @@ class NewsController extends Controller
                 if (file_exists(public_path($news->thumbnail)) && $news->image != null) {
                     unlink(public_path($news->thumbnail));
                 }
-                // if (File::exists($news->image)) {
-                //     File::delete($news->image);
-                // }
-                // if (File::exists($news->thumbnail)) {
-                //     File::delete($news->thumbnail);
-                // }
                 $extension = $request->file('masterImage')->extension();
                 $name = $news->unique_id . '.' . $extension;
             } else if ($news->image != null) {
@@ -182,6 +189,38 @@ class NewsController extends Controller
             $news->user_id      = Auth::guard('admin')->user()->id;
             $news->image        = $name== null ? null : '/uploads/news/' . $name;
             $news->thumbnail    = $name== null ? null : '/uploads/thumbnail/' . $name;
+
+            if ($request->hasFile('otherImage1')) {
+                if (File::exists($news->other_image_1)) {
+                    File::delete($news->other_image_1);
+                }
+                $news->other_image_1 = $this->imageUpload($request, 'otherImage1', 'uploads/otherImage1');
+            }
+            if ($request->hasFile('otherImage2')) {
+                if (File::exists($news->other_image_2)) {
+                    File::delete($news->other_image_2);
+                }
+                $news->other_image_2 = $this->imageUpload($request, 'otherImage2', 'uploads/otherImage2');
+            }
+            if ($request->hasFile('otherImage3')) {
+                if (File::exists($news->other_image_3)) {
+                    File::delete($news->other_image_3);
+                }
+                $news->other_image_3 = $this->imageUpload($request, 'otherImage3', 'uploads/otherImage3');
+            }
+            if ($request->hasFile('otherImage4')) {
+                if (File::exists($news->other_image_4)) {
+                    File::delete($news->other_image_4);
+                }
+                $news->other_image_4 = $this->imageUpload($request, 'otherImage4', 'uploads/otherImage4');
+            }
+            if ($request->hasFile('otherImage5')) {
+                if (File::exists($news->other_image_5)) {
+                    File::delete($news->other_image_5);
+                }
+                $news->other_image_5 = $this->imageUpload($request, 'otherImage5', 'uploads/otherImage5');
+            }
+
             $news->update();
 
             NewsPublished::where('news_id', $news->id)->delete();

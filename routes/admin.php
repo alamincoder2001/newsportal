@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CategorywiseAddController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\DesignationController;
+use App\Http\Controllers\Admin\EditorController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Admin\EmployeeController;
@@ -44,6 +45,12 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/fetch-category', [CategoryController::class, 'fetch'])->name('admin.category.fetch');
     Route::post('/category', [CategoryController::class, 'store'])->name('admin.category.store');
     Route::post('/category/delete', [CategoryController::class, 'destroy'])->name('admin.category.destroy');
+
+    //category Route
+    Route::get('/editor', [EditorController::class, 'index'])->name('admin.editor.index');
+    Route::get('/fetch-editor', [EditorController::class, 'fetch'])->name('admin.editor.fetch');
+    Route::post('/editor', [EditorController::class, 'store'])->name('admin.editor.store');
+    Route::post('/editor/delete', [EditorController::class, 'destroy'])->name('admin.editor.destroy');
 
     //subcategory Route
     Route::get('/subcategory', [SubcategoryController::class, 'index'])->name('admin.subcategory.index');

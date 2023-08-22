@@ -28,6 +28,7 @@
 <meta property="fb:app_id" content="" />
 <meta property="fb:pages" content="" />
 
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="canonical" href="{{ route('website') }}">
 
 <link href="{{ asset('frontend') }}/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -35,6 +36,7 @@
 <link href="{{ asset('frontend') }}/assets/css/calendar.css" rel="stylesheet">
 <link rel="stylesheet" href="{{asset('frontend')}}/assets/css/magnaticpopup.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pg-calendar@1.4.31/dist/css/pignose.calendar.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 <link href="{{ asset('frontend') }}/assets/css/custome-fontend.css" rel="stylesheet" />
 <link href="{{ asset('frontend') }}/assets/css/theme-style.css" rel="stylesheet" />
 <meta http-equiv="refresh" content="1000" />

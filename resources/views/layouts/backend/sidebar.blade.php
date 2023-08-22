@@ -135,6 +135,11 @@ $access = App\Models\AdminAccess::where('admin_id', Auth::guard('admin')->user()
                     <a href="{{ route('admin.category.index') }}" class="sidebar-link {{ Request::is('admin.category.index') ? 'active' : '' }}"><i class="fas fa-plus"></i><span class="hide-menu"> Category Entry </span></a>
                 </li>
                 @endif
+                @if(in_array("editorEntry", $access))
+                <li class="sidebar-item">
+                    <a href="{{ route('admin.editor.index') }}" class="sidebar-link {{ Request::is('admin.editor.index') ? 'active' : '' }}"><i class="fas fa-plus"></i><span class="hide-menu"> Editor Entry </span></a>
+                </li>
+                @endif
 
                 @if(in_array("designationEntry", $access))
 

@@ -24,6 +24,7 @@ Vue.use(CKEditor);
 
 Vue.component("Dashboard", require("./components/Dashboard.vue").default);
 Vue.component("Category", require("./components/Category.vue").default);
+Vue.component("Editor", require("./components/Editor.vue").default);
 Vue.component("Heading", require("./components/Heading.vue").default);
 Vue.component("Subcategory", require("./components/Subcategory.vue").default);
 Vue.component("Designation", require("./components/Designation.vue").default);

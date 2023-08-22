@@ -17,7 +17,7 @@
     </style>
 </head>
 
-<body class="home ">
+<body class="home">
 
     @include('layouts.frontend.header')
 

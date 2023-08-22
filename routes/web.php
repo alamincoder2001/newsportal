@@ -9,3 +9,4 @@ Route::get('/all/{slug?}', [HomeController::class, 'categoryWiseAll'])->name('ca
 Route::get('/cat/{cat_slug?}/{slug?}', [HomeController::class, 'singleNews'])->name('singlenews');
 Route::get('/epaper/', [HomeController::class, 'epaper'])->name('epaper');
 Route::get('/archive/{date}', [HomeController::class, 'archive'])->name('archive');
+Route::post('/old-epaper-list', [HomeController::class, 'oldpaperlist']);

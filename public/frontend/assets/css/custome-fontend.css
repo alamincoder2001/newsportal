@@ -60,11 +60,11 @@ footer .footer-mid ul li a {
 }
 
 /* logo css */
-header .logo {
+/* header .logo {
     display: block;
     padding-top: 8px;
     text-align: center;
-}
+} */
 header .logo img {
     width: 100px;
     height: auto;
@@ -154,7 +154,7 @@ tr {
 }
 .epaper img:hover {
     transition-duration: 1s;
-    transform: scale(1.1);
+    transform: scale(0.9);
 }
 
 .description {
@@ -173,4 +173,25 @@ iframe {
 
 .focus::-webkit-scrollbar {
     display: none;
+}
+
+#dateEnglish,
+#dateArabic,
+#dateBangla,
+#time {
+    font-size: 13px;
+    font-weight: bold;
+}
+.email,
+.editor {
+    font-size: 13px;
+}
+
+.company_banglaName {
+    font-size: 40px;
+    font-weight: bold;
+}
+.company_englishName {
+    font-size: 20px;
+    color: #ad0000;
 }

@@ -100,17 +100,13 @@ export default {
         getEpaper() {
             axios.get("/admin/get-epaper").then((res) => {
                 this.epapers = res.data.map(n => {
-                    n.img = n.image == null ? '' : '<img src="' + n.image + '" width="40px">';
+                    n.img = n.image == null ? '' : '<img src="/' + n.image + '" width="40px">';
                     return n;
                 });;
             });
         },
 
         saveEpaper(event) {
-            if (this.epaper.link == "") {
-                alert("Link field is required");
-                return;
-            }
             if (this.epaper.date == "") {
                 alert("Date field required")
                 return
@@ -143,7 +139,7 @@ export default {
                 publish_date: val.publish_date,
                 image: val.image
             };
-            this.imageSrc = val.image != null ? location.origin + val.image : location.origin + "/noImage.jpg"
+            this.imageSrc = val.image != null ? '/' + val.image : "/noImage.jpg"
         },
         deleteRow(id) {
             if (confirm("Are you sure want to delete this!")) {

@@ -1,46 +1,27 @@
 <header>
     <div class="container mb-3">
         <div class="row">
-            <div class="col-6 col-md-5">
-                <div class="row">
-                    <div class="col-md-3 p-md-0 text-left">
-                        <a href="{{ route('website') }}" class="logo"><img src="{{ asset($setting->logo != null ? $setting->logo : 'noImage.jpg') }}" alt=""></a>
-                    </div>
-                    <div class="col-md-9 p-md-0 navbar-title">
-                        <h1 class="m-0 navbar-title-text">
-                            {{ $setting->company_name }}
-                            <span style="font-size: 18px;color:#ad0000;">({{$setting->company_name_english}})</span>
-                        </h1>
-                        <span class="navbar-subTitle-text">{{ $setting->title }}</span>
-                    </div>
+            <div class="col-5 col-md-4 p-0 mt-md-0 d-flex align-items-center">
+                <div class="navbar-title">
+                    <h1 class="m-0 navbar-title-text gap-3">
+                        <p class="m-0 company_banglaName">{{ $setting->company_name }}</p>
+                        <p class="m-0 company_englishName">({{$setting->company_name_english}})</p>
+                    </h1>
+                    <span class="navbar-subTitle-text">{{ $setting->title }}</span>
                 </div>
             </div>
-            <div class="col-6 col-md-4 p-md-0 text-end">
-                <table style="margin-top:30px;float:right;">
-                    <tr>
-                        <td style="font-size: 13px;font-weight:900;">বিজ্ঞাপন</td>
-                        <td style="font-size: 13px;">:</td>
-                        <td style="font-size: 13px;">{{$setting->advertise_phone}}</td>
-                    </tr>
-                    <tr>
-                        <td style="font-size: 13px;font-weight:900;">সম্পাদক</td>
-                        <td style="font-size: 13px;">:</td>
-                        <td style="font-size: 13px;">{{$setting->editor_phone}}</td>
-                    </tr>
-                    <tr>
-                        <td style="font-size: 13px;font-weight:900;">ই-মেইল</td>
-                        <td style="font-size: 13px;">:</td>
-                        <td style="font-size: 13px;">{{$setting->email}}</td>
-                    </tr>
-                </table>
+
+            <div class="col-2 col-md-4 mt-md-0 d-flex align-items-center justify-content-center">
+                <a href="{{ route('website') }}" class="logo"><img src="{{ asset($setting->logo != null ? $setting->logo : 'noImage.jpg') }}" alt=""></a>
             </div>
-            <div class="col-6 col-md-3 p-md-0 d-md-block d-none d-flex align-items-end justify-content-center mobileViewRow">
-                <span class="text-end mobileview">
-                    <p id="dateEnglish" class="m-0" style="font-size:13px;font-weight: bold;color:brown;"></p>
-                    <p id="dateArabic" class="m-0" style="font-size:13px;font-weight: bold;color:green;"></p>
-                    <p id="dateBangla" class="m-0" style="font-size:13px;font-weight: bold;color:hsl(0, 0%, 14%);"></p>
-                    <p id="time" class="m-0" style="font-size:13px;font-weight: bold;color:darkcyan;"></p>
-                </span>
+            
+            <div class="col-5 col-md-4 p-0 mt-1 d-flex align-items-end justify-content-center mobileViewRow">
+                <p id="dateEnglish" class="m-0" style="color:brown;"></p>
+                <p id="dateArabic" class="m-0" style="color:green;"></p>
+                <p id="dateBangla" class="m-0" style="color:hsl(0, 0%, 14%);"></p>
+                <p id="time" class="m-0" style="color:darkcyan;"></p>
+                <p class="m-0 email"><span style="font-weight: bolder;">ই-মেইল:</span> {{$setting->email}}</p>
+                <p class="m-0 editor"><span style="font-weight: bolder;">বিজ্ঞাপন:</span> {{$setting->advertise_phone}}</p>
             </div>
         </div>
     </div>

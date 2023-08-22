@@ -23,7 +23,7 @@
 @endif
 <div class="container mainContainer my-4">
     <div class="row">
-        <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+        <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4">
             <div id="carouselHomeCaptions" class="carousel slide lead-slider" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     @foreach ($homeSliders as $key => $item)
@@ -53,7 +53,7 @@
             </div>
             <div class="lead-2nd mt-4">
                 <h1 class="mb-0 pb-0 d-block"><a href=""><span class="blink"></span><span>আজকের খবর</span> <i class="bi bi-chevron-right"></i></a></h1>
-                <ul class="m-0 focus" style="height: 363px;overflow-y: scroll;">
+                <ul class="m-0 focus" style="height: 400px;overflow-y: scroll;">
                     @foreach ($focush as $key => $item)
                     <li class="bi bi-caret-right-fill">
                         <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">{{ $item->title }}</a>
@@ -68,7 +68,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+        <div class="col-md-5 col-lg-5 col-xl-5 col-xxl-5">
             <div class="news-tab-area latest-news-top">
                 <h2 class="title"><span class="blink"></span> সর্বশেষ খবর</h2>
                 <div class="tab-content mt-3">

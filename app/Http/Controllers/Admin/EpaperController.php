@@ -7,6 +7,7 @@ use App\Models\AdminAccess;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Validator;
 
@@ -36,7 +37,6 @@ class EpaperController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'link'         => 'required',
             'publish_date' => 'required',
         ]);
 
@@ -48,24 +48,13 @@ class EpaperController extends Controller
         }
 
         try {
-            $uniqueId = $this->generateCode("Epaper", "EP");
-
-            if ($request->hasFile('image')) {
-                $extension = $request->file('image')->extension();
-                $name = $uniqueId . '.' . $extension;
-            } else {
-                $name = null;
-            }
-
-            Epaper::create([
+            $data = Epaper::create([
                 'publish_date' => $request->publish_date,
                 'link'         => $request->link,
-                'image'        => $name == null ? null : '/uploads/epaper/' . $name,
             ]);
 
             if ($request->hasFile('image')) {
-                $img = Image::make($request->file('image'))->resize(950, 920);
-                $img->save(public_path('uploads/epaper/' . $name));
+                $data->image        = $this->imageUpload($request, 'image', 'uploads/epaper');
             }
 
             return response()->json([
@@ -95,24 +84,16 @@ class EpaperController extends Controller
         }
 
         try {
-            $uniqueId = $this->generateCode("Epaper", "EP");
             $epaper = Epaper::find($request->id);
-            if ($request->hasFile('image')) {
-                if (file_exists(public_path($epaper->image)) && $epaper->image != null) {
-                    unlink(public_path($epaper->image));
-                }
-                $extension = $request->file('image')->extension();
-                $name = $uniqueId . '.' . $extension;
-            } else if ($epaper->image != null) {
-                $last = explode('/', $epaper->image);
-                $name = end($last);
-            } else {
-                $name = null;
-            }
-            
+
             $epaper->link         = $request->link;
             $epaper->publish_date = $request->publish_date;
-            $epaper->image        = $name == null ? null : '/uploads/epaper/' . $name;
+            if ($request->hasFile('image')) {
+                if (File::exists($epaper->image)) {
+                    File::delete($epaper->image);
+                }
+                $epaper->image        = $this->imageUpload($request, 'image', 'uploads/epaper');
+            }
             $epaper->update();
 
             return response()->json([

@@ -163,6 +163,7 @@ class AdminController extends Controller
             $data->twitter              = $request->twitter;
             $data->linkedin             = $request->linkedin;
             $data->youtube              = $request->youtube;
+            $data->footercategory       = implode(",", $request->footercategory);
             if ($request->hasFile("logo")) {
                 if (isset($old) && $old != "") {
                     if (File::exists($old)) {

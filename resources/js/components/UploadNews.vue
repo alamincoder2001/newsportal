@@ -27,9 +27,7 @@
                                             <select name="editor" v-model="form.editor" id="editor"
                                                 class="form-control shadow-none">
                                                 <option value="">---ইডিটর পছন্দ করুন---</option>
-                                                <option value="নিজস্ব প্রতিবেদক">নিজস্ব প্রতিবেদক</option>
-                                                <option value="কক্সবাজার প্রতিনিধি">কক্সবাজার প্রতিনিধি</option>
-                                                <option value="বিশেষ প্রতিনিধি">বিশেষ প্রতিনিধি</option>
+                                                <option v-for="(item, index) in editors" :value="item.name" :key="index">{{ item.name }}</option>
                                             </select>
                                             <span class="error-editor error text-danger fst-italic"></span>
                                         </div>
@@ -64,7 +62,7 @@
                                         <img :src="imageSrc" class="imageShow" width="150px" height="101px" />
                                     </div>
                                 </div>
-                                <!-- <div class="form-group row">
+                                <div class="form-group row">
                                     <div class="col-md-4">
                                         <label for="subcategory">Other Images 1:</label>
                                         <input type="file" id="image" class="form-control" @change="Image1" />
@@ -87,7 +85,7 @@
                                         <label for="subcategory">Other Images 5:</label>
                                         <input type="file" id="image" class="form-control" @change="Image5" />
                                     </div>
-                                </div> -->
+                                </div>
                                 <div class="row mt-4">
                                     <div class="col-12 col-md-12 text-end">
                                         <button type="button" @click="clearData" class="btn btn-danger">
@@ -159,11 +157,14 @@ export default {
             imageSrc: location.origin + "/noImage.jpg",
 
             editor: ClassicEditor,
+
+            editors: [],
         };
     },
 
     created() {
         this.getCategory();
+        this.getEditor();
         if (this.$attrs.id != '') {
             this.editNews(this.$attrs.id);
 
@@ -172,13 +173,19 @@ export default {
 
     methods: {
         getCategory() {
-            axios.get(location.origin + "/admin/fetch-category")
+            axios.get("/admin/fetch-category")
                 .then(res => {
                     this.categories = res.data
                 })
         },
+        getEditor() {
+            axios.get("/admin/fetch-editor")
+                .then(res => {
+                    this.editors = res.data.filter(ed => ed.status == 'a');
+                })
+        },
         getSubcategory() {
-            axios.get(location.origin + "/admin/fetch-subcategory")
+            axios.get("/admin/fetch-subcategory")
                 .then(res => {
                     this.subcategories = res.data.filter(sub => sub.category_id == this.selectedCategory.id)
                 })

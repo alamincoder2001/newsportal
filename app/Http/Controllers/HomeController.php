@@ -14,6 +14,7 @@ use App\Models\AdvertiseFive;
 use App\Models\AdvertiseFour;
 use App\Models\AdvertiseThree;
 use App\Models\Epaper;
+use App\Models\Newsvisitor;
 use Illuminate\Support\Facades\DB;
 use Rajurayhan\Bndatetime\BnDateTimeConverter;
 
@@ -119,16 +120,23 @@ class HomeController extends Controller
         })->where('is_published', 'active')->where('is_archive', 'no')->latest()->paginate(8);
 
         // Increment the read counter
-        $counter = NewsCounter::where('news_id', $news->id)->where('category_id', $category->id)->first();
-
-        if ($counter) {
-            $counter->increment('read_count');
-        } else {
-            NewsCounter::create([
-                'news_id'     => $news->id,
-                'category_id' => $category->id,
-                'read_count'  => 1
+        $check = Newsvisitor::where('ipaddress', request()->ip())->where('news_id', $news->id)->first();
+        if (!$check) {
+            Newsvisitor::create([
+                'news_id' => $news->id,
+                'date' => date('Y-m-d'),
+                'ipaddress' => request()->ip()
             ]);
+            $counter = NewsCounter::where('news_id', $news->id)->where('category_id', $category->id)->first();
+            if ($counter) {
+                $counter->increment('read_count');
+            } else {
+                NewsCounter::create([
+                    'news_id'     => $news->id,
+                    'category_id' => $category->id,
+                    'read_count'  => 1
+                ]);
+            }
         }
 
         $news->counter = NewsCounter::where('news_id', $news->id)->where('category_id', $category->id)->first()->read_count;
@@ -137,7 +145,7 @@ class HomeController extends Controller
 
         $latestNews = News::with('category')->where('is_published', 'active')->where('is_archive', 'no')->latest()->take(20)->get();
         $mostRead = NewsCounter::with('news', 'category')->orderBy('read_count', 'desc')->take(10)->get();
-
+        
         return view("singlepage", compact('news', 'categorywisenews', 'category', 'latestNews', 'mostRead', 'ad3'));
     }
 
@@ -151,7 +159,7 @@ class HomeController extends Controller
     public function archive($date)
     {
         $news = DB::select("SELECT * FROM news n WHERE n.is_published = 'active' and date(n.created_at) = '$date'");
-        foreach($news as $item){
+        foreach ($news as $item) {
             $item->category = DB::select("SELECT np.*,
                                     c.slug,
                                     c.name
@@ -161,5 +169,17 @@ class HomeController extends Controller
         }
 
         return view("archive", compact('news'));
+    }
+
+    // epaper list
+    public function oldpaperlist(Request $request)
+    {
+        try {
+            $data = Epaper::where('publish_date', $request->oldDate)->orderBy('id', 'ASC')->get();
+
+            return ['status' => true, 'message' => $data];
+        } catch (\Throwable $th) {
+            return ['status' => false, 'message' => $th->getMessage()];
+        }
     }
 }
