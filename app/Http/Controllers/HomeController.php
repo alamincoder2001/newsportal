@@ -120,12 +120,13 @@ class HomeController extends Controller
         })->where('is_published', 'active')->where('is_archive', 'no')->latest()->paginate(8);
 
         // Increment the read counter
-        $check = Newsvisitor::where('ipaddress', request()->ip())->where('news_id', $news->id)->first();
+        $check = Newsvisitor::where('ipaddress', request()->ip())->where('category_id', $category->id)->where('news_id', $news->id)->first();
         if (!$check) {
             Newsvisitor::create([
-                'news_id' => $news->id,
-                'date' => date('Y-m-d'),
-                'ipaddress' => request()->ip()
+                'news_id'     => $news->id,
+                'category_id' => $category->id,
+                'date'        => date('Y-m-d'),
+                'ipaddress'   => request()->ip()
             ]);
             $counter = NewsCounter::where('news_id', $news->id)->where('category_id', $category->id)->first();
             if ($counter) {
