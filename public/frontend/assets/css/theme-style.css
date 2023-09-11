@@ -65,7 +65,7 @@ header {
 header .logo {
     display:inline-block;
     text-align: left;
-    box-shadow: 0px 0px 10px 0 #9185008c;
+    /* box-shadow: 0px 0px 10px 0 #9185008c; */
 }
 
 header .logo img {
@@ -4276,7 +4276,7 @@ footer .footer-bottom .copyright {
     }
 
     .latest-news-top .tab-content ul {
-        height: 865px
+        height: 585px
     }
 
     .section-1 .lead-item .text {

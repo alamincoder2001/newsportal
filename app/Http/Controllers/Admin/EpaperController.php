@@ -48,14 +48,11 @@ class EpaperController extends Controller
         }
 
         try {
-            $data = Epaper::create([
-                'publish_date' => $request->publish_date,
-                'link'         => $request->link,
-            ]);
-
-            if ($request->hasFile('image')) {
-                $data->image        = $this->imageUpload($request, 'image', 'uploads/epaper');
-            }
+            $data = new Epaper();
+            $data->publish_date = $request->publish_date;
+            $data->link         = $request->link;
+            $data->image        = $this->imageUpload($request, 'image', 'uploads/epaper');
+            $data->save();
 
             return response()->json([
                 'status'  => true,

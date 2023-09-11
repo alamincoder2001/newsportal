@@ -23,7 +23,7 @@
 @endif
 <div class="container mainContainer my-4">
     <div class="row">
-        <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+        <div class="col-md-5 col-lg-5 col-xl-5 col-xxl-5">
             <div id="carouselHomeCaptions" class="carousel slide lead-slider" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     @foreach ($homeSliders as $key => $item)
@@ -34,7 +34,7 @@
                     @foreach ($homeSliders as $key => $item)
                     <div class="carousel-item {{$key == '0' ? 'active': ''}}">
                         <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
-                            <img src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" class="d-block w-100" alt="{{ $item->title }}">
+                            <img src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" class="d-block w-100" alt="{{ $item->title }}" style="height: 250px;" />
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>{{ $item->title }}</h5>
                             </div>
@@ -63,12 +63,46 @@
             </div>
             <ul style="list-style: none;padding:0;margin-top:7px;">
                 <li class="d-flex mobileViewVideo">
-                    <iframe class="video_one" width="50%" height="210" src="{{$setting->video_link1}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <iframe class="video_two" width="50%" height="210" src="{{$setting->video_link2}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="video_one" width="50%" height="190" src="{{$setting->video_link1}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="video_two" width="50%" height="190" src="{{$setting->video_link2}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </li>
             </ul>
         </div>
-        <div class="col-md-5 col-lg-5 col-xl-5 col-xxl-5">
+        <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4 p-md-0">
+            <div class="news-tab-area latest-news-top">
+                <h2 class="title"><span class="blink"></span> বিশেষ খবর</h2>
+                <div class="tab-content mt-3" style="height: 213px;">
+                    <div class="row">
+                        @foreach ($specialnews->take(2) as $key => $item)
+                        <div class="col-md-6">
+                            <div style="background: #eeeeee;height:192px;">
+                                <a href="{{ route('singlenews', [$item->categoryName->slug, $item->slug]) }}">
+                                    <p class="text-center m-0 py-2">
+                                        <img style="width: 120px;" src="{{ asset($item->news->thumbnail != null ? $item->news->thumbnail : 'noImage.jpg') }}" alt="{{ $item->news->title }}">
+                                    </p>
+                                    <p class="px-2 m-0">
+                                        <strong>{{ $item->news->title }}</strong>
+                                        <p class="px-2 m-0" style="font-size: 13px;color: red;">
+                                            <i class="bi bi-stopwatch"></i>
+                                            @php
+                                            $minutes = now()->diffInMinutes($item->news->created_at);
+                                            @endphp
+                                            @if ($minutes > 60)
+                                            {{ App\Models\Setting::banglaNumber(floor(now()->diffInMinutes($item->news->created_at) / 60)) }} ঘন্টা আগে ।
+                                            @else
+                                            {{ App\Models\Setting::banglaNumber(now()->diffInMinutes($item->news->created_at) % 60) }} মিনিট আগে |
+                                            @endif
+
+                                            <small>{{ $item->categoryName->name }}</small>
+                                        </p>
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
             <div class="news-tab-area latest-news-top">
                 <h2 class="title"><span class="blink"></span> সর্বশেষ খবর</h2>
                 <div class="tab-content mt-3">
@@ -126,7 +160,8 @@
                 </li>
                 <li class="mb-3 block">
                     <h5 class="m-0 text-center" style="background: #eeeeee;font-weight: bold;color: #9f0000;">পুরোনো দিনের সংখ্যা</h5>
-                    <div class="calendar"></div>
+                    <!-- <div class="calendar"></div> -->
+                    <div class="calendars"></div>
                 </li>
                 @endforeach
             </ul>

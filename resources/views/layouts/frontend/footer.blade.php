@@ -148,7 +148,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
 <script src="https://www.pigno.se/barn/PIGNOSE-Calendar/dist/js/pignose.calendar.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 
 @stack("webjs")
 
@@ -257,7 +256,32 @@
         }
     })
 
-    Fancybox.bind('[data-fancybox="gallery"]', {
-        // Your custom options
+    const localeEs = {
+        days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+        daysMin: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+        months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        today: 'Today',
+        clear: 'Clear',
+        dateFormat: 'mm/dd/yyyy',
+        timeFormat: 'hh:ii aa',
+        firstDay: 0
+    }
+
+    new AirDatepicker('.calendars', {
+        locale: localeEs,
+        selectedDates: [new Date()],
+        maxDate: new Date(),
+        onSelect: function(date) {
+            var d = new Date(date.date)
+            let day = ("0" + d.getDate()).slice(-2);
+            let mnth = ("0" + (d.getMonth() + 1)).slice(-2)
+            let year = (d.getFullYear());
+            let fulldate = year+'-'+mnth+'-'+day;
+            if (day != 'aN') {
+                location.href = "/archive/"+fulldate
+            }
+        }
     });
 </script>

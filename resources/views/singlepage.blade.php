@@ -78,7 +78,7 @@ $tag_remove = strip_tags($news->description);
                     </div>
                     @if ($news->image != null)
                     <div class="news-img">
-                        <a class="d-flex justify-content-center" href="{{ asset($news->image != null ? $news->image : 'noImage.jpg') }}" data-fancybox="gallery" data-caption="{{ $news->title }}">
+                        <a class="d-flex justify-content-center spotlight" href="{{ asset($news->image != null ? $news->image : 'noImage.jpg') }}">
                             <img style="width: 650px;height:350px;" src="{{ asset($news->image != null ? $news->image : 'noImage.jpg') }}" alt="{{ $news->title }}">
                         </a>
                         <!-- <div class="caption">
@@ -89,38 +89,38 @@ $tag_remove = strip_tags($news->description);
                 </div>
             </div>
             <div class="sub-content">
-                <ul style="padding: 0;display: flex;gap: 5px;margin: 0;">
+                <ul style="padding: 0;display: flex;gap: 5px;margin: 0;" class="spotlight-group">
                     @if($news->other_image_1 != null)
                     <li style="list-style: none;padding: 0;margin: 0;">
-                        <a href="{{asset($news->other_image_1)}}" data-fancybox="gallery" data-caption="Other Image 1">
+                        <a href="{{asset($news->other_image_1)}}" class="spotlight">
                             <img style="width: 125px;height:85px;margin-top: 5px;border: 1px solid gray;" src="{{asset($news->other_image_1)}}" alt="image1" />
                         </a>
                     </li>
                     @endif
                     @if($news->other_image_2 != null)
                     <li style="list-style: none;padding: 0;margin: 0;">
-                        <a href="{{asset($news->other_image_2)}}" data-fancybox="gallery" data-caption="Other Image 2">
+                        <a href="{{asset($news->other_image_2)}}" class="spotlight">
                             <img style="width: 125px;height:85px;margin-top: 5px;border: 1px solid gray;" src="{{asset($news->other_image_2)}}" alt="image1" />
                         </a>
                     </li>
                     @endif
                     @if($news->other_image_3 != null)
                     <li style="list-style: none;padding: 0;margin: 0;">
-                        <a href="{{asset($news->other_image_3)}}" data-fancybox="gallery" data-caption="Other Image 3">
+                        <a href="{{asset($news->other_image_3)}}" class="spotlight">
                             <img style="width: 125px;height:85px;margin-top: 5px;border: 1px solid gray;" src="{{asset($news->other_image_3)}}" alt="image1" />
                         </a>
                     </li>
                     @endif
                     @if($news->other_image_4 != null)
                     <li style="list-style: none;padding: 0;margin: 0;">
-                        <a href="{{asset($news->other_image_4)}}" data-fancybox="gallery" data-caption="Other Image 4">
+                        <a href="{{asset($news->other_image_4)}}" class="spotlight">
                             <img style="width: 125px;height:85px;margin-top: 5px;border: 1px solid gray;" src="{{asset($news->other_image_4)}}" alt="image1" />
                         </a>
                     </li>
                     @endif
                     @if($news->other_image_5 != null)
                     <li style="list-style: none;padding: 0;margin: 0;">
-                        <a href="{{asset($news->other_image_5)}}" data-fancybox="gallery" data-caption="Other Image 5">
+                        <a href="{{asset($news->other_image_5)}}" class="spotlight">
                             <img style="width: 125px;height:85px;margin-top: 5px;border: 1px solid gray;" src="{{asset($news->other_image_5)}}" alt="image1" />
                         </a>
                     </li>

@@ -25,7 +25,7 @@
                 @if(count($epapers) > 0)
                 @foreach($epapers->take(6) as $item)
                 <div class="col-md-4 mt-4 epaper">
-                    <a href="{{ asset($item->image != null ? $item->image : 'noImage.jpg') }}" data-fancybox="gallery" data-caption="{{ $item->title }}">
+                    <a href="{{ asset($item->image != null ? $item->image : 'noImage.jpg') }}" class="spotlight">
                         <img src="{{ asset($item->image != null ? $item->image : 'noImage.jpg') }}">
                     </a>
                 </div>
@@ -62,7 +62,7 @@
                     if (res.message.length > 0) {
                         $.each(res.message, (index, value) => {
                             let row = `<div class="col-md-4 mt-4 epaper">
-                                                <a href="${value.image != null ? value.image : 'noImage.jpg'}" data-fancybox="gallery" data-caption="${ value.title }">
+                                                <a href="${value.image != null ? value.image : 'noImage.jpg'}" class="spotlight">
                                                     <img src="${ value.image != null ? value.image : 'noImage.jpg' }" />
                                                 </a>
                                             </div>`;

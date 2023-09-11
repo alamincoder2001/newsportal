@@ -14,4 +14,8 @@ class NewsPublished extends Model
     {
         return $this->belongsTo(Category::class, "category_id", "id");
     }
+    public function news()
+    {
+        return $this->belongsTo(News::class, "news_id", "id");
+    }
 }

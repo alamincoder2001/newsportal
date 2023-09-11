@@ -4,17 +4,18 @@ namespace App\Http\Controllers;
 
 
 use App\Models\News;
+use App\Models\Epaper;
 use App\Models\Category;
 use App\Models\NewsCounter;
+use App\Models\Newsvisitor;
 use App\Models\PageVisitor;
 use App\Models\AdvertiseOne;
 use App\Models\AdvertiseTwo;
 use Illuminate\Http\Request;
 use App\Models\AdvertiseFive;
 use App\Models\AdvertiseFour;
+use App\Models\NewsPublished;
 use App\Models\AdvertiseThree;
-use App\Models\Epaper;
-use App\Models\Newsvisitor;
 use Illuminate\Support\Facades\DB;
 use Rajurayhan\Bndatetime\BnDateTimeConverter;
 
@@ -57,7 +58,9 @@ class HomeController extends Controller
 
         $categorywisenews = News::with('category')->where('is_published', 'active')->where('is_archive', 'no')->latest()->get();
 
-        return view("home", compact('homeSliders', 'focush', 'highlights', 'jatioNews', 'topJatioNews', 'AntorjatikNews', 'sportsNews', 'homeTopRight', 'jibonDhara', 'binodon', 'healthCorner', 'shilpoBanijjo', 'coxBazar', 'categorywisenews', 'ad1', 'ad2', 'ad3', 'ad4', 'ad5', 'epaper'));
+        $specialnews = NewsPublished::with('categoryName', 'news')->where('category_id', 24)->latest()->get();
+
+        return view("home", compact('homeSliders', 'specialnews', 'focush', 'highlights', 'jatioNews', 'topJatioNews', 'AntorjatikNews', 'sportsNews', 'homeTopRight', 'jibonDhara', 'binodon', 'healthCorner', 'shilpoBanijjo', 'coxBazar', 'categorywisenews', 'ad1', 'ad2', 'ad3', 'ad4', 'ad5', 'epaper'));
     }
 
     // category_wise method
