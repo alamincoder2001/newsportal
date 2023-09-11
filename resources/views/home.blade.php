@@ -108,6 +108,7 @@
                 <div class="tab-content mt-3">
                     <ul>
                         @foreach ($categorywisenews->take(20) as $key => $item)
+                        @if($item->category[0]->category_id != 24)
                         <li>
                             <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}" class="row">
                                 <p class="col-md-8">
@@ -132,6 +133,7 @@
                                 </p>
                             </a>
                         </li>
+                        @endif
                         @endforeach
                     </ul>
                 </div>
