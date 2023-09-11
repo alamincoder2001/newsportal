@@ -52,7 +52,7 @@ class HomeController extends Controller
         $ad4 = AdvertiseFour::first();
         $ad5 = AdvertiseFive::first();
 
-        $epaper = Epaper::first();
+        $epaper = Epaper::latest()->first();
 
         $topJatioNews = NewsCounter::where('category_id', 3)->with('news', 'category')->orderBy('read_count', 'desc')->take(12)->get();
 
