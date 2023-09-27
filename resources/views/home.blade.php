@@ -53,7 +53,7 @@
             </div>
             <div class="lead-2nd mt-4">
                 <h1 class="mb-0 pb-0 d-block"><a href=""><span class="blink"></span><span>আজকের খবর</span> <i class="bi bi-chevron-right"></i></a></h1>
-                <ul class="m-0 focus" style="height: 400px;overflow-y: scroll;">
+                <ul class="m-0 focus" style="height: 470px;overflow-y: scroll;">
                     @foreach ($focush as $key => $item)
                     <li class="bi bi-caret-right-fill">
                         <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">{{ $item->title }}</a>
@@ -71,11 +71,11 @@
         <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4 p-md-0">
             <div class="news-tab-area latest-news-top">
                 <h2 class="title"><span class="blink"></span> বিশেষ খবর</h2>
-                <div class="tab-content mt-3" style="height: 213px;">
+                <div class="tab-content mt-3">
                     <div class="row">
                         @foreach ($specialnews->take(2) as $key => $item)
                         <div class="col-md-6">
-                            <div style="background: #eeeeee;height:192px;">
+                            <div style="background: #eeeeee;height:148px;">
                                 <a href="{{ route('singlenews', [$item->categoryName->slug, $item->slug]) }}">
                                     <p class="text-center m-0 py-2">
                                         <img style="width: 120px;" src="{{ asset($item->news->thumbnail != null ? $item->news->thumbnail : 'noImage.jpg') }}" alt="{{ $item->news->title }}">
@@ -106,7 +106,7 @@
             <div class="news-tab-area latest-news-top">
                 <h2 class="title"><span class="blink"></span> সর্বশেষ খবর</h2>
                 <div class="tab-content mt-3">
-                    <ul>
+                    <ul style="height: 710px;">
                         @foreach ($categorywisenews->take(20) as $key => $item)
                         @if($item->category[0]->category_id != 24)
                         <li>
@@ -153,17 +153,16 @@
             <hr>
             @endif
             <ul class="m-0">
-                @foreach ($homeTopRight->take(1) as $item)
+                <li class="mb-3 block">
+                    <h5 class="m-0 text-center" style="background: #eeeeee;font-weight: bold;color: #9f0000;">পুরোনো দিনের সংখ্যা</h5>
+                    <div class="calendars"></div>
+                </li>
+                @foreach ($homeTopRight->take(2) as $item)
                 <li class="mb-3">
                     <a href="{{ route('singlenews', [$item->category[0]->categoryName->slug, $item->slug]) }}">
                         <img class="lazy" src="{{ asset($item->thumbnail != null ? $item->thumbnail : 'noImage.jpg') }}" alt="{{ $item->title }}">
                         <p>{{ $item->title }}</p>
                     </a>
-                </li>
-                <li class="mb-3 block">
-                    <h5 class="m-0 text-center" style="background: #eeeeee;font-weight: bold;color: #9f0000;">পুরোনো দিনের সংখ্যা</h5>
-                    <!-- <div class="calendar"></div> -->
-                    <div class="calendars"></div>
                 </li>
                 @endforeach
             </ul>

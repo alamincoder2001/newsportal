@@ -44,4 +44,30 @@ class Admin extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function checkGroupName($group, $access)
+    {
+        $check = false;
+        $permission = Permission::where('group_name', $group)->get()->pluck('permissions');
+        $accessAll = $access->where('group_name', $group);
+        if (count($permission) == count($accessAll)) {
+            $check = true;
+        } else {
+            $check = false;
+        }
+
+        return $check;
+    }
+    public static function checkAll($access)
+    {
+        $check = false;
+        $permission = Permission::get();
+        if (count($permission) == count($access)) {
+            $check = true;
+        } else {
+            $check = false;
+        }
+
+        return $check;
+    }
 }

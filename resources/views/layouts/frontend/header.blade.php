@@ -1,7 +1,7 @@
 <header>
     <div class="container mb-3">
         <div class="row">
-            <div class="col-5 col-md-4 p-0 mt-md-0 d-flex align-items-center">
+            <div class="col-5 col-md-5 p-0 mt-md-0 d-flex align-items-center">
                 <div class="navbar-title">
                     <h1 class="m-0 navbar-title-text gap-3">
                         <p class="m-0 company_banglaName">{{ $setting->company_name }}</p>
@@ -11,7 +11,7 @@
                 </div>
             </div>
 
-            <div class="col-2 col-md-4 mt-md-0 d-flex align-items-center justify-content-center">
+            <div class="col-2 col-md-3 mt-md-0 d-flex align-items-center justify-content-center">
                 <a href="{{ route('website') }}" class="logo"><img src="{{ asset($setting->logo != null ? $setting->logo : 'noImage.jpg') }}" alt=""></a>
             </div>
             

@@ -167,18 +167,28 @@ class AdminAccessController extends Controller
     // permission edit
     public function permissionEdit($id)
     {
+        $user = Admin::find($id);
+
+        if (empty($user)) {
+            return back();
+        } else if ($user->id == 1) {
+            return back();
+        }
+
         $access = AdminAccess::where('admin_id', Auth::guard('admin')->user()->id)
             ->pluck('permissions')
             ->toArray();
         if (!in_array("userAccess", $access)) {
             return view("admin.unauthorize");
         }
-        
-        $user = Admin::find($id);
+
         $userAccess = AdminAccess::where('admin_id', $id)->pluck('permissions')->toArray();
-        $group_name = Permission::pluck('group_name')->unique();
-        $permissions = Permission::all();
-        return view('admin.user.access', compact('user', 'userAccess', 'group_name', 'permissions'));
+        $access = AdminAccess::where('admin_id', $id)->get();
+        $groups = Permission::groupBy('group_name')->orderBy('id', 'asc')->get();
+        foreach ($groups as $key => $item) {
+            $item->permissionArr = Permission::where('group_name', $item->group_name)->get();
+        }
+        return view('admin.user.access', compact('user', 'access', 'userAccess', 'groups'));
     }
 
     public function permissionStore(Request $request)
