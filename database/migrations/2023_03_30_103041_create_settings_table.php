@@ -32,7 +32,6 @@ class CreateSettingsTable extends Migration
             $table->string("youtube")->nullable();
             $table->string("favicon")->nullable();
             $table->string("logo")->nullable();
-            $table->text("footercategory")->nullable();
             $table->timestamps();
         });
     }

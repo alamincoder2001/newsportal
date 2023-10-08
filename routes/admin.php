@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\EpaperController;
+use App\Http\Controllers\Admin\FooterController;
 use App\Http\Controllers\Admin\HeadingController;
 use App\Http\Controllers\Admin\NewsletteraddsController;
 
@@ -134,7 +135,7 @@ Route::group(["prefix" => "admin"], function () {
     Route::post('/epaper', [EpaperController::class, 'store'])->name('admin.epaper.store');
     Route::post('/update/epaper', [EpaperController::class, 'update'])->name('admin.epaper.update');
     Route::post('/epaper/delete', [EpaperController::class, 'destroy'])->name('admin.epaper.destroy');
-    
+
     // categorywise add
     Route::get('/category_wise_add', [CategorywiseAddController::class, 'create'])->name('admin.categorywiseadds.create');
     Route::get('/get-category_wise_add', [CategorywiseAddController::class, 'index'])->name('admin.categorywiseadds.index');
@@ -151,4 +152,11 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/heading', [HeadingController::class, 'create'])->name('admin.heading.create');
     Route::post('/get-heading', [HeadingController::class, 'index'])->name('admin.heading.index');
     Route::post('/heading/delete', [HeadingController::class, 'destroy'])->name('admin.heading.destroy');
+
+    // footerpage add
+    Route::get('/footerpage', [FooterController::class, 'create'])->name('admin.footerpage.create');
+    Route::get('/get-footerpage', [FooterController::class, 'index'])->name('admin.footerpage.index');
+    Route::post('/footerpage', [FooterController::class, 'store'])->name('admin.footerpage.store');
+    Route::post('/update/footerpage', [FooterController::class, 'update'])->name('admin.footerpage.update');
+    Route::post('/footerpage/delete', [FooterController::class, 'destroy'])->name('admin.footerpage.destroy');
 });

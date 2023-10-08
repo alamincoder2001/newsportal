@@ -120,6 +120,11 @@ $access = App\Models\AdminAccess::where('admin_id', Auth::guard('admin')->user()
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.categorywiseadds.create') }}" aria-expanded="false"><i class="fa fa-filter"></i><span class="hide-menu">Category Wise Adds</span></a>
                 </li>
                 @endif
+                @if(in_array("categorywiseaddsEntry", $access))
+                <li class="sidebar-item {{ Request::is('admin.footerpage.create') ? 'selected' : '' }}">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.footerpage.create') }}" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Pages Footer</span></a>
+                </li>
+                @endif
                 @if(in_array("epaperEntry", $access))
                 <li class="sidebar-item {{ Request::is('admin.epaper.create') ? 'selected' : '' }}">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('admin.epaper.create') }}" aria-expanded="false"><i class="fa fa-file"></i><span class="hide-menu">Epaper Entry</span></a>

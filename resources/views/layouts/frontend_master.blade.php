@@ -6,13 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
-    <title>@yield('title')</title>
+    <title>@yield('title')-{{$setting->title}}</title>
 
     @include('layouts.frontend.style')
     <style>
-        #staticBackdrop .modal-body{
+        #staticBackdrop .modal-body {
             border-top: 8px solid #ffb50d;
             border-bottom: 5px solid #3a3a3a;
+        }
+
+        .select2-container {
+            width: 100% !important;
+        }
+
+        .goog-te-banner-frame {
+            display: none !important
+        }
+
+        .goog-te-gadget-simple {
+            width: 113px !important;
+            padding: 4px !important;
+            border: none !important;
+            height: 37px !important;
+            margin-left: 15px !important;
+            background: blue !important;
+        }
+
+        .goog-te-gadget-simple .VIpgJd-ZVi9od-xl07Ob-lTBxed span:last-child {
+            display: none;
+        }
+
+        .goog-te-gadget-simple .VIpgJd-ZVi9od-xl07Ob-lTBxed span:nth-child(3) {
+            display: none;
+        }
+
+        .skiptranslate iframe {
+            display: none;
+        }
+
+        .goog-te-gadget-simple .VIpgJd-ZVi9od-xl07Ob-lTBxed {
+            color: white !important;
+            line-height: 30px !important;
+        }
+
+        .goog-te-gadget-simple img {
+            display: none !important;
+        }
+
+        .goog-te-menu-value span {
+            display: none;
+            margin: -15px !important;
+        }
+
+        .goog-te-menu-value span:first-child {
+            display: block;
+            text-align: center;
+            color: white;
         }
     </style>
 </head>

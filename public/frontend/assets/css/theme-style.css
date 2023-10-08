@@ -5,8 +5,8 @@
     src: url(../solaimanlipi/SolaimanLipi_22-02-2012.ttf) format("opentype")
 }
 @font-face {
-    font-family: DhakarchithiMJRegular;
-    src: url(../fonts/DhakarchithiMJRegular.ttf)
+    font-family: 'DhakarchithiMJ';
+    src: url(../fonts/DhakarchithiMJ.ttf) format("TrueType");
 }
 
 ;
@@ -25,11 +25,11 @@ body::-webkit-scrollbar-track
 }
 
 .company_banglaName{
-    font-family: DhakarchithiMJRegular !important;
-    font-weight: 900;
+    font-family: DhakarchithiMJ;
+    font-style: Bold;
 }
 .navbar-subTitle-text{
-    font-family: DhakarchithiMJRegular !important;
+    font-family: DhakarchithiMJ;
 }
 
 body::-webkit-scrollbar
@@ -67,8 +67,8 @@ body {
 }
 
 header {
-    background: url(../img/header-bg.png) center top no-repeat;
-    background-size: 100% 100%;
+    /* background: url(../img/header-bg.png) center top no-repeat;
+    background-size: 100% 100%; */
     padding: 0 10px;
     height: 125px;
     overflow: hidden
@@ -81,8 +81,8 @@ header .logo {
 }
 
 header .logo img {
-    width: 140px;
-    height: auto;
+    width: 125px;
+    /* height: auto; */
 }
 
 header .navbar-title {
@@ -94,16 +94,17 @@ header .navbar-title {
 header .navbar-title-text {
     font-family: 'solaimanlipi';
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-align: left;
     display: flex;
     align-items: center;
 }
 
 header .navbar-subTitle-text {
-    font-weight: bold;
+    margin-top: -10px;
+    font-size: 12px;
     letter-spacing: 1px;
-    text-align: left;
+    text-align: center;
 }
 
 header .line {
@@ -437,7 +438,8 @@ header .header-ad {
 
 .lead-slider .carousel-caption {
     background: rgba(0, 0, 0, .6);
-    background: linear-gradient(0deg, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, .1) 100%);
+    /* background: linear-gradient(0deg, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, .1) 100%); */
+    background: linear-gradient(0deg, rgb(0 0 0) 0%, rgb(0 0 0 / 92%) 100%);
     left: 0;
     right: 0;
     bottom: 0;

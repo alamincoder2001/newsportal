@@ -16,6 +16,7 @@ use App\Models\AdvertiseFive;
 use App\Models\AdvertiseFour;
 use App\Models\NewsPublished;
 use App\Models\AdvertiseThree;
+use App\Models\FooterPage;
 use Illuminate\Support\Facades\DB;
 use Rajurayhan\Bndatetime\BnDateTimeConverter;
 
@@ -185,5 +186,11 @@ class HomeController extends Controller
         } catch (\Throwable $th) {
             return ['status' => false, 'message' => $th->getMessage()];
         }
+    }
+
+    public function footerPage($slug = null)
+    {
+        $footerpage = FooterPage::where("slug", $slug)->first();
+        return view("footerpage", compact('footerpage'));
     }
 }

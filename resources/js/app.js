@@ -36,6 +36,7 @@ Vue.component("ArchiveNews", require("./components/ArchiveNews.vue").default);
 Vue.component("Setting", require("./components/Setting.vue").default);
 Vue.component("CreateUser", require("./components/CreateUser.vue").default);
 Vue.component("Epaper", require("./components/Epaper.vue").default);
+Vue.component("footer-page", require("./components/FooterPage.vue").default);
 Vue.component("categorywise_advertisement", require("./components/CategorywiseAdds.vue").default);
 Vue.component(
     "EmployeeEntry",

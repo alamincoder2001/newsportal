@@ -120,11 +120,11 @@
             <div class="col-md-5">
                 <ul>
                     @php
-                    $catsetting = explode(',', $setting->footercategory);
+                    $footerpages = \App\Models\FooterPage::latest()->get();
                     @endphp
-                    @foreach($catsetting as $key => $item)
+                    @foreach($footerpages as $key => $item)
                     @if($key == 0 || $key == 1 || $key == 2)
-                    <li><a href="javascript:">{{$item}}</a></li>
+                    <li><a href="{{route('footerpage', $item->slug)}}">{{$item->title}}</a></li>
                     @endif
                     @endforeach
                 </ul>
@@ -149,6 +149,7 @@
 <script src="https://www.pigno.se/barn/PIGNOSE-Calendar/dist/js/pignose.calendar.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 
+<script src="{{asset('frontend')}}/assets/js/translate.js"></script>
 @stack("webjs")
 
 <script type="text/javascript">
@@ -278,10 +279,17 @@
             let day = ("0" + d.getDate()).slice(-2);
             let mnth = ("0" + (d.getMonth() + 1)).slice(-2)
             let year = (d.getFullYear());
-            let fulldate = year+'-'+mnth+'-'+day;
+            let fulldate = year + '-' + mnth + '-' + day;
             if (day != 'aN') {
-                location.href = "/archive/"+fulldate
+                location.href = "/archive/" + fulldate
             }
         }
     });
+
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            includedLanguages: 'en,bn',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
 </script>

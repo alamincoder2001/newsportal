@@ -104,9 +104,9 @@
                 </div>
             </div>
             <div class="news-tab-area latest-news-top">
-                <h2 class="title"><span class="blink"></span> সর্বশেষ খবর</h2>
+                <h2 class="title" style="margin-top: 64px;"><span class="blink"></span> সর্বশেষ খবর</h2>
                 <div class="tab-content mt-3">
-                    <ul style="height: 710px;">
+                    <ul style="height: 655px;">
                         @foreach ($categorywisenews->take(20) as $key => $item)
                         @if($item->category[0]->category_id != 24)
                         <li>

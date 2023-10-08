@@ -10,3 +10,4 @@ Route::get('/cat/{cat_slug?}/{slug?}', [HomeController::class, 'singleNews'])->n
 Route::get('/epaper/', [HomeController::class, 'epaper'])->name('epaper');
 Route::get('/archive/{date}', [HomeController::class, 'archive'])->name('archive');
 Route::post('/old-epaper-list', [HomeController::class, 'oldpaperlist']);
+Route::get('/footer/{slug?}', [HomeController::class, 'footerPage'])->name('footerpage');

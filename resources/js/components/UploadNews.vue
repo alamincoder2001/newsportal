@@ -115,7 +115,6 @@
 <script>
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 export default {
-    // props: { id: String },
     data() {
         return {
             form: new Form({
@@ -129,14 +128,6 @@ export default {
                 'id'
             ],
             sCategory: [],
-            // news: {
-            //     id: "",
-            //     title: "",
-            //     subtitle: "",
-            //     category_id: "",
-            //     subcategory_id: "",
-            //     description: "",
-            // },
             image: "",
             otherImage1: '',
             otherImage2: '',
@@ -154,7 +145,7 @@ export default {
                 id: '',
                 name: 'Select Sub Category'
             },
-            imageSrc: location.origin + "/noImage.jpg",
+            imageSrc: "/noImage.jpg",
 
             editor: ClassicEditor,
 

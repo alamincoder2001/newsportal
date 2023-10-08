@@ -113,28 +113,6 @@
                                                 v-model="setting.linkedin" autocomplete="off" />
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
-                                        <hr />
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <div class="d-flex align-items-center justify-content-between mb-1">
-                                                        <label for="footer-setting">Footer Section (Only Show 3)</label>
-                                                        <i @click="addSection" class="fas fa-plus bg-danger p-1 text-white"
-                                                            style="cursor: pointer;"></i>
-                                                    </div>
-                                                    <div class="d-block">
-                                                        <div class="input-group mb-1" v-for="(item, sl) in footercategory">
-                                                            <input type="text" v-model="item.text" name="footercategory[]" class="form-control shadow-none" />
-                                                            <i @click="removeSection(sl)"
-                                                                class="fas fa-minus bg-danger p-1 text-white d-flex align-items-center"
-                                                                style="cursor: pointer;"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="row mt-2">
                                     <label for="" class="col-5 col-lg-4 d-flex align-items-center"></label>
@@ -196,7 +174,6 @@ export default {
                 favicon: "",
                 logo: "",
             },
-            footercategory: [],
 
             imageSrc: location.origin + "/noImage.jpg",
             imageSrc1: location.origin + "/noImage.jpg",
@@ -208,26 +185,12 @@ export default {
     },
 
     methods: {
-        addSection() {
-            let row = {text: ''};
-            this.footercategory.push(row);
-        },
-        removeSection(sl) {
-            this.footercategory.splice(sl, 1);
-        },
         getSetting() {
             axios.get(location.origin + "/admin/settings-fetch")
                 .then(res => {
                     this.setting = res.data
                     this.imageSrc = res.data.logo != null ? location.origin + "/" + res.data.logo : location.origin + "/noImage.jpg"
                     this.imageSrc1 = res.data.favicon != null ? location.origin + "/" + res.data.favicon : location.origin + "/noImage.jpg"
-
-                    let categorysetting = res.data.footercategory.split(",");
-                    let stringArr = [];
-                    categorysetting.forEach(cat => {
-                        stringArr.push({text: cat});
-                    })
-                    this.footercategory = stringArr;
                 })
         },
 

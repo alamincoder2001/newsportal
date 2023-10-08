@@ -258,6 +258,9 @@ $tag_remove = strip_tags($news->description);
     }
 </script>
 <style>
+    article a{
+        color: #6e6eff;
+    }
     #drag-area {
         position: fixed;
         left: 1%;
